@@ -1,0 +1,29 @@
+<%- include('partials/head') %>
+
+<%- include('partials/header') %>
+
+<body>
+  <h1>Bienvenido, <%= usuario.nombre %> (Administrador)</h1>
+
+  <p>Total de cursos en el sistema: <%= totalCursos %></p>
+
+  <nav>
+    <div class="logo">THOT</div>
+    <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/courses" >Gestionar Cursos</a> | 
+      <a href="/">Inicio</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>

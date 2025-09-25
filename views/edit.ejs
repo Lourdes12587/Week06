@@ -1,0 +1,35 @@
+<%- include('partials/head') %>
+
+    <%- include('partials/header') %>
+
+    <% if(curso){ %>
+    <div class="container mt-4 w-25">
+        <div class="card border-secundary">
+            <div class="card-header">EDITAR REGISTRO</div>
+                <div class="card-body">
+                    <form action="/update" method="post">
+                        <input type="text" name="id" id="id" value="<%= curso.id%>"/>
+
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Titulo: </label>
+                            <input type="text" class="form-control" id="titulo" name="titulo" value="<%= curso.titulo %>" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripcion: </label>
+                            <input type="text" class="form-control" id="descripcion" name="descripcion" value="<%= curso.descripcion %>" />
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria" class="form-label">Categoria:</label>
+                            <input type="text" class="form-control" id="categoria" name="categoria" value="<%= curso.categoria%>"/>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a href="/courses" class="btn btn-danger">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <% } else { %>
+            <h1> CURSOS NO ENCONTRADO</h1>
+        <% } %>
+           

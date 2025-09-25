@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+<link rel="stylesheet" href="/resources/css/header.css">
+<%- include('partials/header') %>
+
+<section>
+  <% if (nombre) { %>
+    <h1>SOMOS <%= nombre %></h1>
+    <p>Es más que una experiencia, <%= experiencia %></p>
+  <% } %>
+</section>
+
+<section>
+  <% if (login) { %>
+    <h3>Usuario Conectado: <strong><%= name %></strong></h3>
+    <form action="/logout" method="POST">
+      <button type="submit" class="btn btn-primary mt-3">Cerrar sesión</button>
+    </form>
+  <% } else { %>
+    <h3>Bienvenido, <strong><%= name || 'Invitado' %></strong></h3>
+    <a href="/login" class="btn btn-primary mt-3">Iniciar Sesion</a>
+  <% } %>
+</section>

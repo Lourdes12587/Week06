@@ -1,0 +1,57 @@
+<%- include('partials/head') %>
+
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/resources/css/admin.css">
+
+  <%- include('partials/header') %>
+  
+<% if (login) { %>
+  <div class="container">
+    <h3 class="mt-4">LISTADO DE CURSOS PUBLICADOS</h3>
+    <table class="table table-bordered table-striped text-center mt-4">
+    <% if (rol == "admin") { %>
+      <a href="/create" class="btn btn-outline-primary mt-3"><i class="bx bxs-plus-circle bx-md"></i> Crear Nuevo</a>
+    <% } %>
+      <thead>
+        <tr class="bg-primary text-white">
+          <th scope="col">id:</th>
+          <th scope="col">Titulo:</th>
+          <th scope="col">Descripcion:</th>
+          <th scope="col">Categoria:</th>
+        <% if (rol == "admin") { %>       
+          <th scope="col">Acciones</th>
+        <% } %>
+        </tr>
+      </thead>
+      <tbody>
+        <% cursos.forEach(curso => { %>
+          <tr>
+            <td><%= curso.id %></td>
+            <td><%= curso.titulo %></td>
+            <td><%= curso.descripcion %></td>
+            <td><%= curso.categoria %></td>
+            <% if (rol == "admin") { %>
+              <td>
+                <a href="/edit/<%= curso.id %>" 
+                  class="btn btn-outline-warning me-2"><i class="bx bxs-edit"></i>
+                </a>
+                <a href="/delete/<%= curso.id %>" 
+                  class="btn btn-outline-danger"><i class="bx bxs-trash"></i>
+                </a>
+              </td>
+            <% } %>
+            <% if (rol === "registrado") { %>
+              <td>
+                <form action="/inscribir/<%= curso.id %>" method="POST" style="display:inline;">
+                  <button type="submit" class="btn btn-outline-success btn-sm">
+                  <i class="bx bxs-bookmark-plus"></i> Inscribirse
+                  </button>
+                </form>
+              </td>
+            <% } %>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } %>

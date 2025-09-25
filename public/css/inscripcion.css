@@ -1,0 +1,85 @@
+/* Contenedor principal */
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
+  font-family: Arial, sans-serif;
+}
+
+/* Caja del formulario */
+.login-container {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+/* Título */
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Inputs */
+.login-container input {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.6rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.login-container input:focus {
+  outline: none;
+  border: 1px solid #4e73df;
+  box-shadow: 0 0 5px rgba(78, 115, 223, 0.3);
+}
+
+/* Botón */
+.login-container button {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  background: #4e73df;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background: #2e59d9;
+}
+
+/* Contenedor inferior */
+.denied-container {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+/* Enlace de volver */
+.register-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgba(0,0,0,0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s;
+}
+
+.register-link:hover {
+  background: rgba(0,0,0,0.4);
+}

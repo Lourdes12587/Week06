@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/resources/css/login.css">
+
+<main class="auth-wrapper">
+    <form class="login-container" action="/auth" method="POST">
+      <h2>Iniciar Sesión</h2>
+        <input type="text" name="email" id="email" placeholder="Ingrese su Usuario">
+        <input type="password" name="password" id="password" placeholder="Ingrese su contraseña">
+        <button type="submit">Ingresar</button>
+    </form>
+    <div class="denied-container">
+      <a href="/register" class="register-link">Registrarse</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <% if (typeof alert != 'undefined') { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: <%= showConfirmButton %>,
+          timer: <%= timer %>
+        }).then (()=> {
+          window.location ='/<%= ruta%>'
+        })
+      </script>
+      <% } %>
+</main>

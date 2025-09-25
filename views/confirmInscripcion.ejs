@@ -1,0 +1,14 @@
+<%- include('partials/head') %>
+
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h3>Confirmar inscripción</h3>
+  <p>Curso: <strong><%= curso.titulo %></strong></p>
+  <p>Descripción: <%= curso.descripcion %></p>
+
+  <form action="/courses/inscribir/<%= curso.id %>" method="POST">
+    <button type="submit" class="btn btn-success">Inscribirme</button>
+    <a href="/courses" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>

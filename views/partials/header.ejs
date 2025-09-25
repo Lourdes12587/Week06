@@ -1,0 +1,25 @@
+</head>
+
+<body>
+  <nav>
+    <div class="logo">THOT</div>
+    <div class="menu-btn" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/">Inicio</a>
+        <a href="/login">Iniciar sesion</a>
+        <a href="/register">Registrate</a>
+        <a href="/perfil">Mi perfil</a>
+        <a href="/admin/perfil">Mi perfil (Admin)</a>
+        <a href="/courses">Gestión de Cursos</a>
+    </div>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
