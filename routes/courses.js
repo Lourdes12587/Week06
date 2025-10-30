@@ -14,22 +14,13 @@ function estaAutenticado(req, res, next) {
 }
 
 function isAdmin(req, res, next) {
-  if (req.session?.loggedin && req.session?.rol === 'admin') {
-    next();
-  } else {
-  //return res.status(403).send('Acceso denegado');
-  //res.redirect("/auth/login");
-  res.redirect("/login");
-  }
+  if (req.session?.loggedin && req.session?.rol === 'admin') return next();
+  return res.redirect("/login");
 }
 
 function isRegistrado(req, res, next) {
-  if (req.session?.loggedin && req.session?.rol === 'registrado') {
-    next();
-  } else {
-  //res.status(403).send("Acceso denegado");
+  if (req.session?.loggedin && req.session?.rol === 'registrado') return next();
   res.redirect("/login");
-  }
 }
 
 router.get('/courses', (req, res) => {
@@ -48,8 +39,8 @@ router.get('/courses', (req, res) => {
         cursos: [],
         login: req.session.loggedin || false,
         //rol: req.session.rol || null
-        rol: req.session.rol 
-        
+        //rol: req.session.rol 
+        rol: req.session.rol || 'publico'
       });
     }
 

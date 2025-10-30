@@ -10,11 +10,30 @@
     </div>
     <div class="nav-links" id="navLinks">
       <a href="/">Inicio</a>
-        <a href="/login">Iniciar sesion</a>
-        <a href="/register">Registrate</a>
+      <a href="/courses">Cursos</a>
+
+      <% if (!login) { %>
+        <!-- Usuario sin registrar -->
+        <a href="/login">Iniciar sesión</a>
+        <a href="/register">Regístrate</a>
+      <% } %>
+
+      <% if (login && rol === 'registrado') { %>
+        <!-- Usuario registrado -->
         <a href="/perfil">Mi perfil</a>
+        <form action="/logout" method="POST" style="display:inline;">
+          <button type="submit" class="logout-btn">Cerrar sesión</button>
+        </form>
+      <% } %>
+
+      <% if (login && rol === 'admin') { %>
+        <!-- Administrador -->
         <a href="/admin/perfil">Mi perfil (Admin)</a>
-        <a href="/courses">Gestión de Cursos</a>
+        <a href="/create">Gestión de Cursos</a>
+        <form action="/logout" method="POST" style="display:inline;">
+          <button type="submit" class="logout-btn">Cerrar sesión</button>
+        </form>
+      <% } %>
     </div>
   </nav>
 
@@ -23,3 +42,4 @@
       document.getElementById('navLinks').classList.toggle('active');
     }
   </script>
+</body>

@@ -1,0 +1,58 @@
+site_name: Week06 Project Documentation
+docs_dir: "docs/mkdocs"
+site_description: Full documentation for the Week06 project hosted on Deepwiki
+site_author: Lourdes12587
+repo_url: https://deepwiki.com/Lourdes12587/Week06/1-overview9
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
+    - toc.integrate
+    - content.code.copy
+    - content.action.edit
+
+nav:
+  - Overview: Overview.md
+  - Getting Started: Getting-Started.md
+
+  - Architecture Overview:
+      - Technology Stack: Technology-Stack.md
+      - Application Entry Point: Application-Entry-Point.md
+      - Database Architecture: Database-Architecture.md
+      - Routing System: Routing-System.md
+
+  - Authentication & Authorization:
+      - User Registration: User-Registration.md
+      - User Login: User-Login.md
+      - Role-Based Access Control: Role-Based-Access-Control.md
+      - Session Management: Session-Management.md
+
+  - Course Management System:
+      - Creating Courses: Creating-Courses.md
+      - Editing & Deleting Courses: Editing-&-Deleting-Courses.md
+      - Course Listing & Visibility: Course-Listing-&-Visibility.md
+      - Course Enrollment: Course-Enrollment.md
+
+  - User Profiles:
+      - User Profile Page: User-Profile-Page.md
+      - Administrator Dashboard: Administrator-Dashboard.md
+
+  - Frontend Architecture:
+      - Template System & Partials: Template-System-&-Partials.md
+      - Landing Page: Frontend-Architecture.md
+      - Authentication Views: Authentication-&-Authorization.md
+      - Course Views: Course-Views.md
+      - Styling System: Development-Guide.md
+
+  - API Reference:
+      - Authentication Endpoints: Authentication-&-Authorization.md
+      - Course Management Endpoints: Course-Management-Endpoints.md
+      - Enrollment Endpoints: Enrollment-Endpoints.md
+      - Database Operations: Database-Operations.md
+
+  - Development Guide: Development-Guide.md
+  - README: README.md

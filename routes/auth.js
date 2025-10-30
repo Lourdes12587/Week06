@@ -4,11 +4,6 @@ const bcrypt = require("bcryptjs");
 const db = require("../config/db");
 const { body, validationResult } = require("express-validator");
 
-
-router.get('/login', (req, res) => {
-    res.render('login');
-});
-
 router.get('/register', (req, res) => {
   res.render('register', { register: true});
 });
@@ -70,6 +65,11 @@ router.post("/register",
     }
   }
 );
+
+router.get('/login', (req, res) => {
+   res.render('login');
+});
+
 
 //login-autenticacion
 router.post('/auth', async (req, res) => {

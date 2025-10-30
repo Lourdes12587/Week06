@@ -12,9 +12,16 @@ app.use(
     })
 );
 
-//app.listen(4000, () => { 
-//    console.log("Servidor corriendo en http://localhost:4000");
-//});
+app.listen(4000, () => { 
+    console.log("Servidor corriendo en http://localhost:4000");
+});
+
+app.use((req, res, next) => {
+  res.locals.login = req.session.loggedin || false;
+  res.locals.rol = req.session.rol || 'publico';
+  res.locals.usuario = req.session.usuario || null;
+  next();
+});
 
 app.use("/resources", express.static(__dirname + "/public")); 
 
