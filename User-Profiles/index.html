@@ -1,0 +1,2524 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Course-Management-Endpoints/">
+      
+      
+        <link rel="next" href="../User-Profile-Page/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Overview - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-profiles" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile System Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#profile-route-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile Route Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-profile-for-registered-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Profile for Registered Users
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Profile for Registered Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#route-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Rendering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#administrator-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrator Dashboard
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Administrator Dashboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#route-definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Definition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#statistics-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-dashboard-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Dashboard Data Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Control Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#middleware-function-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Function Mapping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-data-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile Data Structures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Data Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-profile-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Profile Response Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-profile-response-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Profile Response Data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-interaction-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile Interaction Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Interaction Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-profile-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Profile Workflow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-profile-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Profile Workflow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-profile-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Profile Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-profile-error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Profile Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-profiles">User Profiles<a class="headerlink" href="#user-profiles" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="routes/courses">routes/courses.js</a>
+* <a href="views/adminperfil">views/adminperfil.ejs</a>
+* <a href="views/perfil">views/perfil.ejs</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document describes the dual profile system implemented in the course management application. The system provides role-specific profile pages: a <strong>user profile</strong> for registered users displaying their enrolled courses, and an <strong>administrator dashboard</strong> for administrators showing system statistics and management capabilities.</p>
+<p>The profile system is tightly integrated with the role-based access control mechanism. For information about user roles and authentication, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>. For details about the enrollment process that populates user profiles, see <a href="5.4-course-enrollment.md">Course Enrollment</a>.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<hr />
+<h2 id="profile-system-architecture">Profile System Architecture<a class="headerlink" href="#profile-system-architecture" title="Permanent link">&para;</a></h2>
+<p>The application implements two distinct profile endpoints based on user role:</p>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Role Required</th>
+<th>Middleware</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /perfil</code></td>
+<td><code>registrado</code></td>
+<td><code>estaAutenticado</code>, <code>isRegistrado</code></td>
+<td>Display user's enrolled courses</td>
+</tr>
+<tr>
+<td><code>GET /admin/perfil</code></td>
+<td><code>admin</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>Display system statistics and management links</td>
+</tr>
+</tbody>
+</table>
+<h3 id="profile-route-flow">Profile Route Flow<a class="headerlink" href="#profile-route-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+Request["HTTP GET Request"]
+SessionCheck["estaAutenticado()&lt;br&gt;Check session.loggedin"]
+RoleCheck["Role Check"]
+IsRegistrado["isRegistrado()&lt;br&gt;session.rol === 'registrado'"]
+IsAdmin["isAdmin()&lt;br&gt;session.rol === 'admin'"]
+UserQuery["Database Query:&lt;br&gt;SELECT c.* FROM cursos c&lt;br&gt;JOIN inscripciones i&lt;br&gt;WHERE i.id_usuario = ?"]
+AdminQuery["Database Query:&lt;br&gt;SELECT COUNT(*) AS totalCursos&lt;br&gt;FROM cursos"]
+UserView["Render: perfil.ejs&lt;br&gt;Data: cursos[], usuario"]
+AdminView["Render: adminPerfil.ejs&lt;br&gt;Data: totalCursos, usuario"]
+Redirect["Redirect to /login"]
+
+Request --&gt; SessionCheck
+SessionCheck --&gt; RoleCheck
+SessionCheck --&gt; Redirect
+RoleCheck --&gt; IsRegistrado
+RoleCheck --&gt; IsAdmin
+RoleCheck --&gt; Redirect
+IsRegistrado --&gt; UserQuery
+IsAdmin --&gt; AdminQuery
+UserQuery --&gt; UserView
+AdminQuery --&gt; AdminView</code></pre>
+<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<hr />
+<h2 id="user-profile-for-registered-users">User Profile for Registered Users<a class="headerlink" href="#user-profile-for-registered-users" title="Permanent link">&para;</a></h2>
+<p>The user profile at <code>GET /perfil</code> displays all courses in which the authenticated user is enrolled. This endpoint is protected by two middleware functions that verify authentication and role.</p>
+<h3 id="route-definition">Route Definition<a class="headerlink" href="#route-definition" title="Permanent link">&para;</a></h3>
+<p>The profile route is defined in <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
+<p>:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">GET /perfil</span>
+<span class="l l-Scalar l-Scalar-Plain">Middleware</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">estaAutenticado, isRegistrado</span>
+</code></pre></div>
+<h3 id="middleware-chain">Middleware Chain<a class="headerlink" href="#middleware-chain" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Location</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estaAutenticado</code></td>
+<td><a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></td>
+<td>Verifies <code>req.session.loggedin</code> is true</td>
+</tr>
+<tr>
+<td><code>isRegistrado</code></td>
+<td><a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></td>
+<td>Verifies <code>req.session.rol === 'registrado'</code></td>
+</tr>
+</tbody>
+</table>
+<p>If either middleware check fails, the user is redirected to <code>/login</code>.</p>
+<h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
+<p>The profile retrieves enrolled courses using a JOIN query <a href="routes/courses#L155-L160">routes/courses.js L155-L160</a></p>
+<p>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="o">*</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">c</span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">inscripciones</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_curso</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div>
+<p>This query:</p>
+<ul>
+<li>Joins the <code>cursos</code> table with <code>inscripciones</code> on course ID</li>
+<li>Filters by the current user's ID from <code>req.session.usuario.id</code></li>
+<li>Returns all course fields for enrolled courses</li>
+</ul>
+<h3 id="profile-data-flow">Profile Data Flow<a class="headerlink" href="#profile-data-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+  participant Browser
+  participant routes/courses.js
+  participant isRegistrado
+  participant req.session
+  participant MySQL Database
+  participant perfil.ejs
+
+  Browser-&gt;&gt;routes/courses.js: "GET /perfil"
+  routes/courses.js-&gt;&gt;isRegistrado: "Check role"
+  isRegistrado-&gt;&gt;req.session: "Read session.rol"
+  req.session--&gt;&gt;isRegistrado: "rol: 'registrado'"
+  isRegistrado-&gt;&gt;routes/courses.js: "Authorize"
+  routes/courses.js-&gt;&gt;req.session: "Get usuario.id"
+  req.session--&gt;&gt;routes/courses.js: "id: 123"
+  routes/courses.js-&gt;&gt;MySQL Database: "SELECT c.* FROM cursos c
+  MySQL Database--&gt;&gt;routes/courses.js: JOIN inscripciones i
+  routes/courses.js-&gt;&gt;perfil.ejs: WHERE i.id_usuario = 123"
+  perfil.ejs--&gt;&gt;Browser: "results: [{id:1, titulo:..}, {id:5, titulo:..}]"</code></pre>
+<p><strong>Sources:</strong> <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
+<h3 id="view-rendering">View Rendering<a class="headerlink" href="#view-rendering" title="Permanent link">&para;</a></h3>
+<p>The profile view <a href="views/perfil">views/perfil.ejs</a></p>
+<p>receives three data objects:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursos</code></td>
+<td>Array</td>
+<td>List of enrolled course objects from database query</td>
+</tr>
+<tr>
+<td><code>usuario</code></td>
+<td>Object</td>
+<td>Current user object from <code>req.session.usuario</code></td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td>String</td>
+<td>User role from <code>req.session.rol</code></td>
+</tr>
+</tbody>
+</table>
+<p>The view displays:</p>
+<ul>
+<li>User greeting with <code>usuario.nombre</code> <a href="views/perfil#L6-L6">views/perfil.ejs L6</a></li>
+<li>Empty state message if no enrollments <a href="views/perfil#L9-L10">views/perfil.ejs L9-L10</a></li>
+<li>Table of enrolled courses with columns: Título, Categoría, Descripción <a href="views/perfil#L12-L29">views/perfil.ejs L12-L29</a></li>
+<li>Link to view all courses <a href="views/perfil#L32-L32">views/perfil.ejs L32</a></li>
+</ul>
+<p><strong>Sources:</strong> <a href="views/perfil#L1-L35">views/perfil.ejs L1-L35</a></p>
+<hr />
+<h2 id="administrator-dashboard">Administrator Dashboard<a class="headerlink" href="#administrator-dashboard" title="Permanent link">&para;</a></h2>
+<p>The administrator dashboard at <code>GET /admin/perfil</code> provides system statistics and navigation for course management. This endpoint is restricted to users with the <code>admin</code> role.</p>
+<h3 id="route-definition_1">Route Definition<a class="headerlink" href="#route-definition_1" title="Permanent link">&para;</a></h3>
+<p>The admin profile route is defined in <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
+<p>:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">GET /admin/perfil</span>
+<span class="l l-Scalar l-Scalar-Plain">Middleware</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">estaAutenticado, isAdmin</span>
+</code></pre></div>
+<h3 id="middleware-chain_1">Middleware Chain<a class="headerlink" href="#middleware-chain_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Location</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estaAutenticado</code></td>
+<td><a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></td>
+<td>Verifies session is active</td>
+</tr>
+<tr>
+<td><code>isAdmin</code></td>
+<td><a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></td>
+<td>Verifies <code>req.session.rol === 'admin'</code></td>
+</tr>
+</tbody>
+</table>
+<p>Non-admin users attempting to access this route are redirected to <code>/login</code> <a href="routes/courses#L22-L22">routes/courses.js L22</a></p>
+<h3 id="statistics-query">Statistics Query<a class="headerlink" href="#statistics-query" title="Permanent link">&para;</a></h3>
+<p>The dashboard executes a COUNT query to retrieve system metrics <a href="routes/courses#L176-L176">routes/courses.js L176</a></p>
+<p>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totalCursos</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span>
+</code></pre></div>
+<p>This query returns the total number of courses in the system, which is displayed on the dashboard.</p>
+<h3 id="admin-dashboard-data-flow">Admin Dashboard Data Flow<a class="headerlink" href="#admin-dashboard-data-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+Request["GET /admin/perfil"]
+AuthMW["estaAutenticado"]
+AdminMW["isAdmin"]
+GetUser["req.session.usuario"]
+QueryDB["db.query:&lt;br&gt;SELECT COUNT(*)&lt;br&gt;FROM cursos"]
+Results["results[0].totalCursos"]
+Render["res.render('adminPerfil',&lt;br&gt;{usuario, totalCursos})"]
+
+Request --&gt; AuthMW
+AuthMW --&gt; AdminMW
+AdminMW --&gt; GetUser
+GetUser --&gt; QueryDB
+QueryDB --&gt; Results
+Results --&gt; Render</code></pre>
+<p><strong>Sources:</strong> <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
+<h3 id="view-structure">View Structure<a class="headerlink" href="#view-structure" title="Permanent link">&para;</a></h3>
+<p>The admin profile view <a href="views/adminperfil">views/adminperfil.ejs</a></p>
+<p>displays:</p>
+<ol>
+<li><strong>Welcome Header</strong>: Personalized greeting with <code>usuario.nombre</code> and "(Administrador)" label <a href="views/adminperfil#L6-L6">views/adminperfil.ejs L6</a></li>
+<li><strong>Statistics</strong>: Total course count from <code>totalCursos</code> variable <a href="views/adminperfil#L8-L8">views/adminperfil.ejs L8</a></li>
+<li><strong>Navigation Menu</strong>: Links to course management and home page <a href="views/adminperfil#L10-L21">views/adminperfil.ejs L10-L21</a></li>
+</ol>
+<p>The navigation provides quick access to:</p>
+<ul>
+<li><code>/courses</code> - Course listing and management interface</li>
+<li><code>/</code> - Application home page</li>
+</ul>
+<p><strong>Sources:</strong> <a href="views/adminperfil#L1-L29">views/adminperfil.ejs L1-L29</a></p>
+<hr />
+<h2 id="access-control-implementation">Access Control Implementation<a class="headerlink" href="#access-control-implementation" title="Permanent link">&para;</a></h2>
+<p>Both profile endpoints implement strict access control through middleware functions. The system enforces a clear separation between user roles.</p>
+<h3 id="middleware-function-mapping">Middleware Function Mapping<a class="headerlink" href="#middleware-function-mapping" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+EstaAuth["estaAutenticado()&lt;br&gt;routes/courses.js:8-14"]
+IsReg["isRegistrado()&lt;br&gt;routes/courses.js:26-33"]
+IsAdm["isAdmin()&lt;br&gt;routes/courses.js:16-24"]
+UserProfile["GET /perfil&lt;br&gt;lines 152-169"]
+AdminProfile["GET /admin/perfil&lt;br&gt;lines 172-185"]
+CheckLogin["req.session.loggedin"]
+CheckRole["req.session.rol"]
+Redirect1["Redirect /login"]
+Redirect2["Redirect /login"]
+
+EstaAuth --&gt; CheckLogin
+IsReg --&gt; CheckRole
+IsAdm --&gt; CheckRole
+CheckLogin --&gt; IsReg
+CheckLogin --&gt; IsAdm
+CheckLogin --&gt; Redirect1
+CheckRole --&gt; UserProfile
+CheckRole --&gt; AdminProfile
+CheckRole --&gt; Redirect2
+IsReg --&gt; UserProfile
+IsAdm --&gt; AdminProfile
+
+subgraph subGraph3 ["Session Checks"]
+    CheckLogin
+    CheckRole
+end
+
+subgraph subGraph2 ["Profile Routes"]
+    UserProfile
+    AdminProfile
+end
+
+subgraph subGraph1 ["Role-Based Middleware"]
+    IsReg
+    IsAdm
+end
+
+subgraph subGraph0 ["Authentication Middleware"]
+    EstaAuth
+end</code></pre>
+<h3 id="authorization-logic">Authorization Logic<a class="headerlink" href="#authorization-logic" title="Permanent link">&para;</a></h3>
+<p><strong><code>estaAutenticado</code> Function</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p>:</p>
+<ul>
+<li>Checks if <code>req.session.loggedin</code> is truthy</li>
+<li>Calls <code>next()</code> if authenticated</li>
+<li>Redirects to <code>/login</code> if not authenticated</li>
+</ul>
+<p><strong><code>isRegistrado</code> Function</strong> <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
+<p>:</p>
+<ul>
+<li>Verifies <code>req.session.loggedin &amp;&amp; req.session.rol === 'registrado'</code></li>
+<li>Calls <code>next()</code> if role matches</li>
+<li>Redirects to <code>/login</code> if role mismatch</li>
+</ul>
+<p><strong><code>isAdmin</code> Function</strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p>:</p>
+<ul>
+<li>Verifies <code>req.session.loggedin &amp;&amp; req.session.rol === 'admin'</code></li>
+<li>Calls <code>next()</code> if role matches</li>
+<li>Redirects to <code>/login</code> if role mismatch</li>
+</ul>
+<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
+<hr />
+<h2 id="profile-data-structures">Profile Data Structures<a class="headerlink" href="#profile-data-structures" title="Permanent link">&para;</a></h2>
+<h3 id="user-profile-response-data">User Profile Response Data<a class="headerlink" href="#user-profile-response-data" title="Permanent link">&para;</a></h3>
+<p>The <code>GET /perfil</code> endpoint passes the following data structure to the view:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span>
+<span class="nt">  cursos</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
+<span class="w">    </span><span class="p p-Indicator">{</span>
+<span class="nt">      id</span><span class="p">:</span><span class="w"> </span><span class="nv">number</span><span class="p p-Indicator">,</span>
+<span class="nt">      titulo</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
+<span class="nt">      descripcion</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
+<span class="nt">      categoria</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
+<span class="nt">      visibilidad</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span>
+<span class="w">    </span><span class="p p-Indicator">},</span>
+<span class="w">    </span><span class="nv">// ... more courses</span>
+<span class="w">  </span><span class="p p-Indicator">],</span>
+<span class="nt">  usuario</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="nt">    id</span><span class="p">:</span><span class="w"> </span><span class="nv">number</span><span class="p p-Indicator">,</span>
+<span class="nt">    nombre</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
+<span class="nt">    email</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
+<span class="nt">    rol</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;registrado&#39;</span>
+<span class="w">  </span><span class="p p-Indicator">},</span>
+<span class="nt">  rol</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;registrado&#39;</span><span class="p p-Indicator">,</span>
+<span class="nt">  msg</span><span class="p">:</span><span class="w"> </span><span class="nv">string | undefined  // Optional query parameter</span>
+<span class="p p-Indicator">}</span>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="routes/courses#L162-L167">routes/courses.js L162-L167</a></p>
+<h3 id="admin-profile-response-data">Admin Profile Response Data<a class="headerlink" href="#admin-profile-response-data" title="Permanent link">&para;</a></h3>
+<p>The <code>GET /admin/perfil</code> endpoint passes the following data structure to the view:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="n">usuario</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span>
+    <span class="n">nombre</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
+    <span class="n">rol</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span>
+  <span class="p">},</span>
+  <span class="n">totalCursos</span><span class="p">:</span> <span class="n">number</span>  <span class="o">//</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">result</span> <span class="kn">from</span><span class="w"> </span><span class="nn">database</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="routes/courses#L183-L183">routes/courses.js L183</a></p>
+<hr />
+<h2 id="profile-interaction-patterns">Profile Interaction Patterns<a class="headerlink" href="#profile-interaction-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="user-profile-workflow">User Profile Workflow<a class="headerlink" href="#user-profile-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>After successful enrollment, users are redirected to <code>/perfil</code> <a href="routes/courses#L144-L144">routes/courses.js L144</a></p>
+<p>where they can view their updated course list. The profile serves as a confirmation page and central hub for managing enrolled courses.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L117-L149">routes/courses.js L117-L149</a></p>
+<p><a href="views/perfil#L32-L32">views/perfil.ejs L32</a></p>
+<h3 id="admin-profile-workflow">Admin Profile Workflow<a class="headerlink" href="#admin-profile-workflow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The admin dashboard provides navigation to the course management interface at <code>/courses</code> <a href="views/adminperfil#L18-L18">views/adminperfil.ejs L18</a></p>
+<p>where administrators can perform CRUD operations on courses.</p>
+<p><strong>Sources:</strong> <a href="views/adminperfil#L10-L21">views/adminperfil.ejs L10-L21</a></p>
+<hr />
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p>Both profile routes implement basic error handling for database operations:</p>
+<h3 id="user-profile-error-handling">User Profile Error Handling<a class="headerlink" href="#user-profile-error-handling" title="Permanent link">&para;</a></h3>
+<p>When the enrollment query fails in <code>GET /perfil</code> <a href="routes/courses#L161-L161">routes/courses.js L161</a></p>
+<p>the route handler does not explicitly handle the error, relying on implicit error handling. If the query succeeds but returns no results, the view displays an empty state message <a href="views/perfil#L9-L10">views/perfil.ejs L9-L10</a></p>
+<h3 id="admin-profile-error-handling">Admin Profile Error Handling<a class="headerlink" href="#admin-profile-error-handling" title="Permanent link">&para;</a></h3>
+<p>The admin profile includes explicit error handling for the statistics query <a href="routes/courses#L177-L180">routes/courses.js L177-L180</a></p>
+<p>:</p>
+<div class="highlight"><pre><span></span><code>if (err) {
+  console.error(err);
+  return res.render(&quot;adminPerfil&quot;, { usuario, totalCursos: 0 });
+}
+</code></pre></div>
+<p>On database error, the view is rendered with <code>totalCursos: 0</code> as a fallback value, preventing complete page failure.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L161-L168">routes/courses.js L161-L168</a></p>
+<p><a href="routes/courses#L177-L180">routes/courses.js L177-L180</a></p>
+<hr />
+<h2 id="session-dependencies">Session Dependencies<a class="headerlink" href="#session-dependencies" title="Permanent link">&para;</a></h2>
+<p>Both profile endpoints depend on session data populated during the login process:</p>
+<table>
+<thead>
+<tr>
+<th>Session Property</th>
+<th>Set During</th>
+<th>Used By</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>req.session.loggedin</code></td>
+<td>Login [routes/auth.js]</td>
+<td><code>estaAutenticado</code> middleware</td>
+</tr>
+<tr>
+<td><code>req.session.rol</code></td>
+<td>Login [routes/auth.js]</td>
+<td><code>isRegistrado</code>, <code>isAdmin</code> middleware</td>
+</tr>
+<tr>
+<td><code>req.session.usuario</code></td>
+<td>Login [routes/auth.js]</td>
+<td>Profile views for user data</td>
+</tr>
+<tr>
+<td><code>req.session.usuario.id</code></td>
+<td>Login [routes/auth.js]</td>
+<td>Enrollment queries</td>
+</tr>
+</tbody>
+</table>
+<p>The profile system assumes these session properties are properly initialized during authentication. For details on session initialization, see <a href="4.2-user-login.md">User Login</a>.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L154-L154">routes/courses.js L154</a></p>
+<p><a href="routes/courses#L164-L165">routes/courses.js L164-L165</a></p>
+<p><a href="routes/courses#L173-L173">routes/courses.js L173</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

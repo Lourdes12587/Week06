@@ -1,0 +1,3599 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Authentication-Endpoints/">
+      
+      
+        <link rel="next" href="../Profile-Endpoints/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Course Management Endpoints - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#course-management-endpoints" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Course Management Endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Authorization Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /courses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /create
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /save
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /save">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-editid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /edit/:id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /edit/:id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /update
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-deleteid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /delete/:id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /delete/:id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cascading-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cascading Effects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-to-controller-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route-to-Controller Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection Prevention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-response-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Response Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Response Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unauthorized-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unauthorized Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-and-authorization-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication and Authorization Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /courses
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /courses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /create
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /create">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization Behavior
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /save
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /save">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-editid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /edit/:id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /edit/:id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /update
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POST /update">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controller-implementation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-deleteid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /delete/:id
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET /delete/:id">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-query_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cascading-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cascading Effects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-to-controller-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route-to-Controller Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access Control Matrix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection Prevention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-response-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Response Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Response Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Responses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unauthorized-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unauthorized Access
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="course-management-endpoints">Course Management Endpoints<a class="headerlink" href="#course-management-endpoints" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="routes/courses">routes/courses.js</a>
+* <a href="src/controller">src/controller.js</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document provides a comprehensive reference for all course management HTTP endpoints in the system. These endpoints handle CRUD (Create, Read, Update, Delete) operations on courses and implement role-based access control to ensure only administrators can modify course data.</p>
+<p>For enrollment-related endpoints, see <a href="8.3-enrollment-endpoints.md">Enrollment Endpoints</a>. For user and admin profile endpoints, see <a href="8.4-profile-endpoints.md">Profile Endpoints</a>. For authentication endpoints, see <a href="8.1-authentication-endpoints.md">Authentication Endpoints</a>.</p>
+<hr />
+<h2 id="endpoint-summary">Endpoint Summary<a class="headerlink" href="#endpoint-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Middleware</th>
+<th>Role Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><code>/courses</code></td>
+<td>None</td>
+<td>None (public)</td>
+<td>List courses with role-based filtering</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/create</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>admin</td>
+<td>Display course creation form</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/save</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>admin</td>
+<td>Save new course to database</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/edit/:id</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>admin</td>
+<td>Display edit form for existing course</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><code>/update</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>admin</td>
+<td>Update existing course in database</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><code>/delete/:id</code></td>
+<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
+<td>admin</td>
+<td>Delete course from database</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="routes/courses#L35-L103">routes/courses.js L35-L103</a></p>
+<hr />
+<h2 id="middleware-architecture">Middleware Architecture<a class="headerlink" href="#middleware-architecture" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-and-authorization-flow">Authentication and Authorization Flow<a class="headerlink" href="#authentication-and-authorization-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+Request["HTTP Request"]
+EstaAuth["estaAutenticado()&lt;br&gt;routes/courses.js:8-14"]
+IsAdmin["isAdmin()&lt;br&gt;routes/courses.js:16-24"]
+RouteHandler["Route Handler"]
+LoginRedirect["Redirect to /login"]
+
+Request --&gt; EstaAuth
+EstaAuth --&gt; IsAdmin
+EstaAuth --&gt; LoginRedirect
+IsAdmin --&gt; RouteHandler
+IsAdmin --&gt; LoginRedirect</code></pre>
+<p><strong>Middleware Functions</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Location</th>
+<th>Validation Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estaAutenticado</code></td>
+<td>Verify user is logged in</td>
+<td><a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></td>
+<td>Checks <code>req.session.loggedin</code></td>
+</tr>
+<tr>
+<td><code>isAdmin</code></td>
+<td>Verify user has admin role</td>
+<td><a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></td>
+<td>Checks <code>req.session.rol === 'admin'</code></td>
+</tr>
+<tr>
+<td><code>isRegistrado</code></td>
+<td>Verify user has registered role</td>
+<td><a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></td>
+<td>Checks <code>req.session.rol === 'registrado'</code></td>
+</tr>
+</tbody>
+</table>
+<p>All course modification endpoints (create, update, delete) require both <code>estaAutenticado</code> and <code>isAdmin</code> middleware to execute.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
+<hr />
+<h2 id="get-courses">GET /courses<a class="headerlink" href="#get-courses" title="Permanent link">&para;</a></h2>
+<h3 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>Lists all courses available in the system. Implements role-based visibility filtering: public users see only courses marked with <code>visibilidad='publico'</code>, while authenticated users see all courses.</p>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<p>None required (publicly accessible)</p>
+<h3 id="request-parameters">Request Parameters<a class="headerlink" href="#request-parameters" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h3>
+<p>Renders the <code>courses</code> EJS template with the following data:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursos</code></td>
+<td>Array</td>
+<td>Array of course objects from database</td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td>Boolean</td>
+<td>Session login status (<code>req.session.loggedin</code>)</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td>String</td>
+<td>User role (<code>publico</code>, <code>registrado</code>, or <code>admin</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementation-logic">Implementation Logic<a class="headerlink" href="#implementation-logic" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+Start["GET /courses"]
+GetRole["Determine role:&lt;br&gt;req.session.rol || 'publico'"]
+CheckRole["rol === 'publico'?"]
+PublicSQL["SQL: SELECT * FROM cursos&lt;br&gt;WHERE visibilidad='publico'"]
+AllSQL["SQL: SELECT * FROM cursos"]
+Query["db.query()"]
+Error["Error?"]
+RenderEmpty["Render with empty array"]
+RenderResults["Render with results"]
+
+Start --&gt; GetRole
+GetRole --&gt; CheckRole
+CheckRole --&gt; PublicSQL
+CheckRole --&gt; AllSQL
+PublicSQL --&gt; Query
+AllSQL --&gt; Query
+Query --&gt; Error
+Error --&gt; RenderEmpty
+Error --&gt; RenderResults</code></pre>
+<h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
+<p><strong>For public users:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">visibilidad</span><span class="o">=</span><span class="s1">&#39;publico&#39;</span>
+</code></pre></div>
+<p><strong>For authenticated users:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span>
+</code></pre></div>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<p>If database query fails, the endpoint renders the <code>courses</code> template with an empty array and logs the error to console.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<hr />
+<h2 id="get-create">GET /create<a class="headerlink" href="#get-create" title="Permanent link">&para;</a></h2>
+<h3 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h3>
+<p>Displays the course creation form interface. This endpoint is restricted to administrators only.</p>
+<h3 id="authentication_1">Authentication<a class="headerlink" href="#authentication_1" title="Permanent link">&para;</a></h3>
+<p><strong>Required:</strong> User must be authenticated and have <code>admin</code> role</p>
+<h3 id="middleware-chain">Middleware Chain<a class="headerlink" href="#middleware-chain" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>estaAutenticado</code> - Validates session exists</li>
+<li><code>isAdmin</code> - Validates admin role</li>
+</ol>
+<h3 id="request-parameters_1">Request Parameters<a class="headerlink" href="#request-parameters_1" title="Permanent link">&para;</a></h3>
+<p>None</p>
+<h3 id="response_1">Response<a class="headerlink" href="#response_1" title="Permanent link">&para;</a></h3>
+<p>Renders the <code>create</code> EJS template (course creation form)</p>
+<h3 id="authorization-behavior">Authorization Behavior<a class="headerlink" href="#authorization-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If user is not logged in → Redirect to <code>/login</code></li>
+<li>If user lacks admin role → Redirect to <code>/login</code></li>
+<li>If user is admin → Display course creation form</li>
+</ul>
+<p><strong>Sources:</strong> <a href="routes/courses#L64-L67">routes/courses.js L64-L67</a></p>
+<hr />
+<h2 id="post-save">POST /save<a class="headerlink" href="#post-save" title="Permanent link">&para;</a></h2>
+<h3 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h3>
+<p>Processes the submission of a new course and inserts it into the database. Delegates the actual database operation to the CRUD controller.</p>
+<h3 id="authentication_2">Authentication<a class="headerlink" href="#authentication_2" title="Permanent link">&para;</a></h3>
+<p><strong>Required:</strong> User must be authenticated and have <code>admin</code> role</p>
+<h3 id="middleware-chain_1">Middleware Chain<a class="headerlink" href="#middleware-chain_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>estaAutenticado</code> - Validates session exists</li>
+<li><code>isAdmin</code> - Validates admin role</li>
+<li><code>crud.save</code> - Controller function</li>
+</ol>
+<h3 id="request-parameters_2">Request Parameters<a class="headerlink" href="#request-parameters_2" title="Permanent link">&para;</a></h3>
+<p><strong>Body Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>titulo</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Course title</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Course description</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Course category</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controller-implementation">Controller Implementation<a class="headerlink" href="#controller-implementation" title="Permanent link">&para;</a></h3>
+<p>The endpoint delegates to <code>crud.save</code> function which performs the following operation:</p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div>
+<p>With object containing: <code>titulo</code>, <code>descripcion</code>, <code>categoria</code></p>
+<h3 id="response_2">Response<a class="headerlink" href="#response_2" title="Permanent link">&para;</a></h3>
+<p>Redirects to <code>/courses</code> regardless of success or failure</p>
+<h3 id="flow-diagram">Flow Diagram<a class="headerlink" href="#flow-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
+<p><a href="src/controller#L4-L25">src/controller.js L4-L25</a></p>
+<hr />
+<h2 id="get-editid">GET /edit/:id<a class="headerlink" href="#get-editid" title="Permanent link">&para;</a></h2>
+<h3 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h3>
+<p>Displays the course edit form pre-populated with existing course data. Retrieves the course record from the database and passes it to the edit template.</p>
+<h3 id="authentication_3">Authentication<a class="headerlink" href="#authentication_3" title="Permanent link">&para;</a></h3>
+<p><strong>Required:</strong> User must be authenticated and have <code>admin</code> role</p>
+<h3 id="middleware-chain_2">Middleware Chain<a class="headerlink" href="#middleware-chain_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>estaAutenticado</code> - Validates session exists</li>
+<li><code>isAdmin</code> - Validates admin role</li>
+</ol>
+<h3 id="request-parameters_3">Request Parameters<a class="headerlink" href="#request-parameters_3" title="Permanent link">&para;</a></h3>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Course ID to edit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="database-query_1">Database Query<a class="headerlink" href="#database-query_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div>
+<p>Uses parameterized query with <code>req.params.id</code> to prevent SQL injection.</p>
+<h3 id="response_3">Response<a class="headerlink" href="#response_3" title="Permanent link">&para;</a></h3>
+<p>Renders the <code>edit</code> EJS template with the following data:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curso</code></td>
+<td>Object</td>
+<td>Course record from database (<code>results[0]</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-handling_1">Error Handling<a class="headerlink" href="#error-handling_1" title="Permanent link">&para;</a></h3>
+<p>If database query fails, throws an error (no graceful handling implemented).</p>
+<h3 id="implementation-details">Implementation Details<a class="headerlink" href="#implementation-details" title="Permanent link">&para;</a></h3>
+<p>The endpoint directly queries the database within the route handler rather than delegating to a controller. The retrieved course object is passed to the edit template where form fields are pre-populated.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
+<hr />
+<h2 id="post-update">POST /update<a class="headerlink" href="#post-update" title="Permanent link">&para;</a></h2>
+<h3 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h3>
+<p>Processes course update requests and modifies the existing course record in the database. Delegates to the CRUD controller for database operations.</p>
+<h3 id="authentication_4">Authentication<a class="headerlink" href="#authentication_4" title="Permanent link">&para;</a></h3>
+<p><strong>Required:</strong> User must be authenticated and have <code>admin</code> role</p>
+<h3 id="middleware-chain_3">Middleware Chain<a class="headerlink" href="#middleware-chain_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>estaAutenticado</code> - Validates session exists</li>
+<li><code>isAdmin</code> - Validates admin role</li>
+<li><code>crud.update</code> - Controller function</li>
+</ol>
+<h3 id="request-parameters_4">Request Parameters<a class="headerlink" href="#request-parameters_4" title="Permanent link">&para;</a></h3>
+<p><strong>Body Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Course ID to update</td>
+</tr>
+<tr>
+<td><code>titulo</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Updated course title</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Updated course description</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Updated course category</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controller-implementation_1">Controller Implementation<a class="headerlink" href="#controller-implementation_1" title="Permanent link">&para;</a></h3>
+<p>The endpoint delegates to <code>crud.update</code> which executes:</p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div>
+<p>With parameters: <code>[{titulo, descripcion, categoria}, id]</code></p>
+<h3 id="response_4">Response<a class="headerlink" href="#response_4" title="Permanent link">&para;</a></h3>
+<p>Redirects to <code>/courses</code> after update attempt</p>
+<h3 id="error-handling_2">Error Handling<a class="headerlink" href="#error-handling_2" title="Permanent link">&para;</a></h3>
+<p>Logs error to console if update fails, then redirects to <code>/courses</code></p>
+<p><strong>Sources:</strong> <a href="routes/courses#L103-L103">routes/courses.js L103</a></p>
+<p><a href="src/controller#L28-L52">src/controller.js L28-L52</a></p>
+<hr />
+<h2 id="get-deleteid">GET /delete/:id<a class="headerlink" href="#get-deleteid" title="Permanent link">&para;</a></h2>
+<h3 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h3>
+<p>Permanently deletes a course from the database. This is a destructive operation with no confirmation step at the API level (confirmation is handled in the frontend).</p>
+<h3 id="authentication_5">Authentication<a class="headerlink" href="#authentication_5" title="Permanent link">&para;</a></h3>
+<p><strong>Required:</strong> User must be authenticated and have <code>admin</code> role</p>
+<h3 id="middleware-chain_4">Middleware Chain<a class="headerlink" href="#middleware-chain_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>estaAutenticado</code> - Validates session exists</li>
+<li><code>isAdmin</code> - Validates admin role</li>
+</ol>
+<h3 id="request-parameters_5">Request Parameters<a class="headerlink" href="#request-parameters_5" title="Permanent link">&para;</a></h3>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>Yes</td>
+<td>Course ID to delete</td>
+</tr>
+</tbody>
+</table>
+<h3 id="database-query_2">Database Query<a class="headerlink" href="#database-query_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div>
+<p>Uses parameterized query with <code>req.params.id</code> to prevent SQL injection.</p>
+<h3 id="response_5">Response<a class="headerlink" href="#response_5" title="Permanent link">&para;</a></h3>
+<p>Redirects to <code>/courses</code> after deletion</p>
+<h3 id="error-handling_3">Error Handling<a class="headerlink" href="#error-handling_3" title="Permanent link">&para;</a></h3>
+<p>If database query fails, throws an error (no graceful handling implemented).</p>
+<h3 id="cascading-effects">Cascading Effects<a class="headerlink" href="#cascading-effects" title="Permanent link">&para;</a></h3>
+<p><strong>Warning:</strong> This operation does not handle foreign key constraints. If enrollments (<code>inscripciones</code> table) reference this course via <code>id_curso</code>, the database may reject the deletion depending on foreign key configuration.</p>
+<p><strong>Sources:</strong> <a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></p>
+<hr />
+<h2 id="route-to-controller-mapping">Route-to-Controller Mapping<a class="headerlink" href="#route-to-controller-mapping" title="Permanent link">&para;</a></h2>
+<p>The following diagram maps HTTP routes to their implementation in the codebase:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="src/controller#L1-L53">src/controller.js L1-L53</a></p>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="access-control-matrix">Access Control Matrix<a class="headerlink" href="#access-control-matrix" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Public</th>
+<th>Registered</th>
+<th>Admin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /courses</code></td>
+<td>✓ (filtered)</td>
+<td>✓ (all)</td>
+<td>✓ (all)</td>
+</tr>
+<tr>
+<td><code>GET /create</code></td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>POST /save</code></td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>GET /edit/:id</code></td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>POST /update</code></td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+<tr>
+<td><code>GET /delete/:id</code></td>
+<td>✗</td>
+<td>✗</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sql-injection-prevention">SQL Injection Prevention<a class="headerlink" href="#sql-injection-prevention" title="Permanent link">&para;</a></h3>
+<p>All database queries use parameterized queries with placeholders (<code>?</code>) to prevent SQL injection attacks:</p>
+<ul>
+<li>Edit query: <code>&lt;FileRef file-url="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77" min=77  file-path="routes/courses.js"&gt;Hii&lt;/FileRef&gt;</code> uses <code>[id]</code></li>
+<li>Delete query: <code>&lt;FileRef file-url="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91" min=91  file-path="routes/courses.js"&gt;Hii&lt;/FileRef&gt;</code> uses <code>[id]</code></li>
+<li>Update query: <code>&lt;FileRef file-url="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L36-L42" min=36 max=42 file-path="src/controller.js"&gt;Hii&lt;/FileRef&gt;</code> uses <code>[{...}, id]</code></li>
+</ul>
+<h3 id="session-validation">Session Validation<a class="headerlink" href="#session-validation" title="Permanent link">&para;</a></h3>
+<p>The <code>estaAutenticado</code> middleware validates session state before allowing access:</p>
+<div class="highlight"><pre><span></span><code>if (req.session &amp;&amp; req.session.loggedin)
+</code></pre></div>
+<p>The <code>isAdmin</code> middleware further restricts access:</p>
+<div class="highlight"><pre><span></span><code>if (req.session?.loggedin &amp;&amp; req.session?.rol === &#39;admin&#39;)
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="routes/courses#L8-L24">routes/courses.js L8-L24</a></p>
+<hr />
+<h2 id="common-response-patterns">Common Response Patterns<a class="headerlink" href="#common-response-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="success-responses">Success Responses<a class="headerlink" href="#success-responses" title="Permanent link">&para;</a></h3>
+<p>All modification endpoints (<code>save</code>, <code>update</code>, <code>delete</code>) follow the Post-Redirect-Get (PRG) pattern:</p>
+<ol>
+<li>Process the request</li>
+<li>Perform database operation</li>
+<li>Redirect to <code>/courses</code></li>
+</ol>
+<p>This prevents duplicate submissions from browser refresh and provides a clean URL after operations.</p>
+<h3 id="unauthorized-access">Unauthorized Access<a class="headerlink" href="#unauthorized-access" title="Permanent link">&para;</a></h3>
+<p>Requests without proper authentication or authorization are redirected to <code>/login</code> by the middleware chain.</p>
+<h3 id="error-handling_4">Error Handling<a class="headerlink" href="#error-handling_4" title="Permanent link">&para;</a></h3>
+<p>Most endpoints implement minimal error handling:</p>
+<ul>
+<li>Database errors are logged to console</li>
+<li>Successful operations and errors both redirect to <code>/courses</code></li>
+<li>The <code>GET /courses</code> endpoint provides graceful degradation by rendering with an empty course array</li>
+</ul>
+<p><strong>Sources:</strong> <a href="routes/courses#L35-L103">routes/courses.js L35-L103</a></p>
+<p><a href="src/controller#L4-L52">src/controller.js L4-L52</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

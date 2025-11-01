@@ -1,0 +1,2645 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Authentication-%26-Authorization/">
+      
+      
+        <link rel="next" href="../User-Login/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>User Registration - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#user-registration" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              User Registration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registration-flow-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registration Flow Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Registration Flow Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-sequence-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registration Sequence Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routes-and-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routes and Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Routes and Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Specifications
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /register
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /register
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation-chain-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Chain Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-rules-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Rules Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hashing-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hashing Process
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#database-insertion-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Insertion Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insertion-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      Insertion Query
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default Role Assignment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Interface
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-selection-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Selection Field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-preservation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Preservation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-error-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Error Display
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validation Error Display">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#error-rendering-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Rendering Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Success Feedback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Success Feedback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sweetalert-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      SweetAlert Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alert-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alert Rendering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#styling-and-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Styling and Layout
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Styling and Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-design-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visual Design Specifications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql-injection-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection Prevention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-validation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Points
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Profile-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="user-registration">User Registration<a class="headerlink" href="#user-registration" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="public/css/register">public/css/register.css</a>
+* <a href="routes/auth">routes/auth.js</a>
+* <a href="views/register">views/register.ejs</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document describes the user registration system, covering the registration workflow from form submission through account creation. It details the validation rules, password hashing process, database insertion, and role assignment mechanisms. For information about the login process after registration, see <a href="4.2-user-login.md">User Login</a>. For details on role-based permissions, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
+<hr />
+<h2 id="registration-flow-overview">Registration Flow Overview<a class="headerlink" href="#registration-flow-overview" title="Permanent link">&para;</a></h2>
+<p>The registration process follows a two-step workflow: form display and form submission with validation.</p>
+<h3 id="registration-sequence-diagram">Registration Sequence Diagram<a class="headerlink" href="#registration-sequence-diagram" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+  participant User
+  participant Browser
+  participant routes/auth.js
+  participant express-validator
+  participant bcryptjs
+  participant config/db.js
+  participant usuarios table
+  participant views/register.ejs
+
+  User-&gt;&gt;Browser: "Navigate to /register"
+  Browser-&gt;&gt;routes/auth.js: "GET /register"
+  routes/auth.js-&gt;&gt;views/register.ejs: "render('register', {register: true})"
+  views/register.ejs-&gt;&gt;Browser: "Display registration form"
+  Browser-&gt;&gt;User: "Show form"
+  User-&gt;&gt;Browser: "Submit form data"
+  Browser-&gt;&gt;routes/auth.js: "POST /register (nombre, email, password, rol)"
+  routes/auth.js-&gt;&gt;express-validator: "Validate inputs"
+  loop ["Validation fails"]
+    express-validator-&gt;&gt;routes/auth.js: "Return errors array"
+    routes/auth.js-&gt;&gt;views/register.ejs: "render with validaciones"
+    views/register.ejs-&gt;&gt;Browser: "Display errors"
+    Browser-&gt;&gt;User: "Show validation messages"
+    express-validator-&gt;&gt;routes/auth.js: "Validation passed"
+    routes/auth.js-&gt;&gt;bcryptjs: "hash(password, 8)"
+    bcryptjs-&gt;&gt;routes/auth.js: "Return passwordHash"
+    routes/auth.js-&gt;&gt;config/db.js: "INSERT INTO usuarios"
+    config/db.js-&gt;&gt;usuarios table: "Insert record"
+    usuarios table-&gt;&gt;config/db.js: "Success"
+    config/db.js-&gt;&gt;routes/auth.js: "results"
+    routes/auth.js-&gt;&gt;views/register.ejs: "render with alert"
+    views/register.ejs-&gt;&gt;Browser: "SweetAlert success"
+    Browser-&gt;&gt;User: "Show success, redirect to login"
+  end</code></pre>
+<p><strong>Sources:</strong> <a href="routes/auth#L12-L72">routes/auth.js L12-L72</a></p>
+<p><a href="views/register#L9-L71">views/register.ejs L9-L71</a></p>
+<hr />
+<h2 id="routes-and-endpoints">Routes and Endpoints<a class="headerlink" href="#routes-and-endpoints" title="Permanent link">&para;</a></h2>
+<p>The registration system exposes two HTTP endpoints in the <code>auth</code> router.</p>
+<h3 id="endpoint-specifications">Endpoint Specifications<a class="headerlink" href="#endpoint-specifications" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>Purpose</th>
+<th>Middleware</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/register</code></td>
+<td>Display registration form</td>
+<td>None</td>
+<td>Renders <code>register.ejs</code> with <code>register: true</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/register</code></td>
+<td>Process registration</td>
+<td><code>express-validator</code> validation chain</td>
+<td>Renders <code>register.ejs</code> with success/error feedback</td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-register">GET /register<a class="headerlink" href="#get-register" title="Permanent link">&para;</a></h3>
+<p>Displays the registration form to the user.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/register&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;register&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">register</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<p><a href="routes/auth#L12-L14">routes/auth.js L12-L14</a></p>
+<p>The <code>register: true</code> flag is passed to the view to ensure the form is displayed.</p>
+<h3 id="post-register">POST /register<a class="headerlink" href="#post-register" title="Permanent link">&para;</a></h3>
+<p>Processes the registration form submission with validation middleware.</p>
+<p><strong>Request Body Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Validation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nombre</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Minimum 3 characters</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Valid email format</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Minimum 4 characters</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td>String</td>
+<td>No</td>
+<td>Defaults to <code>'registrado'</code> if not provided</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="routes/auth#L8-L14">routes/auth.js L8-L14</a></p>
+<p><a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<hr />
+<h2 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h2>
+<p>The registration endpoint uses <code>express-validator</code> to enforce data quality rules before processing.</p>
+<h3 id="validation-chain-architecture">Validation Chain Architecture<a class="headerlink" href="#validation-chain-architecture" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+Request["POST /register&lt;br&gt;Request Body"]
+ValidatorChain["Validation Chain"]
+NameValidator["body('nombre')&lt;br&gt;.exists()&lt;br&gt;.isLength({min: 3})"]
+EmailValidator["body('email')&lt;br&gt;.exists()&lt;br&gt;.isEmail()"]
+PasswordValidator["body('password')&lt;br&gt;.exists()&lt;br&gt;.isLength({min: 4})"]
+ValidationResult["validationResult(req)"]
+ErrorCheck["errors.isEmpty()?"]
+RenderErrors["Render register.ejs&lt;br&gt;with validaciones array"]
+ProcessRegistration["Continue to&lt;br&gt;password hashing"]
+
+Request --&gt; ValidatorChain
+ValidatorChain --&gt; NameValidator
+ValidatorChain --&gt; EmailValidator
+ValidatorChain --&gt; PasswordValidator
+NameValidator --&gt; ValidationResult
+EmailValidator --&gt; ValidationResult
+PasswordValidator --&gt; ValidationResult
+ValidationResult --&gt; ErrorCheck
+ErrorCheck --&gt; RenderErrors
+ErrorCheck --&gt; ProcessRegistration</code></pre>
+<h3 id="validation-rules-implementation">Validation Rules Implementation<a class="headerlink" href="#validation-rules-implementation" title="Permanent link">&para;</a></h3>
+<p>The validation chain is defined as middleware before the route handler:</p>
+<div class="highlight"><pre><span></span><code>[
+  body(&quot;nombre&quot;)
+    .exists()
+    .isLength({ min: 3 })
+    .withMessage(&quot;El nombre debe tener al menos 3 caracteres&quot;),
+
+  body(&quot;email&quot;)
+    .exists()
+    .isEmail()
+    .withMessage(&quot;El email debe ser válido&quot;),
+
+  body(&quot;password&quot;)
+    .exists()
+    .isLength({ min: 4 })
+    .withMessage(&quot;La contraseña debe tener al menos 4 caracteres&quot;)
+]
+</code></pre></div>
+<p><a href="routes/auth#L17-L33">routes/auth.js L17-L33</a></p>
+<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
+<p>When validation fails, errors are passed to the view:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validationResult</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span><span class="w"> </span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">errors</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">&quot;register&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">validaciones</span><span class="o">:</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">array</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">valores</span><span class="o">:</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><a href="routes/auth#L35-L40">routes/auth.js L35-L40</a></p>
+<p>The <code>validaciones</code> array contains error objects, and <code>valores</code> preserves user input for form repopulation.</p>
+<p><strong>Sources:</strong> <a href="routes/auth#L17-L41">routes/auth.js L17-L41</a></p>
+<hr />
+<h2 id="password-security">Password Security<a class="headerlink" href="#password-security" title="Permanent link">&para;</a></h2>
+<p>Passwords are hashed using <code>bcryptjs</code> with a salt round of 8 before storage.</p>
+<h3 id="hashing-process">Hashing Process<a class="headerlink" href="#hashing-process" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+PlainPassword["Plain Text Password&lt;br&gt;from req.body.password"]
+BCryptHash["bcrypt.hash(password, 8)"]
+Salt["Salt Rounds = 8"]
+HashedPassword["passwordHash&lt;br&gt;(60-character string)"]
+DBInsert["INSERT INTO usuarios&lt;br&gt;password: passwordHash"]
+
+PlainPassword --&gt; BCryptHash
+Salt --&gt; BCryptHash
+BCryptHash --&gt; HashedPassword
+HashedPassword --&gt; DBInsert</code></pre>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">passwordHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+</code></pre></div>
+<p><a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
+<p>The hash function is asynchronous and returns a promise. The salt round value of 8 provides a balance between security and performance for password hashing operations.</p>
+<p><strong>Sources:</strong> <a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
+<hr />
+<h2 id="database-operations">Database Operations<a class="headerlink" href="#database-operations" title="Permanent link">&para;</a></h2>
+<p>Registration data is inserted into the <code>usuarios</code> table using a parameterized query to prevent SQL injection.</p>
+<h3 id="database-insertion-flow">Database Insertion Flow<a class="headerlink" href="#database-insertion-flow" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+PrepareData["Extract data:&lt;br&gt;nombre, email,&lt;br&gt;passwordHash, rol"]
+DefaultRole["rol provided?"]
+SetDefault["Set rol = 'registrado'"]
+BuildQuery["db.query(&lt;br&gt;'INSERT INTO usuarios SET ?',&lt;br&gt;{nombre, email, password, rol})"]
+ExecuteQuery["MySQL executes INSERT"]
+CheckResult["Error?"]
+LogError["console.log(error)"]
+RenderSuccess["Render success alert:&lt;br&gt;alertTitle: 'Registro exitoso'&lt;br&gt;ruta: 'login'"]
+
+PrepareData --&gt; DefaultRole
+DefaultRole --&gt; SetDefault
+DefaultRole --&gt; BuildQuery
+SetDefault --&gt; BuildQuery
+BuildQuery --&gt; ExecuteQuery
+ExecuteQuery --&gt; CheckResult
+CheckResult --&gt; LogError
+CheckResult --&gt; RenderSuccess</code></pre>
+<h3 id="insertion-query">Insertion Query<a class="headerlink" href="#insertion-query" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">  </span><span class="s2">&quot;INSERT INTO usuarios SET ?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="nx">passwordHash</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">rol</span><span class="o">:</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;registrado&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">&quot;register&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">alert</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">alertTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Registro exitoso&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">alertMessage</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tu cuenta fue creada&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">alertIcon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;success&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">showConfirmButton</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">timer</span><span class="o">:</span><span class="w"> </span><span class="mf">2500</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">ruta</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;login&#39;</span><span class="w"> </span>
+<span class="w">      </span><span class="p">});</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><a href="routes/auth#L46-L69">routes/auth.js L46-L69</a></p>
+<h3 id="default-role-assignment">Default Role Assignment<a class="headerlink" href="#default-role-assignment" title="Permanent link">&para;</a></h3>
+<p>If the <code>rol</code> field is not provided or is empty, it defaults to <code>'registrado'</code> using the logical OR operator:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">rol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rol || &#39;registrado&#39;,</span>
+</code></pre></div>
+<p><a href="routes/auth#L52-L52">routes/auth.js L52</a></p>
+<p>This ensures all users have at least basic registered user privileges. For details on role capabilities, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
+<p><strong>Sources:</strong> <a href="routes/auth#L46-L72">routes/auth.js L46-L72</a></p>
+<hr />
+<h2 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h2>
+<p>The registration form is rendered by <code>register.ejs</code> with conditional display logic for validation errors and success alerts.</p>
+<h3 id="form-structure">Form Structure<a class="headerlink" href="#form-structure" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+
+RegisterContainer["registro-container&lt;br&gt;(centered white box)"]
+Heading["h2: 'Crear una Cuenta'"]
+FormElement["form action='/register'&lt;br&gt;method='POST'"]
+NombreField["input name='nombre'&lt;br&gt;type='text'"]
+EmailField["input name='email'&lt;br&gt;type='text'"]
+RolSelect["select name='rol'&lt;br&gt;(admin/registrado options)"]
+PasswordField["input name='password'&lt;br&gt;type='password'"]
+SubmitButton["button.btn-registrarse&lt;br&gt;'Registrate'"]
+ValidationAlerts["Bootstrap alerts&lt;br&gt;(if validaciones exist)"]
+SweetAlert["SweetAlert2&lt;br&gt;(if alert exists)"]
+
+RegisterContainer --&gt; Heading
+RegisterContainer --&gt; FormElement
+FormElement --&gt; NombreField
+FormElement --&gt; EmailField
+FormElement --&gt; RolSelect
+FormElement --&gt; PasswordField
+FormElement --&gt; SubmitButton
+FormElement --&gt; ValidationAlerts
+RegisterContainer --&gt; SweetAlert
+
+subgraph subGraph0 ["Form Fields"]
+    NombreField
+    EmailField
+    RolSelect
+    PasswordField
+end</code></pre>
+<h3 id="form-implementation">Form Implementation<a class="headerlink" href="#form-implementation" title="Permanent link">&para;</a></h3>
+<p>The form conditionally displays based on the <code>register</code> flag or presence of <code>validaciones</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span>% if ((typeof register !== &#39;undefined&#39; <span class="err">&amp;&amp;</span> register) || typeof validaciones !== &#39;undefined&#39;) { %&gt;
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;registro-container&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Crear una Cuenta<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/register&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+      <span class="cm">&lt;!-- form fields --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>% } %&gt;
+</code></pre></div>
+<p><a href="views/register#L9-L55">views/register.ejs L9-L55</a></p>
+<h3 id="role-selection-field">Role Selection Field<a class="headerlink" href="#role-selection-field" title="Permanent link">&para;</a></h3>
+<p>The form includes a dropdown for role selection:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">div</span><span class="w"> </span><span class="k">class</span><span class="o">=</span><span class="ss">&quot;form-group&quot;</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="n">label</span><span class="w"> </span><span class="k">for</span><span class="o">=</span><span class="ss">&quot;rol&quot;</span><span class="o">&gt;</span><span class="n">Rol</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="k">select</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="ss">&quot;rol&quot;</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;admin&quot;</span><span class="o">&gt;</span><span class="n">Administrador</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="k">option</span><span class="w"> </span><span class="n">value</span><span class="o">=</span><span class="ss">&quot;registrado&quot;</span><span class="o">&gt;</span><span class="n">Registrado</span><span class="o">&lt;/</span><span class="k">option</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="o">&lt;/</span><span class="k">select</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</code></pre></div>
+<p><a href="views/register#L26-L32">views/register.ejs L26-L32</a></p>
+<p>Note: In a production system, this field should not be exposed to public users. Role assignment should be handled server-side or restricted to admin-only workflows.</p>
+<h3 id="value-preservation">Value Preservation<a class="headerlink" href="#value-preservation" title="Permanent link">&para;</a></h3>
+<p>On validation failure, form fields repopulate with submitted values:</p>
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; name=&quot;nombre&quot;
+  value=&quot;&lt;% if (typeof valores !==&#39;undefined&#39;) { %&gt; &lt;%= valores.nombre %&gt; &lt;% } %&gt;&quot;&gt;
+</code></pre></div>
+<p><a href="views/register#L16-L17">views/register.ejs L16-L17</a></p>
+<p><strong>Sources:</strong> <a href="views/register#L9-L55">views/register.ejs L9-L55</a></p>
+<hr />
+<h2 id="validation-error-display">Validation Error Display<a class="headerlink" href="#validation-error-display" title="Permanent link">&para;</a></h2>
+<p>Validation errors are displayed using Bootstrap dismissible alerts.</p>
+<h3 id="error-rendering-logic">Error Rendering Logic<a class="headerlink" href="#error-rendering-logic" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;%</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">validaciones</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">%&gt;</span>
+<span class="w">  </span><span class="o">&lt;%</span><span class="w"> </span><span class="nx">validaciones</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">validacion</span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="o">%&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;alert alert-danger alert-dismissible fade show&quot;</span><span class="w"> </span><span class="nx">role</span><span class="o">=</span><span class="s2">&quot;alert&quot;</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">strong</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">validacion</span><span class="p">.</span><span class="nx">msg</span><span class="w"> </span><span class="o">%&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/strong&gt; </span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;button&quot;</span><span class="w"> </span><span class="kd">class</span><span class="o">=</span><span class="s2">&quot;btn-close&quot;</span><span class="w"> </span><span class="nx">data</span><span class="o">-</span><span class="nx">bs</span><span class="o">-</span><span class="nx">dismiss</span><span class="o">=</span><span class="s2">&quot;alert&quot;</span><span class="w"> </span><span class="nx">aria</span><span class="o">-</span><span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Close&quot;</span><span class="o">&gt;&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;   </span>
+<span class="w">  </span><span class="o">&lt;%</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">%&gt;</span>
+</code></pre></div>
+<p><a href="views/register#L42-L52">views/register.ejs L42-L52</a></p>
+<p>Each validation error from <code>express-validator</code> is rendered as a separate Bootstrap alert with the error message from the <code>.withMessage()</code> method.</p>
+<p><strong>Sources:</strong> <a href="views/register#L42-L52">views/register.ejs L42-L52</a></p>
+<hr />
+<h2 id="success-feedback">Success Feedback<a class="headerlink" href="#success-feedback" title="Permanent link">&para;</a></h2>
+<p>Upon successful registration, SweetAlert2 displays a modal and redirects to the login page.</p>
+<h3 id="sweetalert-configuration">SweetAlert Configuration<a class="headerlink" href="#sweetalert-configuration" title="Permanent link">&para;</a></h3>
+<p>The route handler passes alert configuration to the view:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">res.render(&quot;register&quot;, {</span><span class="w"> </span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">alert</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">alertTitle</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;Registro</span><span class="nv"> </span><span class="s">exitoso&#39;</span><span class="err">,</span>
+<span class="w">  </span><span class="nt">alertMessage</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Tu</span><span class="nv"> </span><span class="s">cuenta</span><span class="nv"> </span><span class="s">fue</span><span class="nv"> </span><span class="s">creada&#39;</span><span class="err">,</span>
+<span class="w">  </span><span class="nt">alertIcon</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;success&#39;</span><span class="err">,</span>
+<span class="w">  </span><span class="nt">showConfirmButton</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false,</span>
+<span class="w">  </span><span class="nt">timer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2500,</span>
+<span class="w">  </span><span class="nt">ruta</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;login&#39;</span><span class="w"> </span>
+<span class="err">}</span><span class="l l-Scalar l-Scalar-Plain">);</span>
+</code></pre></div>
+<p><a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></p>
+<h3 id="alert-rendering">Alert Rendering<a class="headerlink" href="#alert-rendering" title="Permanent link">&para;</a></h3>
+<p>The view conditionally renders a SweetAlert script block:</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;%</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">alert</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">%&gt;</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;%= alertTitle %&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;%= alertMessage %&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;%= alertIcon %&gt;&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">showConfirmButton</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">showConfirmButton</span><span class="w"> </span><span class="o">%&gt;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">timer</span><span class="o">:</span><span class="w"> </span><span class="o">&lt;%=</span><span class="w"> </span><span class="nx">timer</span><span class="w"> </span><span class="o">%&gt;</span>
+<span class="w">    </span><span class="p">}).</span><span class="nx">then</span><span class="w"> </span><span class="p">(()=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="w"> </span><span class="o">=</span><span class="s1">&#39;/&lt;%= ruta%&gt;&#39;</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+<span class="o">&lt;%</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">%&gt;</span>
+</code></pre></div>
+<p><a href="views/register#L59-L71">views/register.ejs L59-L71</a></p>
+<p>The alert automatically closes after 2500ms and redirects to <code>/login</code> for the user to sign in with their new credentials.</p>
+<p><strong>Sources:</strong> <a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></p>
+<p><a href="views/register#L59-L71">views/register.ejs L59-L71</a></p>
+<hr />
+<h2 id="styling-and-layout">Styling and Layout<a class="headerlink" href="#styling-and-layout" title="Permanent link">&para;</a></h2>
+<p>The registration page uses a centered card layout with gradient background.</p>
+<h3 id="visual-design-specifications">Visual Design Specifications<a class="headerlink" href="#visual-design-specifications" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Style Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Body</td>
+<td>Gradient background: <code>linear-gradient(120deg, #3b82f6, #6366f1)</code></td>
+</tr>
+<tr>
+<td>Container</td>
+<td>White background, 15px border radius, 400px max-width</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>8px border radius, focus state with blue border (<code>#3b82f6</code>)</td>
+</tr>
+<tr>
+<td>Submit Button</td>
+<td>Full width, blue background (<code>#3b82f6</code>), 8px border radius</td>
+</tr>
+</tbody>
+</table>
+<p>The CSS is defined in <a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
+<p>and provides:</p>
+<ul>
+<li>Flexbox centering for vertical and horizontal alignment</li>
+<li>Responsive design with max-width constraints</li>
+<li>Hover and focus states for interactive elements</li>
+<li>Consistent spacing using margin and padding utilities</li>
+</ul>
+<p><strong>Sources:</strong> <a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="password-storage">Password Storage<a class="headerlink" href="#password-storage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Passwords are never stored in plain text</li>
+<li><code>bcryptjs</code> hash function with 8 salt rounds</li>
+<li>Hashed passwords are 60-character strings stored in the database</li>
+</ul>
+<h3 id="sql-injection-prevention">SQL Injection Prevention<a class="headerlink" href="#sql-injection-prevention" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Parameterized queries using <code>db.query("INSERT INTO usuarios SET ?", {...})</code></li>
+<li>No direct string concatenation of user input</li>
+</ul>
+<h3 id="input-validation_1">Input Validation<a class="headerlink" href="#input-validation_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Server-side validation with <code>express-validator</code></li>
+<li>Client-side HTML5 validation (implicit via input types)</li>
+<li>Error messages do not expose system internals</li>
+</ul>
+<p><strong>Sources:</strong> <a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
+<p><a href="routes/auth#L46-L49">routes/auth.js L46-L49</a></p>
+<hr />
+<h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
+<p>The registration system integrates with:</p>
+<ul>
+<li><strong>Session Management</strong> (<a href="4.4-session-management.md">Session Management</a>): After registration, users must login to create a session</li>
+<li><strong>Login System</strong> (<a href="4.2-user-login.md">User Login</a>): Successful registration redirects to <code>/login</code></li>
+<li><strong>Database Layer</strong> (<a href="3.3-database-architecture.md">Database Architecture</a>): Inserts into <code>usuarios</code> table</li>
+<li><strong>Role-Based Access</strong> (<a href="4.3-role-based-access-control.md">Role-Based Access Control</a>): Assigns default <code>registrado</code> role</li>
+</ul>
+<p><strong>Sources:</strong> <a href="routes/auth#L12-L72">routes/auth.js L12-L72</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
