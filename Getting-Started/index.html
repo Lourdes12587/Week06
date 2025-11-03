@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1249,29 +1257,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1462,6 +1447,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1589,29 +1597,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1910,29 +1895,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2034,12 +1996,12 @@
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href=".gitignore">.gitignore</a>
-* <a href="config/db">config/db.js</a>
-* <a href="package-lock">package-lock.json</a>
-* <a href="package">package.json</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore">.gitignore</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package-lock.json">package-lock.json</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a></p>
 </blockquote>
-<p>This page provides step-by-step instructions for setting up the course management system on your local development environment. It covers installing dependencies, configuring environment variables, initializing the MySQL database, and starting the application server. For information about the system's architecture and features, see <a href="1-overview.md">Overview</a>. For details about the authentication system, see <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a>.</p>
+<p>This page provides step-by-step instructions for setting up the course management system on your local development environment. It covers installing dependencies, configuring environment variables, initializing the MySQL database, and starting the application server. For information about the system's architecture and features, see <a href="/Lourdes12587/Week06/1-overview">Overview</a>. For details about the authentication system, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>.</p>
 <hr />
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Before beginning the setup process, ensure your system has the following installed:</p>
@@ -2077,30 +2039,10 @@
 <hr />
 <h2 id="installation-process">Installation Process<a class="headerlink" href="#installation-process" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates the complete installation workflow, from cloning the repository to starting the server:</p>
-<pre class="mermaid"><code>flowchart TD
-
-Start["Start Installation"]
-Clone["Clone Repository&lt;br&gt;github.com/Lourdes12587/Week06"]
-Install["npm install&lt;br&gt;Reads package.json"]
-CreateEnv["Create .env File&lt;br&gt;Configure environment variables"]
-SetupDB["Initialize MySQL Database&lt;br&gt;Create tables: usuarios, cursos, inscripciones"]
-StartServer["node app.js&lt;br&gt;Starts Express server"]
-Verify["Verify Installation&lt;br&gt;Access Unsupported markdown: link"]
-PackageJSON["package.json&lt;br&gt;Dependencies list"]
-DBConfig["config/db.js&lt;br&gt;Database connection"]
-AppJS["app.js&lt;br&gt;Server initialization"]
-
-Start --&gt; Clone
-Clone --&gt; Install
-Install --&gt; CreateEnv
-CreateEnv --&gt; SetupDB
-SetupDB --&gt; StartServer
-StartServer --&gt; Verify
-Install --&gt; PackageJSON
-CreateEnv --&gt; DBConfig
-SetupDB --&gt; AppJS</code></pre>
-<p><strong>Sources:</strong> <a href="package#L1-L27">package.json L1-L27</a></p>
-<p><a href="config/db#L1-L20">config/db.js L1-L20</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27">package.json L1-L27</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20">config/db.js L1-L20</a></p>
 <hr />
 <h2 id="step-1-clone-the-repository">Step 1: Clone the Repository<a class="headerlink" href="#step-1-clone-the-repository" title="Permanent link">&para;</a></h2>
 <p>Clone the project repository to your local machine:</p>
@@ -2112,7 +2054,7 @@ cd Week06
 <p>Install all required npm packages by running:</p>
 <div class="highlight"><pre><span></span><code>npm install
 </code></pre></div>
-<p>This command reads <a href="package#L1-L27">package.json L1-L27</a></p>
+<p>This command reads <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27">package.json L1-L27</a></p>
 <p>and installs the following dependencies:</p>
 <table>
 <thead>
@@ -2175,33 +2117,19 @@ cd Week06
 </tr>
 </tbody>
 </table>
-<p>The installation process creates a <code>node_modules</code> directory containing all dependencies. This directory is excluded from version control via <a href=".gitignore#L1-L2">.gitignore L1-L2</a></p>
-<p><strong>Sources:</strong> <a href="package#L13-L25">package.json L13-L25</a></p>
-<p><a href="package-lock#L1-L1497">package-lock.json L1-L1497</a></p>
-<p><a href=".gitignore#L1-L2">.gitignore L1-L2</a></p>
+<p>The installation process creates a <code>node_modules</code> directory containing all dependencies. This directory is excluded from version control via <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore#L1-L2">.gitignore L1-L2</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package-lock.json#L1-L1497">package-lock.json L1-L1497</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore#L1-L2">.gitignore L1-L2</a></p>
 <hr />
 <h2 id="step-3-environment-configuration">Step 3: Environment Configuration<a class="headerlink" href="#step-3-environment-configuration" title="Permanent link">&para;</a></h2>
-<p>Create a <code>.env</code> file in the project root directory to configure environment-specific settings. This file is excluded from version control per <a href=".gitignore#L1-L2">.gitignore L1-L2</a></p>
+<p>Create a <code>.env</code> file in the project root directory to configure environment-specific settings. This file is excluded from version control per <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore#L1-L2">.gitignore L1-L2</a></p>
 <p>to protect sensitive information.</p>
 <h3 id="required-environment-variables">Required Environment Variables<a class="headerlink" href="#required-environment-variables" title="Permanent link">&para;</a></h3>
 <p>The following diagram shows how environment variables flow through the application:</p>
-<pre class="mermaid"><code>flowchart TD
-
-EnvFile[".env File"]
-Dotenv["dotenv package&lt;br&gt;Loads variables into process.env"]
-AppJS["app.js&lt;br&gt;Server configuration"]
-DBConfig["config/db.js&lt;br&gt;MySQL connection"]
-Connection["mysql.createConnection()&lt;br&gt;Database connection pool"]
-
-EnvFile --&gt; Dotenv
-Dotenv --&gt; AppJS
-Dotenv --&gt; AppJS
-Dotenv --&gt; DBConfig
-Dotenv --&gt; DBConfig
-Dotenv --&gt; DBConfig
-Dotenv --&gt; DBConfig
-DBConfig --&gt; Connection</code></pre>
-<p><strong>Sources:</strong> <a href="config/db#L3-L9">config/db.js L3-L9</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L3-L9">config/db.js L3-L9</a></p>
 <h3 id="env-file-template">.env File Template<a class="headerlink" href="#env-file-template" title="Permanent link">&para;</a></h3>
 <p>Create a <code>.env</code> file with the following structure:</p>
 <div class="highlight"><pre><span></span><code><span class="gh"># Server Configuration</span>
@@ -2259,8 +2187,8 @@ DB_NAME=curso_db
 </tbody>
 </table>
 <p><strong>Important:</strong> The <code>SESSION_SECRET</code> should be a long, random string for production environments. Never commit the <code>.env</code> file to version control.</p>
-<p><strong>Sources:</strong> <a href="config/db#L3-L9">config/db.js L3-L9</a></p>
-<p><a href=".gitignore#L2-L2">.gitignore L2</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L3-L9">config/db.js L3-L9</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore#L2-L2">.gitignore L2</a></p>
 <hr />
 <h2 id="step-4-database-initialization">Step 4: Database Initialization<a class="headerlink" href="#step-4-database-initialization" title="Permanent link">&para;</a></h2>
 <h3 id="create-mysql-database">Create MySQL Database<a class="headerlink" href="#create-mysql-database" title="Permanent link">&para;</a></h3>
@@ -2304,10 +2232,10 @@ DB_NAME=curso_db
 <span class="p">(</span><span class="s1">&#39;Administrator&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;admin@example.com&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;$2a$10$K8m.1JzU5H5KkJLWZxvHwOYxT5xGxHhZx.7LQnVZLZGBv3mZJk7ye&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="database-schema-relationships">Database Schema Relationships<a class="headerlink" href="#database-schema-relationships" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">edge-animation-frame</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">dash</span><span class="p">{</span><span class="nt">to</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-slow</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">50</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-fast</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">20</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">error-icon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">error-text</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-normal</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-thick</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mf">3.5</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-solid</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-invisible</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">3</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dotted</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">2</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">.</span><span class="nc">cross</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="nt">svg</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="nt">p</span><span class="p">{</span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">entityBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.7</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="w"> </span><span class="nt">rect</span><span class="p">{</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.5</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">labelBkg</span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="nb">rgba</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edgeLabel</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">color</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">rect</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">circle</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">ellipse</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">polygon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLine</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;}#</span><span class="nn">mermaid-zazu9v8dmwr</span><span class="w"> </span><span class="p">:</span><span class="nd">root</span><span class="p">{</span><span class="nv">--mermaid-font-family</span><span class="p">:</span><span class="s2">&quot;trebuchet ms&quot;</span><span class="p">,</span><span class="n">verdana</span><span class="p">,</span><span class="n">arial</span><span class="p">,</span><span class="kc">sans-serif</span><span class="p">;}</span><span class="nt">enrolls</span><span class="w"> </span><span class="nt">inhas</span><span class="w"> </span><span class="nt">enrollmentsusuariosINTidPKVARCHARnombreVARCHARemailUKVARCHARpasswordENUMrolTIMESTAMPcreated_atinscripcionesINTid_usuarioFKINTid_cursoFKTIMESTAMPfecha_inscripcioncursosINTidPKVARCHARtituloTEXTdescripcionVARCHARcategoriaENUMvisibilidadTIMESTAMPcreated_at</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="database-connection-verification">Database Connection Verification<a class="headerlink" href="#database-connection-verification" title="Permanent link">&para;</a></h3>
-<p>The <a href="config/db#L1-L20">config/db.js L1-L20</a></p>
+<p>The <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20">config/db.js L1-L20</a></p>
 <p>module establishes the MySQL connection. It performs the following operations:</p>
 <ol>
 <li><strong>Line 3-9:</strong> Creates a connection using <code>mysql.createConnection()</code> with environment variables</li>
@@ -2316,16 +2244,16 @@ DB_NAME=curso_db
 </ol>
 <p>The connection module uses these environment variables from <code>process.env</code>:</p>
 <ul>
-<li><code>DB_HOST</code> - <a href="config/db#L4-L4">config/db.js L4</a></li>
-<li><code>DB_USER</code> - <a href="config/db#L5-L5">config/db.js L5</a></li>
-<li><code>DB_PASS</code> - <a href="config/db#L6-L6">config/db.js L6</a></li>
-<li><code>DB_NAME</code> - <a href="config/db#L7-L7">config/db.js L7</a></li>
+<li><code>DB_HOST</code> - <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L4-L4">config/db.js L4</a></li>
+<li><code>DB_USER</code> - <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L5-L5">config/db.js L5</a></li>
+<li><code>DB_PASS</code> - <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L6-L6">config/db.js L6</a></li>
+<li><code>DB_NAME</code> - <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L7-L7">config/db.js L7</a></li>
 </ul>
-<p><strong>Sources:</strong> <a href="config/db#L1-L20">config/db.js L1-L20</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20">config/db.js L1-L20</a></p>
 <hr />
 <h2 id="step-5-start-the-application">Step 5: Start the Application<a class="headerlink" href="#step-5-start-the-application" title="Permanent link">&para;</a></h2>
 <h3 id="running-the-server">Running the Server<a class="headerlink" href="#running-the-server" title="Permanent link">&para;</a></h3>
-<p>Start the Express server using the npm start script defined in <a href="package#L8-L8">package.json L8</a></p>
+<p>Start the Express server using the npm start script defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L8-L8">package.json L8</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code>npm start
 </code></pre></div>
@@ -2333,37 +2261,17 @@ DB_NAME=curso_db
 <div class="highlight"><pre><span></span><code>node app.js
 </code></pre></div>
 <h3 id="application-startup-sequence">Application Startup Sequence<a class="headerlink" href="#application-startup-sequence" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>sequenceDiagram
-  participant npm start
-  participant Node.js Runtime
-  participant dotenv Package
-  participant app.js
-  participant config/db.js
-  participant MySQL Database
-  participant Express Server
-
-  npm start-&gt;&gt;Node.js Runtime: Execute "node app.js"
-  Node.js Runtime-&gt;&gt;app.js: Load application
-  app.js-&gt;&gt;dotenv Package: require('dotenv').config()
-  dotenv Package-&gt;&gt;dotenv Package: Parse .env file
-  dotenv Package--&gt;&gt;app.js: Environment variables loaded
-  app.js-&gt;&gt;config/db.js: require('./config/db.js')
-  config/db.js-&gt;&gt;MySQL Database: mysql.createConnection()
-  MySQL Database--&gt;&gt;config/db.js: Connection established
-  config/db.js--&gt;&gt;config/db.js: console.log("Conectado a la base de datos")
-  config/db.js--&gt;&gt;app.js: Export conexion object
-  app.js-&gt;&gt;Express Server: app.listen(PORT)
-  Express Server--&gt;&gt;app.js: Server listening
-  app.js-&gt;&gt;app.js: console.log("Server running on port PORT")</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="expected-console-output">Expected Console Output<a class="headerlink" href="#expected-console-output" title="Permanent link">&para;</a></h3>
 <p>When the application starts successfully, you should see the following messages:</p>
 <div class="highlight"><pre><span></span><code>Conectado a la base de datos
 Server running on port 3000
 </code></pre></div>
-<p>The first message confirms the database connection from <a href="config/db#L15-L15">config/db.js L15</a></p>
+<p>The first message confirms the database connection from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L15-L15">config/db.js L15</a></p>
 <p>The second message indicates the Express server is listening on the configured port.</p>
-<p><strong>Sources:</strong> <a href="package#L6-L8">package.json L6-L8</a></p>
-<p><a href="config/db#L11-L17">config/db.js L11-L17</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L6-L8">package.json L6-L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L11-L17">config/db.js L11-L17</a></p>
 <hr />
 <h2 id="step-6-verify-installation">Step 6: Verify Installation<a class="headerlink" href="#step-6-verify-installation" title="Permanent link">&para;</a></h2>
 <h3 id="access-the-application">Access the Application<a class="headerlink" href="#access-the-application" title="Permanent link">&para;</a></h3>
@@ -2424,62 +2332,26 @@ Server running on port 3000
 <li>Ensure <code>DB_HOST</code> is correct (<code>localhost</code> or <code>127.0.0.1</code>)</li>
 <li>Verify the user has privileges: <code>SHOW GRANTS FOR 'your_user'@'localhost';</code></li>
 </ol>
-<p><strong>Sources:</strong> <a href="config/db#L11-L17">config/db.js L11-L17</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L11-L17">config/db.js L11-L17</a></p>
 <hr />
 <h2 id="directory-structure-overview">Directory Structure Overview<a class="headerlink" href="#directory-structure-overview" title="Permanent link">&para;</a></h2>
 <p>After successful installation, your project structure should look like this:</p>
-<pre class="mermaid"><code>flowchart TD
-
-Root["Project Root&lt;br&gt;Week06/"]
-Config["config/&lt;br&gt;Configuration"]
-Routes["routes/&lt;br&gt;Route Handlers"]
-Views["views/&lt;br&gt;EJS Templates"]
-Public["public/&lt;br&gt;Static Assets"]
-Src["src/&lt;br&gt;Controllers"]
-DB["db.js&lt;br&gt;MySQL connection"]
-Auth["auth.js&lt;br&gt;Login/Register routes"]
-Courses["courses.js&lt;br&gt;Course management"]
-Index["index.js&lt;br&gt;Home routes"]
-CSS["css/&lt;br&gt;Stylesheets"]
-Resources["resources/&lt;br&gt;Images/Icons"]
-Controller["controller.js&lt;br&gt;Course CRUD"]
-CursoCtrl["cursoController.js&lt;br&gt;Enrollment logic"]
-AppJS["app.js&lt;br&gt;Main server file"]
-PackageJSON["package.json&lt;br&gt;Dependencies"]
-Env[".env&lt;br&gt;Environment config"]
-NodeModules["node_modules/&lt;br&gt;Installed packages"]
-
-Root --&gt; Config
-Root --&gt; Routes
-Root --&gt; Views
-Root --&gt; Public
-Root --&gt; Src
-Root --&gt; AppJS
-Root --&gt; PackageJSON
-Root --&gt; Env
-Root --&gt; NodeModules
-Config --&gt; DB
-Routes --&gt; Auth
-Routes --&gt; Courses
-Routes --&gt; Index
-Public --&gt; CSS
-Public --&gt; Resources
-Src --&gt; Controller
-Src --&gt; CursoCtrl</code></pre>
-<p><strong>Sources:</strong> <a href="package#L1-L27">package.json L1-L27</a></p>
-<p><a href="config/db#L1-L20">config/db.js L1-L20</a></p>
-<p><a href=".gitignore#L1-L2">.gitignore L1-L2</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27">package.json L1-L27</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20">config/db.js L1-L20</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/.gitignore#L1-L2">.gitignore L1-L2</a></p>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>After completing the installation and verification:</p>
 <ol>
 <li><strong>Create an Admin Account:</strong> Use the default admin credentials or create a new admin user via SQL</li>
-<li><strong>Explore the Architecture:</strong> Review <a href="3-architecture-overview.md">Architecture Overview</a> to understand the system design</li>
-<li><strong>Configure Authentication:</strong> See <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a> for security details</li>
-<li><strong>Add Courses:</strong> Learn about course management in <a href="5-course-management-system.md">Course Management System</a></li>
-<li><strong>Customize Views:</strong> Explore the template system in <a href="7-frontend-architecture.md">Frontend Architecture</a></li>
+<li><strong>Explore the Architecture:</strong> Review <a href="/Lourdes12587/Week06/3-architecture-overview">Architecture Overview</a> to understand the system design</li>
+<li><strong>Configure Authentication:</strong> See <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a> for security details</li>
+<li><strong>Add Courses:</strong> Learn about course management in <a href="/Lourdes12587/Week06/5-course-management-system">Course Management System</a></li>
+<li><strong>Customize Views:</strong> Explore the template system in <a href="/Lourdes12587/Week06/7-frontend-architecture">Frontend Architecture</a></li>
 </ol>
-<p>For development workflow and extending the system, see <a href="9-development-guide.md">Development Guide</a>.</p>
+<p>For development workflow and extending the system, see <a href="/Lourdes12587/Week06/9-development-guide">Development Guide</a>.</p>
 <hr />
 <h2 id="common-installation-issues">Common Installation Issues<a class="headerlink" href="#common-installation-issues" title="Permanent link">&para;</a></h2>
 <h3 id="npm-install-fails">npm install Fails<a class="headerlink" href="#npm-install-fails" title="Permanent link">&para;</a></h3>
@@ -2517,8 +2389,8 @@ Src --&gt; CursoCtrl</code></pre>
 <li>Check all required variables are defined</li>
 <li>Restart server after creating/modifying <code>.env</code></li>
 </ul>
-<p><strong>Sources:</strong> <a href="config/db#L3-L9">config/db.js L3-L9</a></p>
-<p><a href="package#L13-L25">package.json L13-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L3-L9">config/db.js L3-L9</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
 
 
 

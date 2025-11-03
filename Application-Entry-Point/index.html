@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1126,29 +1134,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1339,6 +1324,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1466,29 +1474,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1787,29 +1772,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1911,17 +1873,17 @@
 <h1 id="application-entry-point">Application Entry Point<a class="headerlink" href="#application-entry-point" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="package">package.json</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document describes <code>app.js</code>, the main entry point and server initialization file for the course management application. It covers the Express application configuration, middleware pipeline setup, session management initialization, static file serving, view engine configuration, and route mounting.</p>
-<p>For detailed information about individual routes and their handlers, see <a href="3.4-routing-system.md">Routing System</a>. For authentication middleware implementation, see <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a>. For database connection setup, see <a href="3.3-database-architecture.md">Database Architecture</a>.</p>
+<p>For detailed information about individual routes and their handlers, see <a href="/Lourdes12587/Week06/3.4-routing-system">Routing System</a>. For authentication middleware implementation, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>. For database connection setup, see <a href="/Lourdes12587/Week06/3.3-database-architecture">Database Architecture</a>.</p>
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The <code>app.js</code> file serves as the central configuration hub for the Express.js application. It initializes the Express server, configures the middleware pipeline, establishes session management, sets up the view engine, and mounts all route handlers. However, it notably does <strong>not</strong> start the HTTP server itself (the <code>app.listen()</code> call is commented out at <a href="app#L15-L17">app.js L15-L17</a></p>
+<p>The <code>app.js</code> file serves as the central configuration hub for the Express.js application. It initializes the Express server, configures the middleware pipeline, establishes session management, sets up the view engine, and mounts all route handlers. However, it notably does <strong>not</strong> start the HTTP server itself (the <code>app.listen()</code> call is commented out at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L15-L17">app.js L15-L17</a></p>
 <p>).</p>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <hr />
 <h2 id="application-initialization-sequence">Application Initialization Sequence<a class="headerlink" href="#application-initialization-sequence" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates the initialization sequence when <code>app.js</code> is loaded:</p>
@@ -1955,16 +1917,16 @@ ExportApp --&gt; End
 End --&gt; Note1</code></pre>
 <p><strong>Initialization Steps:</strong></p>
 <ol>
-<li><strong>Express Framework Import</strong> (<a href="app#L1-L2">app.js L1-L2</a> ): Imports Express and instantiates the application object</li>
-<li><strong>Environment Configuration</strong> (<a href="app#L3-L3">app.js L3</a> ): Loads environment variables from <code>./env/.env</code> using dotenv</li>
-<li><strong>Session Middleware</strong> (<a href="app#L4-L13">app.js L4-L13</a> ): Configures express-session for user session management</li>
-<li><strong>Static File Serving</strong> (<a href="app#L19-L19">app.js L19</a> ): Mounts static file middleware for the <code>/public</code> directory</li>
-<li><strong>View Engine Setup</strong> (<a href="app#L21-L21">app.js L21</a> ): Configures EJS as the templating engine</li>
-<li><strong>Body Parsing</strong> (<a href="app#L25-L26">app.js L25-L26</a> ): Enables URL-encoded and JSON body parsing</li>
-<li><strong>Route Mounting</strong> (<a href="app#L29-L31">app.js L29-L31</a> ): Mounts three route handler modules</li>
+<li><strong>Express Framework Import</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L2">app.js L1-L2</a> ): Imports Express and instantiates the application object</li>
+<li><strong>Environment Configuration</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a> ): Loads environment variables from <code>./env/.env</code> using dotenv</li>
+<li><strong>Session Middleware</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a> ): Configures express-session for user session management</li>
+<li><strong>Static File Serving</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a> ): Mounts static file middleware for the <code>/public</code> directory</li>
+<li><strong>View Engine Setup</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L21">app.js L21</a> ): Configures EJS as the templating engine</li>
+<li><strong>Body Parsing</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L26">app.js L25-L26</a> ): Enables URL-encoded and JSON body parsing</li>
+<li><strong>Route Mounting</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a> ): Mounts three route handler modules</li>
 </ol>
-<p><strong>Sources:</strong> <a href="app#L1-L31">app.js L1-L31</a></p>
-<p><a href="package#L5-L8">package.json L5-L8</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L31">app.js L1-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L5-L8">package.json L5-L8</a></p>
 <hr />
 <h2 id="middleware-pipeline">Middleware Pipeline<a class="headerlink" href="#middleware-pipeline" title="Permanent link">&para;</a></h2>
 <p>The middleware pipeline processes every incoming HTTP request in a specific order. The sequence is critical for proper application functionality:</p>
@@ -2000,29 +1962,29 @@ ServeStatic --&gt; Response</code></pre>
 <td><code>express-session</code></td>
 <td>Session management</td>
 <td>Secret: "secret"resave: falsesaveUninitialized: false</td>
-<td><a href="app#L6-L13">app.js L6-L13</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></td>
 </tr>
 <tr>
 <td><code>express.static</code></td>
 <td>Static file serving</td>
 <td>Mount point: <code>/resources</code>Directory: <code>/public</code></td>
-<td><a href="app#L19-L19">app.js L19</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></td>
 </tr>
 <tr>
 <td><code>express.urlencoded</code></td>
 <td>Parse URL-encoded bodies</td>
 <td>extended: true</td>
-<td><a href="app#L25-L25">app.js L25</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L25">app.js L25</a></td>
 </tr>
 <tr>
 <td><code>express.json</code></td>
 <td>Parse JSON bodies</td>
 <td>Default configuration</td>
-<td><a href="app#L26-L26">app.js L26</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L26-L26">app.js L26</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="app#L6-L26">app.js L6-L26</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L26">app.js L6-L26</a></p>
 <hr />
 <h2 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h2>
 <p>Session management is configured using <code>express-session</code> with the following settings:</p>
@@ -2040,12 +2002,12 @@ SessionConfig --&gt; SaveUninitialized
 Secret --&gt; Note</code></pre>
 <p><strong>Configuration Properties:</strong></p>
 <ul>
-<li><strong>secret</strong> (<a href="app#L8-L8">app.js L8</a> ): Set to hardcoded string <code>"secret"</code>. This should ideally be loaded from environment variables for production security.</li>
-<li><strong>resave</strong> (<a href="app#L9-L9">app.js L9</a> ): Set to <code>false</code> to prevent unnecessary session saves when session data hasn't changed.</li>
-<li><strong>saveUninitialized</strong> (<a href="app#L10-L10">app.js L10</a> ): Set to <code>false</code> to prevent creating session cookies for unauthenticated users.</li>
+<li><strong>secret</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L8-L8">app.js L8</a> ): Set to hardcoded string <code>"secret"</code>. This should ideally be loaded from environment variables for production security.</li>
+<li><strong>resave</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L9-L9">app.js L9</a> ): Set to <code>false</code> to prevent unnecessary session saves when session data hasn't changed.</li>
+<li><strong>saveUninitialized</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L10-L10">app.js L10</a> ): Set to <code>false</code> to prevent creating session cookies for unauthenticated users.</li>
 </ul>
 <p><strong>Security Note:</strong> The session secret is currently hardcoded. For production deployments, this should be moved to an environment variable (e.g., <code>process.env.SESSION_SECRET</code>).</p>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
 <hr />
 <h2 id="static-file-serving">Static File Serving<a class="headerlink" href="#static-file-serving" title="Permanent link">&para;</a></h2>
 <p>Static assets (CSS, images, JavaScript) are served through Express's built-in static file middleware:</p>
@@ -2079,7 +2041,7 @@ Secret --&gt; Note</code></pre>
 </tbody>
 </table>
 <p>This means that a file at <code>/public/css/index.css</code> is accessible in the browser at <code>http://localhost:PORT/resources/css/index.css</code>.</p>
-<p><strong>Sources:</strong> <a href="app#L19-L19">app.js L19</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></p>
 <hr />
 <h2 id="view-engine-configuration">View Engine Configuration<a class="headerlink" href="#view-engine-configuration" title="Permanent link">&para;</a></h2>
 <p>The application uses EJS (Embedded JavaScript) as its templating engine:</p>
@@ -2087,15 +2049,15 @@ Secret --&gt; Note</code></pre>
 </code></pre></div>
 <p><strong>EJS Configuration:</strong></p>
 <ul>
-<li><strong>Template Engine</strong>: EJS version 3.1.10 (from <a href="package#L18-L18">package.json L18</a> )</li>
+<li><strong>Template Engine</strong>: EJS version 3.1.10 (from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L18-L18">package.json L18</a> )</li>
 <li><strong>Views Directory</strong>: Defaults to <code>./views/</code> (Express convention)</li>
 <li><strong>File Extension</strong>: <code>.ejs</code> files are automatically recognized</li>
 <li><strong>Rendering</strong>: Controllers call <code>res.render('templateName', data)</code> to render views</li>
 </ul>
-<p>The commented-out line at <a href="app#L22-L22">app.js L22</a></p>
+<p>The commented-out line at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L22-L22">app.js L22</a></p>
 <p>shows that the views directory was considered for explicit configuration, but the default is being used instead.</p>
-<p><strong>Sources:</strong> <a href="app#L21-L22">app.js L21-L22</a></p>
-<p><a href="package#L18-L18">package.json L18</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L22">app.js L21-L22</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L18-L18">package.json L18</a></p>
 <hr />
 <h2 id="route-mounting">Route Mounting<a class="headerlink" href="#route-mounting" title="Permanent link">&para;</a></h2>
 <p>The application uses a modular routing architecture where route handlers are separated into distinct files and mounted onto the Express application:</p>
@@ -2139,7 +2101,7 @@ CoursesRouter --&gt; AdminProfile</code></pre>
 <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes/courses&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// Line 31</span>
 </code></pre></div>
 <p>All three router modules are mounted at the root path (<code>"/"</code>). Each router module exports an Express Router instance that defines specific endpoints.</p>
-<p><strong>Sources:</strong> <a href="app#L29-L31">app.js L29-L31</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a></p>
 <hr />
 <h2 id="commented-code-analysis">Commented Code Analysis<a class="headerlink" href="#commented-code-analysis" title="Permanent link">&para;</a></h2>
 <p>Several lines in <code>app.js</code> are commented out, indicating features that were considered or may be used in alternative configurations:</p>
@@ -2170,8 +2132,8 @@ CoursesRouter --&gt; AdminProfile</code></pre>
 <li>Authentication state checking happens in individual route handlers</li>
 <li>Each route must manually pass user/role information to templates</li>
 </ul>
-<p><strong>Sources:</strong> <a href="app#L15-L17">app.js L15-L17</a></p>
-<p><a href="app#L33-L39">app.js L33-L39</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L15-L17">app.js L15-L17</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L33-L39">app.js L33-L39</a></p>
 <hr />
 <h2 id="environment-variable-configuration">Environment Variable Configuration<a class="headerlink" href="#environment-variable-configuration" title="Permanent link">&para;</a></h2>
 <p>Environment variables are loaded using the <code>dotenv</code> package:</p>
@@ -2210,8 +2172,8 @@ CoursesRouter --&gt; AdminProfile</code></pre>
 <li>Potentially JWT secrets, API keys, etc.</li>
 </ul>
 <p>The non-standard path <code>./env/.env</code> suggests the environment file is stored in a subdirectory rather than the project root.</p>
-<p><strong>Sources:</strong> <a href="app#L3-L3">app.js L3</a></p>
-<p><a href="package#L17-L17">package.json L17</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L17-L17">package.json L17</a></p>
 <hr />
 <h2 id="module-dependencies">Module Dependencies<a class="headerlink" href="#module-dependencies" title="Permanent link">&para;</a></h2>
 <p>The following diagram shows the direct dependencies imported by <code>app.js</code>:</p>
@@ -2251,12 +2213,12 @@ subgraph subGraph0 ["NPM Packages"]
 end</code></pre>
 <p><strong>Direct Dependencies:</strong></p>
 <ol>
-<li><strong>express</strong> (<a href="app#L1-L1">app.js L1</a> ): Core web framework</li>
-<li><strong>dotenv</strong> (<a href="app#L3-L3">app.js L3</a> ): Environment configuration</li>
-<li><strong>express-session</strong> (<a href="app#L4-L4">app.js L4</a> ): Session management</li>
-<li><strong>./routes/index</strong> (<a href="app#L29-L29">app.js L29</a> ): Landing page routes</li>
-<li><strong>./routes/auth</strong> (<a href="app#L30-L30">app.js L30</a> ): Authentication routes</li>
-<li><strong>./routes/courses</strong> (<a href="app#L31-L31">app.js L31</a> ): Course management routes</li>
+<li><strong>express</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L1">app.js L1</a> ): Core web framework</li>
+<li><strong>dotenv</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a> ): Environment configuration</li>
+<li><strong>express-session</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L4">app.js L4</a> ): Session management</li>
+<li><strong>./routes/index</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L29">app.js L29</a> ): Landing page routes</li>
+<li><strong>./routes/auth</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L30-L30">app.js L30</a> ): Authentication routes</li>
+<li><strong>./routes/courses</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L31-L31">app.js L31</a> ): Course management routes</li>
 </ol>
 <p><strong>Indirect Dependencies</strong> (used by route modules, not directly by <code>app.js</code>):</p>
 <ul>
@@ -2265,8 +2227,8 @@ end</code></pre>
 <li>express-validator (input validation)</li>
 <li>mysql2 (database driver)</li>
 </ul>
-<p><strong>Sources:</strong> <a href="app#L1-L31">app.js L1-L31</a></p>
-<p><a href="package#L13-L25">package.json L13-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L31">app.js L1-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
 <hr />
 <h2 id="execution-flow-summary">Execution Flow Summary<a class="headerlink" href="#execution-flow-summary" title="Permanent link">&para;</a></h2>
 <p>The complete execution flow when the application starts:</p>
@@ -2304,7 +2266,7 @@ end</code></pre>
 <li><strong>Route Modularity</strong>: Routes are separated into logical modules for maintainability</li>
 <li><strong>No Server Start</strong>: The configured app must be started by another module or script</li>
 </ol>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <hr />
 <h2 id="integration-with-packagejson">Integration with Package.json<a class="headerlink" href="#integration-with-packagejson" title="Permanent link">&para;</a></h2>
 <p>The <code>package.json</code> file defines <code>app.js</code> as the main entry point:</p>
@@ -2321,7 +2283,7 @@ end</code></pre>
 <li>The application can be imported as a module if needed</li>
 <li><code>app.js</code> is the conventional entry point for the application</li>
 </ul>
-<p><strong>Sources:</strong> <a href="package#L5-L8">package.json L5-L8</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L5-L8">package.json L5-L8</a></p>
 
 
 

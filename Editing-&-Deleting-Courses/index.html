@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1369,6 +1354,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1496,29 +1504,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1817,29 +1802,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1941,13 +1903,13 @@
 <h1 id="editing-deleting-courses">Editing &amp; Deleting Courses<a class="headerlink" href="#editing-deleting-courses" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="src/controller">src/controller.js</a>
-* <a href="views/edit">views/edit.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs">views/edit.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document details the administrator-exclusive functionality for modifying and deleting courses in the system. It covers the edit workflow including form pre-population with existing data, the update processing logic, and the delete operation with database transaction handling. These operations are restricted to users with the <code>admin</code> role through middleware enforcement.</p>
-<p>For information about creating new courses, see <a href="5.1-creating-courses.md">Creating Courses</a>. For general course visibility and listing functionality, see <a href="5.3-course-listing-and-visibility.md">Course Listing &amp; Visibility</a>.</p>
+<p>For information about creating new courses, see <a href="/Lourdes12587/Week06/5.1-creating-courses">Creating Courses</a>. For general course visibility and listing functionality, see <a href="/Lourdes12587/Week06/5.3-course-listing-and-visibility">Course Listing &amp; Visibility</a>.</p>
 <hr />
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The course editing and deletion features are implemented as protected routes that require both authentication and administrator privileges. The system provides a two-step edit workflow: first retrieving existing course data to pre-populate an edit form, then processing the submitted changes. Deletion operates as a single-step GET request that immediately removes the course record from the database.</p>
@@ -1988,9 +1950,9 @@
 </tr>
 </tbody>
 </table>
-<p>Sources: <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="src/controller#L1-L53">src/controller.js L1-L53</a></p>
-<p><a href="views/edit#L1-L35">views/edit.ejs L1-L35</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L53">src/controller.js L1-L53</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
 <hr />
 <h2 id="request-flow-architecture">Request Flow Architecture<a class="headerlink" href="#request-flow-architecture" title="Permanent link">&para;</a></h2>
 <p><strong>Diagram: Edit and Delete Request Flow</strong></p>
@@ -2029,27 +1991,27 @@
   routes/courses.js-&gt;&gt;config/db.js: "DELETE FROM cursos WHERE id = ?"
   config/db.js-&gt;&gt;routes/courses.js: "Deletion confirmation"
   routes/courses.js-&gt;&gt;Administrator Browser: "res.redirect('/courses')"</code></pre>
-<p>Sources: <a href="routes/courses#L73-L98">routes/courses.js L73-L98</a></p>
-<p><a href="routes/courses#L103-L103">routes/courses.js L103</a></p>
-<p><a href="src/controller#L28-L52">src/controller.js L28-L52</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L98">routes/courses.js L73-L98</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L28-L52">src/controller.js L28-L52</a></p>
 <hr />
 <h2 id="editing-courses">Editing Courses<a class="headerlink" href="#editing-courses" title="Permanent link">&para;</a></h2>
 <h3 id="edit-route-get-editid">Edit Route - GET /edit/:id<a class="headerlink" href="#edit-route-get-editid" title="Permanent link">&para;</a></h3>
 <p>The edit route retrieves a specific course record from the database and renders a form pre-populated with the existing values. This enables administrators to modify course details while preserving unchanged fields.</p>
 <p><strong>Route Definition:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/edit/:id&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Middleware Chain:</strong></p>
 <ol>
-<li><code>estaAutenticado</code> - Verifies <code>req.session.loggedin</code> is true <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></li>
-<li><code>isAdmin</code> - Confirms <code>req.session.rol === 'admin'</code> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></li>
+<li><code>estaAutenticado</code> - Verifies <code>req.session.loggedin</code> is true <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></li>
+<li><code>isAdmin</code> - Confirms <code>req.session.rol === 'admin'</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></li>
 </ol>
 <p><strong>Implementation Details:</strong></p>
 <p>The route handler extracts the course ID from the URL parameters and executes a parameterized SQL query to fetch the course record. The query uses a placeholder (<code>?</code>) to prevent SQL injection:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>The first result (<code>results[0]</code>) is passed to the <code>edit.ejs</code> template as the <code>curso</code> object. If an error occurs, it is thrown, which would trigger Express's default error handler.</p>
-<p>Sources: <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
 <h3 id="edit-form-template">Edit Form Template<a class="headerlink" href="#edit-form-template" title="Permanent link">&para;</a></h3>
 <p>The edit form is rendered by <code>views/edit.ejs</code>, which displays a Bootstrap-styled card interface. The form includes a hidden input field containing the course ID to ensure the correct record is updated during submission.</p>
 <p><strong>Form Structure:</strong></p>
@@ -2089,54 +2051,54 @@
 </tr>
 </tbody>
 </table>
-<p>The form submits to <code>/update</code> via POST method <a href="views/edit#L10-L10">views/edit.ejs L10</a></p>
-<p>If no course data is available, the template displays an error message: "CURSOS NO ENCONTRADO" <a href="views/edit#L33-L33">views/edit.ejs L33</a></p>
-<p>Sources: <a href="views/edit#L1-L35">views/edit.ejs L1-L35</a></p>
+<p>The form submits to <code>/update</code> via POST method <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L10-L10">views/edit.ejs L10</a></p>
+<p>If no course data is available, the template displays an error message: "CURSOS NO ENCONTRADO" <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L33-L33">views/edit.ejs L33</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
 <h3 id="update-route-post-update">Update Route - POST /update<a class="headerlink" href="#update-route-post-update" title="Permanent link">&para;</a></h3>
 <p>The update route delegates processing to the <code>crud.update</code> controller function. The route definition applies the same middleware protection as the edit route:</p>
-<div class="highlight"><pre><span></span><code><span class="n">router</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/update&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="n">isAdmin</span><span class="p">,</span><span class="w"> </span><span class="n">crud</span><span class="p">.</span><span class="k">update</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>Sources: <a href="routes/courses#L103-L103">routes/courses.js L103</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
 <h3 id="update-controller-logic">Update Controller Logic<a class="headerlink" href="#update-controller-logic" title="Permanent link">&para;</a></h3>
 <p>The <code>exports.update</code> function in <code>src/controller.js</code> extracts form data from the request body and executes an UPDATE query. The function uses parameterized queries to safely update the database:</p>
 <p><strong>Form Data Extraction:</strong></p>
 <ul>
-<li><code>req.body.id</code> - Course identifier <a href="src/controller#L30-L30">src/controller.js L30</a></li>
-<li><code>req.body.titulo</code> - Updated title <a href="src/controller#L31-L31">src/controller.js L31</a></li>
-<li><code>req.body.descripcion</code> - Updated description <a href="src/controller#L32-L32">src/controller.js L32</a></li>
-<li><code>req.body.categoria</code> - Updated category <a href="src/controller#L33-L33">src/controller.js L33</a></li>
+<li><code>req.body.id</code> - Course identifier <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L30-L30">src/controller.js L30</a></li>
+<li><code>req.body.titulo</code> - Updated title <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L31-L31">src/controller.js L31</a></li>
+<li><code>req.body.descripcion</code> - Updated description <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L32-L32">src/controller.js L32</a></li>
+<li><code>req.body.categoria</code> - Updated category <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L33-L33">src/controller.js L33</a></li>
 </ul>
 <p><strong>SQL Query Structure:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">UPDATE</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>The query uses two parameters: an object containing the fields to update, and the course ID. The object notation (<code>SET ?</code>) allows MySQL to automatically format the update fields <a href="src/controller#L36-L42">src/controller.js L36-L42</a></p>
+<p>The query uses two parameters: an object containing the fields to update, and the course ID. The object notation (<code>SET ?</code>) allows MySQL to automatically format the update fields <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L36-L42">src/controller.js L36-L42</a></p>
 <p><strong>Response Handling:</strong></p>
 <ul>
-<li>On success or error: redirects to <code>/courses</code> <a href="src/controller#L48-L48">src/controller.js L48</a></li>
-<li>Errors are logged to console but do not halt execution <a href="src/controller#L46-L46">src/controller.js L46</a></li>
+<li>On success or error: redirects to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L48-L48">src/controller.js L48</a></li>
+<li>Errors are logged to console but do not halt execution <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L46-L46">src/controller.js L46</a></li>
 </ul>
-<p>Sources: <a href="src/controller#L28-L52">src/controller.js L28-L52</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L28-L52">src/controller.js L28-L52</a></p>
 <hr />
 <h2 id="deleting-courses">Deleting Courses<a class="headerlink" href="#deleting-courses" title="Permanent link">&para;</a></h2>
 <h3 id="delete-route-get-deleteid">Delete Route - GET /delete/:id<a class="headerlink" href="#delete-route-get-deleteid" title="Permanent link">&para;</a></h3>
 <p>The delete operation is implemented as a single GET request that immediately removes the course from the database. This design choice prioritizes simplicity over the traditional two-step confirmation pattern, relying on client-side confirmation dialogs instead.</p>
 <p><strong>Route Definition:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/delete/:id&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Deletion Process:</strong></p>
 <ol>
-<li>Extract course ID from URL parameter: <code>req.params.id</code> <a href="routes/courses#L89-L89">routes/courses.js L89</a></li>
+<li>Extract course ID from URL parameter: <code>req.params.id</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L89-L89">routes/courses.js L89</a></li>
 <li>Execute DELETE query with parameterized ID</li>
-<li>Redirect to course listing page on success <a href="routes/courses#L95-L95">routes/courses.js L95</a></li>
-<li>Throw error if query fails <a href="routes/courses#L93-L93">routes/courses.js L93</a></li>
+<li>Redirect to course listing page on success <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L95-L95">routes/courses.js L95</a></li>
+<li>Throw error if query fails <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L93-L93">routes/courses.js L93</a></li>
 </ol>
 <p><strong>SQL Query:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>The query uses a parameterized placeholder to safely delete the specified course record <a href="routes/courses#L91-L91">routes/courses.js L91</a></p>
+<p>The query uses a parameterized placeholder to safely delete the specified course record <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></p>
 <p><strong>Cascading Deletions:</strong></p>
 <p>The system does not implement explicit cascading deletion logic in the application code. If foreign key constraints exist on the <code>inscripciones</code> table referencing <code>cursos.id</code>, the database engine would handle cascading behavior based on the constraint definition (e.g., <code>ON DELETE CASCADE</code>). Without such constraints, orphaned enrollment records would remain in the database.</p>
-<p>Sources: <a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></p>
 <hr />
 <h2 id="authorization-and-security">Authorization and Security<a class="headerlink" href="#authorization-and-security" title="Permanent link">&para;</a></h2>
 <p><strong>Diagram: Middleware Security Chain</strong></p>
@@ -2163,26 +2125,22 @@ RoleValid --&gt; Handler
 Handler --&gt; EditHandler
 Handler --&gt; UpdateHandler
 Handler --&gt; DeleteHandler</code></pre>
-<p>Sources: <a href="routes/courses#L8-L24">routes/courses.js L8-L24</a></p>
-<p><a href="routes/courses#L73-L104">routes/courses.js L73-L104</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L24">routes/courses.js L8-L24</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L104">routes/courses.js L73-L104</a></p>
 <h3 id="authentication-middleware-estaautenticado">Authentication Middleware - estaAutenticado<a class="headerlink" href="#authentication-middleware-estaautenticado" title="Permanent link">&para;</a></h3>
 <p>This middleware function verifies that a user session exists and is authenticated. It checks for the presence of <code>req.session.loggedin</code> and calls <code>next()</code> if true, otherwise redirects to <code>/login</code>.</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
 <h3 id="authorization-middleware-isadmin">Authorization Middleware - isAdmin<a class="headerlink" href="#authorization-middleware-isadmin" title="Permanent link">&para;</a></h3>
 <p>This middleware enforces role-based access control by verifying both session authentication and administrator role assignment. It checks:</p>
 <ul>
 <li><code>req.session.loggedin</code> is truthy</li>
 <li><code>req.session.rol === 'admin'</code></li>
 </ul>
-<p>If either condition fails, the request is redirected to <code>/login</code> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p>If either condition fails, the request is redirected to <code>/login</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <p><strong>Session Object Structure:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">req.session = {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">loggedin</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true,</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">rol</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;admin&#39;</span><span class="err">,</span>
-<span class="w">  </span><span class="nt">usuario</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> id</span><span class="p">:</span><span class="w"> </span><span class="nv">...</span><span class="p p-Indicator">,</span><span class="nt"> nombre</span><span class="p">:</span><span class="w"> </span><span class="nv">...</span><span class="p p-Indicator">,</span><span class="nt"> email</span><span class="p">:</span><span class="w"> </span><span class="nv">...</span><span class="w"> </span><span class="p p-Indicator">}</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>Sources: <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <hr />
 <h2 id="database-operations">Database Operations<a class="headerlink" href="#database-operations" title="Permanent link">&para;</a></h2>
 <p><strong>Table: Database Queries by Operation</strong></p>
@@ -2223,28 +2181,20 @@ Handler --&gt; DeleteHandler</code></pre>
 <h3 id="query-parameterization">Query Parameterization<a class="headerlink" href="#query-parameterization" title="Permanent link">&para;</a></h3>
 <p>All database operations use parameterized queries (placeholders with <code>?</code>) to prevent SQL injection attacks. The <code>mysql2</code> driver automatically escapes parameter values before query execution.</p>
 <p><strong>Example from Update Operation:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
-<span class="w">    </span><span class="s2">&quot;UPDATE cursos SET ? WHERE id = ?&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="p">[{</span>
-<span class="w">        </span><span class="nx">titulo</span><span class="o">:</span><span class="w"> </span><span class="nx">titulo</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">descripcion</span><span class="o">:</span><span class="w"> </span><span class="nx">descripcion</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">categoria</span><span class="o">:</span><span class="w"> </span><span class="nx">categoria</span><span class="p">,</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="nx">id</span><span class="p">],</span>
-<span class="w">    </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<span class="p">);</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>The first parameter (<code>?</code>) accepts an object where keys map to column names, and the second parameter (<code>?</code>) is the scalar course ID <a href="src/controller#L35-L43">src/controller.js L35-L43</a></p>
-<p>Sources: <a href="routes/courses#L77-L77">routes/courses.js L77</a></p>
-<p><a href="routes/courses#L91-L91">routes/courses.js L91</a></p>
-<p><a href="src/controller#L35-L43">src/controller.js L35-L43</a></p>
+<p>The first parameter (<code>?</code>) accepts an object where keys map to column names, and the second parameter (<code>?</code>) is the scalar course ID <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L35-L43">src/controller.js L35-L43</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L35-L43">src/controller.js L35-L43</a></p>
 <h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
-<p><strong>Edit Route:</strong> Errors are thrown, delegating to Express's error handling middleware <a href="routes/courses#L79-L79">routes/courses.js L79</a></p>
-<p><strong>Update Controller:</strong> Errors are logged to console but execution continues, redirecting regardless of success <a href="src/controller#L45-L48">src/controller.js L45-L48</a></p>
-<p><strong>Delete Route:</strong> Errors are thrown, delegating to Express's error handling middleware <a href="routes/courses#L93-L93">routes/courses.js L93</a></p>
+<p><strong>Edit Route:</strong> Errors are thrown, delegating to Express's error handling middleware <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L79-L79">routes/courses.js L79</a></p>
+<p><strong>Update Controller:</strong> Errors are logged to console but execution continues, redirecting regardless of success <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L45-L48">src/controller.js L45-L48</a></p>
+<p><strong>Delete Route:</strong> Errors are thrown, delegating to Express's error handling middleware <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L93-L93">routes/courses.js L93</a></p>
 <p>This inconsistent error handling approach means that update failures may not be visible to administrators, as they are always redirected to <code>/courses</code> even when the database operation fails.</p>
-<p>Sources: <a href="routes/courses#L79-L79">routes/courses.js L79</a></p>
-<p><a href="routes/courses#L93-L93">routes/courses.js L93</a></p>
-<p><a href="src/controller#L45-L48">src/controller.js L45-L48</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L79-L79">routes/courses.js L79</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L93-L93">routes/courses.js L93</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L45-L48">src/controller.js L45-L48</a></p>
 <hr />
 <h2 id="complete-endpoint-reference">Complete Endpoint Reference<a class="headerlink" href="#complete-endpoint-reference" title="Permanent link">&para;</a></h2>
 <p><strong>Table: Edit and Delete Endpoints</strong></p>
@@ -2292,7 +2242,7 @@ Handler --&gt; DeleteHandler</code></pre>
 <li><strong>Update (POST):</strong> Post-Redirect-Get pattern to <code>/courses</code></li>
 <li><strong>Delete (GET):</strong> Immediate redirect to <code>/courses</code> after deletion</li>
 </ul>
-<p>Sources: <a href="routes/courses#L73-L104">routes/courses.js L73-L104</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L104">routes/courses.js L73-L104</a></p>
 <hr />
 <h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
 <p><strong>Diagram: System Integration Map</strong></p>
@@ -2321,9 +2271,9 @@ DeleteGet --&gt; DBModule
 Controller --&gt; CoursesList
 DeleteGet --&gt; CoursesList
 DBModule --&gt; CursosTable</code></pre>
-<p>Sources: <a href="routes/courses#L35-L187">routes/courses.js L35-L187</a></p>
-<p><a href="src/controller#L28-L52">src/controller.js L28-L52</a></p>
-<p><a href="views/edit#L1-L35">views/edit.ejs L1-L35</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L187">routes/courses.js L35-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L28-L52">src/controller.js L28-L52</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
 <p>The edit and delete functionality integrates with the broader course management system through the <code>/courses</code> listing page, which conditionally displays edit and delete action links to administrators. After any modification or deletion, the system redirects back to <code>/courses</code>, creating a circular workflow that allows administrators to perform multiple operations in sequence.</p>
 
 

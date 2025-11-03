@@ -16,7 +16,7 @@
         <link rel="prev" href="../Role-Based-Access-Control/">
       
       
-        <link rel="next" href="../Authentication-Views/">
+        <link rel="next" href="../Authentication-Endpoints/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -29,6 +29,9 @@
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1171,29 +1179,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1384,6 +1369,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1511,29 +1519,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1832,29 +1817,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1956,16 +1918,16 @@
 <h1 id="session-management">Session Management<a class="headerlink" href="#session-management" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="routes/auth">routes/auth.js</a>
-* <a href="routes/index">routes/index.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document details the session management implementation in the course management system, explaining how user state is maintained across HTTP requests using the <code>express-session</code> middleware. This includes session configuration, storage, creation during authentication, access patterns in route handlers, and session destruction on logout.</p>
-<p>For information about the authentication process that creates sessions, see <a href="4.2-user-login.md">User Login</a>. For details on role-based access control using session data, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
+<p>For information about the authentication process that creates sessions, see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>. For details on role-based access control using session data, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
 <hr />
 <h2 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h2>
-<p>The application configures session management in <a href="app#L4-L13">app.js L4-L13</a></p>
+<p>The application configures session management in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
 <p>using the <code>express-session</code> middleware. This configuration establishes the foundation for maintaining user state throughout the application.</p>
 <div class="highlight"><pre><span></span><code>Key Configuration Parameters:
 </code></pre></div>
@@ -1995,11 +1957,11 @@
 </tr>
 </tbody>
 </table>
-<p>The <code>secret</code> parameter in <a href="app#L8-L8">app.js L8</a></p>
-<p>is used to sign the session ID cookie, preventing tampering. In production environments, this should be loaded from environment variables rather than hardcoded. The <code>resave: false</code> configuration in <a href="app#L9-L9">app.js L9</a></p>
-<p>prevents unnecessary writes to the session store when session data hasn't changed, improving performance. The <code>saveUninitialized: false</code> setting in <a href="app#L10-L10">app.js L10</a></p>
+<p>The <code>secret</code> parameter in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L8-L8">app.js L8</a></p>
+<p>is used to sign the session ID cookie, preventing tampering. In production environments, this should be loaded from environment variables rather than hardcoded. The <code>resave: false</code> configuration in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L9-L9">app.js L9</a></p>
+<p>prevents unnecessary writes to the session store when session data hasn't changed, improving performance. The <code>saveUninitialized: false</code> setting in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L10-L10">app.js L10</a></p>
 <p>ensures that sessions are only created when data is actually stored, reducing storage overhead and complying with privacy regulations.</p>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
 <hr />
 <h2 id="session-lifecycle">Session Lifecycle<a class="headerlink" href="#session-lifecycle" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates the complete lifecycle of a session from creation through destruction:</p>
@@ -2012,19 +1974,19 @@
     SessionAccessed --&gt; SessionActive : "Session data read/modified"
     SessionActive --&gt; SessionDestroyed : "POST /logout"
     SessionDestroyed --&gt; [*] : "Session cleared"</code></pre>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L136">routes/auth.js L75-L136</a></p>
-<p><a href="routes/index#L6-L14">routes/index.js L6-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L136">routes/auth.js L75-L136</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L14">routes/index.js L6-L14</a></p>
 <hr />
 <h2 id="session-creation-during-authentication">Session Creation During Authentication<a class="headerlink" href="#session-creation-during-authentication" title="Permanent link">&para;</a></h2>
-<p>Sessions are created when a user successfully authenticates through the <code>/auth</code> endpoint. The authentication handler in <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p>Sessions are created when a user successfully authenticates through the <code>/auth</code> endpoint. The authentication handler in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <p>performs credential validation and establishes the session.</p>
 <h3 id="authentication-process">Authentication Process<a class="headerlink" href="#authentication-process" title="Permanent link">&para;</a></h3>
 <p>When a user submits login credentials via <code>POST /auth</code>, the following sequence occurs:</p>
 <ol>
-<li><strong>Credential Extraction:</strong> Email and password are extracted from <code>req.body</code> in <a href="routes/auth#L77-L78">routes/auth.js L77-L78</a></li>
-<li><strong>Database Lookup:</strong> User record is queried from the <code>usuarios</code> table in <a href="routes/auth#L81-L84">routes/auth.js L81-L84</a></li>
-<li><strong>Password Verification:</strong> The submitted password is compared against the stored hash using <code>bcrypt.compare()</code> in <a href="routes/auth#L86-L86">routes/auth.js L86</a></li>
-<li><strong>Session Initialization:</strong> Upon successful authentication, session properties are set in <a href="routes/auth#L102-L104">routes/auth.js L102-L104</a></li>
+<li><strong>Credential Extraction:</strong> Email and password are extracted from <code>req.body</code> in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L77-L78">routes/auth.js L77-L78</a></li>
+<li><strong>Database Lookup:</strong> User record is queried from the <code>usuarios</code> table in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L84">routes/auth.js L81-L84</a></li>
+<li><strong>Password Verification:</strong> The submitted password is compared against the stored hash using <code>bcrypt.compare()</code> in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></li>
+<li><strong>Session Initialization:</strong> Upon successful authentication, session properties are set in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></li>
 </ol>
 <h3 id="session-data-storage">Session Data Storage<a class="headerlink" href="#session-data-storage" title="Permanent link">&para;</a></h3>
 <p>The session object stores three critical pieces of information:</p>
@@ -2043,31 +2005,31 @@
 <tr>
 <td><code>req.session.loggedin</code></td>
 <td><code>boolean</code></td>
-<td><a href="routes/auth#L102-L102">routes/auth.js L102</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L102">routes/auth.js L102</a></td>
 <td>Indicates active authentication status</td>
 </tr>
 <tr>
 <td><code>req.session.usuario</code></td>
 <td><code>object</code></td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
 <td>Complete user record from database</td>
 </tr>
 <tr>
 <td><code>req.session.rol</code></td>
 <td><code>string</code></td>
-<td><a href="routes/auth#L104-L104">routes/auth.js L104</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L104-L104">routes/auth.js L104</a></td>
 <td>User role ('registrado' or 'admin')</td>
 </tr>
 </tbody>
 </table>
-<p>The <code>usuario</code> object stored in <a href="routes/auth#L103-L103">routes/auth.js L103</a></p>
+<p>The <code>usuario</code> object stored in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></p>
 <p>contains all fields from the <code>usuarios</code> table including <code>id</code>, <code>nombre</code>, <code>email</code>, <code>password</code> (hashed), and <code>rol</code>. This allows routes to access user information without additional database queries.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L116">routes/auth.js L75-L116</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L116">routes/auth.js L75-L116</a></p>
 <hr />
 <h2 id="session-access-patterns">Session Access Patterns<a class="headerlink" href="#session-access-patterns" title="Permanent link">&para;</a></h2>
 <p>Once a session is established, route handlers access session data through the <code>req.session</code> object. This section documents common access patterns throughout the application.</p>
 <h3 id="basic-session-reading">Basic Session Reading<a class="headerlink" href="#basic-session-reading" title="Permanent link">&para;</a></h3>
-<p>The index route demonstrates simple session access in <a href="routes/index#L6-L14">routes/index.js L6-L14</a></p>
+<p>The index route demonstrates simple session access in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L14">routes/index.js L6-L14</a></p>
 <p>:</p>
 <p><strong>Session Access Flow in Index Route</strong></p>
 <pre class="mermaid"><code>flowchart TD
@@ -2087,13 +2049,13 @@ C --&gt; E
 D --&gt; F
 E --&gt; F
 F --&gt; G</code></pre>
-<p>The pattern shown in <a href="routes/index#L7-L7">routes/index.js L7</a></p>
-<p>demonstrates safe session access using the optional chaining equivalent: <code>const usuario = req.session.usuario;</code>. The ternary operator in <a href="routes/index#L13-L13">routes/index.js L13</a></p>
+<p>The pattern shown in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L7">routes/index.js L7</a></p>
+<p>demonstrates safe session access using the optional chaining equivalent: <code>const usuario = req.session.usuario;</code>. The ternary operator in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L13-L13">routes/index.js L13</a></p>
 <p>provides a fallback value when no session exists: <code>name: usuario ? usuario.nombre : "Invitado"</code>.</p>
 <h3 id="session-based-conditionals">Session-Based Conditionals<a class="headerlink" href="#session-based-conditionals" title="Permanent link">&para;</a></h3>
-<p>Routes use session data to determine application behavior. The login status check in <a href="routes/index#L12-L12">routes/index.js L12</a></p>
+<p>Routes use session data to determine application behavior. The login status check in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L12-L12">routes/index.js L12</a></p>
 <p>uses the pattern <code>req.session.loggedin || false</code> to provide a default value when the session property is undefined.</p>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L14">routes/index.js L6-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L14">routes/index.js L6-L14</a></p>
 <hr />
 <h2 id="session-persistence-across-requests">Session Persistence Across Requests<a class="headerlink" href="#session-persistence-across-requests" title="Permanent link">&para;</a></h2>
 <p>The session middleware automatically handles cookie management and session persistence. Each HTTP request includes the session ID cookie, which the middleware uses to retrieve stored session data.</p>
@@ -2115,7 +2077,7 @@ F --&gt; G</code></pre>
   Browser-&gt;&gt;Browser: "Store session cookie"
   note over express-session middleware,Session Store (memory): "Session configured in app.js:6-13"
   note over Route Handler: "Session accessed in routes/index.js:7-13"</code></pre>
-<p>The middleware configured in <a href="app#L6-L13">app.js L6-L13</a></p>
+<p>The middleware configured in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <p>intercepts every incoming request before it reaches route handlers. The session ID is extracted from the cookie, the corresponding session data is retrieved from the store, and the data is attached to <code>req.session</code>.</p>
 <h3 id="session-store">Session Store<a class="headerlink" href="#session-store" title="Permanent link">&para;</a></h3>
 <p>By default, <code>express-session</code> uses <code>MemoryStore</code>, which stores session data in application memory. This configuration is suitable for development but has limitations:</p>
@@ -2125,15 +2087,15 @@ F --&gt; G</code></pre>
 <li>Memory consumption grows with active sessions</li>
 </ul>
 <p>For production deployments, a persistent session store (e.g., Redis, MongoDB) should be configured.</p>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
 <hr />
 <h2 id="session-destruction">Session Destruction<a class="headerlink" href="#session-destruction" title="Permanent link">&para;</a></h2>
-<p>Sessions are destroyed when users log out via the <code>POST /logout</code> endpoint defined in <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p>Sessions are destroyed when users log out via the <code>POST /logout</code> endpoint defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <h3 id="logout-implementation">Logout Implementation<a class="headerlink" href="#logout-implementation" title="Permanent link">&para;</a></h3>
 <p>The logout handler uses a single method call to completely destroy the session:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">Method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">req.session.destroy(callback)</span>
 </code></pre></div>
-<p>The implementation in <a href="routes/auth#L135-L135">routes/auth.js L135</a></p>
+<p>The implementation in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L135-L135">routes/auth.js L135</a></p>
 <p>calls <code>req.session.destroy()</code> with a callback that redirects the user to the home page: <code>req.session.destroy(() =&gt; res.redirect('/'))</code>.</p>
 <p><strong>Logout Flow</strong></p>
 <pre class="mermaid"><code>flowchart TD
@@ -2159,7 +2121,7 @@ F --&gt; G</code></pre>
 <li>Subsequent requests will have an empty <code>req.session</code> object</li>
 <li>The user must authenticate again to create a new session</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <hr />
 <h2 id="session-data-structure-reference">Session Data Structure Reference<a class="headerlink" href="#session-data-structure-reference" title="Permanent link">&para;</a></h2>
 <p>The following table provides a comprehensive reference of all session properties used throughout the application:</p>
@@ -2178,61 +2140,61 @@ F --&gt; G</code></pre>
 <td><code>req.session.loggedin</code></td>
 <td><code>boolean</code></td>
 <td><code>true</code>, <code>undefined</code></td>
-<td><a href="routes/auth#L102-L102">routes/auth.js L102</a></td>
-<td><a href="routes/index#L12-L12">routes/index.js L12</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L102">routes/auth.js L102</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L12-L12">routes/index.js L12</a></td>
 </tr>
 <tr>
 <td><code>req.session.usuario</code></td>
 <td><code>object</code></td>
 <td>User record, <code>undefined</code></td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
-<td><a href="routes/index#L7-L13">routes/index.js L7-L13</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L13">routes/index.js L7-L13</a></td>
 </tr>
 <tr>
 <td><code>req.session.usuario.id</code></td>
 <td><code>number</code></td>
 <td>User ID</td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
 <td>Role middleware</td>
 </tr>
 <tr>
 <td><code>req.session.usuario.nombre</code></td>
 <td><code>string</code></td>
 <td>User's name</td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
-<td><a href="routes/index#L13-L13">routes/index.js L13</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L13-L13">routes/index.js L13</a></td>
 </tr>
 <tr>
 <td><code>req.session.usuario.email</code></td>
 <td><code>string</code></td>
 <td>User's email</td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
 <td>Various routes</td>
 </tr>
 <tr>
 <td><code>req.session.usuario.rol</code></td>
 <td><code>string</code></td>
 <td><code>'registrado'</code>, <code>'admin'</code></td>
-<td><a href="routes/auth#L103-L103">routes/auth.js L103</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
 <td>Role middleware</td>
 </tr>
 <tr>
 <td><code>req.session.rol</code></td>
 <td><code>string</code></td>
 <td><code>'registrado'</code>, <code>'admin'</code>, <code>undefined</code></td>
-<td><a href="routes/auth#L104-L104">routes/auth.js L104</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L104-L104">routes/auth.js L104</a></td>
 <td>Role middleware</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Note:</strong> The <code>req.session.usuario.rol</code> and <code>req.session.rol</code> properties are redundant, as both store the same role value. The latter is set explicitly in <a href="routes/auth#L104-L104">routes/auth.js L104</a></p>
+<p><strong>Note:</strong> The <code>req.session.usuario.rol</code> and <code>req.session.rol</code> properties are redundant, as both store the same role value. The latter is set explicitly in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L104-L104">routes/auth.js L104</a></p>
 <p>for convenience.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L100-L104">routes/auth.js L100-L104</a></p>
-<p><a href="routes/index#L7-L13">routes/index.js L7-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L13">routes/index.js L7-L13</a></p>
 <hr />
 <h2 id="session-security-considerations">Session Security Considerations<a class="headerlink" href="#session-security-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="session-secret-management">Session Secret Management<a class="headerlink" href="#session-secret-management" title="Permanent link">&para;</a></h3>
-<p>The session secret in <a href="app#L8-L8">app.js L8</a></p>
+<p>The session secret in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L8-L8">app.js L8</a></p>
 <p>is currently hardcoded as <code>"secret"</code>. In production environments, this should be:</p>
 <ul>
 <li>Generated using a cryptographically secure random number generator</li>
@@ -2249,7 +2211,7 @@ F --&gt; G</code></pre>
 </ul>
 <h3 id="session-fixation-prevention">Session Fixation Prevention<a class="headerlink" href="#session-fixation-prevention" title="Permanent link">&para;</a></h3>
 <p>The application does not regenerate session IDs after login. To prevent session fixation attacks, consider implementing <code>req.session.regenerate()</code> after successful authentication.</p>
-<p><strong>Sources:</strong> <a href="app#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <hr />
 <h2 id="integration-with-middleware">Integration with Middleware<a class="headerlink" href="#integration-with-middleware" title="Permanent link">&para;</a></h2>
 <p>Session data is consumed by authentication and authorization middleware throughout the application. These middleware functions check session properties to enforce access control.</p>
@@ -2284,9 +2246,9 @@ I --&gt; K
 E --&gt; L
 L --&gt; M
 L --&gt; N</code></pre>
-<p>For detailed information on how these middleware functions use session data for access control, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
-<p><a href="routes/auth#L102-L104">routes/auth.js L102-L104</a></p>
+<p>For detailed information on how these middleware functions use session data for access control, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></p>
 
 
 

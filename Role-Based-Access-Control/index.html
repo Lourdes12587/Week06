@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1216,29 +1224,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1429,6 +1414,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1556,29 +1564,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1877,29 +1862,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2001,11 +1963,11 @@
 <h1 id="role-based-access-control">Role-Based Access Control<a class="headerlink" href="#role-based-access-control" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/auth">routes/auth.js</a>
-* <a href="routes/courses">routes/courses.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document describes the role-based access control (RBAC) system that governs user permissions throughout the application. The system defines three distinct user roles and implements middleware functions that restrict access to routes based on authentication status and assigned roles. This page focuses on the middleware implementation and role enforcement mechanisms. For information about the login and authentication process, see <a href="4.2-user-login.md">User Login</a>. For session storage details, see <a href="4.4-session-management.md">Session Management</a>.</p>
+<p>This document describes the role-based access control (RBAC) system that governs user permissions throughout the application. The system defines three distinct user roles and implements middleware functions that restrict access to routes based on authentication status and assigned roles. This page focuses on the middleware implementation and role enforcement mechanisms. For information about the login and authentication process, see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>. For session storage details, see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>.</p>
 <hr />
 <h2 id="the-three-user-roles">The Three User Roles<a class="headerlink" href="#the-three-user-roles" title="Permanent link">&para;</a></h2>
 <p>The application defines three user roles with escalating privileges:</p>
@@ -2039,7 +2001,7 @@
 </tr>
 </tbody>
 </table>
-<p>The role is stored in the <code>usuarios</code> table as an enum field and is loaded into the session upon successful authentication <a href="routes/auth#L100-L104">routes/auth.js L100-L104</a></p>
+<p>The role is stored in the <code>usuarios</code> table as an enum field and is loaded into the session upon successful authentication <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
 <p><strong>Sources:</strong> routes/auth.js, routes/courses.js</p>
 <hr />
 <h2 id="authentication-middleware-functions">Authentication Middleware Functions<a class="headerlink" href="#authentication-middleware-functions" title="Permanent link">&para;</a></h2>
@@ -2048,7 +2010,7 @@
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>This middleware verifies that a user is logged in by checking for an active session. It serves as the base authentication check for all protected routes.</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
 <p><strong>Logic:</strong></p>
 <ul>
 <li>Checks if <code>req.session.loggedin</code> is truthy</li>
@@ -2061,7 +2023,7 @@
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>This middleware enforces administrator-only access by verifying both authentication status and role.</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <p><strong>Logic:</strong></p>
 <ul>
 <li>Checks if <code>req.session.loggedin</code> is truthy AND <code>req.session.rol === 'admin'</code></li>
@@ -2074,7 +2036,7 @@
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isRegistrado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>This middleware restricts access to registered users, excluding administrators from routes meant specifically for regular users.</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
 <p><strong>Logic:</strong></p>
 <ul>
 <li>Checks if <code>req.session.loggedin</code> is truthy AND <code>req.session.rol === 'registrado'</code></li>
@@ -2127,14 +2089,14 @@ RegisteredCheck --&gt; ExecuteRegisteredHandler</code></pre>
 <h2 id="role-assignment-process">Role Assignment Process<a class="headerlink" href="#role-assignment-process" title="Permanent link">&para;</a></h2>
 <h3 id="during-registration">During Registration<a class="headerlink" href="#during-registration" title="Permanent link">&para;</a></h3>
 <p>When a user registers, their role is assigned in the database insertion operation:</p>
-<p><strong>Implementation:</strong> <a href="routes/auth#L43-L52">routes/auth.js L43-L52</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L52">routes/auth.js L43-L52</a></p>
 <div class="highlight"><pre><span></span><code><span class="nt">rol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rol || &#39;registrado&#39;</span>
 </code></pre></div>
 <p>The system defaults to <code>'registrado'</code> if no role is explicitly provided in the registration form, though the standard registration form does not expose role selection to users.</p>
 <hr />
 <h3 id="during-login">During Login<a class="headerlink" href="#during-login" title="Permanent link">&para;</a></h3>
 <p>Upon successful authentication, the user's role is loaded from the database and stored in the session:</p>
-<p><strong>Implementation:</strong> <a href="routes/auth#L100-L104">routes/auth.js L100-L104</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
 <p>The session object is populated with:</p>
 <ul>
 <li><code>req.session.loggedin = true</code></li>
@@ -2197,7 +2159,7 @@ end</code></pre>
 <h2 id="detailed-route-protection-examples">Detailed Route Protection Examples<a class="headerlink" href="#detailed-route-protection-examples" title="Permanent link">&para;</a></h2>
 <h3 id="public-access-example-course-listing">Public Access Example: Course Listing<a class="headerlink" href="#public-access-example-course-listing" title="Permanent link">&para;</a></h3>
 <p>The <code>/courses</code> route is publicly accessible but implements role-based content filtering:</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;publico&#39;</span><span class="p">;</span>
 </code></pre></div>
 <ul>
@@ -2207,8 +2169,8 @@ end</code></pre>
 <hr />
 <h3 id="registered-user-access-example-enrollment">Registered User Access Example: Enrollment<a class="headerlink" href="#registered-user-access-example-enrollment" title="Permanent link">&para;</a></h3>
 <p>The enrollment routes require both authentication and the <code>'registrado'</code> role:</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L106-L114">routes/courses.js L106-L114</a></p>
-<p>and <a href="routes/courses#L117-L149">routes/courses.js L117-L149</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
+<p>and <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
 <p><strong>Middleware Chain:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/inscribir/:id&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isRegistrado</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
 <span class="nx">router</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/inscribir/:id&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isRegistrado</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
@@ -2222,8 +2184,8 @@ end</code></pre>
 <hr />
 <h3 id="administrator-access-example-course-creation">Administrator Access Example: Course Creation<a class="headerlink" href="#administrator-access-example-course-creation" title="Permanent link">&para;</a></h3>
 <p>All CRUD operations require both authentication and the <code>'admin'</code> role:</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L64-L66">routes/courses.js L64-L66</a></p>
-<p>for the form, <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L66">routes/courses.js L64-L66</a></p>
+<p>for the form, <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
 <p>for saving</p>
 <p><strong>Middleware Chain:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/create&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">})</span>
@@ -2374,14 +2336,14 @@ RolCheck --&gt; DenyAccess</code></pre>
 req.session?.rol
 </code></pre></div>
 <p>This prevents runtime errors if the session object is undefined, though in practice the Express session middleware ensures <code>req.session</code> always exists.</p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L17-L17">routes/courses.js L17</a></p>
-<p><a href="routes/courses#L27-L27">routes/courses.js L27</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L17-L17">routes/courses.js L17</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L27-L27">routes/courses.js L27</a></p>
 <hr />
 <h3 id="default-role-assignment">Default Role Assignment<a class="headerlink" href="#default-role-assignment" title="Permanent link">&para;</a></h3>
 <p>The course listing route demonstrates defensive programming by defaulting to <code>'publico'</code> when no session exists:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;publico&#39;</span><span class="p">;</span>
 </code></pre></div>
-<p><strong>Implementation:</strong> <a href="routes/courses#L36-L36">routes/courses.js L36</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L36">routes/courses.js L36</a></p>
 <p>This allows the route to handle both authenticated and unauthenticated users gracefully without requiring authentication middleware.</p>
 <p><strong>Sources:</strong> routes/courses.js:17-36</p>
 

@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1441,6 +1426,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1568,29 +1576,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1889,29 +1874,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2013,12 +1975,12 @@
 <h1 id="course-management-system">Course Management System<a class="headerlink" href="#course-management-system" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="src/controller">src/controller.js</a>
-* <a href="views/courses">views/courses.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs">views/courses.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document provides an overview of the course management functionality within the application. It covers the CRUD operations for courses, role-based access control mechanisms, and the visibility system that determines which users can view and interact with courses. For detailed information on specific operations, see <a href="5.1-creating-courses.md">Creating Courses</a>, <a href="5.2-editing-and-deleting-courses.md">Editing &amp; Deleting Courses</a>, <a href="5.3-course-listing-and-visibility.md">Course Listing &amp; Visibility</a>, and <a href="5.4-course-enrollment.md">Course Enrollment</a>. For user authentication and role definitions, see <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a> and <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
+<p>This document provides an overview of the course management functionality within the application. It covers the CRUD operations for courses, role-based access control mechanisms, and the visibility system that determines which users can view and interact with courses. For detailed information on specific operations, see <a href="/Lourdes12587/Week06/5.1-creating-courses">Creating Courses</a>, <a href="/Lourdes12587/Week06/5.2-editing-and-deleting-courses">Editing &amp; Deleting Courses</a>, <a href="/Lourdes12587/Week06/5.3-course-listing-and-visibility">Course Listing &amp; Visibility</a>, and <a href="/Lourdes12587/Week06/5.4-course-enrollment">Course Enrollment</a>. For user authentication and role definitions, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a> and <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
 <p>The course management system is implemented primarily through <code>routes/courses.js</code>, which defines all course-related endpoints, and <code>src/controller.js</code>, which provides CRUD controller functions for database operations.</p>
 <h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
 <p>The course management system provides distinct capabilities based on user roles:</p>
@@ -2045,7 +2007,7 @@
 </tbody>
 </table>
 <p>All course data is stored in the <code>cursos</code> table within the MySQL database. Course enrollment relationships are tracked in the <code>inscripciones</code> junction table, linking <code>id_usuario</code> to <code>id_curso</code>.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
 <h2 id="route-architecture">Route Architecture<a class="headerlink" href="#route-architecture" title="Permanent link">&para;</a></h2>
 <p>The course management routes are organized within <code>routes/courses.js</code> and follow a consistent pattern of authentication and authorization checks before executing operations.</p>
 <h3 id="course-management-route-map">Course Management Route Map<a class="headerlink" href="#course-management-route-map" title="Permanent link">&para;</a></h3>
@@ -2109,7 +2071,7 @@ end
 subgraph subGraph0 ["Public Access"]
     CoursesRoute
 end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L35-L185">routes/courses.js L35-L185</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L185">routes/courses.js L35-L185</a></p>
 <h2 id="middleware-chain">Middleware Chain<a class="headerlink" href="#middleware-chain" title="Permanent link">&para;</a></h2>
 <p>Three middleware functions enforce access control throughout the course management system:</p>
 <h3 id="estaautenticado">estaAutenticado<a class="headerlink" href="#estaautenticado" title="Permanent link">&para;</a></h3>
@@ -2117,19 +2079,19 @@ end</code></pre>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>Checks <code>req.session.loggedin</code> and redirects to <code>/login</code> if false.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
 <h3 id="isadmin">isAdmin<a class="headerlink" href="#isadmin" title="Permanent link">&para;</a></h3>
 <p>Ensures the authenticated user has the <code>admin</code> role.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>Verifies <code>req.session.rol === 'admin'</code> and redirects to <code>/login</code> if the condition is not met.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <h3 id="isregistrado">isRegistrado<a class="headerlink" href="#isregistrado" title="Permanent link">&para;</a></h3>
 <p>Ensures the authenticated user has the <code>registrado</code> role.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isRegistrado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span>
 </code></pre></div>
 <p>Verifies <code>req.session.rol === 'registrado'</code> and redirects to <code>/login</code> if the condition is not met.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
 <h2 id="course-crud-operations">Course CRUD Operations<a class="headerlink" href="#course-crud-operations" title="Permanent link">&para;</a></h2>
 <h3 id="course-data-structure">Course Data Structure<a class="headerlink" href="#course-data-structure" title="Permanent link">&para;</a></h3>
 <p>The <code>cursos</code> table stores the following fields for each course:</p>
@@ -2181,7 +2143,7 @@ end</code></pre>
 </ul>
 <p><strong>Database Operation:</strong> <code>INSERT INTO cursos SET ?</code></p>
 <p><strong>Response:</strong> Redirects to <code>/courses</code></p>
-<p><strong>Sources:</strong> <a href="src/controller#L4-L25">src/controller.js L4-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L25">src/controller.js L4-L25</a></p>
 <h4 id="update">update<a class="headerlink" href="#update" title="Permanent link">&para;</a></h4>
 <p>Modifies an existing course record.</p>
 <p><strong>Request Body Parameters:</strong></p>
@@ -2193,7 +2155,7 @@ end</code></pre>
 </ul>
 <p><strong>Database Operation:</strong> <code>UPDATE cursos SET ? WHERE id = ?</code></p>
 <p><strong>Response:</strong> Redirects to <code>/courses</code></p>
-<p><strong>Sources:</strong> <a href="src/controller#L28-L52">src/controller.js L28-L52</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L28-L52">src/controller.js L28-L52</a></p>
 <h2 id="visibility-control-system">Visibility Control System<a class="headerlink" href="#visibility-control-system" title="Permanent link">&para;</a></h2>
 <p>The course listing implements visibility filtering based on user role:</p>
 <pre class="mermaid"><code>flowchart TD
@@ -2229,8 +2191,8 @@ end</code></pre>
 <li>Public users (<code>rol === 'publico'</code>) see only courses where <code>visibilidad='publico'</code></li>
 <li>Registered users and admins see all courses regardless of visibility</li>
 </ul>
-<p><strong>Implementation:</strong> <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
 <h2 id="request-response-flow">Request-Response Flow<a class="headerlink" href="#request-response-flow" title="Permanent link">&para;</a></h2>
 <h3 id="admin-course-creation-flow">Admin Course Creation Flow<a class="headerlink" href="#admin-course-creation-flow" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>sequenceDiagram
@@ -2252,8 +2214,8 @@ end</code></pre>
   src/controller.js-&gt;&gt;MySQL cursos table: "crud.save(req, res)"
   MySQL cursos table-&gt;&gt;src/controller.js: "INSERT INTO cursos SET ?"
   src/controller.js-&gt;&gt;Browser: "Insert complete"</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L64-L70">routes/courses.js L64-L70</a></p>
-<p><a href="src/controller#L4-L25">src/controller.js L4-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L70">routes/courses.js L64-L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L25">src/controller.js L4-L25</a></p>
 <h3 id="user-enrollment-flow">User Enrollment Flow<a class="headerlink" href="#user-enrollment-flow" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>sequenceDiagram
   participant Browser
@@ -2279,7 +2241,7 @@ end</code></pre>
     MySQL Database-&gt;&gt;routes/courses.js: "INSERT INTO inscripciones"
     routes/courses.js-&gt;&gt;Browser: "Insert complete"
   end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L106-L149">routes/courses.js L106-L149</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
 <h2 id="view-integration">View Integration<a class="headerlink" href="#view-integration" title="Permanent link">&para;</a></h2>
 <p>The course listing view (<code>views/courses.ejs</code>) adapts its interface based on the user's role:</p>
 <h3 id="conditional-ui-elements">Conditional UI Elements<a class="headerlink" href="#conditional-ui-elements" title="Permanent link">&para;</a></h3>
@@ -2313,7 +2275,7 @@ end</code></pre>
 <li>Line 33: Admin-specific edit/delete action buttons</li>
 <li>Line 43: <code>&lt;% if (rol === "registrado") { %&gt;</code> - Shows enrollment button for registered users</li>
 </ul>
-<p><strong>Sources:</strong> <a href="views/courses#L1-L58">views/courses.ejs L1-L58</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58">views/courses.ejs L1-L58</a></p>
 <h2 id="course-operations-summary">Course Operations Summary<a class="headerlink" href="#course-operations-summary" title="Permanent link">&para;</a></h2>
 <h3 id="read-operations">Read Operations<a class="headerlink" href="#read-operations" title="Permanent link">&para;</a></h3>
 <table>
@@ -2400,7 +2362,7 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/courses#L35-L185">routes/courses.js L35-L185</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L185">routes/courses.js L35-L185</a></p>
 <h2 id="database-query-patterns">Database Query Patterns<a class="headerlink" href="#database-query-patterns" title="Permanent link">&para;</a></h2>
 <p>The course management system uses parameterized queries to prevent SQL injection:</p>
 <p><strong>Parameterized SELECT:</strong></p>
@@ -2426,8 +2388,8 @@ end</code></pre>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
 </code></pre></div>
 <p>Parameters: <code>[idUsuario]</code></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L38-L161">routes/courses.js L38-L161</a></p>
-<p><a href="src/controller#L9-L50">src/controller.js L9-L50</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L161">routes/courses.js L38-L161</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L9-L50">src/controller.js L9-L50</a></p>
 <h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
 <p>Error handling in the course management system follows consistent patterns:</p>
 <ol>
@@ -2437,12 +2399,12 @@ end</code></pre>
 </ol>
 <p>Example from enrollment check:</p>
 <ul>
-<li>If course not found: Redirect to <code>/courses</code> <a href="routes/courses#L110-L110">routes/courses.js L110</a></li>
-<li>If database error during enrollment check: Log and redirect to <code>/courses</code> <a href="routes/courses#L125-L128">routes/courses.js L125-L128</a></li>
+<li>If course not found: Redirect to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L110-L110">routes/courses.js L110</a></li>
+<li>If database error during enrollment check: Log and redirect to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L125-L128">routes/courses.js L125-L128</a></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/courses#L44-L54">routes/courses.js L44-L54</a></p>
-<p><a href="routes/courses#L77-L83">routes/courses.js L77-L83</a></p>
-<p><a href="src/controller#L16-L23">src/controller.js L16-L23</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L54">routes/courses.js L44-L54</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L83">routes/courses.js L77-L83</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L16-L23">src/controller.js L16-L23</a></p>
 
 
 

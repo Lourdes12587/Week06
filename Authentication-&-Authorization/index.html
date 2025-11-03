@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1285,29 +1293,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1498,6 +1483,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1625,29 +1633,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1946,29 +1931,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2070,13 +2032,13 @@
 <h1 id="authentication-authorization">Authentication &amp; Authorization<a class="headerlink" href="#authentication-authorization" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="package">package.json</a>
-* <a href="routes/auth">routes/auth.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document provides comprehensive technical documentation of the authentication and authorization system in the course management application. It covers session-based authentication using <code>express-session</code>, password security with <code>bcryptjs</code>, input validation with <code>express-validator</code>, and role-based access control (RBAC) enforcing three distinct user privilege levels.</p>
-<p>For specifics on the registration workflow, see <a href="4.1-user-registration.md">User Registration</a>. For login process details, see <a href="4.2-user-login.md">User Login</a>. For role-based middleware implementation, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>. For session lifecycle management, see <a href="4.4-session-management.md">Session Management</a>.</p>
+<p>For specifics on the registration workflow, see <a href="/Lourdes12587/Week06/4.1-user-registration">User Registration</a>. For login process details, see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>. For role-based middleware implementation, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>. For session lifecycle management, see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>.</p>
 <h2 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h2>
 <p>The authentication system implements a session-based architecture where user credentials are validated against the <code>usuarios</code> table in the MySQL database. Upon successful authentication, user data is stored in server-side sessions managed by <code>express-session</code>. The system enforces a three-tier role hierarchy (<code>publico</code>, <code>registrado</code>, <code>admin</code>) with middleware guards protecting role-specific routes.</p>
 <h3 id="authentication-components">Authentication Components<a class="headerlink" href="#authentication-components" title="Permanent link">&para;</a></h3>
@@ -2116,10 +2078,10 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="package#L1-L26">package.json L1-L26</a></p>
-<p><a href="app#L4-L13">app.js L4-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L26">package.json L1-L26</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
 <h2 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h2>
-<p>The Express application initializes session middleware globally before route handlers are mounted. The session configuration in <a href="app#L6-L13">app.js L6-L13</a></p>
+<p>The Express application initializes session middleware globally before route handlers are mounted. The session configuration in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <p>establishes the session management parameters:</p>
 <div class="highlight"><pre><span></span><code><span class="k">Session</span><span class="w"> </span><span class="n">Middleware</span><span class="w"> </span><span class="n">Configuration</span><span class="p">:</span>
 <span class="o">-</span><span class="w"> </span><span class="n">secret</span><span class="p">:</span><span class="w"> </span><span class="ss">&quot;secret&quot;</span><span class="w"> </span><span class="p">(</span><span class="k">session</span><span class="w"> </span><span class="n">signing</span><span class="w"> </span><span class="k">key</span><span class="p">)</span>
@@ -2127,23 +2089,23 @@
 <span class="s1">- saveUninitialized: false (don&#39;</span><span class="n">t</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="k">session</span><span class="w"> </span><span class="k">until</span><span class="w"> </span><span class="n">something</span><span class="w"> </span><span class="n">stored</span><span class="p">)</span>
 </code></pre></div>
 <p>The session object persists across requests for authenticated users and stores critical authentication state including <code>req.session.loggedin</code>, <code>req.session.usuario</code> (full user object from database), and <code>req.session.rol</code> (user's role string).</p>
-<p><strong>Sources:</strong> <a href="app#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <h2 id="password-security-architecture">Password Security Architecture<a class="headerlink" href="#password-security-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="bcrypt-hashing-strategy">Bcrypt Hashing Strategy<a class="headerlink" href="#bcrypt-hashing-strategy" title="Permanent link">&para;</a></h3>
-<p>The system uses <code>bcryptjs</code> version 3.0.2 for password security. During user registration at <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
+<p>The system uses <code>bcryptjs</code> version 3.0.2 for password security. During user registration at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
 <p>passwords are hashed with a salt round of 8:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">passwordHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
 </code></pre></div>
 <p>This generates a salted hash using the bcrypt algorithm, making rainbow table attacks infeasible. The salt round of 8 balances security and performance, requiring 2^8 (256) iterations of the hashing algorithm.</p>
 <h3 id="password-verification">Password Verification<a class="headerlink" href="#password-verification" title="Permanent link">&para;</a></h3>
-<p>Login authentication at <a href="routes/auth#L86-L86">routes/auth.js L86</a></p>
+<p>Login authentication at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></p>
 <p>compares the plaintext password against the stored hash:</p>
 <div class="highlight"><pre><span></span><code>await bcrypt.compare(password, results[0].password)
 </code></pre></div>
 <p>The <code>compare()</code> function extracts the salt from the stored hash and applies the same hashing process to the provided password, then performs a constant-time comparison to prevent timing attacks.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
-<p><a href="routes/auth#L86-L86">routes/auth.js L86</a></p>
-<p><a href="package#L14-L14">package.json L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L14-L14">package.json L14</a></p>
 <h2 id="authentication-flow-diagram">Authentication Flow Diagram<a class="headerlink" href="#authentication-flow-diagram" title="Permanent link">&para;</a></h2>
 <h3 id="complete-authentication-request-cycle">Complete Authentication Request Cycle<a class="headerlink" href="#complete-authentication-request-cycle" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>sequenceDiagram
@@ -2174,8 +2136,8 @@
     routes/auth.js-&gt;&gt;Client: "Render login.ejs with success alert"
     routes/auth.js-&gt;&gt;Client: "Render login.ejs with error alert"
   end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
-<p><a href="app#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <h2 id="role-based-authorization-model">Role-Based Authorization Model<a class="headerlink" href="#role-based-authorization-model" title="Permanent link">&para;</a></h2>
 <h3 id="role-hierarchy">Role Hierarchy<a class="headerlink" href="#role-hierarchy" title="Permanent link">&para;</a></h3>
 <p>The system defines three user roles stored in the <code>usuarios.rol</code> column:</p>
@@ -2199,7 +2161,7 @@
 <td>Registered User</td>
 <td><code>'registrado'</code></td>
 <td>Course browsing and enrollment</td>
-<td>Default on registration <a href="routes/auth#L52-L52">routes/auth.js L52</a></td>
+<td>Default on registration <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L52-L52">routes/auth.js L52</a></td>
 </tr>
 <tr>
 <td>Administrator</td>
@@ -2210,15 +2172,15 @@
 </tbody>
 </table>
 <h3 id="role-assignment-logic">Role Assignment Logic<a class="headerlink" href="#role-assignment-logic" title="Permanent link">&para;</a></h3>
-<p>During registration at <a href="routes/auth#L43-L52">routes/auth.js L43-L52</a></p>
+<p>During registration at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L52">routes/auth.js L43-L52</a></p>
 <p>the system assigns roles with fallback logic:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">rol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rol || &#39;registrado&#39;</span>
 </code></pre></div>
 <p>This assigns the <code>rol</code> field from the request body if present, otherwise defaults to <code>'registrado'</code>. In practice, the registration form does not expose role selection to users, so all registrations default to the registered user role. Administrator role assignment requires direct database manipulation or manual intervention.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L43-L52">routes/auth.js L43-L52</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L52">routes/auth.js L43-L52</a></p>
 <h2 id="middleware-architecture">Middleware Architecture<a class="headerlink" href="#middleware-architecture" title="Permanent link">&para;</a></h2>
 <h3 id="authentication-middleware-stack">Authentication Middleware Stack<a class="headerlink" href="#authentication-middleware-stack" title="Permanent link">&para;</a></h3>
-<p>While the core authentication routes exist in <a href="routes/auth">routes/auth.js</a></p>
+<p>While the core authentication routes exist in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a></p>
 <p>the protection middleware functions (<code>estaAutenticado</code>, <code>isRegistrado</code>, <code>isAdmin</code>) are implemented in route-specific files and applied to protected endpoints. These middleware functions check session state before allowing route handlers to execute.</p>
 <pre class="mermaid"><code>flowchart TD
 
@@ -2265,13 +2227,13 @@ end</code></pre>
   <span class="n">rol</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span>               <span class="o">//</span> <span class="n">Duplicated</span> <span class="k">for</span> <span class="n">quick</span> <span class="n">access</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>This structure is established at <a href="routes/auth#L102-L104">routes/auth.js L102-L104</a></p>
+<p>This structure is established at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></p>
 <p>upon successful login.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L102-L104">routes/auth.js L102-L104</a></p>
-<p><a href="app#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <h2 id="registration-implementation">Registration Implementation<a class="headerlink" href="#registration-implementation" title="Permanent link">&para;</a></h2>
 <h3 id="input-validation-chain">Input Validation Chain<a class="headerlink" href="#input-validation-chain" title="Permanent link">&para;</a></h3>
-<p>The registration endpoint at <a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<p>The registration endpoint at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
 <p>implements a validation middleware chain using <code>express-validator</code>:</p>
 <pre class="mermaid"><code>flowchart TD
 
@@ -2301,23 +2263,23 @@ subgraph subGraph0 ["Validation Middleware Array"]
     V1 --&gt; V2
     V2 --&gt; V3
 end</code></pre>
-<p>The validation rules defined at <a href="routes/auth#L18-L33">routes/auth.js L18-L33</a></p>
+<p>The validation rules defined at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L18-L33">routes/auth.js L18-L33</a></p>
 <p>enforce:</p>
 <ul>
 <li><strong>nombre</strong>: Minimum 3 characters</li>
 <li><strong>email</strong>: Valid email format via <code>isEmail()</code> validator</li>
 <li><strong>password</strong>: Minimum 4 characters</li>
 </ul>
-<p>Validation errors are passed back to the view via the <code>validaciones</code> array at <a href="routes/auth#L37-L40">routes/auth.js L37-L40</a></p>
+<p>Validation errors are passed back to the view via the <code>validaciones</code> array at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L37-L40">routes/auth.js L37-L40</a></p>
 <p>allowing the registration form to display field-specific error messages.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
 <h3 id="database-insertion">Database Insertion<a class="headerlink" href="#database-insertion" title="Permanent link">&para;</a></h3>
-<p>Upon successful validation, the registration process at <a href="routes/auth#L46-L69">routes/auth.js L46-L69</a></p>
+<p>Upon successful validation, the registration process at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69">routes/auth.js L46-L69</a></p>
 <p>performs:</p>
 <ol>
-<li>Password hashing: <code>await bcrypt.hash(password, 8)</code> at <a href="routes/auth#L44-L44">routes/auth.js L44</a></li>
-<li>Database insertion: <code>INSERT INTO usuarios SET ?</code> with object notation at <a href="routes/auth#L47-L53">routes/auth.js L47-L53</a></li>
-<li>Success response: Renders <code>register.ejs</code> with SweetAlert2 configuration at <a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></li>
+<li>Password hashing: <code>await bcrypt.hash(password, 8)</code> at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></li>
+<li>Database insertion: <code>INSERT INTO usuarios SET ?</code> with object notation at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L47-L53">routes/auth.js L47-L53</a></li>
+<li>Success response: Renders <code>register.ejs</code> with SweetAlert2 configuration at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L66">routes/auth.js L58-L66</a></li>
 </ol>
 <p>The object notation for the INSERT query provides automatic escaping and prevents SQL injection:</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span>
@@ -2327,10 +2289,10 @@ end</code></pre>
 <span class="nt">  rol</span><span class="p">:</span><span class="w"> </span><span class="nv">rol || &#39;registrado&#39;</span><span class="p p-Indicator">,</span>
 <span class="p p-Indicator">}</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L44-L69">routes/auth.js L44-L69</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L69">routes/auth.js L44-L69</a></p>
 <h2 id="login-implementation">Login Implementation<a class="headerlink" href="#login-implementation" title="Permanent link">&para;</a></h2>
 <h3 id="credential-verification-process">Credential Verification Process<a class="headerlink" href="#credential-verification-process" title="Permanent link">&para;</a></h3>
-<p>The login endpoint <code>POST /auth</code> at <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p>The login endpoint <code>POST /auth</code> at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <p>implements a multi-stage verification:</p>
 <pre class="mermaid"><code>flowchart TD
 
@@ -2353,28 +2315,28 @@ Results --&gt; ComparePass
 ComparePass --&gt; AuthError
 ComparePass --&gt; SetSession
 SetSession --&gt; Success</code></pre>
-<p>The comparison at <a href="routes/auth#L85-L87">routes/auth.js L85-L87</a></p>
+<p>The comparison at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L85-L87">routes/auth.js L85-L87</a></p>
 <p>uses a compound condition:</p>
 <div class="highlight"><pre><span></span><code>if (results.length == 0 || !(await bcrypt.compare(password, results[0].password)))
 </code></pre></div>
 <p>This checks both user existence and password validity in a single conditional, deliberately providing the same error message for both cases to prevent username enumeration attacks.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <h3 id="session-initialization">Session Initialization<a class="headerlink" href="#session-initialization" title="Permanent link">&para;</a></h3>
-<p>Upon successful authentication at <a href="routes/auth#L98-L104">routes/auth.js L98-L104</a></p>
+<p>Upon successful authentication at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L98-L104">routes/auth.js L98-L104</a></p>
 <p>the session object is populated:</p>
 <div class="highlight"><pre><span></span><code>req.session.loggedin = true;
 req.session.usuario = results[0];
 req.session.rol = usuario.rol;
 </code></pre></div>
-<p>The <code>usuario</code> object contains the complete database record including <code>id</code>, <code>nombre</code>, <code>email</code>, <code>password</code> (hashed), and <code>rol</code>. This data persists across requests via the express-session store configured in <a href="app#L6-L13">app.js L6-L13</a></p>
-<p><strong>Sources:</strong> <a href="routes/auth#L98-L104">routes/auth.js L98-L104</a></p>
+<p>The <code>usuario</code> object contains the complete database record including <code>id</code>, <code>nombre</code>, <code>email</code>, <code>password</code> (hashed), and <code>rol</code>. This data persists across requests via the express-session store configured in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L98-L104">routes/auth.js L98-L104</a></p>
 <h2 id="logout-mechanism">Logout Mechanism<a class="headerlink" href="#logout-mechanism" title="Permanent link">&para;</a></h2>
-<p>The logout endpoint <code>POST /logout</code> at <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p>The logout endpoint <code>POST /logout</code> at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <p>implements session destruction:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">));</span>
 </code></pre></div>
 <p>The <code>destroy()</code> method removes the session from the session store and clears the session cookie from the client. The callback redirects to the home route after session destruction completes. This is a POST route rather than GET to prevent CSRF attacks via simple link clicks.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <h2 id="route-protection-pattern">Route Protection Pattern<a class="headerlink" href="#route-protection-pattern" title="Permanent link">&para;</a></h2>
 <h3 id="public-vs-protected-routes">Public vs Protected Routes<a class="headerlink" href="#public-vs-protected-routes" title="Permanent link">&para;</a></h3>
 <p>Routes in the application follow this protection pattern:</p>
@@ -2390,86 +2352,86 @@ req.session.rol = usuario.rol;
 <tr>
 <td><code>GET /</code></td>
 <td>None (public)</td>
-<td><a href="routes/index">routes/index.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a></td>
 </tr>
 <tr>
 <td><code>GET /login</code></td>
 <td>None (public)</td>
-<td><a href="routes/auth#L8-L10">routes/auth.js L8-L10</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></td>
 </tr>
 <tr>
 <td><code>GET /register</code></td>
 <td>None (public)</td>
-<td><a href="routes/auth#L12-L14">routes/auth.js L12-L14</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L14">routes/auth.js L12-L14</a></td>
 </tr>
 <tr>
 <td><code>POST /auth</code></td>
 <td>None (validates credentials)</td>
-<td><a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></td>
 </tr>
 <tr>
 <td><code>POST /register</code></td>
 <td>None (creates account)</td>
-<td><a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></td>
 </tr>
 <tr>
 <td><code>POST /logout</code></td>
 <td>Requires active session</td>
-<td><a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></td>
 </tr>
 <tr>
 <td><code>GET /courses</code></td>
 <td>Varies by role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>POST /inscribir/:id</code></td>
 <td>Requires <code>registrado</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>GET /create</code></td>
 <td>Requires <code>admin</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>POST /save</code></td>
 <td>Requires <code>admin</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>GET /edit/:id</code></td>
 <td>Requires <code>admin</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>POST /update</code></td>
 <td>Requires <code>admin</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 <tr>
 <td><code>GET /delete/:id</code></td>
 <td>Requires <code>admin</code> role</td>
-<td><a href="routes/courses">routes/courses.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></td>
 </tr>
 </tbody>
 </table>
-<p>The specific middleware implementations (<code>estaAutenticado</code>, <code>isRegistrado</code>, <code>isAdmin</code>) are applied in <a href="routes/courses">routes/courses.js</a></p>
+<p>The specific middleware implementations (<code>estaAutenticado</code>, <code>isRegistrado</code>, <code>isAdmin</code>) are applied in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></p>
 <p>and other protected route files, checking <code>req.session.loggedin</code> and <code>req.session.rol</code> before allowing access.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L1-L139">routes/auth.js L1-L139</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
 <h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="sql-injection-prevention">SQL Injection Prevention<a class="headerlink" href="#sql-injection-prevention" title="Permanent link">&para;</a></h3>
-<p>All database queries use parameterized statements. The registration query at <a href="routes/auth#L47-L47">routes/auth.js L47</a></p>
+<p>All database queries use parameterized statements. The registration query at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L47-L47">routes/auth.js L47</a></p>
 <p>uses object notation:</p>
 <div class="highlight"><pre><span></span><code><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="o">?</span>
 </code></pre></div>
-<p>The login query at <a href="routes/auth#L82-L82">routes/auth.js L82</a></p>
+<p>The login query at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L82-L82">routes/auth.js L82</a></p>
 <p>uses array parameters:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
 </code></pre></div>
 <p>Both patterns prevent SQL injection by separating SQL structure from user data.</p>
 <h3 id="password-storage">Password Storage<a class="headerlink" href="#password-storage" title="Permanent link">&para;</a></h3>
-<p>Passwords are never stored in plaintext. The hashing at <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
+<p>Passwords are never stored in plaintext. The hashing at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
 <p>with 8 salt rounds provides:</p>
 <ul>
 <li>Resistance to rainbow table attacks (unique salt per password)</li>
@@ -2477,18 +2439,18 @@ req.session.rol = usuario.rol;
 <li>One-way transformation (cannot reverse hash to plaintext)</li>
 </ul>
 <h3 id="session-security">Session Security<a class="headerlink" href="#session-security" title="Permanent link">&para;</a></h3>
-<p>The session configuration at <a href="app#L8-L8">app.js L8</a></p>
+<p>The session configuration at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L8-L8">app.js L8</a></p>
 <p>uses a secret key for signing session cookies. The production deployment should replace the hardcoded <code>"secret"</code> string with an environment variable containing a cryptographically random string.</p>
-<p>The configuration <code>saveUninitialized: false</code> at <a href="app#L10-L10">app.js L10</a></p>
+<p>The configuration <code>saveUninitialized: false</code> at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L10-L10">app.js L10</a></p>
 <p>prevents session creation until authentication succeeds, reducing session store bloat and potential session fixation attacks.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
-<p><a href="routes/auth#L47-L47">routes/auth.js L47</a></p>
-<p><a href="routes/auth#L82-L82">routes/auth.js L82</a></p>
-<p><a href="app#L6-L13">app.js L6-L13</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L47-L47">routes/auth.js L47</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L82-L82">routes/auth.js L82</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <h2 id="jwt-token-support">JWT Token Support<a class="headerlink" href="#jwt-token-support" title="Permanent link">&para;</a></h2>
-<p>The <code>jsonwebtoken</code> package version 9.0.2 is included in dependencies at <a href="package#L22-L22">package.json L22</a></p>
+<p>The <code>jsonwebtoken</code> package version 9.0.2 is included in dependencies at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L22-L22">package.json L22</a></p>
 <p>but not actively used in the current authentication implementation. The system uses session-based authentication exclusively. JWT support could be implemented for stateless API endpoints or mobile client authentication in future iterations.</p>
-<p><strong>Sources:</strong> <a href="package#L22-L22">package.json L22</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L22-L22">package.json L22</a></p>
 
 
 

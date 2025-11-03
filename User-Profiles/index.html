@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1121,6 +1106,29 @@
   
   <span class="md-ellipsis">
     Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
     
   </span>
   
@@ -1614,29 +1622,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1925,29 +1910,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2049,14 +2011,14 @@
 <h1 id="user-profiles">User Profiles<a class="headerlink" href="#user-profiles" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="views/adminperfil">views/adminperfil.ejs</a>
-* <a href="views/perfil">views/perfil.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs">views/adminperfil.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs">views/perfil.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document describes the dual profile system implemented in the course management application. The system provides role-specific profile pages: a <strong>user profile</strong> for registered users displaying their enrolled courses, and an <strong>administrator dashboard</strong> for administrators showing system statistics and management capabilities.</p>
-<p>The profile system is tightly integrated with the role-based access control mechanism. For information about user roles and authentication, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>. For details about the enrollment process that populates user profiles, see <a href="5.4-course-enrollment.md">Course Enrollment</a>.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<p>The profile system is tightly integrated with the role-based access control mechanism. For information about user roles and authentication, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>. For details about the enrollment process that populates user profiles, see <a href="/Lourdes12587/Week06/5.4-course-enrollment">Course Enrollment</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L185">routes/courses.js L152-L185</a></p>
 <hr />
 <h2 id="profile-system-architecture">Profile System Architecture<a class="headerlink" href="#profile-system-architecture" title="Permanent link">&para;</a></h2>
 <p>The application implements two distinct profile endpoints based on user role:</p>
@@ -2108,13 +2070,13 @@ IsRegistrado --&gt; UserQuery
 IsAdmin --&gt; AdminQuery
 UserQuery --&gt; UserView
 AdminQuery --&gt; AdminView</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L185">routes/courses.js L152-L185</a></p>
 <hr />
 <h2 id="user-profile-for-registered-users">User Profile for Registered Users<a class="headerlink" href="#user-profile-for-registered-users" title="Permanent link">&para;</a></h2>
 <p>The user profile at <code>GET /perfil</code> displays all courses in which the authenticated user is enrolled. This endpoint is protected by two middleware functions that verify authentication and role.</p>
 <h3 id="route-definition">Route Definition<a class="headerlink" href="#route-definition" title="Permanent link">&para;</a></h3>
-<p>The profile route is defined in <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
+<p>The profile route is defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">GET /perfil</span>
 <span class="l l-Scalar l-Scalar-Plain">Middleware</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">estaAutenticado, isRegistrado</span>
@@ -2131,24 +2093,21 @@ AdminQuery --&gt; AdminView</code></pre>
 <tbody>
 <tr>
 <td><code>estaAutenticado</code></td>
-<td><a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></td>
 <td>Verifies <code>req.session.loggedin</code> is true</td>
 </tr>
 <tr>
 <td><code>isRegistrado</code></td>
-<td><a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></td>
 <td>Verifies <code>req.session.rol === 'registrado'</code></td>
 </tr>
 </tbody>
 </table>
 <p>If either middleware check fails, the user is redirected to <code>/login</code>.</p>
 <h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
-<p>The profile retrieves enrolled courses using a JOIN query <a href="routes/courses#L155-L160">routes/courses.js L155-L160</a></p>
+<p>The profile retrieves enrolled courses using a JOIN query <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="o">*</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">c</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">inscripciones</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_curso</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>This query:</p>
 <ul>
@@ -2176,9 +2135,9 @@ AdminQuery --&gt; AdminView</code></pre>
   MySQL Database--&gt;&gt;routes/courses.js: JOIN inscripciones i
   routes/courses.js-&gt;&gt;perfil.ejs: WHERE i.id_usuario = 123"
   perfil.ejs--&gt;&gt;Browser: "results: [{id:1, titulo:..}, {id:5, titulo:..}]"</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
 <h3 id="view-rendering">View Rendering<a class="headerlink" href="#view-rendering" title="Permanent link">&para;</a></h3>
-<p>The profile view <a href="views/perfil">views/perfil.ejs</a></p>
+<p>The profile view <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs">views/perfil.ejs</a></p>
 <p>receives three data objects:</p>
 <table>
 <thead>
@@ -2208,17 +2167,17 @@ AdminQuery --&gt; AdminView</code></pre>
 </table>
 <p>The view displays:</p>
 <ul>
-<li>User greeting with <code>usuario.nombre</code> <a href="views/perfil#L6-L6">views/perfil.ejs L6</a></li>
-<li>Empty state message if no enrollments <a href="views/perfil#L9-L10">views/perfil.ejs L9-L10</a></li>
-<li>Table of enrolled courses with columns: Título, Categoría, Descripción <a href="views/perfil#L12-L29">views/perfil.ejs L12-L29</a></li>
-<li>Link to view all courses <a href="views/perfil#L32-L32">views/perfil.ejs L32</a></li>
+<li>User greeting with <code>usuario.nombre</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L6-L6">views/perfil.ejs L6</a></li>
+<li>Empty state message if no enrollments <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L9-L10">views/perfil.ejs L9-L10</a></li>
+<li>Table of enrolled courses with columns: Título, Categoría, Descripción <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L12-L29">views/perfil.ejs L12-L29</a></li>
+<li>Link to view all courses <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L32-L32">views/perfil.ejs L32</a></li>
 </ul>
-<p><strong>Sources:</strong> <a href="views/perfil#L1-L35">views/perfil.ejs L1-L35</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L1-L35">views/perfil.ejs L1-L35</a></p>
 <hr />
 <h2 id="administrator-dashboard">Administrator Dashboard<a class="headerlink" href="#administrator-dashboard" title="Permanent link">&para;</a></h2>
 <p>The administrator dashboard at <code>GET /admin/perfil</code> provides system statistics and navigation for course management. This endpoint is restricted to users with the <code>admin</code> role.</p>
 <h3 id="route-definition_1">Route Definition<a class="headerlink" href="#route-definition_1" title="Permanent link">&para;</a></h3>
-<p>The admin profile route is defined in <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
+<p>The admin profile route is defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">GET /admin/perfil</span>
 <span class="l l-Scalar l-Scalar-Plain">Middleware</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">estaAutenticado, isAdmin</span>
@@ -2235,21 +2194,21 @@ AdminQuery --&gt; AdminView</code></pre>
 <tbody>
 <tr>
 <td><code>estaAutenticado</code></td>
-<td><a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></td>
 <td>Verifies session is active</td>
 </tr>
 <tr>
 <td><code>isAdmin</code></td>
-<td><a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></td>
 <td>Verifies <code>req.session.rol === 'admin'</code></td>
 </tr>
 </tbody>
 </table>
-<p>Non-admin users attempting to access this route are redirected to <code>/login</code> <a href="routes/courses#L22-L22">routes/courses.js L22</a></p>
+<p>Non-admin users attempting to access this route are redirected to <code>/login</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L22-L22">routes/courses.js L22</a></p>
 <h3 id="statistics-query">Statistics Query<a class="headerlink" href="#statistics-query" title="Permanent link">&para;</a></h3>
-<p>The dashboard executes a COUNT query to retrieve system metrics <a href="routes/courses#L176-L176">routes/courses.js L176</a></p>
+<p>The dashboard executes a COUNT query to retrieve system metrics <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L176-L176">routes/courses.js L176</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totalCursos</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>This query returns the total number of courses in the system, which is displayed on the dashboard.</p>
 <h3 id="admin-dashboard-data-flow">Admin Dashboard Data Flow<a class="headerlink" href="#admin-dashboard-data-flow" title="Permanent link">&para;</a></h3>
@@ -2269,21 +2228,21 @@ AdminMW --&gt; GetUser
 GetUser --&gt; QueryDB
 QueryDB --&gt; Results
 Results --&gt; Render</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></p>
 <h3 id="view-structure">View Structure<a class="headerlink" href="#view-structure" title="Permanent link">&para;</a></h3>
-<p>The admin profile view <a href="views/adminperfil">views/adminperfil.ejs</a></p>
+<p>The admin profile view <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs">views/adminperfil.ejs</a></p>
 <p>displays:</p>
 <ol>
-<li><strong>Welcome Header</strong>: Personalized greeting with <code>usuario.nombre</code> and "(Administrador)" label <a href="views/adminperfil#L6-L6">views/adminperfil.ejs L6</a></li>
-<li><strong>Statistics</strong>: Total course count from <code>totalCursos</code> variable <a href="views/adminperfil#L8-L8">views/adminperfil.ejs L8</a></li>
-<li><strong>Navigation Menu</strong>: Links to course management and home page <a href="views/adminperfil#L10-L21">views/adminperfil.ejs L10-L21</a></li>
+<li><strong>Welcome Header</strong>: Personalized greeting with <code>usuario.nombre</code> and "(Administrador)" label <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L6-L6">views/adminperfil.ejs L6</a></li>
+<li><strong>Statistics</strong>: Total course count from <code>totalCursos</code> variable <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L8-L8">views/adminperfil.ejs L8</a></li>
+<li><strong>Navigation Menu</strong>: Links to course management and home page <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L10-L21">views/adminperfil.ejs L10-L21</a></li>
 </ol>
 <p>The navigation provides quick access to:</p>
 <ul>
 <li><code>/courses</code> - Course listing and management interface</li>
 <li><code>/</code> - Application home page</li>
 </ul>
-<p><strong>Sources:</strong> <a href="views/adminperfil#L1-L29">views/adminperfil.ejs L1-L29</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L1-L29">views/adminperfil.ejs L1-L29</a></p>
 <hr />
 <h2 id="access-control-implementation">Access Control Implementation<a class="headerlink" href="#access-control-implementation" title="Permanent link">&para;</a></h2>
 <p>Both profile endpoints implement strict access control through middleware functions. The system enforces a clear separation between user roles.</p>
@@ -2331,99 +2290,69 @@ subgraph subGraph0 ["Authentication Middleware"]
     EstaAuth
 end</code></pre>
 <h3 id="authorization-logic">Authorization Logic<a class="headerlink" href="#authorization-logic" title="Permanent link">&para;</a></h3>
-<p><strong><code>estaAutenticado</code> Function</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p><strong><code>estaAutenticado</code> Function</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
 <p>:</p>
 <ul>
 <li>Checks if <code>req.session.loggedin</code> is truthy</li>
 <li>Calls <code>next()</code> if authenticated</li>
 <li>Redirects to <code>/login</code> if not authenticated</li>
 </ul>
-<p><strong><code>isRegistrado</code> Function</strong> <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
+<p><strong><code>isRegistrado</code> Function</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
 <p>:</p>
 <ul>
 <li>Verifies <code>req.session.loggedin &amp;&amp; req.session.rol === 'registrado'</code></li>
 <li>Calls <code>next()</code> if role matches</li>
 <li>Redirects to <code>/login</code> if role mismatch</li>
 </ul>
-<p><strong><code>isAdmin</code> Function</strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p><strong><code>isAdmin</code> Function</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <p>:</p>
 <ul>
 <li>Verifies <code>req.session.loggedin &amp;&amp; req.session.rol === 'admin'</code></li>
 <li>Calls <code>next()</code> if role matches</li>
 <li>Redirects to <code>/login</code> if role mismatch</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
 <hr />
 <h2 id="profile-data-structures">Profile Data Structures<a class="headerlink" href="#profile-data-structures" title="Permanent link">&para;</a></h2>
 <h3 id="user-profile-response-data">User Profile Response Data<a class="headerlink" href="#user-profile-response-data" title="Permanent link">&para;</a></h3>
 <p>The <code>GET /perfil</code> endpoint passes the following data structure to the view:</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">{</span>
-<span class="nt">  cursos</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
-<span class="w">    </span><span class="p p-Indicator">{</span>
-<span class="nt">      id</span><span class="p">:</span><span class="w"> </span><span class="nv">number</span><span class="p p-Indicator">,</span>
-<span class="nt">      titulo</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
-<span class="nt">      descripcion</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
-<span class="nt">      categoria</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
-<span class="nt">      visibilidad</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span>
-<span class="w">    </span><span class="p p-Indicator">},</span>
-<span class="w">    </span><span class="nv">// ... more courses</span>
-<span class="w">  </span><span class="p p-Indicator">],</span>
-<span class="nt">  usuario</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
-<span class="nt">    id</span><span class="p">:</span><span class="w"> </span><span class="nv">number</span><span class="p p-Indicator">,</span>
-<span class="nt">    nombre</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
-<span class="nt">    email</span><span class="p">:</span><span class="w"> </span><span class="nv">string</span><span class="p p-Indicator">,</span>
-<span class="nt">    rol</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;registrado&#39;</span>
-<span class="w">  </span><span class="p p-Indicator">},</span>
-<span class="nt">  rol</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;registrado&#39;</span><span class="p p-Indicator">,</span>
-<span class="nt">  msg</span><span class="p">:</span><span class="w"> </span><span class="nv">string | undefined  // Optional query parameter</span>
-<span class="p p-Indicator">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/courses#L162-L167">routes/courses.js L162-L167</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L162-L167">routes/courses.js L162-L167</a></p>
 <h3 id="admin-profile-response-data">Admin Profile Response Data<a class="headerlink" href="#admin-profile-response-data" title="Permanent link">&para;</a></h3>
 <p>The <code>GET /admin/perfil</code> endpoint passes the following data structure to the view:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-  <span class="n">usuario</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">number</span><span class="p">,</span>
-    <span class="n">nombre</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
-    <span class="n">email</span><span class="p">:</span> <span class="n">string</span><span class="p">,</span>
-    <span class="n">rol</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span>
-  <span class="p">},</span>
-  <span class="n">totalCursos</span><span class="p">:</span> <span class="n">number</span>  <span class="o">//</span> <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">result</span> <span class="kn">from</span><span class="w"> </span><span class="nn">database</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/courses#L183-L183">routes/courses.js L183</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L183-L183">routes/courses.js L183</a></p>
 <hr />
 <h2 id="profile-interaction-patterns">Profile Interaction Patterns<a class="headerlink" href="#profile-interaction-patterns" title="Permanent link">&para;</a></h2>
 <h3 id="user-profile-workflow">User Profile Workflow<a class="headerlink" href="#user-profile-workflow" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>After successful enrollment, users are redirected to <code>/perfil</code> <a href="routes/courses#L144-L144">routes/courses.js L144</a></p>
+<p>After successful enrollment, users are redirected to <code>/perfil</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L144-L144">routes/courses.js L144</a></p>
 <p>where they can view their updated course list. The profile serves as a confirmation page and central hub for managing enrolled courses.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L117-L149">routes/courses.js L117-L149</a></p>
-<p><a href="views/perfil#L32-L32">views/perfil.ejs L32</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L32-L32">views/perfil.ejs L32</a></p>
 <h3 id="admin-profile-workflow">Admin Profile Workflow<a class="headerlink" href="#admin-profile-workflow" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>The admin dashboard provides navigation to the course management interface at <code>/courses</code> <a href="views/adminperfil#L18-L18">views/adminperfil.ejs L18</a></p>
+<p>The admin dashboard provides navigation to the course management interface at <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L18-L18">views/adminperfil.ejs L18</a></p>
 <p>where administrators can perform CRUD operations on courses.</p>
-<p><strong>Sources:</strong> <a href="views/adminperfil#L10-L21">views/adminperfil.ejs L10-L21</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L10-L21">views/adminperfil.ejs L10-L21</a></p>
 <hr />
 <h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
 <p>Both profile routes implement basic error handling for database operations:</p>
 <h3 id="user-profile-error-handling">User Profile Error Handling<a class="headerlink" href="#user-profile-error-handling" title="Permanent link">&para;</a></h3>
-<p>When the enrollment query fails in <code>GET /perfil</code> <a href="routes/courses#L161-L161">routes/courses.js L161</a></p>
-<p>the route handler does not explicitly handle the error, relying on implicit error handling. If the query succeeds but returns no results, the view displays an empty state message <a href="views/perfil#L9-L10">views/perfil.ejs L9-L10</a></p>
+<p>When the enrollment query fails in <code>GET /perfil</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L161-L161">routes/courses.js L161</a></p>
+<p>the route handler does not explicitly handle the error, relying on implicit error handling. If the query succeeds but returns no results, the view displays an empty state message <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/perfil.ejs#L9-L10">views/perfil.ejs L9-L10</a></p>
 <h3 id="admin-profile-error-handling">Admin Profile Error Handling<a class="headerlink" href="#admin-profile-error-handling" title="Permanent link">&para;</a></h3>
-<p>The admin profile includes explicit error handling for the statistics query <a href="routes/courses#L177-L180">routes/courses.js L177-L180</a></p>
+<p>The admin profile includes explicit error handling for the statistics query <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L177-L180">routes/courses.js L177-L180</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>if (err) {
-  console.error(err);
-  return res.render(&quot;adminPerfil&quot;, { usuario, totalCursos: 0 });
-}
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>On database error, the view is rendered with <code>totalCursos: 0</code> as a fallback value, preventing complete page failure.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L161-L168">routes/courses.js L161-L168</a></p>
-<p><a href="routes/courses#L177-L180">routes/courses.js L177-L180</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L161-L168">routes/courses.js L161-L168</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L177-L180">routes/courses.js L177-L180</a></p>
 <hr />
 <h2 id="session-dependencies">Session Dependencies<a class="headerlink" href="#session-dependencies" title="Permanent link">&para;</a></h2>
 <p>Both profile endpoints depend on session data populated during the login process:</p>
@@ -2458,10 +2387,10 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p>The profile system assumes these session properties are properly initialized during authentication. For details on session initialization, see <a href="4.2-user-login.md">User Login</a>.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L154-L154">routes/courses.js L154</a></p>
-<p><a href="routes/courses#L164-L165">routes/courses.js L164-L165</a></p>
-<p><a href="routes/courses#L173-L173">routes/courses.js L173</a></p>
+<p>The profile system assumes these session properties are properly initialized during authentication. For details on session initialization, see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L154-L154">routes/courses.js L154</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L164-L165">routes/courses.js L164-L165</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L173-L173">routes/courses.js L173</a></p>
 
 
 

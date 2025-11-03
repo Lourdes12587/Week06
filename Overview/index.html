@@ -28,6 +28,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -55,7 +58,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -105,8 +113,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1130,29 +1138,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1343,6 +1328,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1470,29 +1478,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1791,29 +1776,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1915,12 +1877,12 @@
 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="package">package.json</a>
-* <a href="routes/courses">routes/courses.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document provides a high-level introduction to the course management system located at <a href="https://github.com/Lourdes12587/Week06">https://github.com/Lourdes12587/Week06</a>. It explains the system's purpose, architecture, core features, and technology stack. For detailed setup instructions, see <a href="2-getting-started.md">Getting Started</a>. For in-depth technical details about specific subsystems, refer to <a href="3-architecture-overview.md">Architecture Overview</a>, <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a>, <a href="5-course-management-system.md">Course Management System</a>, and <a href="7-frontend-architecture.md">Frontend Architecture</a>.</p>
+<p>This document provides a high-level introduction to the course management system located at <a href="https://github.com/Lourdes12587/Week06">https://github.com/Lourdes12587/Week06</a>. It explains the system's purpose, architecture, core features, and technology stack. For detailed setup instructions, see <a href="/Lourdes12587/Week06/2-getting-started">Getting Started</a>. For in-depth technical details about specific subsystems, refer to <a href="/Lourdes12587/Week06/3-architecture-overview">Architecture Overview</a>, <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>, <a href="/Lourdes12587/Week06/5-course-management-system">Course Management System</a>, and <a href="/Lourdes12587/Week06/7-frontend-architecture">Frontend Architecture</a>.</p>
 <h2 id="system-purpose">System Purpose<a class="headerlink" href="#system-purpose" title="Permanent link">&para;</a></h2>
 <p>The course management system is a <strong>role-based web application</strong> built with Node.js and Express that enables course creation, management, and enrollment. The system implements three distinct user roles with different capabilities:</p>
 <table>
@@ -1950,9 +1912,9 @@
 </tbody>
 </table>
 <p>The application stores data in a <strong>MySQL database</strong> with three tables (<code>usuarios</code>, <code>cursos</code>, <code>inscripciones</code>) and implements comprehensive security through password hashing, session management, and role-based access control middleware.</p>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="package#L1-L26">package.json L1-L26</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L26">package.json L1-L26</a></p>
 <h2 id="high-level-architecture">High-Level Architecture<a class="headerlink" href="#high-level-architecture" title="Permanent link">&para;</a></h2>
 <p>The system follows a <strong>three-tier architecture</strong> with clear separation of concerns:</p>
 <pre class="mermaid"><code>flowchart TD
@@ -2035,16 +1997,16 @@ subgraph subGraph0 ["Presentation Layer"]
 end</code></pre>
 <p><strong>Application Flow:</strong></p>
 <ol>
-<li><strong>Entry Point:</strong> <a href="app#L1-L41">app.js L1-L41</a>  initializes the Express server, configures middleware, and mounts route handlers</li>
+<li><strong>Entry Point:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a>  initializes the Express server, configures middleware, and mounts route handlers</li>
 <li><strong>Route Handlers:</strong> Modular routers in <code>routes/</code> directory handle HTTP requests and apply middleware chains</li>
 <li><strong>Middleware:</strong> Functions like <code>estaAutenticado</code>, <code>isAdmin</code>, and <code>isRegistrado</code> enforce authentication and authorization</li>
 <li><strong>Controllers:</strong> Business logic in <code>src/controller.js</code> and <code>src/cursoController.js</code> process requests and interact with database</li>
-<li><strong>Database:</strong> <a href="config/db">config/db.js</a>  manages MySQL connection pool and query execution</li>
+<li><strong>Database:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a>  manages MySQL connection pool and query execution</li>
 <li><strong>Views:</strong> EJS templates render dynamic HTML responses</li>
 </ol>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="package#L13-L25">package.json L13-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
 <h2 id="core-features-by-user-role">Core Features by User Role<a class="headerlink" href="#core-features-by-user-role" title="Permanent link">&para;</a></h2>
 <h3 id="public-users-rol-publico">Public Users (rol: 'publico')<a class="headerlink" href="#public-users-rol-publico" title="Permanent link">&para;</a></h3>
 <p>Public users can interact with the system without authentication:</p>
@@ -2054,7 +2016,7 @@ end</code></pre>
 <li>Register new account at <code>GET/POST /register</code></li>
 <li>Login at <code>GET/POST /login</code></li>
 </ul>
-<p>The course visibility filter is applied at <a href="routes/courses#L40-L42">routes/courses.js L40-L42</a></p>
+<p>The course visibility filter is applied at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L40-L42">routes/courses.js L40-L42</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code>if (rol === &#39;publico&#39;) {
   sql += &quot; WHERE visibilidad=&#39;publico&#39;&quot;;
@@ -2064,21 +2026,21 @@ end</code></pre>
 <p>Protected by <code>estaAutenticado</code> and <code>isRegistrado</code> middleware:</p>
 <ul>
 <li>View all courses (no visibility restrictions)</li>
-<li>Enroll in courses via <code>GET/POST /inscribir/:id</code> <a href="routes/courses#L106-L149">routes/courses.js L106-L149</a></li>
-<li>View personal profile with enrolled courses at <code>GET /perfil</code> <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></li>
-<li>Duplicate enrollment prevention <a href="routes/courses#L121-L133">routes/courses.js L121-L133</a></li>
+<li>Enroll in courses via <code>GET/POST /inscribir/:id</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></li>
+<li>View personal profile with enrolled courses at <code>GET /perfil</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></li>
+<li>Duplicate enrollment prevention <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L133">routes/courses.js L121-L133</a></li>
 </ul>
 <h3 id="administrators-rol-admin">Administrators (rol: 'admin')<a class="headerlink" href="#administrators-rol-admin" title="Permanent link">&para;</a></h3>
 <p>Protected by <code>estaAutenticado</code> and <code>isAdmin</code> middleware:</p>
 <ul>
-<li>Create courses: <code>GET /create</code> <a href="routes/courses#L64-L67">routes/courses.js L64-L67</a>  <code>POST /save</code> <a href="routes/courses#L70-L70">routes/courses.js L70</a></li>
-<li>Edit courses: <code>GET /edit/:id</code> <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a>  <code>POST /update</code> <a href="routes/courses#L103-L103">routes/courses.js L103</a></li>
-<li>Delete courses: <code>GET /delete/:id</code> <a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></li>
-<li>View admin dashboard with statistics at <code>GET /admin/perfil</code> <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></li>
+<li>Create courses: <code>GET /create</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L67">routes/courses.js L64-L67</a>  <code>POST /save</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></li>
+<li>Edit courses: <code>GET /edit/:id</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a>  <code>POST /update</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></li>
+<li>Delete courses: <code>GET /delete/:id</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></li>
+<li>View admin dashboard with statistics at <code>GET /admin/perfil</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
-<p><a href="routes/courses#L64-L185">routes/courses.js L64-L185</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L185">routes/courses.js L64-L185</a></p>
 <h2 id="technology-stack">Technology Stack<a class="headerlink" href="#technology-stack" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2176,7 +2138,7 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="package#L13-L25">package.json L13-L25</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
 <h2 id="request-flow-and-middleware-pipeline">Request Flow and Middleware Pipeline<a class="headerlink" href="#request-flow-and-middleware-pipeline" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates how HTTP requests flow through the middleware pipeline and route handlers:</p>
 <pre class="mermaid"><code>sequenceDiagram
@@ -2215,17 +2177,17 @@ end</code></pre>
   end</code></pre>
 <p><strong>Middleware Functions:</strong></p>
 <ol>
-<li><strong><code>estaAutenticado(req, res, next)</code></strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a>  - Verifies <code>req.session.loggedin</code> is <code>true</code></li>
-<li><strong><code>isAdmin(req, res, next)</code></strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a>  - Checks <code>req.session.rol === 'admin'</code></li>
-<li><strong><code>isRegistrado(req, res, next)</code></strong> <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a>  - Checks <code>req.session.rol === 'registrado'</code></li>
+<li><strong><code>estaAutenticado(req, res, next)</code></strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a>  - Verifies <code>req.session.loggedin</code> is <code>true</code></li>
+<li><strong><code>isAdmin(req, res, next)</code></strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a>  - Checks <code>req.session.rol === 'admin'</code></li>
+<li><strong><code>isRegistrado(req, res, next)</code></strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a>  - Checks <code>req.session.rol === 'registrado'</code></li>
 </ol>
 <p>All middleware functions redirect to <code>/login</code> on authorization failure.</p>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
-<p><a href="app#L24-L31">app.js L24-L31</a></p>
-<p><a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L24-L31">app.js L24-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
 <h2 id="database-schema">Database Schema<a class="headerlink" href="#database-schema" title="Permanent link">&para;</a></h2>
 <p>The MySQL database consists of three tables implementing a many-to-many relationship between users and courses:</p>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">edge-animation-frame</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">dash</span><span class="p">{</span><span class="nt">to</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-slow</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">50</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-fast</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">20</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">error-icon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">error-text</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-normal</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-thick</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mf">3.5</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-solid</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-invisible</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">3</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dotted</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">2</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">.</span><span class="nc">cross</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="nt">svg</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="nt">p</span><span class="p">{</span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">entityBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.7</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="w"> </span><span class="nt">rect</span><span class="p">{</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.5</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">labelBkg</span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="nb">rgba</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edgeLabel</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">color</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">rect</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">circle</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">ellipse</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">polygon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLine</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;}#</span><span class="nn">mermaid-5akmlkvl2ub</span><span class="w"> </span><span class="p">:</span><span class="nd">root</span><span class="p">{</span><span class="nv">--mermaid-font-family</span><span class="p">:</span><span class="s2">&quot;trebuchet ms&quot;</span><span class="p">,</span><span class="n">verdana</span><span class="p">,</span><span class="n">arial</span><span class="p">,</span><span class="kc">sans-serif</span><span class="p">;}</span><span class="nt">enrollscontainsusuariosintidPKvarcharnombrevarcharemailvarcharpasswordenumrolinscripcionesintid_usuarioFKintid_cursoFKcursosintidPKvarchartitulotextdescripcionvarcharcategoriaenumvisibilidad</span>
+<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">edge-animation-frame</span><span class="p">{</span><span class="nt">from</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}@</span><span class="k">keyframes</span><span class="w"> </span><span class="nt">dash</span><span class="p">{</span><span class="nt">to</span><span class="p">{</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">0</span><span class="p">;}}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-slow</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">50</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-animation-fast</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="mi">5</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-dashoffset</span><span class="p">:</span><span class="mi">900</span><span class="p">;</span><span class="k">animation</span><span class="p">:</span><span class="n">dash</span><span class="w"> </span><span class="mi">20</span><span class="kt">s</span><span class="w"> </span><span class="kc">linear</span><span class="w"> </span><span class="kc">infinite</span><span class="p">;</span><span class="k">stroke-linecap</span><span class="p">:</span><span class="kc">round</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">error-icon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">error-text</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#222222</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-normal</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-thick</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mf">3.5</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-solid</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-thickness-invisible</span><span class="p">{</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">0</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">3</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dotted</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">2</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">.</span><span class="nc">cross</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="nt">svg</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="nt">p</span><span class="p">{</span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">entityBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.7</span><span class="p">;</span><span class="k">background-color</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLabelBox</span><span class="w"> </span><span class="nt">rect</span><span class="p">{</span><span class="k">opacity</span><span class="p">:</span><span class="mf">0.5</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">labelBkg</span><span class="p">{</span><span class="k">background-color</span><span class="p">:</span><span class="nb">rgba</span><span class="p">(</span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edgeLabel</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">label</span><span class="p">{</span><span class="k">font-family</span><span class="p">:</span><span class="n">ui-sans-serif</span><span class="p">,</span><span class="o">-</span><span class="n">apple-system</span><span class="p">,</span><span class="n">system-ui</span><span class="p">,</span><span class="n">Segoe</span><span class="w"> </span><span class="n">UI</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">;</span><span class="k">color</span><span class="p">:</span><span class="mh">#333</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">edge-pattern-dashed</span><span class="p">{</span><span class="k">stroke-dasharray</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">rect</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">circle</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">ellipse</span><span class="o">,</span><span class="p">#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">node</span><span class="w"> </span><span class="nt">polygon</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="mh">#ffffff</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#dddddd</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="kt">px</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">relationshipLine</span><span class="p">{</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">.</span><span class="nc">marker</span><span class="p">{</span><span class="k">fill</span><span class="p">:</span><span class="kc">none</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke</span><span class="p">:</span><span class="mh">#999</span><span class="cp">!important</span><span class="p">;</span><span class="k">stroke-width</span><span class="p">:</span><span class="mi">1</span><span class="p">;}#</span><span class="nn">mermaid-7uww5hhnlmq</span><span class="w"> </span><span class="p">:</span><span class="nd">root</span><span class="p">{</span><span class="nv">--mermaid-font-family</span><span class="p">:</span><span class="s2">&quot;trebuchet ms&quot;</span><span class="p">,</span><span class="n">verdana</span><span class="p">,</span><span class="n">arial</span><span class="p">,</span><span class="kc">sans-serif</span><span class="p">;}</span><span class="nt">enrollscontainsusuariosintidPKvarcharnombrevarcharemailvarcharpasswordenumrolinscripcionesintid_usuarioFKintid_cursoFKcursosintidPKvarchartitulotextdescripcionvarcharcategoriaenumvisibilidad</span>
 </code></pre></div>
 <p><strong>Table Descriptions:</strong></p>
 <table>
@@ -2257,17 +2219,17 @@ end</code></pre>
 <p><strong>Database Operations:</strong></p>
 <ul>
 <li>All queries use parameterized statements for SQL injection prevention</li>
-<li>Connection pooling managed by <a href="config/db">config/db.js</a></li>
-<li>Example query: <a href="routes/courses#L77-L77">routes/courses.js L77</a>  - <code>SELECT * FROM cursos WHERE id = ?</code></li>
+<li>Connection pooling managed by <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></li>
+<li>Example query: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a>  - <code>SELECT * FROM cursos WHERE id = ?</code></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/courses#L77-L77">routes/courses.js L77</a></p>
-<p><a href="routes/courses#L91-L91">routes/courses.js L91</a></p>
-<p><a href="routes/courses#L109-L109">routes/courses.js L109</a></p>
-<p><a href="routes/courses#L121-L137">routes/courses.js L121-L137</a></p>
-<p><a href="routes/courses#L155-L160">routes/courses.js L155-L160</a></p>
-<p><a href="routes/courses#L176-L176">routes/courses.js L176</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L109-L109">routes/courses.js L109</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L137">routes/courses.js L121-L137</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L176-L176">routes/courses.js L176</a></p>
 <h2 id="session-and-authentication-model">Session and Authentication Model<a class="headerlink" href="#session-and-authentication-model" title="Permanent link">&para;</a></h2>
-<p>The application maintains user state through server-side sessions configured in <a href="app#L6-L13">app.js L6-L13</a></p>
+<p>The application maintains user state through server-side sessions configured in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></p>
 <p>:</p>
 <p><strong>Session Configuration:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">session({</span>
@@ -2284,70 +2246,70 @@ end</code></pre>
 </ul>
 <p>These session variables are used throughout the application:</p>
 <ul>
-<li><a href="routes/courses#L9-L9">routes/courses.js L9</a>  - Authentication check</li>
-<li><a href="routes/courses#L17-L17">routes/courses.js L17</a>  - Admin role check</li>
-<li><a href="routes/courses#L27-L27">routes/courses.js L27</a>  - Registered role check</li>
-<li><a href="routes/courses#L36-L36">routes/courses.js L36</a>  - Visibility filtering</li>
-<li><a href="routes/courses#L119-L119">routes/courses.js L119</a>  - User identification for enrollment</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L9-L9">routes/courses.js L9</a>  - Authentication check</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L17-L17">routes/courses.js L17</a>  - Admin role check</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L27-L27">routes/courses.js L27</a>  - Registered role check</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L36">routes/courses.js L36</a>  - Visibility filtering</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L119-L119">routes/courses.js L119</a>  - User identification for enrollment</li>
 </ul>
-<p><strong>Sources:</strong> <a href="app#L4-L13">app.js L4-L13</a></p>
-<p><a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L36-L36">routes/courses.js L36</a></p>
-<p><a href="routes/courses#L49-L51">routes/courses.js L49-L51</a></p>
-<p><a href="routes/courses#L119-L119">routes/courses.js L119</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L36">routes/courses.js L36</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L49-L51">routes/courses.js L49-L51</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L119-L119">routes/courses.js L119</a></p>
 <h2 id="application-entry-point">Application Entry Point<a class="headerlink" href="#application-entry-point" title="Permanent link">&para;</a></h2>
-<p>The <a href="app#L1-L41">app.js L1-L41</a></p>
+<p>The <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <p>file serves as the application entry point and performs the following initialization:</p>
 <ol>
-<li><strong>Express Server Setup:</strong> <a href="app#L1-L2">app.js L1-L2</a></li>
-<li><strong>Environment Configuration:</strong> <a href="app#L3-L3">app.js L3</a>  - Loads <code>.env</code> file from <code>./env/.env</code></li>
-<li><strong>Session Middleware:</strong> <a href="app#L4-L13">app.js L4-L13</a>  - Configures express-session</li>
-<li><strong>Static Assets:</strong> <a href="app#L19-L19">app.js L19</a>  - Serves files from <code>/public</code> at <code>/resources</code> path</li>
-<li><strong>View Engine:</strong> <a href="app#L21-L21">app.js L21</a>  - Sets EJS as template engine</li>
-<li><strong>Body Parsing:</strong> <a href="app#L25-L26">app.js L25-L26</a>  - URL-encoded and JSON body parsing</li>
-<li><strong>Route Mounting:</strong> <a href="app#L29-L31">app.js L29-L31</a>  - Mounts three routers: * <code>routes/index.js</code> - Landing page * <code>routes/auth.js</code> - Authentication endpoints * <code>routes/courses.js</code> - Course management and enrollment</li>
+<li><strong>Express Server Setup:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L2">app.js L1-L2</a></li>
+<li><strong>Environment Configuration:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a>  - Loads <code>.env</code> file from <code>./env/.env</code></li>
+<li><strong>Session Middleware:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a>  - Configures express-session</li>
+<li><strong>Static Assets:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a>  - Serves files from <code>/public</code> at <code>/resources</code> path</li>
+<li><strong>View Engine:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L21">app.js L21</a>  - Sets EJS as template engine</li>
+<li><strong>Body Parsing:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L26">app.js L25-L26</a>  - URL-encoded and JSON body parsing</li>
+<li><strong>Route Mounting:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a>  - Mounts three routers: * <code>routes/index.js</code> - Landing page * <code>routes/auth.js</code> - Authentication endpoints * <code>routes/courses.js</code> - Course management and enrollment</li>
 </ol>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <h2 id="key-routes-and-endpoints">Key Routes and Endpoints<a class="headerlink" href="#key-routes-and-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="public-endpoints">Public Endpoints<a class="headerlink" href="#public-endpoints" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>GET /</code> - Landing page (<a href="routes/index">routes/index.js</a> )</li>
-<li><code>GET /login</code> - Login form (<a href="routes/auth">routes/auth.js</a> )</li>
-<li><code>GET /register</code> - Registration form (<a href="routes/auth">routes/auth.js</a> )</li>
-<li><code>POST /auth</code> - Process login (<a href="routes/auth">routes/auth.js</a> )</li>
-<li><code>POST /register</code> - Process registration (<a href="routes/auth">routes/auth.js</a> )</li>
-<li><code>GET /courses</code> - Course listing with visibility filtering <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></li>
+<li><code>GET /</code> - Landing page (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a> )</li>
+<li><code>GET /login</code> - Login form (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a> )</li>
+<li><code>GET /register</code> - Registration form (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a> )</li>
+<li><code>POST /auth</code> - Process login (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a> )</li>
+<li><code>POST /register</code> - Process registration (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a> )</li>
+<li><code>GET /courses</code> - Course listing with visibility filtering <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></li>
 </ul>
 <h3 id="protected-endpoints-registered-users">Protected Endpoints (Registered Users)<a class="headerlink" href="#protected-endpoints-registered-users" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>GET /inscribir/:id</code> - Enrollment confirmation <a href="routes/courses#L106-L114">routes/courses.js L106-L114</a></li>
-<li><code>POST /inscribir/:id</code> - Process enrollment <a href="routes/courses#L117-L149">routes/courses.js L117-L149</a></li>
-<li><code>GET /perfil</code> - User profile with enrolled courses <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></li>
+<li><code>GET /inscribir/:id</code> - Enrollment confirmation <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></li>
+<li><code>POST /inscribir/:id</code> - Process enrollment <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></li>
+<li><code>GET /perfil</code> - User profile with enrolled courses <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></li>
 </ul>
 <h3 id="protected-endpoints-administrators">Protected Endpoints (Administrators)<a class="headerlink" href="#protected-endpoints-administrators" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>GET /create</code> - Course creation form <a href="routes/courses#L64-L67">routes/courses.js L64-L67</a></li>
-<li><code>POST /save</code> - Save new course <a href="routes/courses#L70-L70">routes/courses.js L70</a></li>
-<li><code>GET /edit/:id</code> - Course edit form <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></li>
-<li><code>POST /update</code> - Update existing course <a href="routes/courses#L103-L103">routes/courses.js L103</a></li>
-<li><code>GET /delete/:id</code> - Delete course <a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></li>
-<li><code>GET /admin/perfil</code> - Admin dashboard <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></li>
+<li><code>GET /create</code> - Course creation form <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L67">routes/courses.js L64-L67</a></li>
+<li><code>POST /save</code> - Save new course <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></li>
+<li><code>GET /edit/:id</code> - Course edit form <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></li>
+<li><code>POST /update</code> - Update existing course <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></li>
+<li><code>GET /delete/:id</code> - Delete course <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></li>
+<li><code>GET /admin/perfil</code> - Admin dashboard <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/courses#L35-L187">routes/courses.js L35-L187</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L187">routes/courses.js L35-L187</a></p>
 <h2 id="navigation-to-related-documentation">Navigation to Related Documentation<a class="headerlink" href="#navigation-to-related-documentation" title="Permanent link">&para;</a></h2>
 <p>This overview provides a foundation for understanding the system. For detailed information on specific subsystems:</p>
 <ul>
-<li><strong><a href="2-getting-started.md">Getting Started</a></strong> - Installation, dependencies, database setup, and running the application</li>
-<li><strong><a href="3-architecture-overview.md">Architecture Overview</a></strong> - Deep dive into system architecture, technology stack, and design patterns</li>
-<li><strong><a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a></strong> - User registration, login flow, password hashing, and role-based access control</li>
-<li><strong><a href="5-course-management-system.md">Course Management System</a></strong> - CRUD operations, visibility control, and enrollment logic</li>
-<li><strong><a href="7-frontend-architecture.md">Frontend Architecture</a></strong> - EJS templates, partials, styling system, and user interface</li>
-<li><strong><a href="8-api-reference.md">API Reference</a></strong> - Complete endpoint documentation with request/response specifications</li>
-<li><strong><a href="9-development-guide.md">Development Guide</a></strong> - Project structure, adding features, and best practices</li>
+<li><strong><a href="/Lourdes12587/Week06/2-getting-started">Getting Started</a></strong> - Installation, dependencies, database setup, and running the application</li>
+<li><strong><a href="/Lourdes12587/Week06/3-architecture-overview">Architecture Overview</a></strong> - Deep dive into system architecture, technology stack, and design patterns</li>
+<li><strong><a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a></strong> - User registration, login flow, password hashing, and role-based access control</li>
+<li><strong><a href="/Lourdes12587/Week06/5-course-management-system">Course Management System</a></strong> - CRUD operations, visibility control, and enrollment logic</li>
+<li><strong><a href="/Lourdes12587/Week06/7-frontend-architecture">Frontend Architecture</a></strong> - EJS templates, partials, styling system, and user interface</li>
+<li><strong><a href="/Lourdes12587/Week06/8-api-reference">API Reference</a></strong> - Complete endpoint documentation with request/response specifications</li>
+<li><strong><a href="/Lourdes12587/Week06/9-development-guide">Development Guide</a></strong> - Project structure, adding features, and best practices</li>
 </ul>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="package#L1-L26">package.json L1-L26</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L26">package.json L1-L26</a></p>
 
 
 

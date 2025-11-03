@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1138,6 +1123,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1265,29 +1273,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1952,29 +1937,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2076,25 +2038,42 @@
 <h1 id="landing-page">Landing Page<a class="headerlink" href="#landing-page" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="public/css/index">public/css/index.css</a>
-* <a href="routes/index">routes/index.js</a>
-* <a href="views/index">views/index.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css">public/css/index.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs">views/index.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document covers the landing page implementation, which serves as the application's home route (<code>GET /</code>). The landing page adapts its display based on user authentication status, showing login prompts for unauthenticated visitors and personalized greetings with logout options for authenticated users.</p>
 <p>For information about other frontend components, see:</p>
 <ul>
-<li>Login and registration forms: <a href="7.3-authentication-views.md">Authentication Views</a></li>
-<li>Course listing and forms: <a href="7.4-course-views.md">Course Views</a></li>
-<li>Template partials and EJS system: <a href="7.1-template-system-and-partials.md">Template System &amp; Partials</a></li>
+<li>Login and registration forms: <a href="/Lourdes12587/Week06/7.3-authentication-views">Authentication Views</a></li>
+<li>Course listing and forms: <a href="/Lourdes12587/Week06/7.4-course-views">Course Views</a></li>
+<li>Template partials and EJS system: <a href="/Lourdes12587/Week06/7.1-template-system-and-partials">Template System &amp; Partials</a></li>
 </ul>
 <h2 id="route-handler">Route Handler<a class="headerlink" href="#route-handler" title="Permanent link">&para;</a></h2>
-<p>The landing page is served by the root route handler located at <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
+<p>The landing page is served by the root route handler located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
 <p>The handler extracts session data and passes contextual information to the EJS template renderer.</p>
 <h3 id="request-processing-flow">Request Processing Flow<a class="headerlink" href="#request-processing-flow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
+<pre class="mermaid"><code>flowchart TD
+
+Request["HTTP GET /"]
+Handler["routes/index.js&lt;br&gt;router.get('/', handler)"]
+SessionCheck["req.session.usuario"]
+LoggedInCheck["req.session.loggedin"]
+DataObject["Construct data object"]
+Render["res.render('index', data)"]
+Template["views/index.ejs"]
+Response["HTML Response"]
+
+Request --&gt; Handler
+Handler --&gt; SessionCheck
+Handler --&gt; LoggedInCheck
+SessionCheck --&gt; DataObject
+LoggedInCheck --&gt; DataObject
+DataObject --&gt; Render
+Render --&gt; Template
+Template --&gt; Response</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
 <h3 id="session-data-extraction">Session Data Extraction<a class="headerlink" href="#session-data-extraction" title="Permanent link">&para;</a></h3>
 <p>The route handler accesses the session object to determine authentication state:</p>
 <table>
@@ -2123,36 +2102,64 @@
 </tr>
 </tbody>
 </table>
-<p>At <a href="routes/index#L7-L7">routes/index.js L7</a></p>
+<p>At <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L7">routes/index.js L7</a></p>
 <p>the handler extracts the user object:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">usuario</span><span class="p">;</span>
 </code></pre></div>
-<p>At <a href="routes/index#L9-L14">routes/index.js L9-L14</a></p>
+<p>At <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L9-L14">routes/index.js L9-L14</a></p>
 <p>the handler constructs the template data object:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">res.render(&quot;index&quot;, {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">nombre</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;THOT&quot;</span><span class="err">,</span>
+<span class="w">    </span><span class="nt">experiencia</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Los</span><span class="nv"> </span><span class="s">milagros</span><span class="nv"> </span><span class="s">llegan</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tu</span><span class="nv"> </span><span class="s">lado</span><span class="nv"> </span><span class="s">cuando</span><span class="nv"> </span><span class="s">empieces</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">aprender&quot;</span><span class="err">,</span>
+<span class="w">    </span><span class="nt">login</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">req.session.loggedin || false,</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usuario ? usuario.nombre</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Invitado&quot;</span>
+<span class="err">}</span><span class="l l-Scalar l-Scalar-Plain">);</span>
 </code></pre></div>
 <p>The <code>name</code> property uses a ternary operator to provide a fallback value of <code>"Invitado"</code> when no user is logged in.</p>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
 <h2 id="template-structure">Template Structure<a class="headerlink" href="#template-structure" title="Permanent link">&para;</a></h2>
-<p>The landing page template at <a href="views/index#L1-L22">views/index.ejs L1-L22</a></p>
+<p>The landing page template at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L22">views/index.ejs L1-L22</a></p>
 <p>implements a two-section layout with conditional rendering based on authentication status.</p>
 <h3 id="template-component-architecture">Template Component Architecture<a class="headerlink" href="#template-component-architecture" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<p><strong>Sources:</strong> <a href="views/index#L1-L22">views/index.ejs L1-L22</a></p>
+<pre class="mermaid"><code>flowchart TD
+
+IndexEJS["views/index.ejs"]
+HeadPartial["&lt;%- include('partials/head') %&gt;"]
+HeaderCSS["resources/css/header.css"]
+HeaderPartial["&lt;%- include('partials/header') %&gt;"]
+Section1["Brand Messagelines 5-10"]
+Section2["User Statuslines 12-22"]
+AuthBranch["&lt;% if (login) %&gt;"]
+GuestBranch["&lt;% } else { %&gt;"]
+LogoutForm["POST /logout"]
+LoginLink["href='/login'"]
+
+IndexEJS --&gt; HeadPartial
+IndexEJS --&gt; HeaderCSS
+IndexEJS --&gt; HeaderPartial
+IndexEJS --&gt; Section1
+IndexEJS --&gt; Section2
+Section2 --&gt; AuthBranch
+Section2 --&gt; GuestBranch
+AuthBranch --&gt; LogoutForm
+GuestBranch --&gt; LoginLink</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L22">views/index.ejs L1-L22</a></p>
 <h3 id="partial-includes">Partial Includes<a class="headerlink" href="#partial-includes" title="Permanent link">&para;</a></h3>
-<p>The template begins with two partial includes at <a href="views/index#L1-L3">views/index.ejs L1-L3</a></p>
+<p>The template begins with two partial includes at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L3">views/index.ejs L1-L3</a></p>
 <p>:</p>
 <ol>
 <li><strong>Head partial</strong>: <code>&lt;%- include('partials/head') %&gt;</code> - Contains HTML metadata, viewport settings, and Bootstrap CDN links</li>
 <li><strong>Header CSS</strong>: Custom stylesheet loaded at line 2</li>
 <li><strong>Header partial</strong>: <code>&lt;%- include('partials/header') %&gt;</code> - Provides navigation bar consistent across all pages</li>
 </ol>
-<p><strong>Sources:</strong> <a href="views/index#L1-L3">views/index.ejs L1-L3</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L3">views/index.ejs L1-L3</a></p>
 <h3 id="section-1-brand-display">Section 1: Brand Display<a class="headerlink" href="#section-1-brand-display" title="Permanent link">&para;</a></h3>
-<p>The first section at <a href="views/index#L5-L10">views/index.ejs L5-L10</a></p>
+<p>The first section at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L5-L10">views/index.ejs L5-L10</a></p>
 <p>displays static branding content:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span>% if (nombre) { %&gt;
+  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>SOMOS <span class="err">&lt;</span>%= nombre %&gt;<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Es más que una experiencia, <span class="err">&lt;</span>%= experiencia %&gt;<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>% } %&gt;
 </code></pre></div>
 <p>This section renders:</p>
 <ul>
@@ -2160,25 +2167,29 @@
 <li>Tagline from the <code>experiencia</code> variable in a <code>&lt;p&gt;</code> element</li>
 <li>Conditional wrapper ensures content only displays when data exists</li>
 </ul>
-<p><strong>Sources:</strong> <a href="views/index#L5-L10">views/index.ejs L5-L10</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L5-L10">views/index.ejs L5-L10</a></p>
 <h3 id="section-2-authentication-dependent-display">Section 2: Authentication-Dependent Display<a class="headerlink" href="#section-2-authentication-dependent-display" title="Permanent link">&para;</a></h3>
-<p>The second section at <a href="views/index#L12-L22">views/index.ejs L12-L22</a></p>
+<p>The second section at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L12-L22">views/index.ejs L12-L22</a></p>
 <p>implements branching logic based on the <code>login</code> boolean flag.</p>
 <h4 id="authenticated-user-view">Authenticated User View<a class="headerlink" href="#authenticated-user-view" title="Permanent link">&para;</a></h4>
-<p>When <code>login</code> is <code>true</code>, the template renders at <a href="views/index#L13-L17">views/index.ejs L13-L17</a></p>
+<p>When <code>login</code> is <code>true</code>, the template renders at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L13-L17">views/index.ejs L13-L17</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;h3&gt;</span>Usuario<span class="w"> </span>Conectado:<span class="w"> </span><span class="nt">&lt;strong&gt;</span><span class="err">&lt;</span>%=<span class="w"> </span>name<span class="w"> </span>%&gt;<span class="nt">&lt;/strong&gt;&lt;/h3&gt;</span>
+<span class="nt">&lt;form</span><span class="w"> </span><span class="na">action=</span><span class="s">&quot;/logout&quot;</span><span class="w"> </span><span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;button</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;btn btn-primary mt-3&quot;</span><span class="nt">&gt;</span>Cerrar<span class="w"> </span>sesión<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
 </code></pre></div>
 <p>Components:</p>
 <ul>
 <li>User's name displayed in <code>&lt;strong&gt;</code> tags</li>
-<li>POST form targeting <code>/logout</code> endpoint (handled by <a href="routes/auth">routes/auth.js</a> )</li>
+<li>POST form targeting <code>/logout</code> endpoint (handled by <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a> )</li>
 <li>Bootstrap-styled button with <code>btn btn-primary mt-3</code> classes</li>
 </ul>
 <h4 id="guest-user-view">Guest User View<a class="headerlink" href="#guest-user-view" title="Permanent link">&para;</a></h4>
-<p>When <code>login</code> is <code>false</code>, the template renders at <a href="views/index#L18-L21">views/index.ejs L18-L21</a></p>
+<p>When <code>login</code> is <code>false</code>, the template renders at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L18-L21">views/index.ejs L18-L21</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;h3&gt;</span>Bienvenido,<span class="w"> </span><span class="nt">&lt;strong&gt;</span><span class="err">&lt;</span>%=<span class="w"> </span>name<span class="w"> </span>||<span class="w"> </span>&#39;Invitado&#39;<span class="w"> </span>%&gt;<span class="nt">&lt;/strong&gt;&lt;/h3&gt;</span>
+<span class="nt">&lt;a</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;/login&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;btn btn-primary mt-3&quot;</span><span class="nt">&gt;</span>Iniciar<span class="w"> </span>Sesion<span class="nt">&lt;/a&gt;</span>
 </code></pre></div>
 <p>Components:</p>
 <ul>
@@ -2186,18 +2197,46 @@
 <li>Hyperlink to <code>/login</code> route styled as Bootstrap button</li>
 <li>Same visual styling as authenticated view for consistency</li>
 </ul>
-<p><strong>Sources:</strong> <a href="views/index#L12-L22">views/index.ejs L12-L22</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L12-L22">views/index.ejs L12-L22</a></p>
 <h2 id="conditional-rendering-logic">Conditional Rendering Logic<a class="headerlink" href="#conditional-rendering-logic" title="Permanent link">&para;</a></h2>
 <p>The landing page implements state-dependent rendering:</p>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
-<p><a href="views/index#L12-L22">views/index.ejs L12-L22</a></p>
+<pre class="mermaid"><code>flowchart TD
+
+HTTPRequest["GET / request received"]
+SessionMW["express-session middleware&lt;br&gt;loads req.session"]
+RouteHandler["routes/index.js handler&lt;br&gt;line 6"]
+CheckUser["req.session.usuario&lt;br&gt;exists?"]
+ExtractName["name = usuario.nombre"]
+DefaultName["name = 'Invitado'"]
+CheckLogin["req.session.loggedin&lt;br&gt;= true?"]
+LoginTrue["login = true"]
+LoginFalse["login = false"]
+RenderCall["res.render('index', data)"]
+EJSProcess["EJS evaluates if (login)"]
+RenderAuth["Display:&lt;br&gt;- Username&lt;br&gt;- Logout form"]
+RenderGuest["Display:&lt;br&gt;- Welcome message&lt;br&gt;- Login link"]
+
+HTTPRequest --&gt; SessionMW
+SessionMW --&gt; RouteHandler
+RouteHandler --&gt; CheckUser
+CheckUser --&gt; ExtractName
+CheckUser --&gt; DefaultName
+ExtractName --&gt; CheckLogin
+DefaultName --&gt; CheckLogin
+CheckLogin --&gt; LoginTrue
+CheckLogin --&gt; LoginFalse
+LoginTrue --&gt; RenderCall
+LoginFalse --&gt; RenderCall
+RenderCall --&gt; EJSProcess
+EJSProcess --&gt; RenderAuth
+EJSProcess --&gt; RenderGuest</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L12-L22">views/index.ejs L12-L22</a></p>
 <h2 id="styling-architecture">Styling Architecture<a class="headerlink" href="#styling-architecture" title="Permanent link">&para;</a></h2>
-<p>The landing page CSS at <a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
+<p>The landing page CSS at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
 <p>implements a gradient-based design with interactive hover effects.</p>
 <h3 id="core-layout-styles">Core Layout Styles<a class="headerlink" href="#core-layout-styles" title="Permanent link">&para;</a></h3>
-<p>The body element at <a href="public/css/index#L9-L20">public/css/index.css L9-L20</a></p>
+<p>The body element at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L9-L20">public/css/index.css L9-L20</a></p>
 <p>establishes the page foundation:</p>
 <table>
 <thead>
@@ -2250,11 +2289,21 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="public/css/index#L9-L20">public/css/index.css L9-L20</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L9-L20">public/css/index.css L9-L20</a></p>
 <h3 id="heading-styles">Heading Styles<a class="headerlink" href="#heading-styles" title="Permanent link">&para;</a></h3>
-<p>The <code>&lt;h2&gt;</code> styling at <a href="public/css/index#L23-L33">public/css/index.css L23-L33</a></p>
+<p>The <code>&lt;h2&gt;</code> styling at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L23-L33">public/css/index.css L23-L33</a></p>
 <p>includes:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">rem</span><span class="p">;</span>
+<span class="w">  </span><span class="k">margin-bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">text-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.3</span><span class="p">);</span>
+<span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">h2</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">transform</span><span class="p">:</span><span class="w"> </span><span class="nb">scale</span><span class="p">(</span><span class="mf">1.1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffd700</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Interactive features:</p>
 <ul>
@@ -2262,16 +2311,21 @@
 <li>Color change to gold (#ffd700)</li>
 <li>Text shadow for depth perception</li>
 </ul>
-<p><strong>Sources:</strong> <a href="public/css/index#L23-L33">public/css/index.css L23-L33</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L23-L33">public/css/index.css L23-L33</a></p>
 <h3 id="paragraph-interactive-effects">Paragraph Interactive Effects<a class="headerlink" href="#paragraph-interactive-effects" title="Permanent link">&para;</a></h3>
-<p>Paragraph elements at <a href="public/css/index#L36-L50">public/css/index.css L36-L50</a></p>
+<p>Paragraph elements at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L36-L50">public/css/index.css L36-L50</a></p>
 <p>implement hover overlays:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="nt">p</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">opacity</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>This creates a semi-transparent white background when users hover over text content.</p>
-<p><strong>Sources:</strong> <a href="public/css/index#L36-L50">public/css/index.css L36-L50</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L36-L50">public/css/index.css L36-L50</a></p>
 <h3 id="navigation-bar">Navigation Bar<a class="headerlink" href="#navigation-bar" title="Permanent link">&para;</a></h3>
-<p>The fixed navbar at <a href="public/css/index#L53-L64">public/css/index.css L53-L64</a></p>
+<p>The fixed navbar at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L53-L64">public/css/index.css L53-L64</a></p>
 <p>uses:</p>
 <ul>
 <li><code>position: fixed</code> with <code>top: 0</code> for persistent visibility</li>
@@ -2279,20 +2333,53 @@
 <li>Gradient background from #4f46e5 to #3b82f6</li>
 <li>Flexbox with <code>space-between</code> for logo and links separation</li>
 </ul>
-<p>Navigation links at <a href="public/css/index#L77-L98">public/css/index.css L77-L98</a></p>
+<p>Navigation links at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L77-L98">public/css/index.css L77-L98</a></p>
 <p>feature animated underlines using <code>::after</code> pseudo-elements:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code>.nav-links a::after {
+  content: &#39;&#39;;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="public/css/index#L53-L99">public/css/index.css L53-L99</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L53-L99">public/css/index.css L53-L99</a></p>
 <h2 id="data-flow-mapping">Data Flow Mapping<a class="headerlink" href="#data-flow-mapping" title="Permanent link">&para;</a></h2>
 <p>The complete request-response cycle maps to specific code entities:</p>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
-<p><a href="views/index#L1-L22">views/index.ejs L1-L22</a></p>
-<p><a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
+<pre class="mermaid"><code>flowchart TD
+
+Browser["Browser&lt;br&gt;HTTP GET /"]
+ExpressServer["app.js&lt;br&gt;Express application"]
+SessionMW["express-session&lt;br&gt;middleware"]
+IndexRouter["routes/index.js&lt;br&gt;router.get('/')"]
+SessionData["req.session&lt;br&gt;{usuario, loggedin}"]
+RenderEngine["EJS Engine&lt;br&gt;res.render()"]
+IndexTemplate["views/index.ejs"]
+CSS["public/css/index.css"]
+HTML["HTML Response"]
+
+Browser --&gt; ExpressServer
+ExpressServer --&gt; SessionMW
+SessionMW --&gt; IndexRouter
+IndexRouter --&gt; SessionData
+SessionData --&gt; IndexRouter
+IndexRouter --&gt; RenderEngine
+RenderEngine --&gt; IndexTemplate
+IndexTemplate --&gt; HTML
+CSS --&gt; HTML
+HTML --&gt; Browser</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L22">views/index.ejs L1-L22</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
 <h2 id="template-variables-reference">Template Variables Reference<a class="headerlink" href="#template-variables-reference" title="Permanent link">&para;</a></h2>
-<p>All variables passed from <a href="routes/index#L9-L14">routes/index.js L9-L14</a></p>
+<p>All variables passed from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L9-L14">routes/index.js L9-L14</a></p>
 <p>to the EJS renderer:</p>
 <table>
 <thead>
@@ -2310,39 +2397,39 @@
 <td>String</td>
 <td>Hardcoded "THOT"</td>
 <td>N/A</td>
-<td><a href="views/index#L7-L7">views/index.ejs L7</a> <br>  in <code>&lt;h1&gt;</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L7-L7">views/index.ejs L7</a> <br>  in <code>&lt;h1&gt;</code></td>
 </tr>
 <tr>
 <td><code>experiencia</code></td>
 <td>String</td>
 <td>Hardcoded tagline</td>
 <td>N/A</td>
-<td><a href="views/index#L8-L8">views/index.ejs L8</a> <br>  in <code>&lt;p&gt;</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L8-L8">views/index.ejs L8</a> <br>  in <code>&lt;p&gt;</code></td>
 </tr>
 <tr>
 <td><code>login</code></td>
 <td>Boolean</td>
 <td><code>req.session.loggedin \|\| false</code></td>
 <td><code>false</code></td>
-<td><a href="views/index#L13-L13">views/index.ejs L13</a> <br>  conditional</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L13-L13">views/index.ejs L13</a> <br>  conditional</td>
 </tr>
 <tr>
 <td><code>name</code></td>
 <td>String</td>
 <td><code>usuario ? usuario.nombre : "Invitado"</code></td>
 <td><code>"Invitado"</code></td>
-<td><a href="views/index#L14-L19">views/index.ejs L14-L19</a> <br>  display</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L14-L19">views/index.ejs L14-L19</a> <br>  display</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/index#L9-L14">routes/index.js L9-L14</a></p>
-<p><a href="views/index#L6-L22">views/index.ejs L6-L22</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L9-L14">routes/index.js L9-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L6-L22">views/index.ejs L6-L22</a></p>
 <h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
 <h3 id="session-system-dependency">Session System Dependency<a class="headerlink" href="#session-system-dependency" title="Permanent link">&para;</a></h3>
 <p>The landing page requires <code>express-session</code> middleware configured in the main application. Session data must be populated by:</p>
 <ul>
-<li><a href="routes/auth">routes/auth.js</a>  during login (see <a href="4.2-user-login.md">User Login</a>)</li>
-<li>Session middleware restoring cookies on subsequent requests (see <a href="4.4-session-management.md">Session Management</a>)</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>  during login (see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>)</li>
+<li>Session middleware restoring cookies on subsequent requests (see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>)</li>
 </ul>
 <h3 id="authentication-endpoints">Authentication Endpoints<a class="headerlink" href="#authentication-endpoints" title="Permanent link">&para;</a></h3>
 <p>The template links to authentication routes:</p>
@@ -2362,36 +2449,36 @@
 <td>Navigate</td>
 <td><code>/login</code></td>
 <td>GET</td>
-<td><a href="routes/auth">routes/auth.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a></td>
 </tr>
 <tr>
 <td>Logout form</td>
 <td>Submit</td>
 <td><code>/logout</code></td>
 <td>POST</td>
-<td><a href="routes/auth">routes/auth.js</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="views/index#L16-L20">views/index.ejs L16-L20</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L16-L20">views/index.ejs L16-L20</a></p>
 <h3 id="partial-templates">Partial Templates<a class="headerlink" href="#partial-templates" title="Permanent link">&para;</a></h3>
 <p>The landing page includes shared partials that provide consistent layout across the application:</p>
 <ol>
 <li><code>partials/head</code> - HTML metadata and Bootstrap CDN links</li>
 <li><code>partials/header</code> - Site-wide navigation bar</li>
 </ol>
-<p>For complete documentation on the partial system, see <a href="7.1-template-system-and-partials.md">Template System &amp; Partials</a>.</p>
-<p><strong>Sources:</strong> <a href="views/index#L1-L3">views/index.ejs L1-L3</a></p>
+<p>For complete documentation on the partial system, see <a href="/Lourdes12587/Week06/7.1-template-system-and-partials">Template System &amp; Partials</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L3">views/index.ejs L1-L3</a></p>
 <h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <p>The landing page implements minimal security measures as it displays only non-sensitive public information:</p>
 <ol>
-<li><strong>XSS Protection</strong>: EJS <code>&lt;%= %&gt;</code> syntax auto-escapes HTML entities by default at <a href="views/index#L7-L19">views/index.ejs L7-L19</a></li>
+<li><strong>XSS Protection</strong>: EJS <code>&lt;%= %&gt;</code> syntax auto-escapes HTML entities by default at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L7-L19">views/index.ejs L7-L19</a></li>
 <li><strong>No sensitive data exposure</strong>: Only displays user's name, never passwords or email</li>
-<li><strong>CSRF-safe</strong>: Logout form at <a href="views/index#L15-L17">views/index.ejs L15-L17</a>  should include CSRF token in production</li>
-<li><strong>Session validation</strong>: No database queries performed, only session data reading at <a href="routes/index#L7-L13">routes/index.js L7-L13</a></li>
+<li><strong>CSRF-safe</strong>: Logout form at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L15-L17">views/index.ejs L15-L17</a>  should include CSRF token in production</li>
+<li><strong>Session validation</strong>: No database queries performed, only session data reading at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L13">routes/index.js L7-L13</a></li>
 </ol>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
-<p><a href="views/index#L1-L22">views/index.ejs L1-L22</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L22">views/index.ejs L1-L22</a></p>
 <h2 id="usage-scenarios">Usage Scenarios<a class="headerlink" href="#usage-scenarios" title="Permanent link">&para;</a></h2>
 <h3 id="scenario-1-first-time-visitor">Scenario 1: First-Time Visitor<a class="headerlink" href="#scenario-1-first-time-visitor" title="Permanent link">&para;</a></h3>
 <p><strong>Initial Request:</strong></p>
@@ -2400,7 +2487,11 @@
 <span class="nt">Cookie</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(none)</span>
 </code></pre></div>
 <p><strong>Session State:</strong></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">req.session = {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">// Empty or new session</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">loggedin</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">undefined,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">usuario</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">undefined</span>
+<span class="err">}</span>
 </code></pre></div>
 <p><strong>Rendered Output:</strong></p>
 <ul>
@@ -2409,8 +2500,8 @@
 <li>Status: "Bienvenido, <strong>Invitado</strong>"</li>
 <li>Action: Button styled link to <code>/login</code></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/index#L9-L14">routes/index.js L9-L14</a></p>
-<p><a href="views/index#L18-L21">views/index.ejs L18-L21</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L9-L14">routes/index.js L9-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L18-L21">views/index.ejs L18-L21</a></p>
 <h3 id="scenario-2-authenticated-user">Scenario 2: Authenticated User<a class="headerlink" href="#scenario-2-authenticated-user" title="Permanent link">&para;</a></h3>
 <p><strong>Authenticated Request:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">GET / HTTP/1.1</span>
@@ -2418,7 +2509,15 @@
 <span class="nt">Cookie</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">connect.sid=s%3A...</span>
 </code></pre></div>
 <p><strong>Session State:</strong></p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">req.session = {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">loggedin</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true,</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">usuario</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="nt">    id</span><span class="p">:</span><span class="w"> </span><span class="nv">5</span><span class="p p-Indicator">,</span>
+<span class="nt">    nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;María</span><span class="nv"> </span><span class="s">García&quot;</span><span class="p p-Indicator">,</span>
+<span class="nt">    email</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;maria@example.com&quot;</span><span class="p p-Indicator">,</span>
+<span class="nt">    rol</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;registrado&quot;</span>
+<span class="w">  </span><span class="p p-Indicator">}</span>
+<span class="err">}</span>
 </code></pre></div>
 <p><strong>Rendered Output:</strong></p>
 <ul>
@@ -2427,31 +2526,41 @@
 <li>Status: "Usuario Conectado: <strong>María García</strong>"</li>
 <li>Action: POST form with "Cerrar sesión" button</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/index#L7-L14">routes/index.js L7-L14</a></p>
-<p><a href="views/index#L13-L17">views/index.ejs L13-L17</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L14">routes/index.js L7-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L13-L17">views/index.ejs L13-L17</a></p>
 <h2 id="extension-guidelines">Extension Guidelines<a class="headerlink" href="#extension-guidelines" title="Permanent link">&para;</a></h2>
 <p>To modify landing page behavior:</p>
 <h3 id="change-branding-content">Change Branding Content<a class="headerlink" href="#change-branding-content" title="Permanent link">&para;</a></h3>
-<p>Update static strings at <a href="routes/index#L10-L11">routes/index.js L10-L11</a></p>
+<p>Update static strings at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L10-L11">routes/index.js L10-L11</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="nt">nombre</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;THOT&quot;</span><span class="err">,</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">// Change application name</span>
+<span class="nt">experiencia</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Los</span><span class="nv"> </span><span class="s">milagros</span><span class="nv"> </span><span class="s">llegan</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">tu</span><span class="nv"> </span><span class="s">lado</span><span class="nv"> </span><span class="s">cuando</span><span class="nv"> </span><span class="s">empieces</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">aprender&quot;</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">// Modify tagline</span>
 </code></pre></div>
 <h3 id="add-role-specific-content">Add Role-Specific Content<a class="headerlink" href="#add-role-specific-content" title="Permanent link">&para;</a></h3>
 <p>Extend conditional logic to differentiate admin vs registered users:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="c1">// In routes/index.js</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">usuario</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">isAdmin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">usuario</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">;</span>
+
+<span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// ... existing properties</span>
+<span class="w">    </span><span class="nx">isAdmin</span><span class="o">:</span><span class="w"> </span><span class="nx">isAdmin</span>
+<span class="p">});</span>
 </code></pre></div>
-<p>Then add conditional in <a href="views/index">views/index.ejs</a></p>
+<p>Then add conditional in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs">views/index.ejs</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code><span class="err">&lt;</span>% if (isAdmin) { %&gt;
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Admin features available<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>% } %&gt;
 </code></pre></div>
 <h3 id="modify-visual-design">Modify Visual Design<a class="headerlink" href="#modify-visual-design" title="Permanent link">&para;</a></h3>
-<p>Edit gradient colors at <a href="public/css/index#L11-L11">public/css/index.css L11</a></p>
+<p>Edit gradient colors at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L11-L11">public/css/index.css L11</a></p>
 <p>:</p>
-<div class="highlight"><pre><span></span><code>
+<div class="highlight"><pre><span></span><code>background: linear-gradient(135deg, #1e3c72, #2a5298);  // Modify color stops
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/index#L6-L15">routes/index.js L6-L15</a></p>
-<p><a href="views/index#L1-L22">views/index.ejs L1-L22</a></p>
-<p><a href="public/css/index#L9-L20">public/css/index.css L9-L20</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L15">routes/index.js L6-L15</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L22">views/index.ejs L1-L22</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L9-L20">public/css/index.css L9-L20</a></p>
 
 
 

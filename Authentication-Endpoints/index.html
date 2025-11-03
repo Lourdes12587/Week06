@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -922,29 +930,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1465,6 +1450,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1592,29 +1600,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -2243,29 +2228,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2367,12 +2329,12 @@
 <h1 id="authentication-endpoints">Authentication Endpoints<a class="headerlink" href="#authentication-endpoints" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/auth">routes/auth.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document provides a comprehensive reference for all authentication-related HTTP endpoints in the course management system. These endpoints handle user registration, login, and logout operations, including input validation, password hashing, session management, and error handling.</p>
-<p>For information about the underlying authentication mechanisms and session management, see <a href="4.4-session-management.md">Session Management</a>. For details on role-based access control middleware, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L1-L139">routes/auth.js L1-L139</a></p>
+<p>For information about the underlying authentication mechanisms and session management, see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>. For details on role-based access control middleware, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
 <hr />
 <h2 id="endpoint-overview">Endpoint Overview<a class="headerlink" href="#endpoint-overview" title="Permanent link">&para;</a></h2>
 <p>The authentication router (<code>routes/auth.js</code>) exposes five HTTP endpoints:</p>
@@ -2424,17 +2386,55 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/auth#L8-L136">routes/auth.js L8-L136</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L136">routes/auth.js L8-L136</a></p>
 <hr />
 <h2 id="authentication-flow-architecture">Authentication Flow Architecture<a class="headerlink" href="#authentication-flow-architecture" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L8-L136">routes/auth.js L8-L136</a></p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant Client Browser
+  participant routes/auth.js
+  participant express-validator
+  participant bcryptjs
+  participant config/db
+  participant express-session
+
+  note over Client Browser,express-session: Registration Flow
+  Client Browser-&gt;&gt;routes/auth.js: GET /register
+  routes/auth.js-&gt;&gt;Client Browser: render('register')
+  Client Browser-&gt;&gt;routes/auth.js: POST /register
+  routes/auth.js-&gt;&gt;express-validator: {nombre, email, password, rol}
+  loop [Validation Errors]
+    express-validator-&gt;&gt;routes/auth.js: validationResult(req)
+    routes/auth.js-&gt;&gt;Client Browser: errors.array()
+    routes/auth.js-&gt;&gt;bcryptjs: render('register')
+    bcryptjs-&gt;&gt;routes/auth.js: with validaciones
+    routes/auth.js-&gt;&gt;config/db: hash(password, 8)
+    config/db-&gt;&gt;routes/auth.js: passwordHash
+    routes/auth.js-&gt;&gt;Client Browser: INSERT INTO usuarios
+    note over Client Browser,express-session: Login Flow
+    Client Browser-&gt;&gt;routes/auth.js: results
+    routes/auth.js-&gt;&gt;Client Browser: render('register')
+    Client Browser-&gt;&gt;routes/auth.js: with success alert
+    routes/auth.js-&gt;&gt;config/db: GET /login
+    config/db-&gt;&gt;routes/auth.js: render('login')
+    routes/auth.js-&gt;&gt;bcryptjs: POST /auth
+    bcryptjs-&gt;&gt;routes/auth.js: {email, password}
+    routes/auth.js-&gt;&gt;Client Browser: SELECT * FROM usuarios
+    routes/auth.js-&gt;&gt;bcryptjs: WHERE email = ?
+    bcryptjs-&gt;&gt;routes/auth.js: results[0]
+    routes/auth.js-&gt;&gt;express-session: compare(password, hash)
+    routes/auth.js-&gt;&gt;Client Browser: false
+  end
+  note over Client Browser,express-session: Logout Flow
+  Client Browser-&gt;&gt;routes/auth.js: render('login')
+  routes/auth.js-&gt;&gt;express-session: with error alert
+  express-session-&gt;&gt;routes/auth.js: compare(password, hash)
+  routes/auth.js-&gt;&gt;Client Browser: true</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L136">routes/auth.js L8-L136</a></p>
 <hr />
 <h2 id="registration-endpoints">Registration Endpoints<a class="headerlink" href="#registration-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="get-register">GET /register<a class="headerlink" href="#get-register" title="Permanent link">&para;</a></h3>
 <p>Renders the registration form for new users.</p>
-<p><strong>Route Definition:</strong> <a href="routes/auth#L12-L14">routes/auth.js L12-L14</a></p>
+<p><strong>Route Definition:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L14">routes/auth.js L12-L14</a></p>
 <p><strong>Request Parameters:</strong> None</p>
 <p><strong>Response:</strong></p>
 <ul>
@@ -2444,11 +2444,11 @@
 <p><strong>Example Usage:</strong></p>
 <div class="highlight"><pre><span></span><code>GET /register
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L12-L14">routes/auth.js L12-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L14">routes/auth.js L12-L14</a></p>
 <hr />
 <h3 id="post-register">POST /register<a class="headerlink" href="#post-register" title="Permanent link">&para;</a></h3>
 <p>Processes new user registration with input validation and password hashing.</p>
-<p><strong>Route Definition:</strong> <a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<p><strong>Route Definition:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
 <p><strong>Request Body:</strong></p>
 <table>
 <thead>
@@ -2489,14 +2489,14 @@
 <p><strong>Validation Middleware:</strong>
 The endpoint uses <code>express-validator</code> with three validation chains:</p>
 <ul>
-<li><a href="routes/auth#L19-L22">routes/auth.js L19-L22</a>  - Validates <code>nombre</code> field</li>
-<li><a href="routes/auth#L24-L27">routes/auth.js L24-L27</a>  - Validates <code>email</code> field</li>
-<li><a href="routes/auth#L29-L32">routes/auth.js L29-L32</a>  - Validates <code>password</code> field</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L19-L22">routes/auth.js L19-L22</a>  - Validates <code>nombre</code> field</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L24-L27">routes/auth.js L24-L27</a>  - Validates <code>email</code> field</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L29-L32">routes/auth.js L29-L32</a>  - Validates <code>password</code> field</li>
 </ul>
 <p><strong>Processing Flow:</strong></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
 <p><strong>Success Response:</strong>
 Renders the <code>register</code> view with SweetAlert2 configuration:</p>
 <div class="highlight"><pre><span></span><code>
@@ -2511,12 +2511,12 @@ Renders the <code>register</code> view with validation errors:</p>
 <li>Operation: <code>INSERT INTO usuarios SET ?</code></li>
 <li>Fields inserted: <code>nombre</code>, <code>email</code>, <code>password</code> (hashed), <code>rol</code> (default: <code>'registrado'</code>)</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L34-L72">routes/auth.js L34-L72</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L34-L72">routes/auth.js L34-L72</a></p>
 <hr />
 <h2 id="login-endpoints">Login Endpoints<a class="headerlink" href="#login-endpoints" title="Permanent link">&para;</a></h2>
 <h3 id="get-login">GET /login<a class="headerlink" href="#get-login" title="Permanent link">&para;</a></h3>
 <p>Renders the login form for existing users.</p>
-<p><strong>Route Definition:</strong> <a href="routes/auth#L8-L10">routes/auth.js L8-L10</a></p>
+<p><strong>Route Definition:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></p>
 <p><strong>Request Parameters:</strong> None</p>
 <p><strong>Response:</strong></p>
 <ul>
@@ -2525,11 +2525,11 @@ Renders the <code>register</code> view with validation errors:</p>
 <p><strong>Example Usage:</strong></p>
 <div class="highlight"><pre><span></span><code>GET /login
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L8-L10">routes/auth.js L8-L10</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></p>
 <hr />
 <h3 id="post-auth">POST /auth<a class="headerlink" href="#post-auth" title="Permanent link">&para;</a></h3>
 <p>Authenticates user credentials and establishes a session.</p>
-<p><strong>Route Definition:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Route Definition:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <p><strong>Request Body:</strong></p>
 <table>
 <thead>
@@ -2558,13 +2558,13 @@ Renders the <code>register</code> view with validation errors:</p>
 <p><strong>Authentication Process:</strong></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <p><strong>Session Data Structure:</strong>
 Upon successful authentication, the following session properties are set:</p>
 <ul>
-<li><a href="routes/auth#L102-L102">routes/auth.js L102</a>  - <code>req.session.loggedin = true</code></li>
-<li><a href="routes/auth#L103-L103">routes/auth.js L103</a>  - <code>req.session.usuario = results[0]</code> (entire user object)</li>
-<li><a href="routes/auth#L104-L104">routes/auth.js L104</a>  - <code>req.session.rol = usuario.rol</code> (role string)</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L102">routes/auth.js L102</a>  - <code>req.session.loggedin = true</code></li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a>  - <code>req.session.usuario = results[0]</code> (entire user object)</li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L104-L104">routes/auth.js L104</a>  - <code>req.session.rol = usuario.rol</code> (role string)</li>
 </ul>
 <p><strong>Success Response:</strong>
 Renders the <code>login</code> view with SweetAlert2 configuration:</p>
@@ -2595,12 +2595,12 @@ Renders the <code>login</code> view with SweetAlert2 configuration:</p>
 <li>Query: <code>SELECT * FROM usuarios WHERE email = ?</code></li>
 <li>Parameters: <code>[email]</code></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <hr />
 <h2 id="logout-endpoint">Logout Endpoint<a class="headerlink" href="#logout-endpoint" title="Permanent link">&para;</a></h2>
 <h3 id="post-logout">POST /logout<a class="headerlink" href="#post-logout" title="Permanent link">&para;</a></h3>
 <p>Destroys the user session and redirects to the homepage.</p>
-<p><strong>Route Definition:</strong> <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p><strong>Route Definition:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <p><strong>Request Parameters:</strong> None</p>
 <p><strong>Request Body:</strong> None</p>
 <p><strong>Response:</strong></p>
@@ -2615,12 +2615,12 @@ Renders the <code>login</code> view with SweetAlert2 configuration:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>The <code>destroy()</code> method accepts a callback that executes after session cleanup is complete. The redirect ensures users are sent to the home page after logout.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L134-L136">routes/auth.js L134-L136</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
 <hr />
 <h2 id="validation-specifications">Validation Specifications<a class="headerlink" href="#validation-specifications" title="Permanent link">&para;</a></h2>
 <p>The registration endpoint implements three validation chains using <code>express-validator</code>:</p>
 <h3 id="nombre-validation">Nombre Validation<a class="headerlink" href="#nombre-validation" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L19-L22">routes/auth.js L19-L22</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L19-L22">routes/auth.js L19-L22</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Rules:</strong></p>
@@ -2630,7 +2630,7 @@ Renders the <code>login</code> view with SweetAlert2 configuration:</p>
 <li>Error message: "El nombre debe tener al menos 3 caracteres"</li>
 </ul>
 <h3 id="email-validation">Email Validation<a class="headerlink" href="#email-validation" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L24-L27">routes/auth.js L24-L27</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L24-L27">routes/auth.js L24-L27</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Rules:</strong></p>
@@ -2640,7 +2640,7 @@ Renders the <code>login</code> view with SweetAlert2 configuration:</p>
 <li>Error message: "El email debe ser válido"</li>
 </ul>
 <h3 id="password-validation">Password Validation<a class="headerlink" href="#password-validation" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L29-L32">routes/auth.js L29-L32</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L29-L32">routes/auth.js L29-L32</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Rules:</strong></p>
@@ -2655,12 +2655,12 @@ When validation fails, the registration form is re-rendered with:</p>
 <li><code>validaciones: errors.array()</code> - Array of validation error objects</li>
 <li><code>valores: req.body</code> - Original form data for pre-population</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L17-L40">routes/auth.js L17-L40</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L40">routes/auth.js L17-L40</a></p>
 <hr />
 <h2 id="password-security">Password Security<a class="headerlink" href="#password-security" title="Permanent link">&para;</a></h2>
 <p>All password operations use <code>bcryptjs</code> for cryptographic hashing:</p>
 <h3 id="registration-password-hashing">Registration Password Hashing<a class="headerlink" href="#registration-password-hashing" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <ul>
@@ -2669,7 +2669,7 @@ When validation fails, the registration form is re-rendered with:</p>
 <li><strong>Storage:</strong> Hashed password is stored in the <code>password</code> column of the <code>usuarios</code> table</li>
 </ul>
 <h3 id="login-password-comparison">Login Password Comparison<a class="headerlink" href="#login-password-comparison" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L86-L86">routes/auth.js L86</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <ul>
@@ -2677,12 +2677,12 @@ When validation fails, the registration form is re-rendered with:</p>
 <li><strong>Returns:</strong> Boolean indicating match status</li>
 <li><strong>Security:</strong> Prevents timing attacks through constant-time comparison</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L44-L44">routes/auth.js L44</a></p>
-<p><a href="routes/auth#L86-L86">routes/auth.js L86</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></p>
 <hr />
 <h2 id="database-operations-reference">Database Operations Reference<a class="headerlink" href="#database-operations-reference" title="Permanent link">&para;</a></h2>
 <h3 id="registration-database-insert">Registration Database Insert<a class="headerlink" href="#registration-database-insert" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L46-L69">routes/auth.js L46-L69</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69">routes/auth.js L46-L69</a></p>
 <p><strong>Query:</strong></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
@@ -2690,9 +2690,9 @@ When validation fails, the registration form is re-rendered with:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p><strong>Default Role Assignment:</strong>
-If no <code>rol</code> field is provided in the request body, the user is assigned the role <code>'registrado'</code> by default <a href="routes/auth#L52-L52">routes/auth.js L52</a></p>
+If no <code>rol</code> field is provided in the request body, the user is assigned the role <code>'registrado'</code> by default <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L52-L52">routes/auth.js L52</a></p>
 <h3 id="login-database-query">Login Database Query<a class="headerlink" href="#login-database-query" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L81-L118">routes/auth.js L81-L118</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L118">routes/auth.js L81-L118</a></p>
 <p><strong>Query:</strong></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
@@ -2703,7 +2703,7 @@ If no <code>rol</code> field is provided in the request body, the user is assign
 <li><code>results[0]</code> contains the user object if found</li>
 <li>User object includes: <code>id</code>, <code>nombre</code>, <code>email</code>, <code>password</code> (hashed), <code>rol</code></li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L46-L118">routes/auth.js L46-L118</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L118">routes/auth.js L46-L118</a></p>
 <hr />
 <h2 id="response-patterns">Response Patterns<a class="headerlink" href="#response-patterns" title="Permanent link">&para;</a></h2>
 <p>All authentication endpoints follow a consistent response pattern using SweetAlert2 configuration objects:</p>
@@ -2755,18 +2755,18 @@ If no <code>rol</code> field is provided in the request body, the user is assign
 </tbody>
 </table>
 <h3 id="registration-success-response">Registration Success Response<a class="headerlink" href="#registration-success-response" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L66">routes/auth.js L58-L66</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="login-success-response">Login Success Response<a class="headerlink" href="#login-success-response" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L106-L115">routes/auth.js L106-L115</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L106-L115">routes/auth.js L106-L115</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="login-error-response">Login Error Response<a class="headerlink" href="#login-error-response" title="Permanent link">&para;</a></h3>
-<p><strong>Implementation:</strong> <a href="routes/auth#L88-L97">routes/auth.js L88-L97</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L88-L97">routes/auth.js L88-L97</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L58-L129">routes/auth.js L58-L129</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L129">routes/auth.js L58-L129</a></p>
 <hr />
 <h2 id="module-dependencies">Module Dependencies<a class="headerlink" href="#module-dependencies" title="Permanent link">&para;</a></h2>
 <p>The authentication router relies on the following imported modules:</p>
@@ -2782,32 +2782,32 @@ If no <code>rol</code> field is provided in the request body, the user is assign
 <tr>
 <td><code>express</code></td>
 <td>Router creation</td>
-<td><a href="routes/auth#L1-L1">routes/auth.js L1</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L1">routes/auth.js L1</a></td>
 </tr>
 <tr>
 <td><code>bcryptjs</code></td>
 <td>Password hashing and comparison</td>
-<td><a href="routes/auth#L3-L3">routes/auth.js L3</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L3-L3">routes/auth.js L3</a></td>
 </tr>
 <tr>
 <td><code>config/db</code></td>
 <td>Database connection</td>
-<td><a href="routes/auth#L4-L4">routes/auth.js L4</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L4-L4">routes/auth.js L4</a></td>
 </tr>
 <tr>
 <td><code>express-validator</code></td>
 <td>Input validation</td>
-<td><a href="routes/auth#L5-L5">routes/auth.js L5</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L5-L5">routes/auth.js L5</a></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Router Export:</strong>
-The configured router is exported at <a href="routes/auth#L139-L139">routes/auth.js L139</a></p>
+The configured router is exported at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L139-L139">routes/auth.js L139</a></p>
 <p>as:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L1-L5">routes/auth.js L1-L5</a></p>
-<p><a href="routes/auth#L139-L139">routes/auth.js L139</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L5">routes/auth.js L1-L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L139-L139">routes/auth.js L139</a></p>
 
 
 

@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../Course-Enrollment/">
+      
+      
+        <link rel="next" href="../Course-Management-Endpoints/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,11 +24,14 @@
     
     
       
-        <title>Architecture Overview - Week06 Project Documentation</title>
+        <title>Course Views - Week06 Project Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -62,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-overview" class="md-skip">
+        <a href="#course-views" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,15 +108,15 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture Overview
+              Course Views
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -277,10 +289,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Course-Management-System/" class="md-tabs__link">
           
   
@@ -919,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -969,28 +960,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1003,7 +997,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Course Management System
@@ -1120,6 +1114,332 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-course-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Course Views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-listing-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Listing View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Listing View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-structure-and-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Structure and Includes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-based-rendering-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role-Based Rendering Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registered-user-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registered User Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-table-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Table Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-creation-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Creation View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Creation View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Submission
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-edit-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Edit View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Edit View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-population-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Population Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden-id-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hidden ID Field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-pre-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Pre-Population
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-confirmation-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Confirmation View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrollment Confirmation View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirmation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirmation Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-information-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Information Display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirmation-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirmation Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-route-controller-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      View-Route-Controller Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-rendering-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Rendering Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Rendering Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejs-conditional-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      EJS Conditional Syntax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow-and-template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow and Template Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow and Template Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-variable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Variable Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1259,29 +1579,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1580,29 +1877,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1701,587 +1975,410 @@
 
 
 
-<h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
+<h1 id="course-views">Course Views<a class="headerlink" href="#course-views" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="config/db">config/db.js</a>
-* <a href="package">package.json</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs">views/confirmInscripcion.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs">views/courses.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs">views/create.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs">views/edit.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document provides a comprehensive overview of the system's architecture, explaining how the Express.js application is structured, how requests flow through the middleware pipeline, and how the three-tier design pattern organizes the codebase. This page focuses on the high-level architectural patterns and component interactions. For detailed information about specific subsystems, refer to:</p>
-<ul>
-<li>Technology stack and dependencies: <a href="3.1-technology-stack.md">Technology Stack</a></li>
-<li>Main server configuration: <a href="3.2-application-entry-point.md">Application Entry Point</a></li>
-<li>Database schema and connection management: <a href="3.3-database-architecture.md">Database Architecture</a></li>
-<li>Route organization and middleware chains: <a href="3.4-routing-system.md">Routing System</a></li>
-</ul>
-<hr />
-<h2 id="architectural-pattern">Architectural Pattern<a class="headerlink" href="#architectural-pattern" title="Permanent link">&para;</a></h2>
-<p>The application implements a <strong>three-tier architecture</strong> separating concerns into distinct layers:</p>
+<p>This document details the EJS template views that render course-related user interfaces in the system. These views handle course listing, creation, editing, and enrollment confirmation. Each view adapts its interface based on the authenticated user's role (admin, registrado, or publico).</p>
+<p>For information about the authentication-related views (login and registration forms), see <a href="/Lourdes12587/Week06/7.3-authentication-views">Authentication Views</a>. For details about the template system structure and shared partials, see <a href="/Lourdes12587/Week06/7.1-template-system-and-partials">Template System &amp; Partials</a>. For backend route handlers and controllers that serve these views, see <a href="/Lourdes12587/Week06/5-course-management-system">Course Management System</a> and <a href="/Lourdes12587/Week06/8-api-reference">API Reference</a>.</p>
+<h2 id="overview-of-course-views">Overview of Course Views<a class="headerlink" href="#overview-of-course-views" title="Permanent link">&para;</a></h2>
+<p>The system provides four primary course-related views, each serving a distinct purpose in the course management workflow:</p>
 <table>
 <thead>
 <tr>
-<th>Layer</th>
-<th>Responsibility</th>
-<th>Key Components</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Presentation Layer</strong></td>
-<td>User interface rendering and static assets</td>
-<td>EJS templates (<code>views/*.ejs</code>), CSS stylesheets (<code>public/css/*.css</code>), client-side resources (<code>public/resources/</code>)</td>
-</tr>
-<tr>
-<td><strong>Application Layer</strong></td>
-<td>Business logic, request handling, authentication</td>
-<td>Express routes (<code>routes/*.js</code>), controllers (<code>src/*.js</code>), middleware stack</td>
-</tr>
-<tr>
-<td><strong>Data Layer</strong></td>
-<td>Data persistence and retrieval</td>
-<td>MySQL database, connection module (<code>config/db.js</code>)</td>
-</tr>
-</tbody>
-</table>
-<p>This separation ensures maintainability by isolating UI concerns from business logic and data access logic.</p>
-<p><strong>Sources:</strong> High-level system architecture diagrams, <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<hr />
-<h2 id="application-layer-structure">Application Layer Structure<a class="headerlink" href="#application-layer-structure" title="Permanent link">&para;</a></h2>
-<h3 id="express-application-initialization">Express Application Initialization<a class="headerlink" href="#express-application-initialization" title="Permanent link">&para;</a></h3>
-<p>The Express application is initialized in <code>app.js</code>, which serves as the central orchestrator for all middleware, routes, and server configuration.</p>
-<pre class="mermaid"><code>flowchart TD
-
-Express["express()"]
-DotEnv["dotenv.config()"]
-SessionMW["session middleware"]
-BodyParser["Body parsing middleware"]
-StaticFiles["Static file middleware"]
-ViewEngine["EJS view engine"]
-Routes["Route mounting"]
-IndexRoutes["routes/index.js"]
-AuthRoutes["routes/auth.js"]
-CoursesRoutes["routes/courses.js"]
-
-Routes --&gt; IndexRoutes
-Routes --&gt; AuthRoutes
-Routes --&gt; CoursesRoutes
-
-subgraph subGraph0 ["app.js - Application Bootstrap"]
-    Express
-    DotEnv
-    SessionMW
-    BodyParser
-    StaticFiles
-    ViewEngine
-    Routes
-    Express --&gt; DotEnv
-    DotEnv --&gt; SessionMW
-    SessionMW --&gt; StaticFiles
-    StaticFiles --&gt; ViewEngine
-    ViewEngine --&gt; BodyParser
-    BodyParser --&gt; Routes
-end</code></pre>
-<p><strong>Diagram: Express Application Bootstrap Sequence</strong></p>
-<p>The initialization sequence in <a href="app#L1-L31">app.js L1-L31</a></p>
-<p>follows this order:</p>
-<ol>
-<li><strong>Line 1-2</strong>: Express framework initialization via <code>const app = express()</code></li>
-<li><strong>Line 3</strong>: Environment configuration loading from <code>./env/.env</code> using <code>dotenv</code></li>
-<li><strong>Line 4-13</strong>: Session middleware configuration with <code>express-session</code></li>
-<li><strong>Line 19</strong>: Static resource serving from <code>/public</code> directory mounted at <code>/resources</code> endpoint</li>
-<li><strong>Line 21</strong>: EJS templating engine configuration via <code>app.set('view engine', 'ejs')</code></li>
-<li><strong>Line 25-26</strong>: Request body parsing for URL-encoded forms and JSON payloads</li>
-<li><strong>Line 29-31</strong>: Route module mounting for index, authentication, and course management</li>
-</ol>
-<p><strong>Sources:</strong> <a href="app#L1-L31">app.js L1-L31</a></p>
-<hr />
-<h2 id="three-tier-architecture-implementation">Three-Tier Architecture Implementation<a class="headerlink" href="#three-tier-architecture-implementation" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-
-Browser["Web Browser"]
-EJSViews["views/*.ejs&lt;br&gt;EJS Templates"]
-CSSFiles["public/css/*.css&lt;br&gt;Stylesheets"]
-Resources["public/resources/&lt;br&gt;Static Assets"]
-AppJS["app.js&lt;br&gt;Express Server"]
-IndexJS["routes/index.js"]
-AuthJS["routes/auth.js"]
-CoursesJS["routes/courses.js"]
-ControllerJS["src/controller.js&lt;br&gt;Course CRUD"]
-CursoControllerJS["src/cursoController.js&lt;br&gt;Enrollment Logic"]
-SessionMid["express-session"]
-AuthMid["Authentication&lt;br&gt;bcryptjs + JWT"]
-ValidatorMid["express-validator"]
-DBConfigJS["config/db.js&lt;br&gt;Connection Pool"]
-MySQLDB["MySQL Database&lt;br&gt;usuarios&lt;br&gt;cursos&lt;br&gt;inscripciones"]
-
-Browser --&gt; AppJS
-AppJS --&gt; EJSViews
-AppJS --&gt; CSSFiles
-AppJS --&gt; Resources
-IndexJS --&gt; EJSViews
-AuthJS --&gt; EJSViews
-CoursesJS --&gt; EJSViews
-AuthJS --&gt; DBConfigJS
-ControllerJS --&gt; DBConfigJS
-CursoControllerJS --&gt; DBConfigJS
-
-subgraph subGraph5 ["Data Tier"]
-    DBConfigJS
-    MySQLDB
-    DBConfigJS --&gt; MySQLDB
-end
-
-subgraph subGraph4 ["Application Tier"]
-    AppJS
-    AppJS --&gt; SessionMid
-    ValidatorMid --&gt; IndexJS
-    ValidatorMid --&gt; AuthJS
-    ValidatorMid --&gt; CoursesJS
-    CoursesJS --&gt; ControllerJS
-    CoursesJS --&gt; CursoControllerJS
-
-subgraph subGraph3 ["Middleware Stack"]
-    SessionMid
-    AuthMid
-    ValidatorMid
-    SessionMid --&gt; AuthMid
-    AuthMid --&gt; ValidatorMid
-end
-
-subgraph Controllers ["Controllers"]
-    ControllerJS
-    CursoControllerJS
-end
-
-subgraph Routes ["Routes"]
-    IndexJS
-    AuthJS
-    CoursesJS
-end
-end
-
-subgraph subGraph0 ["Presentation Tier"]
-    Browser
-    EJSViews
-    CSSFiles
-    Resources
-end</code></pre>
-<p><strong>Diagram: Three-Tier Architecture with Code Entities</strong></p>
-<h3 id="presentation-tier">Presentation Tier<a class="headerlink" href="#presentation-tier" title="Permanent link">&para;</a></h3>
-<p>The presentation tier handles all user-facing content:</p>
-<ul>
-<li><strong>Templates</strong>: EJS files in <code>views/</code> directory render dynamic HTML based on server-side data</li>
-<li><strong>Stylesheets</strong>: Page-specific CSS files in <code>public/css/</code> provide styling</li>
-<li><strong>Static Resources</strong>: Images, fonts, and other assets served from <code>public/resources/</code></li>
-</ul>
-<h3 id="application-tier">Application Tier<a class="headerlink" href="#application-tier" title="Permanent link">&para;</a></h3>
-<p>The application tier contains the core business logic:</p>
-<ul>
-<li><strong>Entry Point</strong>: <a href="app#L1-L41">app.js L1-L41</a>  initializes the Express server and configures middleware</li>
-<li><strong>Route Handlers</strong>: Modular route files in <code>routes/</code> directory map HTTP endpoints to controller logic</li>
-<li><strong>Controllers</strong>: Business logic modules in <code>src/</code> directory handle CRUD operations and enrollment logic</li>
-<li><strong>Middleware</strong>: Authentication, validation, and session management protect routes and sanitize input</li>
-</ul>
-<h3 id="data-tier">Data Tier<a class="headerlink" href="#data-tier" title="Permanent link">&para;</a></h3>
-<p>The data tier manages persistence:</p>
-<ul>
-<li><strong>Connection Module</strong>: <a href="config/db#L1-L19">config/db.js L1-L19</a>  creates and exports a MySQL connection using <code>mysql2</code></li>
-<li><strong>Database</strong>: MySQL instance stores three tables (<code>usuarios</code>, <code>cursos</code>, <code>inscripciones</code>)</li>
-</ul>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>High-level system architecture diagrams</p>
-<hr />
-<h2 id="request-processing-flow">Request Processing Flow<a class="headerlink" href="#request-processing-flow" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>sequenceDiagram
-  participant Browser
-  participant app.js
-  participant express-session
-  participant routes/*
-  participant src/*
-  participant config/db.js
-  participant MySQL Database
-  participant views/*.ejs
-
-  Browser-&gt;&gt;app.js: "HTTP Request"
-  app.js-&gt;&gt;express-session: "Load session data"
-  express-session--&gt;&gt;app.js: "Session context"
-  loop ["Read Operation (GET)"]
-    app.js-&gt;&gt;Browser: "Serve from public/"
-    app.js-&gt;&gt;routes/*: "Route to handler"
-    routes/*-&gt;&gt;config/db.js: "SELECT query"
-    config/db.js-&gt;&gt;MySQL Database: "Execute query"
-    MySQL Database--&gt;&gt;config/db.js: "Result set"
-    config/db.js--&gt;&gt;routes/*: "Data rows"
-    routes/*-&gt;&gt;views/*.ejs: "res.render(view, data)"
-    views/*.ejs--&gt;&gt;Browser: "HTML response"
-    routes/*-&gt;&gt;src/*: "Delegate to controller"
-    src/*-&gt;&gt;config/db.js: "INSERT/UPDATE/DELETE"
-    config/db.js-&gt;&gt;MySQL Database: "Execute statement"
-    MySQL Database--&gt;&gt;config/db.js: "Confirmation"
-    config/db.js--&gt;&gt;src/*: "Success/Error"
-    src/*-&gt;&gt;routes/*: "Operation result"
-    routes/*-&gt;&gt;Browser: "res.redirect(url)"
-  end</code></pre>
-<p><strong>Diagram: HTTP Request Processing Sequence</strong></p>
-<h3 id="request-lifecycle">Request Lifecycle<a class="headerlink" href="#request-lifecycle" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Browser to Express</strong>: Client sends HTTP request to the server</li>
-<li><strong>Session Loading</strong>: <a href="app#L6-L13">app.js L6-L13</a>  processes session data via <code>express-session</code> middleware</li>
-<li><strong>Static vs Dynamic</strong>: <a href="app#L19-L19">app.js L19</a>  serves static files from <code>/resources/*</code> directly; dynamic routes proceed to handlers</li>
-<li><strong>Route Matching</strong>: <a href="app#L29-L31">app.js L29-L31</a>  routes request to appropriate handler in <code>routes/index.js</code>, <code>routes/auth.js</code>, or <code>routes/courses.js</code></li>
-<li><strong>Database Operations</strong>: Routes interact with database via <a href="config/db">config/db.js</a>  connection</li>
-<li><strong>Response Generation</strong>: * GET requests render EJS templates with data * POST requests redirect after database modification (Post-Redirect-Get pattern)</li>
-</ol>
-<p><strong>Sources:</strong> <a href="app#L6-L31">app.js L6-L31</a></p>
-<p><a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>HTTP request flow diagram</p>
-<hr />
-<h2 id="middleware-pipeline">Middleware Pipeline<a class="headerlink" href="#middleware-pipeline" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-
-Request["HTTP Request"]
-Session["express-session&lt;br&gt;Line 6-13"]
-Static["Static File Check&lt;br&gt;Line 19"]
-BodyParser["express.urlencoded&lt;br&gt;express.json&lt;br&gt;Lines 25-26"]
-Router["Route Matching&lt;br&gt;Lines 29-31"]
-AuthMiddleware["Authentication&lt;br&gt;Middleware"]
-ValidatorMiddleware["express-validator&lt;br&gt;Middleware"]
-Handler["Route Handler"]
-Response["HTTP Response"]
-
-Request --&gt; Session
-Session --&gt; Static
-Static --&gt; BodyParser
-BodyParser --&gt; Router
-Router --&gt; AuthMiddleware
-Router --&gt; ValidatorMiddleware
-AuthMiddleware --&gt; Handler
-ValidatorMiddleware --&gt; Handler
-Handler --&gt; Response</code></pre>
-<p><strong>Diagram: Middleware Pipeline Execution Order</strong></p>
-<h3 id="core-middleware-configuration">Core Middleware Configuration<a class="headerlink" href="#core-middleware-configuration" title="Permanent link">&para;</a></h3>
-<p>The middleware stack in <a href="app">app.js</a></p>
-<p>processes every request in sequence:</p>
-<table>
-<thead>
-<tr>
-<th>Order</th>
-<th>Middleware</th>
-<th>Configuration</th>
+<th>View File</th>
+<th>Route</th>
+<th>Primary Users</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td><code>express-session</code></td>
-<td>Lines 6-13</td>
-<td>Session management with secret key</td>
+<td><code>views/courses.ejs</code></td>
+<td><code>GET /courses</code></td>
+<td>All authenticated users</td>
+<td>Display all available courses with role-specific actions</td>
 </tr>
 <tr>
-<td>2</td>
-<td><code>express.static</code></td>
-<td>Line 19</td>
-<td>Static file serving from <code>/public</code> directory at <code>/resources</code> path</td>
+<td><code>views/create.ejs</code></td>
+<td><code>GET /create</code></td>
+<td>Admin only</td>
+<td>Form to create new courses</td>
 </tr>
 <tr>
-<td>3</td>
-<td><code>express.urlencoded</code></td>
-<td>Line 25</td>
-<td>Parse URL-encoded request bodies (form submissions)</td>
+<td><code>views/edit.ejs</code></td>
+<td><code>GET /edit/:id</code></td>
+<td>Admin only</td>
+<td>Form to edit existing course details</td>
 </tr>
 <tr>
-<td>4</td>
-<td><code>express.json</code></td>
-<td>Line 26</td>
-<td>Parse JSON request bodies (API requests)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Route handlers</td>
-<td>Lines 29-31</td>
-<td>Mount modular route files</td>
+<td><code>views/confirmInscripcion.ejs</code></td>
+<td><code>GET /inscribir/:id</code></td>
+<td>Registered users only</td>
+<td>Confirmation page before enrollment</td>
 </tr>
 </tbody>
 </table>
-<h3 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h3>
-<p>The session middleware <a href="app#L6-L13">app.js L6-L13</a></p>
-<p>configures:</p>
-<ul>
-<li><strong>Secret</strong>: <code>"secret"</code> used for signing session ID cookies</li>
-<li><strong>Resave</strong>: <code>false</code> prevents unnecessary session saves</li>
-<li><strong>SaveUninitialized</strong>: <code>false</code> prevents creating sessions for unauthenticated users</li>
-</ul>
-<h3 id="route-specific-middleware">Route-Specific Middleware<a class="headerlink" href="#route-specific-middleware" title="Permanent link">&para;</a></h3>
-<p>Individual route modules in <code>routes/</code> directory apply additional middleware:</p>
-<ul>
-<li><strong>Authentication middleware</strong>: Verifies user login status before protected routes</li>
-<li><strong>Role-based middleware</strong>: Checks user role (<code>admin</code>, <code>registrado</code>, <code>publico</code>) for authorization</li>
-<li><strong>Validation middleware</strong>: Uses <code>express-validator</code> to sanitize and validate input</li>
-</ul>
-<p><strong>Sources:</strong> <a href="app#L6-L26">app.js L6-L26</a></p>
-<p><a href="package#L14-L24">package.json L14-L24</a></p>
-<hr />
-<h2 id="module-organization">Module Organization<a class="headerlink" href="#module-organization" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-
-Assets["Images, Fonts, etc."]
-AppJS["app.js&lt;br&gt;Main Entry Point"]
-DotEnv[".env&lt;br&gt;Environment Variables"]
-IndexRoute["index.js&lt;br&gt;Landing Page Routes"]
-AuthRoute["auth.js&lt;br&gt;Login/Register Routes"]
-CoursesRoute["courses.js&lt;br&gt;Course CRUD Routes"]
-EJSFiles["*.ejs&lt;br&gt;Template Files"]
-CSSFiles["*.css&lt;br&gt;Stylesheets"]
-DBConfig["db.js&lt;br&gt;MySQL Connection"]
-Controller["controller.js&lt;br&gt;Course CRUD Logic"]
-CursoController["cursoController.js&lt;br&gt;Enrollment Logic"]
-PackageJSON["package.json&lt;br&gt;Dependencies"]
-
-subgraph subGraph8 ["Root Directory"]
-    AppJS
-    PackageJSON
-    AppJS --&gt; DotEnv
-    AppJS --&gt; IndexRoute
-    AppJS --&gt; AuthRoute
-    AppJS --&gt; CoursesRoute
-    AppJS --&gt; EJSFiles
-    AppJS --&gt; CSSFiles
-    AppJS --&gt; Assets
-    IndexRoute --&gt; EJSFiles
-    AuthRoute --&gt; EJSFiles
-    AuthRoute --&gt; DBConfig
-    CoursesRoute --&gt; EJSFiles
-    CoursesRoute --&gt; Controller
-    CoursesRoute --&gt; CursoController
-    Controller --&gt; DBConfig
-    CursoController --&gt; DBConfig
-
-subgraph public/ ["public/"]
-
-subgraph resources/ ["resources/"]
-    Assets
-end
-
-subgraph css/ ["css/"]
-    CSSFiles
-end
-end
-
-subgraph views/ ["views/"]
-    EJSFiles
-end
-
-subgraph config/ ["config/"]
-    DBConfig
-end
-
-subgraph src/ ["src/"]
-    Controller
-    CursoController
-end
-
-subgraph routes/ ["routes/"]
-    IndexRoute
-    AuthRoute
-    CoursesRoute
-end
-
-subgraph env/ ["env/"]
-    DotEnv
-end
-end</code></pre>
-<p><strong>Diagram: Directory Structure and Module Dependencies</strong></p>
-<h3 id="directory-structure">Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h3>
-<p>The application follows a modular organization pattern:</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58">views/courses.ejs L1-L58</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h2 id="course-listing-view">Course Listing View<a class="headerlink" href="#course-listing-view" title="Permanent link">&para;</a></h2>
+<h3 id="file-structure-and-includes">File Structure and Includes<a class="headerlink" href="#file-structure-and-includes" title="Permanent link">&para;</a></h3>
+<p>The course listing view (<code>views/courses.ejs</code>) serves as the primary interface for browsing available courses. The view begins by including standard partials and loading external resources:</p>
+<div class="highlight"><pre><span></span><code>&lt;%- include(&#39;partials/head&#39;) %&gt;
+&lt;link href=&#39;https://cdn.boxicons.com/fonts/basic/boxicons.min.css&#39; rel=&#39;stylesheet&#39;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/css/admin.css&quot;&gt;
+&lt;%- include(&#39;partials/header&#39;) %&gt;
+</code></pre></div>
+<p>The view loads Boxicons for action icons and a custom admin stylesheet for enhanced styling.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L6">views/courses.ejs L1-L6</a></p>
+<h3 id="role-based-rendering-logic">Role-Based Rendering Logic<a class="headerlink" href="#role-based-rendering-logic" title="Permanent link">&para;</a></h3>
+<p>The entire course listing is conditionally rendered based on the <code>login</code> status. The view receives three critical variables from the route handler: <code>login</code> (boolean), <code>rol</code> (string), and <code>cursos</code> (array).</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57">views/courses.ejs L8-L57</a></p>
+<h3 id="admin-features">Admin Features<a class="headerlink" href="#admin-features" title="Permanent link">&para;</a></h3>
+<p>Administrators see enhanced functionality including a course creation button and action columns for each course:</p>
 <table>
 <thead>
 <tr>
-<th>Directory</th>
-<th>Purpose</th>
-<th>Key Files</th>
+<th>Feature</th>
+<th>Implementation</th>
+<th>Location</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Root</td>
-<td>Application entry and configuration</td>
-<td><code>app.js</code>, <code>package.json</code></td>
+<td>Create New Button</td>
+<td><code>&lt;a href="/create" class="btn btn-outline-primary"&gt;</code> with Boxicons plus icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L13-L13">views/courses.ejs L13</a></td>
 </tr>
 <tr>
-<td><code>env/</code></td>
-<td>Environment variables</td>
-<td><code>.env</code> (contains DB credentials, secrets)</td>
+<td>Edit Action</td>
+<td><code>&lt;a href="/edit/&lt;%= curso.id %&gt;" class="btn btn-outline-warning"&gt;</code> with edit icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L35-L37">views/courses.ejs L35-L37</a></td>
 </tr>
 <tr>
-<td><code>routes/</code></td>
-<td>HTTP endpoint definitions</td>
-<td><code>index.js</code>, <code>auth.js</code>, <code>courses.js</code></td>
-</tr>
-<tr>
-<td><code>src/</code></td>
-<td>Business logic controllers</td>
-<td><code>controller.js</code>, <code>cursoController.js</code></td>
-</tr>
-<tr>
-<td><code>config/</code></td>
-<td>Infrastructure configuration</td>
-<td><code>db.js</code> (MySQL connection)</td>
-</tr>
-<tr>
-<td><code>views/</code></td>
-<td>EJS template files</td>
-<td><code>*.ejs</code> files for rendering HTML</td>
-</tr>
-<tr>
-<td><code>public/css/</code></td>
-<td>Stylesheets</td>
-<td>Page-specific CSS files</td>
-</tr>
-<tr>
-<td><code>public/resources/</code></td>
-<td>Static assets</td>
-<td>Images, fonts, icons</td>
+<td>Delete Action</td>
+<td><code>&lt;a href="/delete/&lt;%= curso.id %&gt;" class="btn btn-outline-danger"&gt;</code> with trash icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L38-L40">views/courses.ejs L38-L40</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="module-responsibilities">Module Responsibilities<a class="headerlink" href="#module-responsibilities" title="Permanent link">&para;</a></h3>
-<p><strong>Entry Point</strong>: <a href="app#L1-L41">app.js L1-L41</a></p>
+<p>The action column header is conditionally rendered only for admin users:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14">views/courses.ejs L12-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L23">views/courses.ejs L21-L23</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L42">views/courses.ejs L33-L42</a></p>
+<h3 id="registered-user-features">Registered User Features<a class="headerlink" href="#registered-user-features" title="Permanent link">&para;</a></h3>
+<p>Registered users (with <code>rol === "registrado"</code>) see an enrollment button for each course instead of edit/delete actions. The implementation uses a POST form with an inline submit button:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Note: This form implementation has been superseded by the two-step enrollment process using <code>views/confirmInscripcion.ejs</code>. The route <code>GET /inscribir/:id</code> now displays the confirmation page before processing the enrollment.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L43-L51">views/courses.ejs L43-L51</a></p>
+<h3 id="course-table-structure">Course Table Structure<a class="headerlink" href="#course-table-structure" title="Permanent link">&para;</a></h3>
+<p>The course listing displays a Bootstrap-styled table with the following columns:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Source</th>
+<th>Always Visible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>curso.id</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Titulo</td>
+<td><code>curso.titulo</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Descripcion</td>
+<td><code>curso.descripcion</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Categoria</td>
+<td><code>curso.categoria</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Acciones</td>
+<td>Dynamic actions based on role</td>
+<td>Conditional</td>
+</tr>
+</tbody>
+</table>
+<p>The table header uses Bootstrap's <code>bg-primary text-white</code> classes for styling:</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L10-L55">views/courses.ejs L10-L55</a></p>
+<h2 id="course-creation-view">Course Creation View<a class="headerlink" href="#course-creation-view" title="Permanent link">&para;</a></h2>
+<h3 id="form-layout">Form Layout<a class="headerlink" href="#form-layout" title="Permanent link">&para;</a></h3>
+<p>The course creation view (<code>views/create.ejs</code>) provides a simple form interface for administrators to add new courses. The form uses Bootstrap's card component for visual structure:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-4 w-25&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card border-secundary&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header&quot;</span><span class="p">&gt;</span>FORMULARIO PARA CREAR CURSO<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/save&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+        ...
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The container is constrained to 25% width (<code>w-25</code>) and includes top margin (<code>mt-4</code>) for spacing.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L5-L29">views/create.ejs L5-L29</a></p>
+<h3 id="input-fields">Input Fields<a class="headerlink" href="#input-fields" title="Permanent link">&para;</a></h3>
+<p>The form collects three fields for course creation:</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Input Type</th>
+<th>Bootstrap Class</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>titulo</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+</tbody>
+</table>
+<p>Each field follows the same structure with label and input wrapped in <code>mb-3</code> (margin-bottom) divs:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L11-L22">views/create.ejs L11-L22</a></p>
+<h3 id="form-submission">Form Submission<a class="headerlink" href="#form-submission" title="Permanent link">&para;</a></h3>
+<p>The form submits to <code>POST /save</code> with two action buttons:</p>
 <ul>
-<li>Initializes Express application</li>
-<li>Configures middleware stack</li>
-<li>Mounts route modules</li>
-<li>Sets view engine and static file paths</li>
+<li><strong>Guardar (Save)</strong>: Primary button that submits the form</li>
+<li><strong>Cancelar (Cancel)</strong>: Secondary link-styled as button that redirects to <code>/courses</code></li>
 </ul>
-<p><strong>Configuration</strong>: <a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<ul>
-<li>Creates MySQL connection using <code>mysql2.createConnection()</code></li>
-<li>Reads credentials from environment variables <a href="db#L4-L7">db.js L4-L7</a></li>
-<li>Exports connection for use by routes and controllers</li>
-</ul>
-<p><strong>Route Handlers</strong>: <code>routes/*.js</code></p>
-<ul>
-<li>Define HTTP endpoint mappings</li>
-<li>Apply authentication and validation middleware</li>
-<li>Delegate business logic to controllers</li>
-<li>Render views or send redirects</li>
-</ul>
-<p><strong>Controllers</strong>: <code>src/*.js</code></p>
-<ul>
-<li>Implement business logic for CRUD operations</li>
-<li>Handle database transactions</li>
-<li>Process enrollment requests</li>
-<li>Return success/error results to routes</li>
-</ul>
-<p><strong>Views</strong>: <code>views/*.ejs</code></p>
-<ul>
-<li>Render dynamic HTML using EJS syntax</li>
-<li>Display data passed from route handlers</li>
-<li>Include shared partials for header/footer</li>
-<li>Integrate with CSS stylesheets</li>
-</ul>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>project structure diagrams</p>
-<hr />
-<h2 id="database-connection-architecture">Database Connection Architecture<a class="headerlink" href="#database-connection-architecture" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-
-AuthRoute["routes/auth.js"]
-CoursesRoute["routes/courses.js"]
-Controller["src/controller.js"]
-CursoController["src/cursoController.js"]
-DBConfig["config/db.js"]
-EnvVars["process.env.DB_HOST&lt;br&gt;process.env.DB_USER&lt;br&gt;process.env.DB_PASS&lt;br&gt;process.env.DB_NAME"]
-MySQL2["mysql2.createConnection()"]
-UsuariosTable["usuarios table"]
-CursosTable["cursos table"]
-InscripcionesTable["inscripciones table"]
-
-AuthRoute --&gt; DBConfig
-CoursesRoute --&gt; DBConfig
-Controller --&gt; DBConfig
-CursoController --&gt; DBConfig
-MySQL2 --&gt; UsuariosTable
-MySQL2 --&gt; CursosTable
-MySQL2 --&gt; InscripcionesTable
-
-subgraph subGraph3 ["MySQL Database"]
-    UsuariosTable
-    CursosTable
-    InscripcionesTable
-end
-
-subgraph subGraph2 ["Database Layer"]
-    DBConfig
-    DBConfig --&gt; EnvVars
-
-subgraph subGraph1 ["Connection Configuration"]
-    EnvVars
-    MySQL2
-    EnvVars --&gt; MySQL2
-end
-end
-
-subgraph subGraph0 ["Application Layer"]
-    AuthRoute
-    CoursesRoute
-    Controller
-    CursoController
-end</code></pre>
-<p><strong>Diagram: Database Connection Module Architecture</strong></p>
-<h3 id="connection-module-design">Connection Module Design<a class="headerlink" href="#connection-module-design" title="Permanent link">&para;</a></h3>
-<p>The <a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>module implements a centralized database connection pattern:</p>
-<ol>
-<li><strong>Line 1</strong>: Import <code>mysql2</code> driver for MySQL connectivity</li>
-<li><strong>Lines 3-9</strong>: Create connection using environment variables: * <code>process.env.DB_HOST</code>: Database server hostname * <code>process.env.DB_USER</code>: MySQL username * <code>process.env.DB_PASS</code>: MySQL password * <code>process.env.DB_NAME</code>: Target database name</li>
-<li><strong>Lines 11-17</strong>: Establish connection with error handling</li>
-<li><strong>Line 19</strong>: Export connection object via <code>module.exports</code></li>
-</ol>
-<p>All route handlers and controllers import this single connection instance, ensuring consistent database access across the application. This centralized pattern simplifies connection management and environment configuration.</p>
-<p><strong>Sources:</strong> <a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>database architecture diagrams</p>
-<hr />
-<h2 id="design-patterns">Design Patterns<a class="headerlink" href="#design-patterns" title="Permanent link">&para;</a></h2>
-<p>The architecture implements several key design patterns:</p>
-<h3 id="separation-of-concerns">Separation of Concerns<a class="headerlink" href="#separation-of-concerns" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Routes</strong> handle HTTP request/response</li>
-<li><strong>Controllers</strong> implement business logic</li>
-<li><strong>Database module</strong> manages data access</li>
-<li><strong>Views</strong> handle presentation</li>
-</ul>
-<h3 id="middleware-chain-pattern">Middleware Chain Pattern<a class="headerlink" href="#middleware-chain-pattern" title="Permanent link">&para;</a></h3>
-<p>Sequential middleware processing via <a href="app#L6-L26">app.js L6-L26</a></p>
-<p>ensures:</p>
-<ul>
-<li>Session establishment before route handling</li>
-<li>Body parsing before controller access</li>
-<li>Authentication checks before protected routes</li>
-</ul>
-<h3 id="module-pattern">Module Pattern<a class="headerlink" href="#module-pattern" title="Permanent link">&para;</a></h3>
-<p>Each functional area (auth, courses) exists as separate module in <code>routes/</code> directory, promoting:</p>
-<ul>
-<li>Code organization</li>
-<li>Independent testing</li>
-<li>Easier maintenance</li>
-</ul>
-<h3 id="dependency-injection">Dependency Injection<a class="headerlink" href="#dependency-injection" title="Permanent link">&para;</a></h3>
-<p>The database connection <a href="config/db#L19-L19">config/db.js L19</a></p>
-<p>is exported and imported by consumers, enabling:</p>
-<ul>
-<li>Centralized configuration</li>
-<li>Testability through mock injection</li>
-<li>Connection reuse</li>
-</ul>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
-<p><a href="config/db#L1-L19">config/db.js L1-L19</a></p>
-<p>module dependency diagrams</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L10-L10">views/create.ejs L10</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L24-L25">views/create.ejs L24-L25</a></p>
+<h2 id="course-edit-view">Course Edit View<a class="headerlink" href="#course-edit-view" title="Permanent link">&para;</a></h2>
+<h3 id="pre-population-logic">Pre-Population Logic<a class="headerlink" href="#pre-population-logic" title="Permanent link">&para;</a></h3>
+<p>The edit view (<code>views/edit.ejs</code>) conditionally renders based on whether a <code>curso</code> object was found. If the course exists, the form is pre-populated with current values; otherwise, an error message displays:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L32-L34">views/edit.ejs L32-L34</a></p>
+<h3 id="hidden-id-field">Hidden ID Field<a class="headerlink" href="#hidden-id-field" title="Permanent link">&para;</a></h3>
+<p>The edit form includes a hidden <code>id</code> field to identify which course to update. This field is placed at the beginning of the form and is not displayed to the user:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Note: The <code>id</code> field should use <code>type="hidden"</code> instead of <code>type="text"</code> for proper form semantics, though it functions correctly as-is.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L10-L11">views/edit.ejs L10-L11</a></p>
+<h3 id="value-pre-population">Value Pre-Population<a class="headerlink" href="#value-pre-population" title="Permanent link">&para;</a></h3>
+<p>Each input field is pre-filled with the current course data using the <code>value</code> attribute:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The form structure mirrors the creation form but includes pre-populated values and posts to <code>POST /update</code> instead of <code>/save</code>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L13-L24">views/edit.ejs L13-L24</a></p>
+<h2 id="enrollment-confirmation-view">Enrollment Confirmation View<a class="headerlink" href="#enrollment-confirmation-view" title="Permanent link">&para;</a></h2>
+<h3 id="confirmation-flow">Confirmation Flow<a class="headerlink" href="#confirmation-flow" title="Permanent link">&para;</a></h3>
+<p>The enrollment confirmation view (<code>views/confirmInscripcion.ejs</code>) implements a two-step enrollment process to prevent accidental enrollments. The view displays course details and requires explicit user confirmation:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h3 id="course-information-display">Course Information Display<a class="headerlink" href="#course-information-display" title="Permanent link">&para;</a></h3>
+<p>The confirmation page displays two key pieces of course information:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The course title is emphasized with <code>&lt;strong&gt;</code> tags to draw attention to the course being enrolled in.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L6-L8">views/confirmInscripcion.ejs L6-L8</a></p>
+<h3 id="confirmation-actions">Confirmation Actions<a class="headerlink" href="#confirmation-actions" title="Permanent link">&para;</a></h3>
+<p>The form provides two buttons for user decision:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Type</th>
+<th>Action</th>
+<th>CSS Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inscribirme</td>
+<td>submit</td>
+<td>Posts to <code>/courses/inscribir/&lt;%= curso.id %&gt;</code></td>
+<td><code>btn btn-success</code></td>
+</tr>
+<tr>
+<td>Cancelar</td>
+<td>link</td>
+<td>Redirects to <code>/courses</code></td>
+<td><code>btn btn-secondary</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L10-L13">views/confirmInscripcion.ejs L10-L13</a></p>
+<h2 id="view-route-controller-mapping">View-Route-Controller Mapping<a class="headerlink" href="#view-route-controller-mapping" title="Permanent link">&para;</a></h2>
+<p>The following diagram illustrates how each course view connects to its corresponding route handler, middleware, and database operations:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58">views/courses.ejs L1-L58</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h2 id="conditional-rendering-patterns">Conditional Rendering Patterns<a class="headerlink" href="#conditional-rendering-patterns" title="Permanent link">&para;</a></h2>
+<p>The course views extensively use EJS conditional rendering to adapt the UI based on user authentication and role. The following table summarizes the conditional logic patterns:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Condition</th>
+<th>Rendered Content</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (login)</code></td>
+<td>Entire course table</td>
+<td>Prevent unauthorized access</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>"Crear Nuevo" button</td>
+<td>Admin-only course creation</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>"Acciones" table header</td>
+<td>Admin-only action column</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>Edit/Delete buttons</td>
+<td>Admin-only course management</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol === "registrado")</code></td>
+<td>"Inscribirse" button</td>
+<td>Registered user enrollment</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>if(curso)</code></td>
+<td>Edit form</td>
+<td>Handle missing course</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>else</code></td>
+<td>"CURSOS NO ENCONTRADO"</td>
+<td>Error state</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejs-conditional-syntax">EJS Conditional Syntax<a class="headerlink" href="#ejs-conditional-syntax" title="Permanent link">&para;</a></h3>
+<p>The views use standard EJS scriptlet tags for conditional logic:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8">views/courses.ejs L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14">views/courses.ejs L12-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L23">views/courses.ejs L21-L23</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L42">views/courses.ejs L33-L42</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L43-L51">views/courses.ejs L43-L51</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L32-L34">views/edit.ejs L32-L34</a></p>
+<h2 id="data-flow-and-template-variables">Data Flow and Template Variables<a class="headerlink" href="#data-flow-and-template-variables" title="Permanent link">&para;</a></h2>
+<p>Each course view receives specific data from its route handler. The following diagram maps the data flow from database queries through route handlers to template rendering:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="expected-variable-types">Expected Variable Types<a class="headerlink" href="#expected-variable-types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Variable</th>
+<th>Type</th>
+<th>Source</th>
+<th>Nullable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>courses.ejs</td>
+<td><code>login</code></td>
+<td>boolean</td>
+<td>Session/middleware</td>
+<td>No</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>rol</code></td>
+<td>string</td>
+<td>Session (<code>req.session.rol</code>)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>cursos</code></td>
+<td>array</td>
+<td>Database query result</td>
+<td>No (can be empty)</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>curso</code></td>
+<td>object</td>
+<td>Database query result</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>confirmInscripcion.ejs</td>
+<td><code>curso</code></td>
+<td>object</td>
+<td>Database query result</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8">views/courses.ejs L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L12">views/courses.ejs L12</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L21">views/courses.ejs L21</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L27-L27">views/courses.ejs L27</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L7-L8">views/confirmInscripcion.ejs L7-L8</a></p>
 
 
 

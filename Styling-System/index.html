@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1138,6 +1123,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1265,29 +1273,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -2039,29 +2024,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2163,15 +2125,15 @@
 <h1 id="styling-system">Styling System<a class="headerlink" href="#styling-system" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="public/css/header">public/css/header.css</a>
-* <a href="public/css/index">public/css/index.css</a>
-* <a href="public/css/inscripcion">public/css/inscripcion.css</a>
-* <a href="public/css/login">public/css/login.css</a>
-* <a href="public/css/register">public/css/register.css</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css">public/css/header.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css">public/css/index.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css">public/css/inscripcion.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css">public/css/login.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css">public/css/register.css</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document details the CSS architecture for the course management system, including the organization of stylesheets, styling patterns, responsive design implementation, and the integration with Bootstrap and Boxicons. The styling system uses page-specific CSS files with shared navigation components and consistent theming across the application.</p>
-<p>For information about the EJS templates that these styles are applied to, see <a href="7.1-template-system-and-partials.md">Template System &amp; Partials</a>. For details on specific page layouts, see <a href="7.3-authentication-views.md">Authentication Views</a> and <a href="7.4-course-views.md">Course Views</a>.</p>
+<p>For information about the EJS templates that these styles are applied to, see <a href="/Lourdes12587/Week06/7.1-template-system-and-partials">Template System &amp; Partials</a>. For details on specific page layouts, see <a href="/Lourdes12587/Week06/7.3-authentication-views">Authentication Views</a> and <a href="/Lourdes12587/Week06/7.4-course-views">Course Views</a>.</p>
 <hr />
 <h2 id="css-architecture-overview">CSS Architecture Overview<a class="headerlink" href="#css-architecture-overview" title="Permanent link">&para;</a></h2>
 <p>The styling system is organized around page-specific stylesheets with some shared styling patterns, particularly for navigation components. Each major view has its own CSS file in the <code>public/css/</code> directory.</p>
@@ -2225,11 +2187,11 @@ subgraph public/css/ ["public/css/"]
     register
     inscripcion
 end</code></pre>
-<p><strong>Sources:</strong> <a href="public/css/header#L1-L102">public/css/header.css L1-L102</a></p>
-<p><a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
-<p><a href="public/css/login#L1-L83">public/css/login.css L1-L83</a></p>
-<p><a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
-<p><a href="public/css/inscripcion#L1-L85">public/css/inscripcion.css L1-L85</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L1-L102">public/css/header.css L1-L102</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L1-L83">public/css/login.css L1-L83</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css#L1-L85">public/css/inscripcion.css L1-L85</a></p>
 <hr />
 <h2 id="page-specific-stylesheet-organization">Page-Specific Stylesheet Organization<a class="headerlink" href="#page-specific-stylesheet-organization" title="Permanent link">&para;</a></h2>
 <p>The system uses a one-stylesheet-per-page pattern for major views, allowing for isolated styling concerns without conflicts.</p>
@@ -2276,11 +2238,11 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="public/css/header#L1-L102">public/css/header.css L1-L102</a></p>
-<p><a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
-<p><a href="public/css/login#L1-L83">public/css/login.css L1-L83</a></p>
-<p><a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
-<p><a href="public/css/inscripcion#L1-L85">public/css/inscripcion.css L1-L85</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L1-L102">public/css/header.css L1-L102</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L1-L83">public/css/login.css L1-L83</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css#L1-L85">public/css/inscripcion.css L1-L85</a></p>
 <hr />
 <h2 id="navigation-styling-system">Navigation Styling System<a class="headerlink" href="#navigation-styling-system" title="Permanent link">&para;</a></h2>
 <p>The navigation bar styling appears in multiple CSS files with consistent patterns. The primary implementation uses a fixed-position gradient navigation bar with responsive behavior.</p>
@@ -2302,11 +2264,11 @@ linkItems --&gt; hoverEffect</code></pre>
 <h4 id="navigation-css-pattern">Navigation CSS Pattern<a class="headerlink" href="#navigation-css-pattern" title="Permanent link">&para;</a></h4>
 <p>The navigation bar is styled with:</p>
 <ul>
-<li><strong>Fixed positioning</strong> at the top of the viewport <a href="public/css/index#L56-L56">public/css/index.css L56</a></li>
-<li><strong>Gradient background</strong> from <code>#4f46e5</code> to <code>#3b82f6</code> <a href="public/css/index#L54-L54">public/css/index.css L54</a></li>
-<li><strong>Flexbox layout</strong> for horizontal alignment <a href="public/css/index#L60-L62">public/css/index.css L60-L62</a></li>
-<li><strong>Box shadow</strong> for depth: <code>0 4px 6px rgba(0, 0, 0, 0.1)</code> <a href="public/css/index#L63-L63">public/css/index.css L63</a></li>
-<li><strong>z-index of 1000</strong> to stay above content <a href="public/css/index#L59-L59">public/css/index.css L59</a></li>
+<li><strong>Fixed positioning</strong> at the top of the viewport <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L56-L56">public/css/index.css L56</a></li>
+<li><strong>Gradient background</strong> from <code>#4f46e5</code> to <code>#3b82f6</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L54-L54">public/css/index.css L54</a></li>
+<li><strong>Flexbox layout</strong> for horizontal alignment <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L60-L62">public/css/index.css L60-L62</a></li>
+<li><strong>Box shadow</strong> for depth: <code>0 4px 6px rgba(0, 0, 0, 0.1)</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L63-L63">public/css/index.css L63</a></li>
+<li><strong>z-index of 1000</strong> to stay above content <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L59-L59">public/css/index.css L59</a></li>
 </ul>
 <h4 id="navigation-link-hover-effect">Navigation Link Hover Effect<a class="headerlink" href="#navigation-link-hover-effect" title="Permanent link">&para;</a></h4>
 <p>Navigation links implement a custom underline animation using CSS pseudo-elements:</p>
@@ -2326,8 +2288,8 @@ linkItems --&gt; hoverEffect</code></pre>
 }
 </code></pre></div>
 <p>This creates a left-to-right underline that expands on hover.</p>
-<p><strong>Sources:</strong> <a href="public/css/index#L52-L98">public/css/index.css L52-L98</a></p>
-<p><a href="public/css/header#L7-L52">public/css/header.css L7-L52</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L52-L98">public/css/index.css L52-L98</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L7-L52">public/css/header.css L7-L52</a></p>
 <hr />
 <h2 id="responsive-design-implementation">Responsive Design Implementation<a class="headerlink" href="#responsive-design-implementation" title="Permanent link">&para;</a></h2>
 <p>The styling system implements mobile-first responsive patterns using CSS media queries, particularly for navigation collapse.</p>
@@ -2351,10 +2313,10 @@ active --&gt; vertical</code></pre>
 <h4 id="mobile-menu-implementation">Mobile Menu Implementation<a class="headerlink" href="#mobile-menu-implementation" title="Permanent link">&para;</a></h4>
 <p>At breakpoint <code>max-width: 768px</code>:</p>
 <ul>
-<li><strong>Navigation links hidden</strong> by default <a href="public/css/header#L69-L70">public/css/header.css L69-L70</a></li>
-<li><strong>Menu button displayed</strong> using flexbox <a href="public/css/header#L84-L86">public/css/header.css L84-L86</a></li>
-<li><strong>Vertical layout</strong> when <code>.active</code> class is added <a href="public/css/header#L71-L77">public/css/header.css L71-L77</a></li>
-<li><strong>Full-width dropdown</strong> positioned below header <a href="public/css/header#L74-L77">public/css/header.css L74-L77</a></li>
+<li><strong>Navigation links hidden</strong> by default <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L69-L70">public/css/header.css L69-L70</a></li>
+<li><strong>Menu button displayed</strong> using flexbox <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L84-L86">public/css/header.css L84-L86</a></li>
+<li><strong>Vertical layout</strong> when <code>.active</code> class is added <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L71-L77">public/css/header.css L71-L77</a></li>
+<li><strong>Full-width dropdown</strong> positioned below header <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L74-L77">public/css/header.css L74-L77</a></li>
 </ul>
 <p>The <code>.menu-btn</code> consists of three horizontal bars styled as:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">menu-btn</span><span class="w"> </span><span class="nt">div</span><span class="w"> </span><span class="p">{</span>
@@ -2365,8 +2327,8 @@ active --&gt; vertical</code></pre>
 <span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="public/css/header#L68-L87">public/css/header.css L68-L87</a></p>
-<p><a href="public/css/index#L100-L114">public/css/index.css L100-L114</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L68-L87">public/css/header.css L68-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L100-L114">public/css/index.css L100-L114</a></p>
 <hr />
 <h2 id="form-styling-patterns">Form Styling Patterns<a class="headerlink" href="#form-styling-patterns" title="Permanent link">&para;</a></h2>
 <p>Authentication forms (login, registration, enrollment) share consistent styling patterns with centered layouts and card-like containers.</p>
@@ -2427,9 +2389,9 @@ buttons --&gt; buttonStyle</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="public/css/login#L11-L47">public/css/login.css L11-L47</a></p>
-<p><a href="public/css/register#L16-L55">public/css/register.css L16-L55</a></p>
-<p><a href="public/css/inscripcion#L2-L45">public/css/inscripcion.css L2-L45</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L11-L47">public/css/login.css L11-L47</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L16-L55">public/css/register.css L16-L55</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css#L2-L45">public/css/inscripcion.css L2-L45</a></p>
 <hr />
 <h2 id="color-schemes-and-gradients">Color Schemes and Gradients<a class="headerlink" href="#color-schemes-and-gradients" title="Permanent link">&para;</a></h2>
 <p>The application uses consistent color schemes across different pages, with gradient backgrounds being a dominant visual pattern.</p>
@@ -2504,10 +2466,10 @@ subgraph subGraph0 ["Blue Theme Family"]
     register
     enroll
 end</code></pre>
-<p><strong>Sources:</strong> <a href="public/css/index#L11-L11">public/css/index.css L11</a></p>
-<p><a href="public/css/login#L4-L4">public/css/login.css L4</a></p>
-<p><a href="public/css/register#L8-L8">public/css/register.css L8</a></p>
-<p><a href="public/css/inscripcion#L8-L8">public/css/inscripcion.css L8</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L11-L11">public/css/index.css L11</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L4-L4">public/css/login.css L4</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L8-L8">public/css/register.css L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css#L8-L8">public/css/inscripcion.css L8</a></p>
 <hr />
 <h2 id="animation-and-transition-patterns">Animation and Transition Patterns<a class="headerlink" href="#animation-and-transition-patterns" title="Permanent link">&para;</a></h2>
 <p>The styling system employs CSS transitions for smooth interactive feedback and one keyframe animation for page load effects.</p>
@@ -2580,7 +2542,7 @@ end</code></pre>
 <li>Hover/focus state with property change</li>
 <li>0.3s timing for smooth feedback</li>
 </ol>
-<p>Example from heading hover <a href="public/css/index#L27-L33">public/css/index.css L27-L33</a></p>
+<p>Example from heading hover <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L27-L33">public/css/index.css L27-L33</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">transform</span><span class="w"> </span><span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
@@ -2591,10 +2553,10 @@ end</code></pre>
 <span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#ffd700</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="public/css/index#L19-L19">public/css/index.css L19</a></p>
-<p><a href="public/css/index#L27-L50">public/css/index.css L27-L50</a></p>
-<p><a href="public/css/login#L41-L46">public/css/login.css L41-L46</a></p>
-<p><a href="public/css/register#L49-L54">public/css/register.css L49-L54</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L19-L19">public/css/index.css L19</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L27-L50">public/css/index.css L27-L50</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L41-L46">public/css/login.css L41-L46</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L49-L54">public/css/register.css L49-L54</a></p>
 <hr />
 <h2 id="layout-patterns">Layout Patterns<a class="headerlink" href="#layout-patterns" title="Permanent link">&para;</a></h2>
 <p>The system uses primarily Flexbox for layout management with consistent centering patterns across pages.</p>
@@ -2661,10 +2623,10 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="public/css/index#L13-L18">public/css/index.css L13-L18</a></p>
-<p><a href="public/css/login#L6-L8">public/css/login.css L6-L8</a></p>
-<p><a href="public/css/register#L10-L13">public/css/register.css L10-L13</a></p>
-<p><a href="public/css/header#L14-L16">public/css/header.css L14-L16</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L13-L18">public/css/index.css L13-L18</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L6-L8">public/css/login.css L6-L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L10-L13">public/css/register.css L10-L13</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L14-L16">public/css/header.css L14-L16</a></p>
 <hr />
 <h2 id="section-styling-pattern">Section Styling Pattern<a class="headerlink" href="#section-styling-pattern" title="Permanent link">&para;</a></h2>
 <p>Multiple CSS files include section styling, particularly for the landing page with alternating background colors.</p>
@@ -2675,7 +2637,7 @@ end</code></pre>
 <span class="w">  </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">center</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>The <code>100px</code> top padding creates space below the fixed navigation <a href="public/css/header#L90-L93">public/css/header.css L90-L93</a></p>
+<p>The <code>100px</code> top padding creates space below the fixed navigation <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L90-L93">public/css/header.css L90-L93</a></p>
 <h3 id="section-color-scheme">Section Color Scheme<a class="headerlink" href="#section-color-scheme" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2699,8 +2661,8 @@ end</code></pre>
 </tbody>
 </table>
 <p>This creates visual separation between different content areas on scrollable pages.</p>
-<p><strong>Sources:</strong> <a href="public/css/header#L89-L101">public/css/header.css L89-L101</a></p>
-<p><a href="public/css/index#L115-L127">public/css/index.css L115-L127</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L89-L101">public/css/header.css L89-L101</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L115-L127">public/css/index.css L115-L127</a></p>
 <hr />
 <h2 id="reset-and-base-styles">Reset and Base Styles<a class="headerlink" href="#reset-and-base-styles" title="Permanent link">&para;</a></h2>
 <p>Some CSS files include CSS resets to ensure consistent rendering across browsers.</p>
@@ -2713,8 +2675,8 @@ end</code></pre>
 </code></pre></div>
 <p>This universal selector reset appears in:</p>
 <ul>
-<li><a href="public/css/index#L1-L6">public/css/index.css L1-L6</a></li>
-<li><a href="public/css/register#L1-L5">public/css/register.css L1-L5</a></li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L6">public/css/index.css L1-L6</a></li>
+<li><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L5">public/css/register.css L1-L5</a></li>
 </ul>
 <h3 id="base-body-styles">Base Body Styles<a class="headerlink" href="#base-body-styles" title="Permanent link">&para;</a></h3>
 <p>The body element typically includes:</p>
@@ -2724,8 +2686,8 @@ end</code></pre>
 <li><strong>Display</strong>: Flexbox for centering</li>
 <li><strong>Min-height</strong>: <code>100vh</code> for full viewport height</li>
 </ul>
-<p><strong>Sources:</strong> <a href="public/css/index#L1-L20">public/css/index.css L1-L20</a></p>
-<p><a href="public/css/register#L1-L14">public/css/register.css L1-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L20">public/css/index.css L1-L20</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L14">public/css/register.css L1-L14</a></p>
 <hr />
 <h2 id="style-to-view-integration">Style-to-View Integration<a class="headerlink" href="#style-to-view-integration" title="Permanent link">&para;</a></h2>
 <p>The following diagram shows how CSS files are linked to their respective EJS templates:</p>
@@ -2778,11 +2740,11 @@ subgraph subGraph0 ["View Templates"]
     perfilEJS
 end</code></pre>
 <p>The CSS files are served as static assets through Express's <code>express.static</code> middleware configured in <code>app.js</code> to serve files from the <code>public/</code> directory.</p>
-<p><strong>Sources:</strong> <a href="public/css/header#L1-L102">public/css/header.css L1-L102</a></p>
-<p><a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
-<p><a href="public/css/login#L1-L83">public/css/login.css L1-L83</a></p>
-<p><a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
-<p><a href="public/css/inscripcion#L1-L85">public/css/inscripcion.css L1-L85</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/header.css#L1-L102">public/css/header.css L1-L102</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L1-L83">public/css/login.css L1-L83</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/inscripcion.css#L1-L85">public/css/inscripcion.css L1-L85</a></p>
 <hr />
 <h2 id="best-practices-and-conventions">Best Practices and Conventions<a class="headerlink" href="#best-practices-and-conventions" title="Permanent link">&para;</a></h2>
 <p>The styling system follows several consistent patterns:</p>
@@ -2813,9 +2775,9 @@ end</code></pre>
 <li><strong>Easing</strong>: <code>ease</code> or <code>ease-out</code> for natural motion</li>
 <li><strong>Properties</strong>: Usually single-property transitions for performance</li>
 </ul>
-<p><strong>Sources:</strong> <a href="public/css/login#L1-L83">public/css/login.css L1-L83</a></p>
-<p><a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
-<p><a href="public/css/index#L1-L129">public/css/index.css L1-L129</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L1-L83">public/css/login.css L1-L83</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/index.css#L1-L129">public/css/index.css L1-L129</a></p>
 
 
 

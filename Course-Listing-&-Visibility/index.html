@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1288,6 +1273,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1415,29 +1423,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1736,29 +1721,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1860,42 +1822,19 @@
 <h1 id="course-listing-visibility">Course Listing &amp; Visibility<a class="headerlink" href="#course-listing-visibility" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="views/courses">views/courses.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs">views/courses.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document details the course listing system and its role-based visibility control mechanism. The system implements differential course display based on user authentication status and role, filtering which courses are visible to public users versus authenticated registered users and administrators.</p>
-<p>For information about course enrollment functionality, see <a href="5.4-course-enrollment.md">Course Enrollment</a>. For details about creating and managing course visibility settings, see <a href="5.1-creating-courses.md">Creating Courses</a> and <a href="5.2-editing-and-deleting-courses.md">Editing &amp; Deleting Courses</a>.</p>
+<p>For information about course enrollment functionality, see <a href="/Lourdes12587/Week06/5.4-course-enrollment">Course Enrollment</a>. For details about creating and managing course visibility settings, see <a href="/Lourdes12587/Week06/5.1-creating-courses">Creating Courses</a> and <a href="/Lourdes12587/Week06/5.2-editing-and-deleting-courses">Editing &amp; Deleting Courses</a>.</p>
 <hr />
 <h2 id="visibility-architecture-overview">Visibility Architecture Overview<a class="headerlink" href="#visibility-architecture-overview" title="Permanent link">&para;</a></h2>
 <p>The course listing system implements a two-tier visibility model where courses in the database have a <code>visibilidad</code> field that determines their accessibility. The system filters courses based on the requesting user's role before rendering the list.</p>
 <p><strong>Visibility Control Flow Diagram</strong></p>
-<pre class="mermaid"><code>flowchart TD
-
-Request["GET /courses Request"]
-SessionCheck["Session Check&lt;br&gt;req.session?.rol"]
-RoleDetection["User Role"]
-PublicoQuery["SQL Query&lt;br&gt;WHERE visibilidad='publico'"]
-FullQuery["SQL Query&lt;br&gt;SELECT * FROM cursos"]
-DBExec["db.query() Execution"]
-ResultsCheck["Query Success?"]
-EmptyResults["Render with&lt;br&gt;cursos: []"]
-RenderView["Render courses.ejs&lt;br&gt;with results"]
-ViewLayer["courses.ejs&lt;br&gt;displays empty list"]
-
-Request --&gt; SessionCheck
-SessionCheck --&gt; RoleDetection
-RoleDetection --&gt; PublicoQuery
-RoleDetection --&gt; FullQuery
-RoleDetection --&gt; FullQuery
-PublicoQuery --&gt; DBExec
-FullQuery --&gt; DBExec
-DBExec --&gt; ResultsCheck
-ResultsCheck --&gt; EmptyResults
-ResultsCheck --&gt; RenderView
-EmptyResults --&gt; ViewLayer
-RenderView --&gt; ViewLayer</code></pre>
-<p>Sources: <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
 <hr />
 <h2 id="role-determination-logic">Role Determination Logic<a class="headerlink" href="#role-determination-logic" title="Permanent link">&para;</a></h2>
 <p>The <code>/courses</code> route handler begins by determining the user's role through session inspection. If no session exists or the user is not logged in, the role defaults to <code>'publico'</code>.</p>
@@ -1925,28 +1864,19 @@ RenderView --&gt; ViewLayer</code></pre>
 </tr>
 </tbody>
 </table>
-<p>The role detection occurs at <a href="routes/courses#L36-L36">routes/courses.js L36</a></p>
+<p>The role detection occurs at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L36">routes/courses.js L36</a></p>
 <p>using the expression:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;publico&#39;</span><span class="p">;</span>
 </code></pre></div>
 <p>This uses optional chaining to safely access the session and provides a default value of <code>'publico'</code> when the session is undefined or the <code>rol</code> property is absent.</p>
-<p>Sources: <a href="routes/courses#L35-L42">routes/courses.js L35-L42</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L42">routes/courses.js L35-L42</a></p>
 <hr />
 <h2 id="database-query-construction">Database Query Construction<a class="headerlink" href="#database-query-construction" title="Permanent link">&para;</a></h2>
 <p>The route constructs a dynamic SQL query based on the detected role. The base query selects all columns from the <code>cursos</code> table, and a conditional <code>WHERE</code> clause is appended for public users.</p>
 <p><strong>Query Construction Logic Diagram</strong></p>
-<pre class="mermaid"><code>flowchart TD
-
-Start["Initialize base query&lt;br&gt;let sql = 'SELECT * FROM cursos'"]
-CheckRole["rol === 'publico'?"]
-AppendWhere["sql += ' WHERE visibilidad=public'"]
-ExecuteQuery["db.query(sql, callback)"]
-
-Start --&gt; CheckRole
-CheckRole --&gt; AppendWhere
-CheckRole --&gt; ExecuteQuery
-AppendWhere --&gt; ExecuteQuery</code></pre>
-<p>The implementation at <a href="routes/courses#L38-L42">routes/courses.js L38-L42</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The implementation at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L42">routes/courses.js L38-L42</a></p>
 <p>constructs the query as follows:</p>
 <ul>
 <li>Line 38: Initialize base SQL query string</li>
@@ -1958,27 +1888,17 @@ AppendWhere --&gt; ExecuteQuery</code></pre>
 <li>Public users only see courses marked as <code>visibilidad='publico'</code> in the database</li>
 <li>Authenticated users (both <code>'registrado'</code> and <code>'admin'</code>) see all courses regardless of visibility setting</li>
 </ul>
-<p>Sources: <a href="routes/courses#L38-L42">routes/courses.js L38-L42</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L42">routes/courses.js L38-L42</a></p>
 <hr />
 <h2 id="error-handling-and-results-processing">Error Handling and Results Processing<a class="headerlink" href="#error-handling-and-results-processing" title="Permanent link">&para;</a></h2>
 <p>The database query execution includes error handling that ensures graceful degradation when database operations fail.</p>
-<pre class="mermaid"><code>flowchart TD
-
-QueryExec["db.query() Callback"]
-ErrorCheck["error exists?"]
-LogError["console.error(error)"]
-RenderEmpty["res.render('courses')&lt;br&gt;cursos: []&lt;br&gt;login: false/session value&lt;br&gt;rol: session.rol"]
-RenderSuccess["res.render('courses')&lt;br&gt;cursos: results&lt;br&gt;login: session value&lt;br&gt;rol: detected rol"]
-
-QueryExec --&gt; ErrorCheck
-ErrorCheck --&gt; LogError
-ErrorCheck --&gt; RenderSuccess
-LogError --&gt; RenderEmpty</code></pre>
-<p>The error handling at <a href="routes/courses#L44-L61">routes/courses.js L44-L61</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The error handling at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L61">routes/courses.js L44-L61</a></p>
 <p>follows this pattern:</p>
 <ol>
-<li><strong>Error Path</strong> <a href="routes/courses#L45-L54">routes/courses.js L45-L54</a> : When a database error occurs, the error is logged to console, and the view is rendered with an empty array for courses. Session state is still passed to maintain UI consistency.</li>
-<li><strong>Success Path</strong> <a href="routes/courses#L56-L60">routes/courses.js L56-L60</a> : When the query succeeds, the results array is passed directly to the view along with session state and the determined role.</li>
+<li><strong>Error Path</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L45-L54">routes/courses.js L45-L54</a> : When a database error occurs, the error is logged to console, and the view is rendered with an empty array for courses. Session state is still passed to maintain UI consistency.</li>
+<li><strong>Success Path</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L56-L60">routes/courses.js L56-L60</a> : When the query succeeds, the results array is passed directly to the view along with session state and the determined role.</li>
 </ol>
 <p>The view receives three critical data points:</p>
 <ul>
@@ -1986,45 +1906,21 @@ LogError --&gt; RenderEmpty</code></pre>
 <li><code>login</code>: Boolean indicating if user has an active session (<code>req.session.loggedin</code>)</li>
 <li><code>rol</code>: String indicating user's role (<code>'publico'</code>, <code>'registrado'</code>, or <code>'admin'</code>)</li>
 </ul>
-<p>Sources: <a href="routes/courses#L44-L61">routes/courses.js L44-L61</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L61">routes/courses.js L44-L61</a></p>
 <hr />
 <h2 id="view-rendering-and-conditional-display">View Rendering and Conditional Display<a class="headerlink" href="#view-rendering-and-conditional-display" title="Permanent link">&para;</a></h2>
 <p>The <code>courses.ejs</code> template adapts its display based on the <code>login</code> status and <code>rol</code> value passed from the route handler. The template uses EJS conditional tags to show or hide UI elements.</p>
 <p><strong>Template Conditional Logic Structure</strong></p>
-<pre class="mermaid"><code>flowchart TD
-
-Template["courses.ejs Template"]
-LoginCheck["&lt;% if login %&gt;"]
-HideContent["No content displayed"]
-ShowTable["Display course table"]
-RoleCheck["&lt;% if rol == 'admin' %&gt;"]
-ShowCreateBtn["Show Create New button"]
-HeaderLoop["&lt;% if rol == 'admin' %&gt;"]
-ShowActionsHeader["Show Actions column"]
-RowLoop["&lt;% cursos.forEach %&gt;"]
-RoleCheckRow["Role Check in Row"]
-ShowEditDelete["Admin: Edit/Delete buttons"]
-ShowEnroll["Registrado: Enroll button"]
-
-Template --&gt; LoginCheck
-LoginCheck --&gt; HideContent
-LoginCheck --&gt; ShowTable
-ShowTable --&gt; RoleCheck
-RoleCheck --&gt; ShowCreateBtn
-ShowTable --&gt; HeaderLoop
-HeaderLoop --&gt; ShowActionsHeader
-ShowTable --&gt; RowLoop
-RowLoop --&gt; RoleCheckRow
-RoleCheckRow --&gt; ShowEditDelete
-RoleCheckRow --&gt; ShowEnroll</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="display-logic-implementation">Display Logic Implementation<a class="headerlink" href="#display-logic-implementation" title="Permanent link">&para;</a></h3>
-<p>The template structure at <a href="views/courses#L8-L57">views/courses.ejs L8-L57</a></p>
+<p>The template structure at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57">views/courses.ejs L8-L57</a></p>
 <p>implements the following visibility rules:</p>
 <ol>
-<li><strong>Top-Level Authentication Gate</strong> <a href="views/courses#L8-L8">views/courses.ejs L8</a> : The entire course listing table is wrapped in <code>&lt;% if (login) { %&gt;</code>, preventing any course display for unauthenticated users or when login is false.</li>
-<li><strong>Create Button Visibility</strong> <a href="views/courses#L12-L14">views/courses.ejs L12-L14</a> : The "Create New" button with link to <code>/create</code> appears only when <code>rol == "admin"</code>.</li>
-<li><strong>Table Header Conditional Column</strong> <a href="views/courses#L21-L23">views/courses.ejs L21-L23</a> : An "Acciones" (Actions) header column is added to the table only for admin users.</li>
-<li><strong>Row-Level Action Buttons</strong> <a href="views/courses#L33-L51">views/courses.ejs L33-L51</a> : Each course row contains conditional action buttons: * <strong>Admin Actions</strong> <a href="views/courses#L33-L42">views/courses.ejs L33-L42</a> : Edit and delete buttons linking to <code>/edit/:id</code> and <code>/delete/:id</code> * <strong>Registered User Actions</strong> <a href="views/courses#L43-L51">views/courses.ejs L43-L51</a> : Enroll button submitting POST to <code>/inscribir/:id</code></li>
+<li><strong>Top-Level Authentication Gate</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8">views/courses.ejs L8</a> : The entire course listing table is wrapped in <code>&lt;% if (login) { %&gt;</code>, preventing any course display for unauthenticated users or when login is false.</li>
+<li><strong>Create Button Visibility</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14">views/courses.ejs L12-L14</a> : The "Create New" button with link to <code>/create</code> appears only when <code>rol == "admin"</code>.</li>
+<li><strong>Table Header Conditional Column</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L23">views/courses.ejs L21-L23</a> : An "Acciones" (Actions) header column is added to the table only for admin users.</li>
+<li><strong>Row-Level Action Buttons</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L51">views/courses.ejs L33-L51</a> : Each course row contains conditional action buttons: * <strong>Admin Actions</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L42">views/courses.ejs L33-L42</a> : Edit and delete buttons linking to <code>/edit/:id</code> and <code>/delete/:id</code> * <strong>Registered User Actions</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L43-L51">views/courses.ejs L43-L51</a> : Enroll button submitting POST to <code>/inscribir/:id</code></li>
 </ol>
 <h3 id="table-structure">Table Structure<a class="headerlink" href="#table-structure" title="Permanent link">&para;</a></h3>
 <p>The table displays four core course fields for all authenticated users:</p>
@@ -2064,9 +1960,9 @@ RoleCheckRow --&gt; ShowEnroll</code></pre>
 </tr>
 </tbody>
 </table>
-<p>The iteration over courses occurs at <a href="views/courses#L27-L53">views/courses.ejs L27-L53</a></p>
+<p>The iteration over courses occurs at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L27-L53">views/courses.ejs L27-L53</a></p>
 <p>using <code>&lt;% cursos.forEach(curso =&gt; { %&gt;</code>.</p>
-<p>Sources: <a href="views/courses#L8-L57">views/courses.ejs L8-L57</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57">views/courses.ejs L8-L57</a></p>
 <hr />
 <h2 id="role-to-view-mapping">Role-to-View Mapping<a class="headerlink" href="#role-to-view-mapping" title="Permanent link">&para;</a></h2>
 <p>The following table summarizes which UI elements are visible to each role when accessing <code>/courses</code>:</p>
@@ -2137,43 +2033,15 @@ RoleCheckRow --&gt; ShowEnroll</code></pre>
 </tbody>
 </table>
 <p><strong>Key Observation</strong>: While public users can technically access the <code>/courses</code> endpoint, they see no content because the template requires <code>login</code> to be true. This creates a "soft" restriction where the route is accessible but displays nothing, effectively requiring authentication to view any courses.</p>
-<p>Sources: <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
-<p><a href="views/courses#L8-L57">views/courses.ejs L8-L57</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57">views/courses.ejs L8-L57</a></p>
 <hr />
 <h2 id="integration-with-authentication-middleware">Integration with Authentication Middleware<a class="headerlink" href="#integration-with-authentication-middleware" title="Permanent link">&para;</a></h2>
-<p>The <code>/courses</code> route at <a href="routes/courses#L35-L35">routes/courses.js L35</a></p>
+<p>The <code>/courses</code> route at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L35">routes/courses.js L35</a></p>
 <p>notably does <strong>not</strong> use authentication middleware (<code>estaAutenticado</code>, <code>isAdmin</code>, or <code>isRegistrado</code>). This design decision allows the route to be accessible to all users, but the visibility filtering and template conditional logic enforce what each user type can actually see.</p>
 <p><strong>Comparison with Protected Routes:</strong></p>
-<pre class="mermaid"><code>flowchart TD
-
-CreateRoute["GET /create"]
-AuthMW["estaAutenticado"]
-AdminMW["isAdmin"]
-DirectAccess["Direct handler execution"]
-CoursesRoute["GET /courses"]
-NoMiddleware["No middleware"]
-RoleDetection["Role detection in handler"]
-ConditionalQuery["Conditional SQL query"]
-
-subgraph subGraph1 ["Protected Route Pattern"]
-    CreateRoute
-    AuthMW
-    AdminMW
-    DirectAccess
-    CreateRoute --&gt; AuthMW
-    AuthMW --&gt; AdminMW
-    AdminMW --&gt; DirectAccess
-end
-
-subgraph subGraph0 ["Public Route Pattern"]
-    CoursesRoute
-    NoMiddleware
-    RoleDetection
-    ConditionalQuery
-    CoursesRoute --&gt; NoMiddleware
-    NoMiddleware --&gt; RoleDetection
-    RoleDetection --&gt; ConditionalQuery
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p>This architectural choice means:</p>
 <ul>
 <li>The endpoint remains publicly accessible at the HTTP level</li>
@@ -2181,19 +2049,19 @@ end</code></pre>
 <li>Public users receive a response (albeit with filtered results and limited view rendering)</li>
 <li>The route handler must defensively handle the absence of session data</li>
 </ul>
-<p>Sources: <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
 <hr />
 <h2 id="visibility-field-database-integration">Visibility Field Database Integration<a class="headerlink" href="#visibility-field-database-integration" title="Permanent link">&para;</a></h2>
-<p>The <code>visibilidad</code> column in the <code>cursos</code> table determines which courses appear in the filtered public view. While the exact schema is defined in database initialization scripts, the query construction at <a href="routes/courses#L40-L42">routes/courses.js L40-L42</a></p>
+<p>The <code>visibilidad</code> column in the <code>cursos</code> table determines which courses appear in the filtered public view. While the exact schema is defined in database initialization scripts, the query construction at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L40-L42">routes/courses.js L40-L42</a></p>
 <p>reveals that:</p>
 <ul>
 <li>The field is named <code>visibilidad</code> (Spanish for "visibility")</li>
 <li>It accepts at least the value <code>'publico'</code> for publicly visible courses</li>
 <li>Courses without <code>visibilidad='publico'</code> are hidden from public users but remain visible to authenticated users</li>
 </ul>
-<p>This creates a simple binary visibility model where administrators can mark courses as public or private when creating or editing them (see <a href="5.1-creating-courses.md">Creating Courses</a> and <a href="5.2-editing-and-deleting-courses.md">Editing &amp; Deleting Courses</a> for course creation and modification workflows).</p>
-<p>Sources: <a href="routes/courses#L38-L42">routes/courses.js L38-L42</a></p>
+<p>This creates a simple binary visibility model where administrators can mark courses as public or private when creating or editing them (see <a href="/Lourdes12587/Week06/5.1-creating-courses">Creating Courses</a> and <a href="/Lourdes12587/Week06/5.2-editing-and-deleting-courses">Editing &amp; Deleting Courses</a> for course creation and modification workflows).</p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L42">routes/courses.js L38-L42</a></p>
 
 
 

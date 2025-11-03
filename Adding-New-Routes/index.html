@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1342,29 +1350,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1555,6 +1540,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1682,29 +1690,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -2003,29 +1988,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2127,17 +2089,17 @@
 <h1 id="adding-new-routes">Adding New Routes<a class="headerlink" href="#adding-new-routes" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="src/controller">src/controller.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></p>
 </blockquote>
 <p>This document provides a step-by-step guide for extending the application with new routes. It covers route file creation, middleware application, controller integration, view rendering, and router mounting in the Express application.</p>
-<p>For information about existing route endpoints and their specifications, see <a href="8-api-reference.md">API Reference</a>. For database operation patterns used in route handlers, see <a href="9.3-database-operations.md">Database Operations</a>. For security considerations when implementing routes, see <a href="9.4-security-considerations.md">Security Considerations</a>.</p>
+<p>For information about existing route endpoints and their specifications, see <a href="/Lourdes12587/Week06/8-api-reference">API Reference</a>. For database operation patterns used in route handlers, see <a href="/Lourdes12587/Week06/9.3-database-operations">Database Operations</a>. For security considerations when implementing routes, see <a href="/Lourdes12587/Week06/9.4-security-considerations">Security Considerations</a>.</p>
 <hr />
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This page covers the technical process of adding new HTTP endpoints to the application. You will learn how to create route modules, apply authentication/authorization middleware, integrate database operations through controllers, and properly mount routes in the Express server. The examples reference the existing routing patterns found in <code>routes/courses.js</code> and <code>routes/auth.js</code>.</p>
-<p>Sources: <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="app#L1-L41">app.js L1-L41</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <hr />
 <h2 id="route-creation-workflow">Route Creation Workflow<a class="headerlink" href="#route-creation-workflow" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates the complete workflow for adding a new route to the system:</p>
@@ -2183,8 +2145,8 @@ TestRoute --&gt; End</code></pre>
 <li><strong>View Connection</strong>: Link routes to EJS templates for rendering</li>
 <li><strong>Router Mounting</strong>: Register the router in <code>app.js</code></li>
 </ol>
-<p>Sources: <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="app#L28-L31">app.js L28-L31</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L28-L31">app.js L28-L31</a></p>
 <hr />
 <h2 id="step-1-create-a-route-file">Step 1: Create a Route File<a class="headerlink" href="#step-1-create-a-route-file" title="Permanent link">&para;</a></h2>
 <p>All route modules are stored in the <code>routes/</code> directory. Create a new file following this basic structure:</p>
@@ -2233,8 +2195,8 @@ TestRoute --&gt; End</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Sources: <a href="routes/courses#L1-L7">routes/courses.js L1-L7</a></p>
-<p><a href="routes/courses#L187-L187">routes/courses.js L187</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L7">routes/courses.js L1-L7</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L187-L187">routes/courses.js L187</a></p>
 <hr />
 <h2 id="step-2-define-middleware-functions">Step 2: Define Middleware Functions<a class="headerlink" href="#step-2-define-middleware-functions" title="Permanent link">&para;</a></h2>
 <p>The system uses middleware functions for authentication and authorization. These can be defined locally in your route file or extracted to a shared middleware module.</p>
@@ -2252,7 +2214,7 @@ SessionCheck --&gt; NextHandler
 SessionCheck --&gt; RedirectLogin
 NextHandler --&gt; RouteHandler</code></pre>
 <p><strong>estaAutenticado Middleware</strong>: Verifies user is logged in</p>
-<p>Implementation pattern from <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
+<p>Implementation pattern from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
 <p>:</p>
 <ul>
 <li>Checks <code>req.session.loggedin</code> property</li>
@@ -2260,7 +2222,7 @@ NextHandler --&gt; RouteHandler</code></pre>
 <li>Redirects to <code>/login</code> if not authenticated</li>
 </ul>
 <p><strong>isAdmin Middleware</strong>: Restricts access to administrators</p>
-<p>Implementation pattern from <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
+<p>Implementation pattern from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
 <p>:</p>
 <ul>
 <li>Verifies <code>req.session.loggedin</code> is true</li>
@@ -2268,7 +2230,7 @@ NextHandler --&gt; RouteHandler</code></pre>
 <li>Redirects to <code>/login</code> if unauthorized</li>
 </ul>
 <p><strong>isRegistrado Middleware</strong>: Restricts access to registered users</p>
-<p>Implementation pattern from <a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
+<p>Implementation pattern from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
 <p>:</p>
 <ul>
 <li>Verifies <code>req.session.loggedin</code> is true</li>
@@ -2280,9 +2242,9 @@ NextHandler --&gt; RouteHandler</code></pre>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>The middleware chain executes left-to-right. Each must call <code>next()</code> for the chain to continue.</p>
-<p>Sources: <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L64-L64">routes/courses.js L64</a></p>
-<p><a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L64">routes/courses.js L64</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
 <hr />
 <h2 id="step-3-implement-route-handlers">Step 3: Implement Route Handlers<a class="headerlink" href="#step-3-implement-route-handlers" title="Permanent link">&para;</a></h2>
 <p>Route handlers process HTTP requests and generate responses. The system uses two primary patterns: inline handlers and controller functions.</p>
@@ -2290,7 +2252,7 @@ NextHandler --&gt; RouteHandler</code></pre>
 <p>Used for simple operations like rendering views or straightforward database queries:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>Example from <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
+<p>Example from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
 <p><strong>Key aspects</strong>:</p>
 <ul>
 <li>Route parameters accessed via <code>req.params</code></li>
@@ -2303,9 +2265,9 @@ NextHandler --&gt; RouteHandler</code></pre>
 <p>Used for complex business logic or reusable operations:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>Examples from <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
-<p><a href="routes/courses#L103-L103">routes/courses.js L103</a></p>
-<p><a href="src/controller#L4-L25">src/controller.js L4-L25</a></p>
+<p>Examples from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L25">src/controller.js L4-L25</a></p>
 <h3 id="route-handler-response-types">Route Handler Response Types<a class="headerlink" href="#route-handler-response-types" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2338,9 +2300,9 @@ NextHandler --&gt; RouteHandler</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Sources: <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
-<p><a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></p>
-<p><a href="src/controller#L1-L53">src/controller.js L1-L53</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L53">src/controller.js L1-L53</a></p>
 <hr />
 <h2 id="step-4-mount-router-in-appjs">Step 4: Mount Router in app.js<a class="headerlink" href="#step-4-mount-router-in-appjs" title="Permanent link">&para;</a></h2>
 <p>After creating your route file, register it with the Express application in <code>app.js</code>.</p>
@@ -2359,7 +2321,7 @@ UseMethod --&gt; PathPrefix
 UseMethod --&gt; RouterRequire
 RouterRequire --&gt; RouteFile
 RouteFile --&gt; ExportRouter</code></pre>
-<p><strong>Current Route Mounting</strong>: <a href="app#L28-L31">app.js L28-L31</a></p>
+<p><strong>Current Route Mounting</strong>: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L28-L31">app.js L28-L31</a></p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <h3 id="adding-a-new-router">Adding a New Router<a class="headerlink" href="#adding-a-new-router" title="Permanent link">&para;</a></h3>
@@ -2398,8 +2360,8 @@ RouteFile --&gt; ExportRouter</code></pre>
 </tr>
 </tbody>
 </table>
-<p>All routes in the current system use the root prefix <code>"/"</code> as shown in <a href="app#L29-L31">app.js L29-L31</a></p>
-<p>Sources: <a href="app#L28-L31">app.js L28-L31</a></p>
+<p>All routes in the current system use the root prefix <code>"/"</code> as shown in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L28-L31">app.js L28-L31</a></p>
 <hr />
 <h2 id="step-5-connect-views">Step 5: Connect Views<a class="headerlink" href="#step-5-connect-views" title="Permanent link">&para;</a></h2>
 <p>Route handlers typically render EJS templates located in the <code>views/</code> directory. The connection between routes and views follows specific patterns.</p>
@@ -2410,15 +2372,15 @@ RouteFile --&gt; ExportRouter</code></pre>
 <p><strong>List View with Data</strong>:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
 <p><strong>Form View with Pre-populated Data</strong>:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
 <p><strong>Simple View Render</strong>:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L64-L66">routes/courses.js L64-L66</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L66">routes/courses.js L64-L66</a></p>
 <h3 id="common-data-passed-to-views">Common Data Passed to Views<a class="headerlink" href="#common-data-passed-to-views" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2462,9 +2424,9 @@ RouteFile --&gt; ExportRouter</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Sources: <a href="routes/courses#L44-L61">routes/courses.js L44-L61</a></p>
-<p><a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
-<p><a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L61">routes/courses.js L44-L61</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
 <hr />
 <h2 id="route-types-and-patterns">Route Types and Patterns<a class="headerlink" href="#route-types-and-patterns" title="Permanent link">&para;</a></h2>
 <p>The system implements several distinct route patterns based on functionality.</p>
@@ -2478,9 +2440,9 @@ RouteFile --&gt; ExportRouter</code></pre>
 <li>Render EJS templates</li>
 <li>Pass data to views</li>
 </ul>
-<p><strong>Examples</strong>: <a href="routes/courses#L35-L62">routes/courses.js L35-L62</a></p>
-<p><a href="routes/courses#L73-L84">routes/courses.js L73-L84</a></p>
-<p><a href="routes/courses#L106-L114">routes/courses.js L106-L114</a></p>
+<p><strong>Examples</strong>: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
 <h3 id="pattern-2-write-operations-post-routes">Pattern 2: Write Operations (POST Routes)<a class="headerlink" href="#pattern-2-write-operations-post-routes" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
@@ -2491,28 +2453,28 @@ RouteFile --&gt; ExportRouter</code></pre>
 <li>Perform database modifications</li>
 <li>Redirect after success (Post-Redirect-Get pattern)</li>
 </ul>
-<p><strong>Examples</strong>: <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
-<p><a href="routes/courses#L103-L103">routes/courses.js L103</a></p>
-<p><a href="routes/courses#L117-L149">routes/courses.js L117-L149</a></p>
+<p><strong>Examples</strong>: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
 <h3 id="pattern-3-two-step-confirmation">Pattern 3: Two-Step Confirmation<a class="headerlink" href="#pattern-3-two-step-confirmation" title="Permanent link">&para;</a></h3>
 <p>Used for critical operations requiring user confirmation:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L106-L149">routes/courses.js L106-L149</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
 <h3 id="pattern-4-delete-operations">Pattern 4: Delete Operations<a class="headerlink" href="#pattern-4-delete-operations" title="Permanent link">&para;</a></h3>
 <p>Simple GET routes for deletions with immediate redirection:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L87-L98">routes/courses.js L87-L98</a></p>
-<p>Sources: <a href="routes/courses#L35-L187">routes/courses.js L35-L187</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L187">routes/courses.js L35-L187</a></p>
 <hr />
 <h2 id="best-practices-from-codebase">Best Practices from Codebase<a class="headerlink" href="#best-practices-from-codebase" title="Permanent link">&para;</a></h2>
 <h3 id="1-always-use-parameterized-queries">1. Always Use Parameterized Queries<a class="headerlink" href="#1-always-use-parameterized-queries" title="Permanent link">&para;</a></h3>
 <p><strong>Correct</strong> (prevents SQL injection):</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L77-L77">routes/courses.js L77</a></p>
-<p><a href="src/controller#L10-L10">src/controller.js L10</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L10-L10">src/controller.js L10</a></p>
 <h3 id="2-apply-middleware-in-correct-order">2. Apply Middleware in Correct Order<a class="headerlink" href="#2-apply-middleware-in-correct-order" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
@@ -2520,13 +2482,13 @@ RouteFile --&gt; ExportRouter</code></pre>
 <h3 id="3-handle-database-errors">3. Handle Database Errors<a class="headerlink" href="#3-handle-database-errors" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L44-L54">routes/courses.js L44-L54</a></p>
-<p><a href="routes/courses#L77-L83">routes/courses.js L77-L83</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L54">routes/courses.js L44-L54</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L83">routes/courses.js L77-L83</a></p>
 <h3 id="4-use-post-redirect-get-pattern">4. Use Post-Redirect-Get Pattern<a class="headerlink" href="#4-use-post-redirect-get-pattern" title="Permanent link">&para;</a></h3>
 <p>After POST requests that modify data, redirect to a GET route:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="src/controller#L16-L23">src/controller.js L16-L23</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L16-L23">src/controller.js L16-L23</a></p>
 <h3 id="5-extract-complex-logic-to-controllers">5. Extract Complex Logic to Controllers<a class="headerlink" href="#5-extract-complex-logic-to-controllers" title="Permanent link">&para;</a></h3>
 <p>If a route handler exceeds 20 lines or contains reusable logic, move it to a controller:</p>
 <p><strong>In route file</strong>:</p>
@@ -2535,15 +2497,15 @@ RouteFile --&gt; ExportRouter</code></pre>
 <p><strong>In controller file</strong>:</p>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
-<p><a href="src/controller#L4-L25">src/controller.js L4-L25</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L25">src/controller.js L4-L25</a></p>
 <h3 id="6-consistent-session-data-access">6. Consistent Session Data Access<a class="headerlink" href="#6-consistent-session-data-access" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
-<p>From <a href="routes/courses#L36-L36">routes/courses.js L36</a></p>
-<p><a href="routes/courses#L49-L51">routes/courses.js L49-L51</a></p>
-<p>Sources: <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="src/controller#L1-L53">src/controller.js L1-L53</a></p>
+<p>From <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L36">routes/courses.js L36</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L49-L51">routes/courses.js L49-L51</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L53">src/controller.js L1-L53</a></p>
 <hr />
 <h2 id="complete-example-adding-a-new-feature">Complete Example: Adding a New Feature<a class="headerlink" href="#complete-example-adding-a-new-feature" title="Permanent link">&para;</a></h2>
 <p>This example demonstrates adding a "comments" feature to the system.</p>
@@ -2611,16 +2573,16 @@ RouteFile --&gt; ExportRouter</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Sources: <a href="routes/courses#L1-L187">routes/courses.js L1-L187</a></p>
-<p><a href="app#L28-L31">app.js L28-L31</a></p>
+<p>Sources: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L28-L31">app.js L28-L31</a></p>
 <hr />
 <h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="3.4-routing-system.md">Routing System</a> - Overview of the modular routing architecture</li>
-<li><a href="8-api-reference.md">API Reference</a> - Complete endpoint documentation</li>
-<li><a href="9.3-database-operations.md">Database Operations</a> - Database query patterns and best practices</li>
-<li><a href="9.4-security-considerations.md">Security Considerations</a> - Authentication and input validation</li>
-<li><a href="7-frontend-architecture.md">Frontend Architecture</a> - Creating and connecting EJS views</li>
+<li><a href="/Lourdes12587/Week06/3.4-routing-system">Routing System</a> - Overview of the modular routing architecture</li>
+<li><a href="/Lourdes12587/Week06/8-api-reference">API Reference</a> - Complete endpoint documentation</li>
+<li><a href="/Lourdes12587/Week06/9.3-database-operations">Database Operations</a> - Database query patterns and best practices</li>
+<li><a href="/Lourdes12587/Week06/9.4-security-considerations">Security Considerations</a> - Authentication and input validation</li>
+<li><a href="/Lourdes12587/Week06/7-frontend-architecture">Frontend Architecture</a> - Creating and connecting EJS views</li>
 </ul>
 
 

@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1294,29 +1302,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1507,6 +1492,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1634,29 +1642,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1955,29 +1940,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2079,60 +2041,20 @@
 <h1 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="app">app.js</a>
-* <a href="config/db">config/db.js</a>
-* <a href="routes/index">routes/index.js</a>
-* <a href="src/controller">src/controller.js</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document describes the physical organization of the codebase, explaining the purpose of each directory and how files are organized within the system. It maps the folder structure to the architectural layers and explains the conventions used for organizing routes, controllers, views, and configuration files.</p>
-<p>For information about the overall architecture and how these components interact, see <a href="3-architecture-overview.md">Architecture Overview</a>. For guidance on adding new functionality to the codebase, see <a href="9.2-adding-new-routes.md">Adding New Routes</a>.</p>
+<p>For information about the overall architecture and how these components interact, see <a href="/Lourdes12587/Week06/3-architecture-overview">Architecture Overview</a>. For guidance on adding new functionality to the codebase, see <a href="/Lourdes12587/Week06/9.2-adding-new-routes">Adding New Routes</a>.</p>
 <hr />
 <h2 id="directory-structure-overview">Directory Structure Overview<a class="headerlink" href="#directory-structure-overview" title="Permanent link">&para;</a></h2>
 <p>The project follows a modular organization pattern that separates concerns by file type and responsibility. The structure promotes maintainability by grouping related files together and establishing clear boundaries between presentation, application logic, and configuration.</p>
 <h3 id="high-level-directory-layout">High-Level Directory Layout<a class="headerlink" href="#high-level-directory-layout" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-Root["/ (Project Root)"]
-AppJS["app.js"]
-PackageJSON["package.json"]
-EnvDir["env/"]
-RoutesDir["routes/"]
-ViewsDir["views/"]
-PublicDir["public/"]
-SrcDir["src/"]
-ConfigDir["config/"]
-IndexRoute["index.js"]
-AuthRoute["auth.js"]
-CoursesRoute["courses.js"]
-Controller["controller.js"]
-CursoController["cursoController.js"]
-DBConfig["db.js"]
-PartialsDir["partials/"]
-EJSFiles["*.ejs"]
-CSSDir["css/"]
-ResourcesDir["resources/"]
-EnvFile[".env"]
-
-Root --&gt; AppJS
-Root --&gt; PackageJSON
-Root --&gt; EnvDir
-Root --&gt; RoutesDir
-Root --&gt; ViewsDir
-Root --&gt; PublicDir
-Root --&gt; SrcDir
-Root --&gt; ConfigDir
-RoutesDir --&gt; IndexRoute
-RoutesDir --&gt; AuthRoute
-RoutesDir --&gt; CoursesRoute
-SrcDir --&gt; Controller
-SrcDir --&gt; CursoController
-ConfigDir --&gt; DBConfig
-ViewsDir --&gt; PartialsDir
-ViewsDir --&gt; EJSFiles
-PublicDir --&gt; CSSDir
-PublicDir --&gt; ResourcesDir
-EnvDir --&gt; EnvFile</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p><strong>Directory Mapping to Architectural Layers:</strong></p>
 <table>
 <thead>
@@ -2175,7 +2097,7 @@ EnvDir --&gt; EnvFile</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <p>High-Level System Architecture Diagram</p>
 <hr />
 <h2 id="root-directory-files">Root Directory Files<a class="headerlink" href="#root-directory-files" title="Permanent link">&para;</a></h2>
@@ -2183,48 +2105,17 @@ EnvDir --&gt; EnvFile</code></pre>
 <p>The <code>app.js</code> file serves as the main application entry point and orchestrates the entire Express application.</p>
 <p><strong>Key Responsibilities:</strong></p>
 <ul>
-<li>Express application initialization (<a href="app#L1-L2">app.js L1-L2</a> )</li>
-<li>Environment configuration loading (<a href="app#L3-L3">app.js L3</a> )</li>
-<li>Session middleware setup (<a href="app#L6-L13">app.js L6-L13</a> )</li>
-<li>Static file serving configuration (<a href="app#L19-L19">app.js L19</a> )</li>
-<li>View engine configuration (<a href="app#L21-L21">app.js L21</a> )</li>
-<li>Body parsing middleware (<a href="app#L25-L26">app.js L25-L26</a> )</li>
-<li>Route mounting (<a href="app#L29-L31">app.js L29-L31</a> )</li>
+<li>Express application initialization (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L2">app.js L1-L2</a> )</li>
+<li>Environment configuration loading (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a> )</li>
+<li>Session middleware setup (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a> )</li>
+<li>Static file serving configuration (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a> )</li>
+<li>View engine configuration (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L21">app.js L21</a> )</li>
+<li>Body parsing middleware (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L26">app.js L25-L26</a> )</li>
+<li>Route mounting (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a> )</li>
 </ul>
-<pre class="mermaid"><code>flowchart TD
-
-RequireExpress["require('express')"]
-CreateApp["express()"]
-LoadDotEnv["dotenv.config()"]
-ConfigSession["session middleware&lt;br&gt;app.use(session())"]
-ConfigStatic["static files&lt;br&gt;app.use('/resources')"]
-ConfigEJS["view engine&lt;br&gt;app.set('view engine')"]
-ConfigParsers["body parsers&lt;br&gt;urlencoded + json"]
-MountIndex["app.use('/', index)"]
-MountAuth["app.use('/', auth)"]
-MountCourses["app.use('/', courses)"]
-
-subgraph subGraph0 ["app.js Initialization Flow"]
-    RequireExpress
-    CreateApp
-    LoadDotEnv
-    ConfigSession
-    ConfigStatic
-    ConfigEJS
-    ConfigParsers
-    MountIndex
-    MountAuth
-    MountCourses
-    RequireExpress --&gt; CreateApp
-    LoadDotEnv --&gt; ConfigSession
-    ConfigSession --&gt; ConfigStatic
-    ConfigStatic --&gt; ConfigEJS
-    ConfigEJS --&gt; ConfigParsers
-    ConfigParsers --&gt; MountIndex
-    MountIndex --&gt; MountAuth
-    MountAuth --&gt; MountCourses
-end</code></pre>
-<p><strong>Sources:</strong> <a href="app#L1-L41">app.js L1-L41</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
 <h3 id="packagejson-dependency-manifest">package.json - Dependency Manifest<a class="headerlink" href="#packagejson-dependency-manifest" title="Permanent link">&para;</a></h3>
 <p>The <code>package.json</code> file defines all npm dependencies and project metadata. Key dependencies include:</p>
 <table>
@@ -2283,78 +2174,17 @@ end</code></pre>
 <h2 id="routes-directory-routes">Routes Directory (routes/)<a class="headerlink" href="#routes-directory-routes" title="Permanent link">&para;</a></h2>
 <p>The <code>routes/</code> directory contains modular route handlers that define HTTP endpoints and delegate business logic to controllers. Each file represents a logical grouping of related endpoints.</p>
 <h3 id="route-organization-pattern">Route Organization Pattern<a class="headerlink" href="#route-organization-pattern" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-IndexJS["index.js&lt;br&gt;Landing page routes"]
-AuthJS["auth.js&lt;br&gt;Authentication routes"]
-CoursesJS["courses.js&lt;br&gt;Course management routes"]
-GET_Root["GET /&lt;br&gt;Landing page"]
-GET_Login["GET /login&lt;br&gt;Login form"]
-POST_Auth["POST /auth&lt;br&gt;Authenticate"]
-GET_Register["GET /register&lt;br&gt;Register form"]
-POST_Register["POST /register&lt;br&gt;Create account"]
-POST_Logout["POST /logout&lt;br&gt;Destroy session"]
-GET_Courses["GET /courses&lt;br&gt;Course listing"]
-GET_Create["GET /create&lt;br&gt;Course form"]
-POST_Save["POST /save&lt;br&gt;Create course"]
-GET_Edit["GET /edit/:id&lt;br&gt;Edit form"]
-POST_Update["POST /update&lt;br&gt;Update course"]
-GET_Delete["GET /delete/:id&lt;br&gt;Delete course"]
-GET_Inscribir["GET /inscribir/:id&lt;br&gt;Enrollment confirm"]
-POST_Inscribir["POST /inscribir/:id&lt;br&gt;Process enrollment"]
-GET_Perfil["GET /perfil&lt;br&gt;User profile"]
-GET_AdminPerfil["GET /admin/perfil&lt;br&gt;Admin dashboard"]
-
-IndexJS --&gt; GET_Root
-AuthJS --&gt; GET_Login
-AuthJS --&gt; POST_Auth
-AuthJS --&gt; GET_Register
-AuthJS --&gt; POST_Register
-AuthJS --&gt; POST_Logout
-CoursesJS --&gt; GET_Courses
-CoursesJS --&gt; GET_Create
-CoursesJS --&gt; POST_Save
-CoursesJS --&gt; GET_Edit
-CoursesJS --&gt; POST_Update
-CoursesJS --&gt; GET_Delete
-CoursesJS --&gt; GET_Inscribir
-CoursesJS --&gt; POST_Inscribir
-CoursesJS --&gt; GET_Perfil
-CoursesJS --&gt; GET_AdminPerfil
-
-subgraph subGraph1 ["Mounted Routes"]
-    GET_Root
-    GET_Login
-    POST_Auth
-    GET_Register
-    POST_Register
-    POST_Logout
-    GET_Courses
-    GET_Create
-    POST_Save
-    GET_Edit
-    POST_Update
-    GET_Delete
-    GET_Inscribir
-    POST_Inscribir
-    GET_Perfil
-    GET_AdminPerfil
-end
-
-subgraph subGraph0 ["routes/ Directory Structure"]
-    IndexJS
-    AuthJS
-    CoursesJS
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="indexjs-landing-page-routes">index.js - Landing Page Routes<a class="headerlink" href="#indexjs-landing-page-routes" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Handles the root endpoint and renders the landing page with dynamic content based on session state.</p>
 <p><strong>Key Features:</strong></p>
 <ul>
-<li>Session-aware rendering (<a href="routes/index#L7-L7">routes/index.js L7</a> )</li>
-<li>Dynamic user greeting (<a href="routes/index#L13-L13">routes/index.js L13</a> )</li>
-<li>Login status tracking (<a href="routes/index#L12-L12">routes/index.js L12</a> )</li>
+<li>Session-aware rendering (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L7-L7">routes/index.js L7</a> )</li>
+<li>Dynamic user greeting (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L13-L13">routes/index.js L13</a> )</li>
+<li>Login status tracking (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L12-L12">routes/index.js L12</a> )</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/index#L1-L18">routes/index.js L1-L18</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L1-L18">routes/index.js L1-L18</a></p>
 <h3 id="authjs-authentication-routes">auth.js - Authentication Routes<a class="headerlink" href="#authjs-authentication-routes" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Manages user registration, login, and logout functionality.</p>
 <p><strong>Typical Route Structure:</strong></p>
@@ -2365,7 +2195,7 @@ end</code></pre>
 <li>Password hashing integration</li>
 <li>Session creation/destruction</li>
 </ul>
-<p><strong>Sources:</strong> Authentication &amp; Authorization System Diagram, <a href="4-authentication-and-authorization.md">Architecture Overview</a></p>
+<p><strong>Sources:</strong> Authentication &amp; Authorization System Diagram, <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Architecture Overview</a></p>
 <h3 id="coursesjs-course-management-routes">courses.js - Course Management Routes<a class="headerlink" href="#coursesjs-course-management-routes" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Handles all course-related operations including CRUD operations, enrollment, and profile views.</p>
 <p><strong>Route Categories:</strong></p>
@@ -2380,40 +2210,8 @@ end</code></pre>
 <h2 id="controllers-directory-src">Controllers Directory (src/)<a class="headerlink" href="#controllers-directory-src" title="Permanent link">&para;</a></h2>
 <p>The <code>src/</code> directory contains controller modules that implement business logic for data manipulation and database operations. Controllers are invoked by route handlers to process requests.</p>
 <h3 id="controller-organization">Controller Organization<a class="headerlink" href="#controller-organization" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-ControllerJS["controller.js&lt;br&gt;Course CRUD operations"]
-CursoControllerJS["cursoController.js&lt;br&gt;Enrollment logic"]
-SaveFunc["exports.save&lt;br&gt;INSERT course"]
-UpdateFunc["exports.update&lt;br&gt;UPDATE course"]
-EnrollFunc["exports.inscribir&lt;br&gt;INSERT enrollment"]
-DBInsert["db.query('INSERT INTO cursos')"]
-DBUpdate["db.query('UPDATE cursos')"]
-DBEnroll["db.query('INSERT INTO inscripciones')"]
-
-ControllerJS --&gt; SaveFunc
-ControllerJS --&gt; UpdateFunc
-CursoControllerJS --&gt; EnrollFunc
-SaveFunc --&gt; DBInsert
-UpdateFunc --&gt; DBUpdate
-EnrollFunc --&gt; DBEnroll
-
-subgraph subGraph2 ["Database Operations"]
-    DBInsert
-    DBUpdate
-    DBEnroll
-end
-
-subgraph subGraph1 ["Exported Functions"]
-    SaveFunc
-    UpdateFunc
-    EnrollFunc
-end
-
-subgraph subGraph0 ["src/ Directory"]
-    ControllerJS
-    CursoControllerJS
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="controllerjs-course-crud-controller">controller.js - Course CRUD Controller<a class="headerlink" href="#controllerjs-course-crud-controller" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Implements create and update operations for courses.</p>
 <p><strong>Exported Functions:</strong></p>
@@ -2429,22 +2227,22 @@ end</code></pre>
 <tr>
 <td><code>exports.save</code></td>
 <td>Create new course</td>
-<td><code>INSERT INTO cursos</code> (<a href="src/controller#L9-L10">src/controller.js L9-L10</a> <br> )</td>
+<td><code>INSERT INTO cursos</code> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L9-L10">src/controller.js L9-L10</a> <br> )</td>
 </tr>
 <tr>
 <td><code>exports.update</code></td>
 <td>Modify existing course</td>
-<td><code>UPDATE cursos SET ? WHERE id = ?</code> (<a href="src/controller#L36-L36">src/controller.js L36</a> <br> )</td>
+<td><code>UPDATE cursos SET ? WHERE id = ?</code> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L36-L36">src/controller.js L36</a> <br> )</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Pattern Used:</strong></p>
 <ol>
-<li>Extract request body parameters (<a href="src/controller#L5-L7">src/controller.js L5-L7</a> )</li>
+<li>Extract request body parameters (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L5-L7">src/controller.js L5-L7</a> )</li>
 <li>Execute parameterized database query</li>
-<li>Handle errors and redirect (<a href="src/controller#L17-L23">src/controller.js L17-L23</a> )</li>
+<li>Handle errors and redirect (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L17-L23">src/controller.js L17-L23</a> )</li>
 </ol>
-<p><strong>Sources:</strong> <a href="src/controller#L1-L53">src/controller.js L1-L53</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L53">src/controller.js L1-L53</a></p>
 <h3 id="cursocontrollerjs-enrollment-controller">cursoController.js - Enrollment Controller<a class="headerlink" href="#cursocontrollerjs-enrollment-controller" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Manages course enrollment operations including duplicate prevention and database transactions.</p>
 <p><strong>Key Functionality:</strong></p>
@@ -2459,41 +2257,14 @@ end</code></pre>
 <p>The <code>config/</code> directory contains configuration modules that set up external service connections and system-wide settings.</p>
 <h3 id="dbjs-database-connection-module">db.js - Database Connection Module<a class="headerlink" href="#dbjs-database-connection-module" title="Permanent link">&para;</a></h3>
 <p><strong>File Purpose:</strong> Establishes and exports a single MySQL database connection that is shared across the application.</p>
-<pre class="mermaid"><code>flowchart TD
-
-RequireMySQL["require('mysql2')"]
-CreateConnection["mysql.createConnection()"]
-EnvVars["Environment Variables&lt;br&gt;DB_HOST, DB_USER&lt;br&gt;DB_PASS, DB_NAME"]
-ConnectDB["conexion.connect()"]
-ExportConnection["module.exports = conexion"]
-Routes["routes/auth.js&lt;br&gt;routes/courses.js"]
-Controllers["src/controller.js&lt;br&gt;src/cursoController.js"]
-
-ExportConnection --&gt; Routes
-ExportConnection --&gt; Controllers
-
-subgraph subGraph1 ["Used By"]
-    Routes
-    Controllers
-end
-
-subgraph subGraph0 ["config/db.js Module"]
-    RequireMySQL
-    CreateConnection
-    EnvVars
-    ConnectDB
-    ExportConnection
-    RequireMySQL --&gt; CreateConnection
-    EnvVars --&gt; CreateConnection
-    CreateConnection --&gt; ConnectDB
-    ConnectDB --&gt; ExportConnection
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p><strong>Configuration Pattern:</strong></p>
 <ul>
-<li>Connection parameters sourced from environment variables (<a href="config/db#L4-L7">config/db.js L4-L7</a> )</li>
-<li>Singleton connection instance (<a href="config/db#L3-L3">config/db.js L3</a> )</li>
-<li>Connection test on initialization (<a href="config/db#L11-L17">config/db.js L11-L17</a> )</li>
-<li>Exported for use across application (<a href="config/db#L19-L19">config/db.js L19</a> )</li>
+<li>Connection parameters sourced from environment variables (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L4-L7">config/db.js L4-L7</a> )</li>
+<li>Singleton connection instance (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L3-L3">config/db.js L3</a> )</li>
+<li>Connection test on initialization (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L11-L17">config/db.js L11-L17</a> )</li>
+<li>Exported for use across application (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L19-L19">config/db.js L19</a> )</li>
 </ul>
 <p><strong>Database Configuration:</strong></p>
 <table>
@@ -2527,48 +2298,13 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="config/db#L1-L20">config/db.js L1-L20</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20">config/db.js L1-L20</a></p>
 <hr />
 <h2 id="views-directory-views">Views Directory (views/)<a class="headerlink" href="#views-directory-views" title="Permanent link">&para;</a></h2>
 <p>The <code>views/</code> directory contains EJS template files that generate HTML responses. Templates use embedded JavaScript to render dynamic content based on data passed from route handlers.</p>
 <h3 id="view-organization-structure">View Organization Structure<a class="headerlink" href="#view-organization-structure" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-IndexEJS["index.ejs&lt;br&gt;Landing page"]
-PartialsDir["partials/"]
-HeadPartial["head.ejs&lt;br&gt;HTML head + meta tags"]
-HeaderPartial["header.ejs&lt;br&gt;Navigation bar"]
-LoginEJS["login.ejs&lt;br&gt;Login form"]
-CoursesEJS["courses.ejs&lt;br&gt;Course listing"]
-RegisterEJS["register.ejs&lt;br&gt;Registration form"]
-CreateEJS["create.ejs&lt;br&gt;Course creation form"]
-EditEJS["edit.ejs&lt;br&gt;Course edit form"]
-InscribirEJS["inscribir.ejs&lt;br&gt;Enrollment confirmation"]
-PerfilEJS["perfil.ejs&lt;br&gt;User profile"]
-AdminPerfilEJS["adminPerfil.ejs&lt;br&gt;Admin dashboard"]
-
-subgraph subGraph0 ["views/ Directory"]
-    IndexEJS
-    PartialsDir
-    HeadPartial
-    HeaderPartial
-    LoginEJS
-    CoursesEJS
-    RegisterEJS
-    CreateEJS
-    EditEJS
-    InscribirEJS
-    PerfilEJS
-    AdminPerfilEJS
-    PartialsDir --&gt; HeadPartial
-    PartialsDir --&gt; HeaderPartial
-    IndexEJS --&gt; HeadPartial
-    IndexEJS --&gt; HeaderPartial
-    LoginEJS --&gt; HeadPartial
-    LoginEJS --&gt; HeaderPartial
-    CoursesEJS --&gt; HeadPartial
-    CoursesEJS --&gt; HeaderPartial
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="template-categories">Template Categories<a class="headerlink" href="#template-categories" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -2619,61 +2355,21 @@ Route handlers call <code>res.render()</code> with template name and data object
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">usuario ? usuario.nombre</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Invitado&quot;</span>
 <span class="err">}</span><span class="l l-Scalar l-Scalar-Plain">);</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/index#L9-L14">routes/index.js L9-L14</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L9-L14">routes/index.js L9-L14</a></p>
 <p>Frontend Architecture Diagram</p>
 <hr />
 <h2 id="public-directory-public">Public Directory (public/)<a class="headerlink" href="#public-directory-public" title="Permanent link">&para;</a></h2>
-<p>The <code>public/</code> directory contains static assets served directly to clients without processing. The directory is mounted at the <code>/resources</code> URL path (<a href="app#L19-L19">app.js L19</a></p>
+<p>The <code>public/</code> directory contains static assets served directly to clients without processing. The directory is mounted at the <code>/resources</code> URL path (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></p>
 <p>).</p>
 <h3 id="static-asset-organization">Static Asset Organization<a class="headerlink" href="#static-asset-organization" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-CSSDir["css/"]
-StyleCSS["style.css&lt;br&gt;Global styles"]
-LoginCSS["login.css&lt;br&gt;Login page styles"]
-RegisterCSS["register.css&lt;br&gt;Registration styles"]
-CoursesCSS["courses.css&lt;br&gt;Course listing styles"]
-CreateCSS["create.css&lt;br&gt;Course form styles"]
-EditCSS["edit.css&lt;br&gt;Edit form styles"]
-InscribirCSS["inscribir.css&lt;br&gt;Enrollment styles"]
-PerfilCSS["perfil.css&lt;br&gt;Profile styles"]
-AdminPerfilCSS["adminPerfil.css&lt;br&gt;Admin dashboard styles"]
-ResourcesDir["resources/"]
-Images["images/&lt;br&gt;Static images"]
-Icons["icons/&lt;br&gt;Icon assets"]
-
-subgraph subGraph0 ["public/ Directory Structure"]
-    CSSDir
-    StyleCSS
-    LoginCSS
-    RegisterCSS
-    CoursesCSS
-    CreateCSS
-    EditCSS
-    InscribirCSS
-    PerfilCSS
-    AdminPerfilCSS
-    ResourcesDir
-    Images
-    Icons
-    CSSDir --&gt; StyleCSS
-    CSSDir --&gt; LoginCSS
-    CSSDir --&gt; RegisterCSS
-    CSSDir --&gt; CoursesCSS
-    CSSDir --&gt; CreateCSS
-    CSSDir --&gt; EditCSS
-    CSSDir --&gt; InscribirCSS
-    CSSDir --&gt; PerfilCSS
-    CSSDir --&gt; AdminPerfilCSS
-    ResourcesDir --&gt; Images
-    ResourcesDir --&gt; Icons
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <h3 id="static-file-serving-configuration">Static File Serving Configuration<a class="headerlink" href="#static-file-serving-configuration" title="Permanent link">&para;</a></h3>
 <p><strong>URL Mapping:</strong></p>
 <ul>
 <li>File path: <code>public/css/style.css</code></li>
 <li>Served at: <code>/resources/css/style.css</code></li>
-<li>Configuration: <a href="app#L19-L19">app.js L19</a></li>
+<li>Configuration: <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></li>
 </ul>
 <p><strong>Asset Categories:</strong></p>
 <table>
@@ -2699,14 +2395,14 @@ end</code></pre>
 </table>
 <p><strong>Styling Strategy:</strong>
 Each major view has a dedicated stylesheet that imports or extends global styles, providing page-specific visual customization while maintaining consistency.</p>
-<p><strong>Sources:</strong> <a href="app#L19-L19">app.js L19</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></p>
 <p>Styling System Section</p>
 <hr />
 <h2 id="environment-configuration-env">Environment Configuration (env/)<a class="headerlink" href="#environment-configuration-env" title="Permanent link">&para;</a></h2>
 <p>The <code>env/</code> directory contains environment-specific configuration files that store sensitive credentials and deployment-specific settings.</p>
 <h3 id="env-file-structure">.env File Structure<a class="headerlink" href="#env-file-structure" title="Permanent link">&para;</a></h3>
 <p><strong>File Path:</strong> <code>env/.env</code>
-<strong>Loading:</strong> <a href="app#L3-L3">app.js L3</a></p>
+<strong>Loading:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a></p>
 <p><strong>Required Variables:</strong></p>
 <table>
 <thead>
@@ -2720,28 +2416,28 @@ Each major view has a dedicated stylesheet that imports or extends global styles
 <tr>
 <td><code>DB_HOST</code></td>
 <td>MySQL server address</td>
-<td><a href="config/db#L4-L4">config/db.js L4</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L4-L4">config/db.js L4</a></td>
 </tr>
 <tr>
 <td><code>DB_USER</code></td>
 <td>Database username</td>
-<td><a href="config/db#L5-L5">config/db.js L5</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L5-L5">config/db.js L5</a></td>
 </tr>
 <tr>
 <td><code>DB_PASS</code></td>
 <td>Database password</td>
-<td><a href="config/db#L6-L6">config/db.js L6</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L6-L6">config/db.js L6</a></td>
 </tr>
 <tr>
 <td><code>DB_NAME</code></td>
 <td>Database name</td>
-<td><a href="config/db#L7-L7">config/db.js L7</a></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L7-L7">config/db.js L7</a></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Security Note:</strong> This file should never be committed to version control. It contains sensitive credentials that must be kept secret.</p>
-<p><strong>Sources:</strong> <a href="app#L3-L3">app.js L3</a></p>
-<p><a href="config/db#L4-L7">config/db.js L4-L7</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L4-L7">config/db.js L4-L7</a></p>
 <hr />
 <h2 id="file-organization-patterns">File Organization Patterns<a class="headerlink" href="#file-organization-patterns" title="Permanent link">&para;</a></h2>
 <h3 id="naming-conventions">Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h3>
@@ -2778,67 +2474,14 @@ Each major view has a dedicated stylesheet that imports or extends global styles
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">router</span><span class="p">;</span><span class="w">        </span><span class="c1">// Single export</span>
 <span class="nx">exports</span><span class="p">.</span><span class="nx">save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{};</span><span class="w"> </span><span class="c1">// Multiple exports</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="app#L1-L2">app.js L1-L2</a></p>
-<p><a href="routes/index#L2-L4">routes/index.js L2-L4</a></p>
-<p><a href="config/db#L1-L1">config/db.js L1</a></p>
-<p><a href="src/controller#L1-L1">src/controller.js L1</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L2">app.js L1-L2</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L2-L4">routes/index.js L2-L4</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L1">config/db.js L1</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L1">src/controller.js L1</a></p>
 <hr />
 <h2 id="dependency-flow-between-directories">Dependency Flow Between Directories<a class="headerlink" href="#dependency-flow-between-directories" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>flowchart TD
-
-AppJS["app.js"]
-IndexRoute["routes/index.js"]
-AuthRoute["routes/auth.js"]
-CoursesRoute["routes/courses.js"]
-Controller["src/controller.js"]
-CursoController["src/cursoController.js"]
-DBConfig["config/db.js"]
-EnvConfig["env/.env"]
-Views["views/*.ejs"]
-CSS["public/css/*.css"]
-
-AppJS --&gt; IndexRoute
-AppJS --&gt; AuthRoute
-AppJS --&gt; CoursesRoute
-AppJS --&gt; DBConfig
-AppJS --&gt; EnvConfig
-IndexRoute --&gt; DBConfig
-AuthRoute --&gt; DBConfig
-CoursesRoute --&gt; DBConfig
-CoursesRoute --&gt; Controller
-CoursesRoute --&gt; CursoController
-Controller --&gt; DBConfig
-CursoController --&gt; DBConfig
-IndexRoute --&gt; Views
-AuthRoute --&gt; Views
-CoursesRoute --&gt; Views
-
-subgraph subGraph4 ["Presentation Layer"]
-    Views
-    CSS
-    Views --&gt; CSS
-end
-
-subgraph subGraph3 ["Configuration Layer"]
-    DBConfig
-    EnvConfig
-    DBConfig --&gt; EnvConfig
-end
-
-subgraph subGraph2 ["Controllers Layer"]
-    Controller
-    CursoController
-end
-
-subgraph subGraph1 ["Routes Layer"]
-    IndexRoute
-    AuthRoute
-    CoursesRoute
-end
-
-subgraph subGraph0 ["Application Entry"]
-    AppJS
-end</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
 <p><strong>Import Hierarchy:</strong></p>
 <ol>
 <li><strong>Top Level:</strong> <code>app.js</code> loads environment config and mounts routes</li>
@@ -2847,10 +2490,10 @@ end</code></pre>
 <li><strong>Data Level:</strong> Database config reads environment variables</li>
 </ol>
 <p><strong>Key Principle:</strong> Each layer only imports from its own level or lower layers, maintaining unidirectional dependency flow.</p>
-<p><strong>Sources:</strong> <a href="app#L1-L31">app.js L1-L31</a></p>
-<p><a href="routes/index#L2-L4">routes/index.js L2-L4</a></p>
-<p><a href="src/controller#L1-L1">src/controller.js L1</a></p>
-<p><a href="config/db#L1-L3">config/db.js L1-L3</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L31">app.js L1-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L2-L4">routes/index.js L2-L4</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L1">src/controller.js L1</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L3">config/db.js L1-L3</a></p>
 <hr />
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The project structure follows a layered architecture with clear separation of concerns:</p>
@@ -2864,7 +2507,7 @@ end</code></pre>
 <li><strong><code>env/</code></strong> stores environment-specific configuration</li>
 </ul>
 <p>This organization promotes maintainability by grouping related functionality, enforces architectural boundaries through directory structure, and makes the codebase navigable by establishing consistent naming and organization conventions.</p>
-<p>For details on how to extend this structure with new features, see <a href="9.2-adding-new-routes.md">Adding New Routes</a>. For information about the database schema accessed by these modules, see <a href="3.3-database-architecture.md">Database Architecture</a>.</p>
+<p>For details on how to extend this structure with new features, see <a href="/Lourdes12587/Week06/9.2-adding-new-routes">Adding New Routes</a>. For information about the database schema accessed by these modules, see <a href="/Lourdes12587/Week06/3.3-database-architecture">Database Architecture</a>.</p>
 
 
 

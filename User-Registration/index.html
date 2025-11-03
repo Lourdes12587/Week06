@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1345,29 +1353,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1558,6 +1543,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1685,29 +1693,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -2006,29 +1991,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2130,12 +2092,12 @@
 <h1 id="user-registration">User Registration<a class="headerlink" href="#user-registration" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="public/css/register">public/css/register.css</a>
-* <a href="routes/auth">routes/auth.js</a>
-* <a href="views/register">views/register.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css">public/css/register.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs">views/register.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document describes the user registration system, covering the registration workflow from form submission through account creation. It details the validation rules, password hashing process, database insertion, and role assignment mechanisms. For information about the login process after registration, see <a href="4.2-user-login.md">User Login</a>. For details on role-based permissions, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
+<p>This document describes the user registration system, covering the registration workflow from form submission through account creation. It details the validation rules, password hashing process, database insertion, and role assignment mechanisms. For information about the login process after registration, see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>. For details on role-based permissions, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
 <hr />
 <h2 id="registration-flow-overview">Registration Flow Overview<a class="headerlink" href="#registration-flow-overview" title="Permanent link">&para;</a></h2>
 <p>The registration process follows a two-step workflow: form display and form submission with validation.</p>
@@ -2174,8 +2136,8 @@
     views/register.ejs-&gt;&gt;Browser: "SweetAlert success"
     Browser-&gt;&gt;User: "Show success, redirect to login"
   end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/auth#L12-L72">routes/auth.js L12-L72</a></p>
-<p><a href="views/register#L9-L71">views/register.ejs L9-L71</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L72">routes/auth.js L12-L72</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L9-L71">views/register.ejs L9-L71</a></p>
 <hr />
 <h2 id="routes-and-endpoints">Routes and Endpoints<a class="headerlink" href="#routes-and-endpoints" title="Permanent link">&para;</a></h2>
 <p>The registration system exposes two HTTP endpoints in the <code>auth</code> router.</p>
@@ -2213,7 +2175,7 @@
 <span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;register&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">register</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div>
-<p><a href="routes/auth#L12-L14">routes/auth.js L12-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L14">routes/auth.js L12-L14</a></p>
 <p>The <code>register: true</code> flag is passed to the view to ensure the form is displayed.</p>
 <h3 id="post-register">POST /register<a class="headerlink" href="#post-register" title="Permanent link">&para;</a></h3>
 <p>Processes the registration form submission with validation middleware.</p>
@@ -2254,8 +2216,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/auth#L8-L14">routes/auth.js L8-L14</a></p>
-<p><a href="routes/auth#L17-L72">routes/auth.js L17-L72</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L14">routes/auth.js L8-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
 <hr />
 <h2 id="input-validation">Input Validation<a class="headerlink" href="#input-validation" title="Permanent link">&para;</a></h2>
 <p>The registration endpoint uses <code>express-validator</code> to enforce data quality rules before processing.</p>
@@ -2301,7 +2263,7 @@ ErrorCheck --&gt; ProcessRegistration</code></pre>
     .withMessage(&quot;La contraseña debe tener al menos 4 caracteres&quot;)
 ]
 </code></pre></div>
-<p><a href="routes/auth#L17-L33">routes/auth.js L17-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L33">routes/auth.js L17-L33</a></p>
 <h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
 <p>When validation fails, errors are passed to the view:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validationResult</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span><span class="w"> </span>
@@ -2312,9 +2274,9 @@ ErrorCheck --&gt; ProcessRegistration</code></pre>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><a href="routes/auth#L35-L40">routes/auth.js L35-L40</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L40">routes/auth.js L35-L40</a></p>
 <p>The <code>validaciones</code> array contains error objects, and <code>valores</code> preserves user input for form repopulation.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L17-L41">routes/auth.js L17-L41</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L41">routes/auth.js L17-L41</a></p>
 <hr />
 <h2 id="password-security">Password Security<a class="headerlink" href="#password-security" title="Permanent link">&para;</a></h2>
 <p>Passwords are hashed using <code>bcryptjs</code> with a salt round of 8 before storage.</p>
@@ -2335,9 +2297,9 @@ HashedPassword --&gt; DBInsert</code></pre>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">;</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">passwordHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
 </code></pre></div>
-<p><a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L44">routes/auth.js L43-L44</a></p>
 <p>The hash function is asynchronous and returns a promise. The salt round value of 8 provides a balance between security and performance for password hashing operations.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L44">routes/auth.js L43-L44</a></p>
 <hr />
 <h2 id="database-operations">Database Operations<a class="headerlink" href="#database-operations" title="Permanent link">&para;</a></h2>
 <p>Registration data is inserted into the <code>usuarios</code> table using a parameterized query to prevent SQL injection.</p>
@@ -2387,14 +2349,14 @@ CheckResult --&gt; RenderSuccess</code></pre>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
-<p><a href="routes/auth#L46-L69">routes/auth.js L46-L69</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69">routes/auth.js L46-L69</a></p>
 <h3 id="default-role-assignment">Default Role Assignment<a class="headerlink" href="#default-role-assignment" title="Permanent link">&para;</a></h3>
 <p>If the <code>rol</code> field is not provided or is empty, it defaults to <code>'registrado'</code> using the logical OR operator:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">rol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rol || &#39;registrado&#39;,</span>
 </code></pre></div>
-<p><a href="routes/auth#L52-L52">routes/auth.js L52</a></p>
-<p>This ensures all users have at least basic registered user privileges. For details on role capabilities, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L46-L72">routes/auth.js L46-L72</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L52-L52">routes/auth.js L52</a></p>
+<p>This ensures all users have at least basic registered user privileges. For details on role capabilities, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L72">routes/auth.js L46-L72</a></p>
 <hr />
 <h2 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h2>
 <p>The registration form is rendered by <code>register.ejs</code> with conditional display logic for validation errors and success alerts.</p>
@@ -2439,7 +2401,7 @@ end</code></pre>
   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 <span class="err">&lt;</span>% } %&gt;
 </code></pre></div>
-<p><a href="views/register#L9-L55">views/register.ejs L9-L55</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L9-L55">views/register.ejs L9-L55</a></p>
 <h3 id="role-selection-field">Role Selection Field<a class="headerlink" href="#role-selection-field" title="Permanent link">&para;</a></h3>
 <p>The form includes a dropdown for role selection:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">div</span><span class="w"> </span><span class="k">class</span><span class="o">=</span><span class="ss">&quot;form-group&quot;</span><span class="o">&gt;</span>
@@ -2450,15 +2412,15 @@ end</code></pre>
 <span class="w">  </span><span class="o">&lt;/</span><span class="k">select</span><span class="o">&gt;</span>
 <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </code></pre></div>
-<p><a href="views/register#L26-L32">views/register.ejs L26-L32</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L26-L32">views/register.ejs L26-L32</a></p>
 <p>Note: In a production system, this field should not be exposed to public users. Role assignment should be handled server-side or restricted to admin-only workflows.</p>
 <h3 id="value-preservation">Value Preservation<a class="headerlink" href="#value-preservation" title="Permanent link">&para;</a></h3>
 <p>On validation failure, form fields repopulate with submitted values:</p>
 <div class="highlight"><pre><span></span><code>&lt;input type=&quot;text&quot; name=&quot;nombre&quot;
   value=&quot;&lt;% if (typeof valores !==&#39;undefined&#39;) { %&gt; &lt;%= valores.nombre %&gt; &lt;% } %&gt;&quot;&gt;
 </code></pre></div>
-<p><a href="views/register#L16-L17">views/register.ejs L16-L17</a></p>
-<p><strong>Sources:</strong> <a href="views/register#L9-L55">views/register.ejs L9-L55</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L16-L17">views/register.ejs L16-L17</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L9-L55">views/register.ejs L9-L55</a></p>
 <hr />
 <h2 id="validation-error-display">Validation Error Display<a class="headerlink" href="#validation-error-display" title="Permanent link">&para;</a></h2>
 <p>Validation errors are displayed using Bootstrap dismissible alerts.</p>
@@ -2474,9 +2436,9 @@ end</code></pre>
 <span class="w">  </span><span class="o">&lt;%</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="o">%&gt;</span>
 <span class="o">&lt;%</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">%&gt;</span>
 </code></pre></div>
-<p><a href="views/register#L42-L52">views/register.ejs L42-L52</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L42-L52">views/register.ejs L42-L52</a></p>
 <p>Each validation error from <code>express-validator</code> is rendered as a separate Bootstrap alert with the error message from the <code>.withMessage()</code> method.</p>
-<p><strong>Sources:</strong> <a href="views/register#L42-L52">views/register.ejs L42-L52</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L42-L52">views/register.ejs L42-L52</a></p>
 <hr />
 <h2 id="success-feedback">Success Feedback<a class="headerlink" href="#success-feedback" title="Permanent link">&para;</a></h2>
 <p>Upon successful registration, SweetAlert2 displays a modal and redirects to the login page.</p>
@@ -2492,7 +2454,7 @@ end</code></pre>
 <span class="w">  </span><span class="nt">ruta</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;login&#39;</span><span class="w"> </span>
 <span class="err">}</span><span class="l l-Scalar l-Scalar-Plain">);</span>
 </code></pre></div>
-<p><a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L66">routes/auth.js L58-L66</a></p>
 <h3 id="alert-rendering">Alert Rendering<a class="headerlink" href="#alert-rendering" title="Permanent link">&para;</a></h3>
 <p>The view conditionally renders a SweetAlert script block:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&lt;%</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">alert</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">%&gt;</span>
@@ -2509,10 +2471,10 @@ end</code></pre>
 <span class="w">  </span><span class="o">&lt;</span><span class="err">/script&gt;</span>
 <span class="o">&lt;%</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">%&gt;</span>
 </code></pre></div>
-<p><a href="views/register#L59-L71">views/register.ejs L59-L71</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L59-L71">views/register.ejs L59-L71</a></p>
 <p>The alert automatically closes after 2500ms and redirects to <code>/login</code> for the user to sign in with their new credentials.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L58-L66">routes/auth.js L58-L66</a></p>
-<p><a href="views/register#L59-L71">views/register.ejs L59-L71</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L66">routes/auth.js L58-L66</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L59-L71">views/register.ejs L59-L71</a></p>
 <hr />
 <h2 id="styling-and-layout">Styling and Layout<a class="headerlink" href="#styling-and-layout" title="Permanent link">&para;</a></h2>
 <p>The registration page uses a centered card layout with gradient background.</p>
@@ -2543,7 +2505,7 @@ end</code></pre>
 </tr>
 </tbody>
 </table>
-<p>The CSS is defined in <a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
+<p>The CSS is defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
 <p>and provides:</p>
 <ul>
 <li>Flexbox centering for vertical and horizontal alignment</li>
@@ -2551,7 +2513,7 @@ end</code></pre>
 <li>Hover and focus states for interactive elements</li>
 <li>Consistent spacing using margin and padding utilities</li>
 </ul>
-<p><strong>Sources:</strong> <a href="public/css/register#L1-L87">public/css/register.css L1-L87</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/register.css#L1-L87">public/css/register.css L1-L87</a></p>
 <hr />
 <h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="password-storage">Password Storage<a class="headerlink" href="#password-storage" title="Permanent link">&para;</a></h3>
@@ -2571,18 +2533,18 @@ end</code></pre>
 <li>Client-side HTML5 validation (implicit via input types)</li>
 <li>Error messages do not expose system internals</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L43-L44">routes/auth.js L43-L44</a></p>
-<p><a href="routes/auth#L46-L49">routes/auth.js L46-L49</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L44">routes/auth.js L43-L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L49">routes/auth.js L46-L49</a></p>
 <hr />
 <h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
 <p>The registration system integrates with:</p>
 <ul>
-<li><strong>Session Management</strong> (<a href="4.4-session-management.md">Session Management</a>): After registration, users must login to create a session</li>
-<li><strong>Login System</strong> (<a href="4.2-user-login.md">User Login</a>): Successful registration redirects to <code>/login</code></li>
-<li><strong>Database Layer</strong> (<a href="3.3-database-architecture.md">Database Architecture</a>): Inserts into <code>usuarios</code> table</li>
-<li><strong>Role-Based Access</strong> (<a href="4.3-role-based-access-control.md">Role-Based Access Control</a>): Assigns default <code>registrado</code> role</li>
+<li><strong>Session Management</strong> (<a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>): After registration, users must login to create a session</li>
+<li><strong>Login System</strong> (<a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>): Successful registration redirects to <code>/login</code></li>
+<li><strong>Database Layer</strong> (<a href="/Lourdes12587/Week06/3.3-database-architecture">Database Architecture</a>): Inserts into <code>usuarios</code> table</li>
+<li><strong>Role-Based Access</strong> (<a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>): Assigns default <code>registrado</code> role</li>
 </ul>
-<p><strong>Sources:</strong> <a href="routes/auth#L12-L72">routes/auth.js L12-L72</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L72">routes/auth.js L12-L72</a></p>
 
 
 

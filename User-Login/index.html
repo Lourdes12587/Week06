@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1273,29 +1281,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1486,6 +1471,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1613,29 +1621,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1934,29 +1919,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2058,23 +2020,23 @@
 <h1 id="user-login">User Login<a class="headerlink" href="#user-login" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="public/css/login">public/css/login.css</a>
-* <a href="routes/auth">routes/auth.js</a>
-* <a href="views/login">views/login.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css">public/css/login.css</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs">views/login.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This document details the user login functionality, covering the authentication process where existing users provide credentials and gain access to the system. The login process includes credential validation, password verification using bcrypt, session creation, and role-based response handling.</p>
-<p>For information about creating new user accounts, see <a href="4.1-user-registration.md">User Registration</a>. For details about how roles control access to protected routes, see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>. For session storage and management, see <a href="4.4-session-management.md">Session Management</a>.</p>
+<p>For information about creating new user accounts, see <a href="/Lourdes12587/Week06/4.1-user-registration">User Registration</a>. For details about how roles control access to protected routes, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>. For session storage and management, see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>.</p>
 <hr />
 <h2 id="login-form-presentation">Login Form Presentation<a class="headerlink" href="#login-form-presentation" title="Permanent link">&para;</a></h2>
 <p>The login form is rendered at the <code>/login</code> endpoint, providing a simple interface for credential submission.</p>
 <h3 id="route-handler">Route Handler<a class="headerlink" href="#route-handler" title="Permanent link">&para;</a></h3>
-<p>The GET <code>/login</code> route is defined in <a href="routes/auth#L8-L10">routes/auth.js L8-L10</a></p>
+<p>The GET <code>/login</code> route is defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></p>
 <p>and renders the login view without any additional data:</p>
 <div class="highlight"><pre><span></span><code>GET /login → renders views/login.ejs
 </code></pre></div>
 <h3 id="form-structure">Form Structure<a class="headerlink" href="#form-structure" title="Permanent link">&para;</a></h3>
-<p>The login form in <a href="views/login#L8-L13">views/login.ejs L8-L13</a></p>
+<p>The login form in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L8-L13">views/login.ejs L8-L13</a></p>
 <p>contains two input fields and submits via POST to <code>/auth</code>:</p>
 <table>
 <thead>
@@ -2106,9 +2068,9 @@
 </tr>
 </tbody>
 </table>
-<p>The form uses the <code>login-container</code> class and is wrapped in an <code>auth-wrapper</code> for consistent styling. A registration link is provided below the form at <a href="views/login#L14-L16">views/login.ejs L14-L16</a></p>
-<p><strong>Sources:</strong> <a href="views/login#L1-L34">views/login.ejs L1-L34</a></p>
-<p><a href="routes/auth#L8-L10">routes/auth.js L8-L10</a></p>
+<p>The form uses the <code>login-container</code> class and is wrapped in an <code>auth-wrapper</code> for consistent styling. A registration link is provided below the form at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L14-L16">views/login.ejs L14-L16</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L1-L34">views/login.ejs L1-L34</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></p>
 <hr />
 <h2 id="authentication-flow">Authentication Flow<a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h2>
 <h3 id="authentication-flow-diagram">Authentication Flow Diagram<a class="headerlink" href="#authentication-flow-diagram" title="Permanent link">&para;</a></h3>
@@ -2138,26 +2100,26 @@
     POST /auth-&gt;&gt;login.ejs: "Render alert:
     login.ejs-&gt;&gt;Browser: Usuario y/o contraseña incorrectos"
   end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <h3 id="request-processing">Request Processing<a class="headerlink" href="#request-processing" title="Permanent link">&para;</a></h3>
-<p>The POST <code>/auth</code> endpoint in <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p>The POST <code>/auth</code> endpoint in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <p>handles authentication. The process begins by extracting credentials from the request body:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
 </code></pre></div>
-<p><strong>Sources:</strong> <a href="routes/auth#L77-L78">routes/auth.js L77-L78</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L77-L78">routes/auth.js L77-L78</a></p>
 <h3 id="credential-validation">Credential Validation<a class="headerlink" href="#credential-validation" title="Permanent link">&para;</a></h3>
-<p>The handler first checks if both email and password are provided <a href="routes/auth#L80-L80">routes/auth.js L80</a></p>
+<p>The handler first checks if both email and password are provided <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L80-L80">routes/auth.js L80</a></p>
 <p>If either is missing, an error alert is rendered.</p>
 <h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
-<p>When credentials are present, the system queries the <code>usuarios</code> table <a href="routes/auth#L81-L84">routes/auth.js L81-L84</a></p>
+<p>When credentials are present, the system queries the <code>usuarios</code> table <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L84">routes/auth.js L81-L84</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">usuarios</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
 </code></pre></div>
 <p>The email parameter is passed as an array to prevent SQL injection: <code>[email]</code>.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L81-L84">routes/auth.js L81-L84</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L84">routes/auth.js L81-L84</a></p>
 <h3 id="password-verification">Password Verification<a class="headerlink" href="#password-verification" title="Permanent link">&para;</a></h3>
-<p>Password verification occurs in <a href="routes/auth#L85-L87">routes/auth.js L85-L87</a></p>
+<p>Password verification occurs in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L85-L87">routes/auth.js L85-L87</a></p>
 <p>using bcrypt's asynchronous compare function:</p>
 <div class="highlight"><pre><span></span><code>await bcrypt.compare(password, results[0].password)
 </code></pre></div>
@@ -2167,9 +2129,9 @@
 <li>Whether the provided password matches the stored hash</li>
 </ol>
 <p>If either check fails, authentication is denied.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L85-L87">routes/auth.js L85-L87</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L85-L87">routes/auth.js L85-L87</a></p>
 <h3 id="session-initialization">Session Initialization<a class="headerlink" href="#session-initialization" title="Permanent link">&para;</a></h3>
-<p>Upon successful authentication <a href="routes/auth#L98-L104">routes/auth.js L98-L104</a></p>
+<p>Upon successful authentication <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L98-L104">routes/auth.js L98-L104</a></p>
 <p>the system establishes a session by setting three session variables:</p>
 <table>
 <thead>
@@ -2198,7 +2160,7 @@
 </tbody>
 </table>
 <p>This session data persists across requests and is used by authentication middleware throughout the application.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L100-L104">routes/auth.js L100-L104</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
 <hr />
 <h2 id="response-handling-with-sweetalert2">Response Handling with SweetAlert2<a class="headerlink" href="#response-handling-with-sweetalert2" title="Permanent link">&para;</a></h2>
 <h3 id="alert-configuration">Alert Configuration<a class="headerlink" href="#alert-configuration" title="Permanent link">&para;</a></h3>
@@ -2249,12 +2211,12 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="views/login#L20-L32">views/login.ejs L20-L32</a></p>
-<p><a href="routes/auth#L88-L97">routes/auth.js L88-L97</a></p>
-<p><a href="routes/auth#L106-L115">routes/auth.js L106-L115</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L20-L32">views/login.ejs L20-L32</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L88-L97">routes/auth.js L88-L97</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L106-L115">routes/auth.js L106-L115</a></p>
 <h3 id="alert-scenarios">Alert Scenarios<a class="headerlink" href="#alert-scenarios" title="Permanent link">&para;</a></h3>
 <h4 id="missing-credentials">Missing Credentials<a class="headerlink" href="#missing-credentials" title="Permanent link">&para;</a></h4>
-<p><a href="routes/auth#L120-L130">routes/auth.js L120-L130</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L120-L130">routes/auth.js L120-L130</a></p>
 <ul>
 <li>
 <p>When email or password is not provided:</p>
@@ -2269,7 +2231,7 @@
 <li><strong>Redirect:</strong> None (stays on login page)</li>
 </ul>
 <h4 id="invalid-credentials">Invalid Credentials<a class="headerlink" href="#invalid-credentials" title="Permanent link">&para;</a></h4>
-<p><a href="routes/auth#L88-L97">routes/auth.js L88-L97</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L88-L97">routes/auth.js L88-L97</a></p>
 <ul>
 <li>
 <p>When email not found or password doesn't match:</p>
@@ -2284,7 +2246,7 @@
 <li><strong>Redirect:</strong> Stays on <code>/login</code></li>
 </ul>
 <h4 id="successful-authentication">Successful Authentication<a class="headerlink" href="#successful-authentication" title="Permanent link">&para;</a></h4>
-<p><a href="routes/auth#L106-L115">routes/auth.js L106-L115</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L106-L115">routes/auth.js L106-L115</a></p>
 <ul>
 <li>
 <p>When credentials are valid:</p>
@@ -2299,7 +2261,7 @@
 <li><strong>Redirect:</strong> Root path <code>/</code></li>
 </ul>
 <h3 id="sweetalert2-implementation">SweetAlert2 Implementation<a class="headerlink" href="#sweetalert2-implementation" title="Permanent link">&para;</a></h3>
-<p>The alert script in <a href="views/login#L20-L32">views/login.ejs L20-L32</a></p>
+<p>The alert script in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L20-L32">views/login.ejs L20-L32</a></p>
 <p>executes when the <code>alert</code> variable is defined:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">Swal</span><span class="p">.</span><span class="nx">fire</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;%= alertTitle %&gt;&#39;</span><span class="p">,</span>
@@ -2312,10 +2274,10 @@
 <span class="p">})</span>
 </code></pre></div>
 <p>The <code>.then()</code> callback redirects the user after the alert is dismissed or the timer expires.</p>
-<p><strong>Sources:</strong> <a href="views/login#L18-L32">views/login.ejs L18-L32</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L18-L32">views/login.ejs L18-L32</a></p>
 <hr />
 <h2 id="login-page-styling">Login Page Styling<a class="headerlink" href="#login-page-styling" title="Permanent link">&para;</a></h2>
-<p>The login page uses dedicated styles defined in <a href="public/css/login">public/css/login.css</a></p>
+<p>The login page uses dedicated styles defined in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css">public/css/login.css</a></p>
 <p>Key styling features include:</p>
 <h3 id="layout-structure">Layout Structure<a class="headerlink" href="#layout-structure" title="Permanent link">&para;</a></h3>
 <table>
@@ -2346,11 +2308,11 @@
 </table>
 <h3 id="form-elements">Form Elements<a class="headerlink" href="#form-elements" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Input Fields</strong> <a href="public/css/login#L35-L47">public/css/login.css L35-L47</a>  - 0.75rem vertical padding, 1rem horizontal padding, 8px border-radius, focus state with #74ebd5 border color</li>
-<li><strong>Submit Button</strong> <a href="public/css/login#L49-L62">public/css/login.css L49-L62</a>  - Blue background (#4a6cf7), white text, hover effect darkens to #3f5cd8</li>
-<li><strong>Register Link</strong> <a href="public/css/login#L74-L83">public/css/login.css L74-L83</a>  - Blue text (#4a6cf7) matching button color, bold font weight, hover darkening effect</li>
+<li><strong>Input Fields</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L35-L47">public/css/login.css L35-L47</a>  - 0.75rem vertical padding, 1rem horizontal padding, 8px border-radius, focus state with #74ebd5 border color</li>
+<li><strong>Submit Button</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L49-L62">public/css/login.css L49-L62</a>  - Blue background (#4a6cf7), white text, hover effect darkens to #3f5cd8</li>
+<li><strong>Register Link</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L74-L83">public/css/login.css L74-L83</a>  - Blue text (#4a6cf7) matching button color, bold font weight, hover darkening effect</li>
 </ul>
-<p><strong>Sources:</strong> <a href="public/css/login#L1-L83">public/css/login.css L1-L83</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/public/css/login.css#L1-L83">public/css/login.css L1-L83</a></p>
 <hr />
 <h2 id="code-entity-reference">Code Entity Reference<a class="headerlink" href="#code-entity-reference" title="Permanent link">&para;</a></h2>
 <h3 id="authentication-route-handler">Authentication Route Handler<a class="headerlink" href="#authentication-route-handler" title="Permanent link">&para;</a></h3>
@@ -2380,7 +2342,7 @@ CheckResults --&gt; ComparePass
 ComparePass --&gt; RenderError1
 ComparePass --&gt; SetSession
 SetSession --&gt; RenderSuccess</code></pre>
-<p><strong>Sources:</strong> <a href="routes/auth#L8-L131">routes/auth.js L8-L131</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L131">routes/auth.js L8-L131</a></p>
 <h3 id="template-and-view-integration">Template and View Integration<a class="headerlink" href="#template-and-view-integration" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart TD
 
@@ -2404,11 +2366,11 @@ LoginEJS --&gt; AlertScript
 Form --&gt; EmailInput
 Form --&gt; PasswordInput
 Form --&gt; SubmitBtn</code></pre>
-<p><strong>Sources:</strong> <a href="views/login#L1-L34">views/login.ejs L1-L34</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L1-L34">views/login.ejs L1-L34</a></p>
 <hr />
 <h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="password-comparison">Password Comparison<a class="headerlink" href="#password-comparison" title="Permanent link">&para;</a></h3>
-<p>The authentication process uses bcrypt's asynchronous <code>compare</code> function <a href="routes/auth#L86-L86">routes/auth.js L86</a></p>
+<p>The authentication process uses bcrypt's asynchronous <code>compare</code> function <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></p>
 <p>rather than plain text comparison. This ensures:</p>
 <ul>
 <li>Timing-safe comparison resistant to timing attacks</li>
@@ -2416,7 +2378,7 @@ Form --&gt; SubmitBtn</code></pre>
 <li>Asynchronous operation preventing blocking</li>
 </ul>
 <h3 id="sql-injection-prevention">SQL Injection Prevention<a class="headerlink" href="#sql-injection-prevention" title="Permanent link">&para;</a></h3>
-<p>The database query uses parameterized queries <a href="routes/auth#L82-L83">routes/auth.js L82-L83</a></p>
+<p>The database query uses parameterized queries <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L82-L83">routes/auth.js L82-L83</a></p>
 <p>:</p>
 <div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="ss">&quot;SELECT * FROM usuarios WHERE email = ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">email</span><span class="p">],</span><span class="w"> </span><span class="p">...)</span>
 </code></pre></div>
@@ -2428,8 +2390,8 @@ Form --&gt; SubmitBtn</code></pre>
 <li>Role information in <code>req.session.rol</code> for authorization checks</li>
 <li>Authentication flag in <code>req.session.loggedin</code></li>
 </ul>
-<p>For detailed session configuration and security settings, see <a href="4.4-session-management.md">Session Management</a>.</p>
-<p><strong>Sources:</strong> <a href="routes/auth#L75-L131">routes/auth.js L75-L131</a></p>
+<p>For detailed session configuration and security settings, see <a href="/Lourdes12587/Week06/4.4-session-management">Session Management</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
 <hr />
 <h2 id="integration-points">Integration Points<a class="headerlink" href="#integration-points" title="Permanent link">&para;</a></h2>
 <p>The login functionality integrates with several other system components:</p>
@@ -2460,7 +2422,7 @@ Form --&gt; SubmitBtn</code></pre>
 <tr>
 <td>Authorization</td>
 <td>Session variables</td>
-<td>Provides data for role-based middleware (see <a href="4.3-role-based-access-control.md">Role-Based Access Control</a>)</td>
+<td>Provides data for role-based middleware (see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>)</td>
 </tr>
 <tr>
 <td>Home Page</td>
@@ -2469,9 +2431,9 @@ Form --&gt; SubmitBtn</code></pre>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/auth#L4-L4">routes/auth.js L4</a></p>
-<p><a href="routes/auth#L102-L104">routes/auth.js L102-L104</a></p>
-<p><a href="views/login#L15-L15">views/login.ejs L15</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L4-L4">routes/auth.js L4</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/login.ejs#L15-L15">views/login.ejs L15</a></p>
 
 
 

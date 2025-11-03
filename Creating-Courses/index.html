@@ -30,6 +30,9 @@
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
       
 
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -107,8 +115,8 @@
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -925,29 +933,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1399,6 +1384,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1526,29 +1534,6 @@
   
   <span class="md-ellipsis">
     Administrator Dashboard
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
     
   </span>
   
@@ -1847,29 +1832,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Profile-Endpoints/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1971,13 +1933,13 @@
 <h1 id="creating-courses">Creating Courses<a class="headerlink" href="#creating-courses" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="src/controller">src/controller.js</a>
-* <a href="views/create">views/create.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs">views/create.ejs</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
 <p>This page documents the course creation workflow available exclusively to administrators. It covers the form interface, authorization requirements, database insertion logic, and the complete request flow from displaying the creation form to persisting a new course record.</p>
-<p>For modifying or removing existing courses, see <a href="5.2-editing-and-deleting-courses.md">Editing &amp; Deleting Courses</a>. For information about how courses are displayed to different user roles, see <a href="5.3-course-listing-and-visibility.md">Course Listing &amp; Visibility</a>.</p>
+<p>For modifying or removing existing courses, see <a href="/Lourdes12587/Week06/5.2-editing-and-deleting-courses">Editing &amp; Deleting Courses</a>. For information about how courses are displayed to different user roles, see <a href="/Lourdes12587/Week06/5.3-course-listing-and-visibility">Course Listing &amp; Visibility</a>.</p>
 <hr />
 <h2 id="authorization-requirements">Authorization Requirements<a class="headerlink" href="#authorization-requirements" title="Permanent link">&para;</a></h2>
 <p>Course creation is protected by a two-stage authorization chain that enforces both authentication and role-based access control.</p>
@@ -2003,7 +1965,7 @@
 </tbody>
 </table>
 <p>Both middleware functions redirect unauthorized users to <code>/login</code> if authorization fails. The middleware chain executes sequentially before any course creation logic runs.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L24">routes/courses.js L8-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L24">routes/courses.js L8-L24</a></p>
 <hr />
 <h2 id="course-creation-request-flow">Course Creation Request Flow<a class="headerlink" href="#course-creation-request-flow" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates the complete flow from initial form request through database persistence.</p>
@@ -2036,8 +1998,8 @@
   controller.save-&gt;&gt;MySQL Database: "Call save(req, res)"
   MySQL Database-&gt;&gt;controller.save: "INSERT INTO cursos"
   controller.save-&gt;&gt;Browser: "Confirm insertion"</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L64-L70">routes/courses.js L64-L70</a></p>
-<p><a href="src/controller#L4-L24">src/controller.js L4-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L70">routes/courses.js L64-L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L24">src/controller.js L4-L24</a></p>
 <hr />
 <h2 id="route-definitions">Route Definitions<a class="headerlink" href="#route-definitions" title="Permanent link">&para;</a></h2>
 <h3 id="get-create-route">GET /create Route<a class="headerlink" href="#get-create-route" title="Permanent link">&para;</a></h3>
@@ -2046,7 +2008,7 @@
 <span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<p><strong>Location:</strong> <a href="routes/courses#L64-L66">routes/courses.js L64-L66</a></p>
+<p><strong>Location:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L66">routes/courses.js L64-L66</a></p>
 <p><strong>Middleware Chain:</strong></p>
 <ol>
 <li><code>estaAutenticado</code> - Validates session existence</li>
@@ -2057,10 +2019,10 @@
 <p>Processes the submitted form data and persists the new course to the database.</p>
 <div class="highlight"><pre><span></span><code>router.post(&#39;/save&#39;, estaAutenticado, isAdmin, crud.save);
 </code></pre></div>
-<p><strong>Location:</strong> <a href="routes/courses#L70-L70">routes/courses.js L70</a></p>
+<p><strong>Location:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
 <p><strong>Middleware Chain:</strong> Same authorization requirements as GET /create</p>
 <p><strong>Handler:</strong> Delegates to <code>crud.save</code> function from <code>src/controller.js</code></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L64-L70">routes/courses.js L64-L70</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L70">routes/courses.js L64-L70</a></p>
 <hr />
 <h2 id="controller-logic">Controller Logic<a class="headerlink" href="#controller-logic" title="Permanent link">&para;</a></h2>
 <p>The <code>save</code> function in the CRUD controller handles the database insertion logic.</p>
@@ -2079,8 +2041,8 @@ CrudModule --&gt; SaveFunction
 SaveFunction --&gt; DBModule
 DBModule --&gt; DBQuery
 DBQuery --&gt; CursosTable</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L5-L70">routes/courses.js L5-L70</a></p>
-<p><a href="src/controller#L1-L24">src/controller.js L1-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L5-L70">routes/courses.js L5-L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L1-L24">src/controller.js L1-L24</a></p>
 <h3 id="function-implementation">Function Implementation<a class="headerlink" href="#function-implementation" title="Permanent link">&para;</a></h3>
 <p>The <code>save</code> function extracts form data from <code>req.body</code> and constructs an INSERT query:</p>
 <p><strong>Function Signature:</strong> <code>exports.save = (req, res) =&gt; { ... }</code></p>
@@ -2096,8 +2058,8 @@ DBQuery --&gt; CursosTable</code></pre>
 <p>The <code>?</code> placeholder is replaced with an object containing the three fields. The MySQL driver automatically converts the object to a SET clause.</p>
 <p><strong>Success Behavior:</strong> Redirects to <code>/courses</code> (the course listing page)</p>
 <p><strong>Error Behavior:</strong> Logs error to console and still redirects to <code>/courses</code></p>
-<p><strong>Location:</strong> <a href="src/controller#L4-L24">src/controller.js L4-L24</a></p>
-<p><strong>Sources:</strong> <a href="src/controller#L4-L24">src/controller.js L4-L24</a></p>
+<p><strong>Location:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L24">src/controller.js L4-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L24">src/controller.js L4-L24</a></p>
 <hr />
 <h2 id="form-interface">Form Interface<a class="headerlink" href="#form-interface" title="Permanent link">&para;</a></h2>
 <p>The course creation form is rendered by the <code>create.ejs</code> template.</p>
@@ -2116,7 +2078,7 @@ Form --&gt; DescField
 Form --&gt; CatField
 Form --&gt; SubmitBtn
 Form --&gt; CancelBtn</code></pre>
-<p><strong>Sources:</strong> <a href="views/create#L10-L26">views/create.ejs L10-L26</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L10-L26">views/create.ejs L10-L26</a></p>
 <h3 id="template-implementation">Template Implementation<a class="headerlink" href="#template-implementation" title="Permanent link">&para;</a></h3>
 <p>The form uses Bootstrap styling classes and submits to the <code>/save</code> endpoint:</p>
 <table>
@@ -2161,8 +2123,8 @@ Form --&gt; CancelBtn</code></pre>
 <li>Includes <code>partials/header</code> for navigation</li>
 <li>Contains a centered card (<code>w-25</code> width class) with the form</li>
 </ul>
-<p><strong>Location:</strong> <a href="views/create#L1-L29">views/create.ejs L1-L29</a></p>
-<p><strong>Sources:</strong> <a href="views/create#L1-L29">views/create.ejs L1-L29</a></p>
+<p><strong>Location:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
 <hr />
 <h2 id="database-insertion">Database Insertion<a class="headerlink" href="#database-insertion" title="Permanent link">&para;</a></h2>
 <h3 id="query-execution-flow">Query Execution Flow<a class="headerlink" href="#query-execution-flow" title="Permanent link">&para;</a></h3>
@@ -2182,7 +2144,7 @@ DBQuery --&gt; CursosTable
 CursosTable --&gt; AutoIncrement
 CursosTable --&gt; DefaultVis
 DBQuery --&gt; Redirect</code></pre>
-<p><strong>Sources:</strong> <a href="src/controller#L4-L24">src/controller.js L4-L24</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L4-L24">src/controller.js L4-L24</a></p>
 <h3 id="database-table-schema">Database Table Schema<a class="headerlink" href="#database-table-schema" title="Permanent link">&para;</a></h3>
 <p>Based on the INSERT operation, the <code>cursos</code> table accepts the following fields:</p>
 <table>
@@ -2222,8 +2184,8 @@ DBQuery --&gt; Redirect</code></pre>
 </tbody>
 </table>
 <p>The form does not provide values for <code>id</code> (primary key) or <code>visibilidad</code> (visibility control), which suggests these fields have database-level defaults.</p>
-<p><strong>Sources:</strong> <a href="src/controller#L9-L14">src/controller.js L9-L14</a></p>
-<p><a href="routes/courses#L38-L42">routes/courses.js L38-L42</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L9-L14">src/controller.js L9-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L42">routes/courses.js L38-L42</a></p>
 <hr />
 <h2 id="validation-and-error-handling">Validation and Error Handling<a class="headerlink" href="#validation-and-error-handling" title="Permanent link">&para;</a></h2>
 <h3 id="current-implementation">Current Implementation<a class="headerlink" href="#current-implementation" title="Permanent link">&para;</a></h3>
@@ -2232,8 +2194,8 @@ DBQuery --&gt; Redirect</code></pre>
 <p><strong>Server-Side Validation:</strong> None implemented before database insertion</p>
 <p><strong>Error Handling:</strong></p>
 <ul>
-<li>Database errors are logged to console via <code>console.log(error)</code> <a href="src/controller#L18-L18">src/controller.js L18</a></li>
-<li>Both success and error cases redirect to <code>/courses</code> <a href="src/controller#L19-L21">src/controller.js L19-L21</a></li>
+<li>Database errors are logged to console via <code>console.log(error)</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L18-L18">src/controller.js L18</a></li>
+<li>Both success and error cases redirect to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L19-L21">src/controller.js L19-L21</a></li>
 <li>No error messages are displayed to the user</li>
 </ul>
 <h3 id="error-scenarios">Error Scenarios<a class="headerlink" href="#error-scenarios" title="Permanent link">&para;</a></h3>
@@ -2269,13 +2231,13 @@ DBQuery --&gt; Redirect</code></pre>
 <li>Users receive no feedback about success or failure</li>
 <li>Database constraints (if any) are the only validation layer</li>
 </ul>
-<p><strong>Sources:</strong> <a href="src/controller#L16-L22">src/controller.js L16-L22</a></p>
-<p><a href="views/create#L10-L26">views/create.ejs L10-L26</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L16-L22">src/controller.js L16-L22</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L10-L26">views/create.ejs L10-L26</a></p>
 <hr />
 <h2 id="integration-with-course-listing">Integration with Course Listing<a class="headerlink" href="#integration-with-course-listing" title="Permanent link">&para;</a></h2>
 <p>After successful course creation, the user is redirected to <code>/courses</code>, where the new course appears in the listing. Since no <code>visibilidad</code> value is specified, the course inherits the database default value, which controls whether it appears to public users.</p>
-<p>For details on how courses are queried and displayed, see <a href="5.3-course-listing-and-visibility.md">Course Listing &amp; Visibility</a>.</p>
-<p><strong>Sources:</strong> <a href="src/controller#L21-L21">src/controller.js L21</a></p>
+<p>For details on how courses are queried and displayed, see <a href="/Lourdes12587/Week06/5.3-course-listing-and-visibility">Course Listing &amp; Visibility</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L21-L21">src/controller.js L21</a></p>
 
 
 

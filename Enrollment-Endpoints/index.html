@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../Course-Management-Endpoints/">
-      
-      
-        <link rel="next" href="..">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,11 +20,14 @@
     
     
       
-        <title>Profile Endpoints - Week06 Project Documentation</title>
+        <title>Enrollment Endpoints - Week06 Project Documentation</title>
       
     
     
       <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -57,7 +56,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -66,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#profile-endpoints" class="md-skip">
+        <a href="#enrollment-endpoints" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -100,15 +104,15 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Profile Endpoints
+              Enrollment Endpoints
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -341,12 +345,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../API-Reference/" class="md-tabs__link">
           
   
@@ -925,29 +927,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../Authentication-Views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Authentication Views
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../Authentication-Endpoints/" class="md-nav__link">
         
   
@@ -1138,6 +1117,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Course-Management-Endpoints/" class="md-nav__link">
         
   
@@ -1270,302 +1272,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose-and-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purpose and Scope
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-profile-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Profile Endpoint
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Profile Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#route-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Route Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#request-processing-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request Processing Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-query" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Query
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response-data-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Data Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-template-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      View Template Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#authorization-failure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authorization Failure
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#admin-profile-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Admin Profile Endpoint
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Admin Profile Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#route-definition_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Route Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#request-processing-flow_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request Processing Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-query_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Query
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Error Handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response-data-structure_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Data Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-template-structure_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      View Template Structure
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profile-endpoint-access-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      Profile Endpoint Access Control
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Profile Endpoint Access Control">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#middleware-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Middleware Implementation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#session-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Session Requirements
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-flow-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Flow Comparison
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Flow Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-profile-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Profile Data Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#admin-profile-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Admin Profile Data Flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-parameter-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query Parameter Support
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1749,31 +1455,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   
@@ -1786,7 +1489,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -1857,302 +1560,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Profile Endpoints
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Tabla de contenidos
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose-and-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purpose and Scope
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#user-profile-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Profile Endpoint
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Profile Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#route-definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      Route Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#request-processing-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request Processing Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-query" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Query
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response-data-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Data Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-template-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      View Template Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#authorization-failure" class="md-nav__link">
-    <span class="md-ellipsis">
-      Authorization Failure
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#admin-profile-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Admin Profile Endpoint
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Admin Profile Endpoint">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#route-definition_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Route Definition
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#request-processing-flow_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Request Processing Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-query_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Query
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Error Handling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#response-data-structure_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Data Structure
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#view-template-structure_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      View Template Structure
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#profile-endpoint-access-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      Profile Endpoint Access Control
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Profile Endpoint Access Control">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#middleware-implementation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Middleware Implementation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#session-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Session Requirements
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-flow-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data Flow Comparison
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Data Flow Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-profile-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      User Profile Data Flow
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#admin-profile-data-flow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Admin Profile Data Flow
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#query-parameter-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Query Parameter Support
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2256,317 +1663,352 @@
 
 
 
-<h1 id="profile-endpoints">Profile Endpoints<a class="headerlink" href="#profile-endpoints" title="Permanent link">&para;</a></h1>
+<h1 id="enrollment-endpoints">Enrollment Endpoints<a class="headerlink" href="#enrollment-endpoints" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Relevant source files</strong>
-* <a href="routes/courses">routes/courses.js</a>
-* <a href="views/adminperfil">views/adminperfil.ejs</a>
-* <a href="views/perfil">views/perfil.ejs</a></p>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/cursoController.js">src/cursoController.js</a></p>
 </blockquote>
 <h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
-<p>This document provides reference documentation for the profile-related HTTP endpoints in the course management system. These endpoints serve role-specific dashboard views: regular users view their enrolled courses, while administrators view system statistics.</p>
-<p>For authentication and authorization mechanisms, see <a href="4-authentication-and-authorization.md">Authentication &amp; Authorization</a>. For course enrollment functionality, see <a href="8.3-enrollment-endpoints.md">Enrollment Endpoints</a>. For the general user profile system architecture, see <a href="6-user-profiles.md">User Profiles</a>.</p>
+<p>This document provides technical reference for the enrollment endpoints that handle course registration for authenticated users. These endpoints implement a two-step enrollment workflow with duplicate prevention and role-based access control.</p>
+<p>The enrollment functionality is restricted to users with the <code>registrado</code> role. For information about course management by administrators, see <a href="/Lourdes12587/Week06/8.2-course-management-endpoints">Course Management Endpoints</a>. For information about user and admin profile pages where enrollments are displayed, see <a href="/Lourdes12587/Week06/8.4-profile-endpoints">Profile Endpoints</a>. For authentication middleware details, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
 <hr />
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The system implements two distinct profile endpoints based on user role:</p>
+<h2 id="endpoints-overview">Endpoints Overview<a class="headerlink" href="#endpoints-overview" title="Permanent link">&para;</a></h2>
+<p>The enrollment system consists of two endpoints located in <code>routes/courses.js</code>:</p>
 <table>
 <thead>
 <tr>
 <th>Endpoint</th>
-<th>Role Required</th>
-<th>Middleware Chain</th>
+<th>Method</th>
 <th>Purpose</th>
+<th>Middleware</th>
+<th>Handler Location</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>GET /perfil</code></td>
-<td><code>registrado</code></td>
+<td><code>/inscribir/:id</code></td>
+<td>GET</td>
+<td>Display enrollment confirmation page</td>
 <td><code>estaAutenticado</code>, <code>isRegistrado</code></td>
-<td>Display enrolled courses for registered users</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></td>
 </tr>
 <tr>
-<td><code>GET /admin/perfil</code></td>
-<td><code>admin</code></td>
-<td><code>estaAutenticado</code>, <code>isAdmin</code></td>
-<td>Display system statistics and management links</td>
+<td><code>/inscribir/:id</code></td>
+<td>POST</td>
+<td>Process enrollment and insert record</td>
+<td><code>estaAutenticado</code>, <code>isRegistrado</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></td>
 </tr>
 </tbody>
 </table>
-<p>Both endpoints require active session authentication but differ in role-based access control and data presentation.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<p>Both endpoints require authenticated users with the <code>registrado</code> role. The <code>:id</code> parameter represents the course ID (<code>id_curso</code>) from the <code>cursos</code> table.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
 <hr />
-<h2 id="user-profile-endpoint">User Profile Endpoint<a class="headerlink" href="#user-profile-endpoint" title="Permanent link">&para;</a></h2>
-<h3 id="route-definition">Route Definition<a class="headerlink" href="#route-definition" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>GET /perfil
-</code></pre></div>
-<p><strong>Middleware:</strong> <a href="blob/ce0c3bcd/estaautenticado.md"><code>estaAutenticado</code></a></p>
-<p><a href="blob/ce0c3bcd/isregistrado.md"><code>isRegistrado</code></a></p>
-<p><strong>Authentication:</strong> Required - session must contain <code>loggedin: true</code> and <code>rol: 'registrado'</code></p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
-<h3 id="request-processing-flow">Request Processing Flow<a class="headerlink" href="#request-processing-flow" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>sequenceDiagram
-  participant Client
-  participant routes/courses.js
-  participant estaAutenticado
-  participant isRegistrado
-  participant MySQL Database
-  participant views/perfil.ejs
-
-  Client-&gt;&gt;routes/courses.js: "GET /perfil"
-  routes/courses.js-&gt;&gt;estaAutenticado: "Check authentication"
-  loop ["rol !== 'registrado'"]
-    estaAutenticado-&gt;&gt;Client: "Redirect to /login"
-    estaAutenticado-&gt;&gt;isRegistrado: "Check role"
-    isRegistrado-&gt;&gt;Client: "Redirect to /login"
-    isRegistrado-&gt;&gt;routes/courses.js: "Proceed"
-    routes/courses.js-&gt;&gt;MySQL Database: "SELECT c.* FROM cursos c JOIN inscripciones i"
-    MySQL Database-&gt;&gt;routes/courses.js: "Return enrolled courses"
-    routes/courses.js-&gt;&gt;views/perfil.ejs: "Render with courses, usuario, rol, msg"
-    views/perfil.ejs-&gt;&gt;Client: "HTML response"
-  end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L14">routes/courses.js L8-L14</a></p>
-<p><a href="routes/courses#L26-L33">routes/courses.js L26-L33</a></p>
-<p><a href="routes/courses#L152-L169">routes/courses.js L152-L169</a></p>
-<h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
-<p>The endpoint executes a JOIN query to retrieve all courses the user is enrolled in:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="o">*</span><span class="w"> </span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span><span class="w"> </span><span class="k">c</span>
-<span class="k">JOIN</span><span class="w"> </span><span class="n">inscripciones</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_curso</span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">id_usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
-</code></pre></div>
-<p>The <code>idUsuario</code> parameter is extracted from <code>req.session.usuario.id</code> at <a href="routes/courses#L154-L154">routes/courses.js L154</a></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L155-L160">routes/courses.js L155-L160</a></p>
-<h3 id="response-data-structure">Response Data Structure<a class="headerlink" href="#response-data-structure" title="Permanent link">&para;</a></h3>
-<p>The endpoint renders the <code>perfil</code> view with the following context object:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Source</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>cursos</code></td>
-<td>Array</td>
-<td>Database query results</td>
-<td>Array of course objects the user is enrolled in</td>
-</tr>
-<tr>
-<td><code>usuario</code></td>
-<td>Object</td>
-<td><code>req.session.usuario</code></td>
-<td>Current user object from session</td>
-</tr>
-<tr>
-<td><code>rol</code></td>
-<td>String</td>
-<td><code>req.session.rol</code></td>
-<td>User role (always <code>'registrado'</code> for this endpoint)</td>
-</tr>
-<tr>
-<td><code>msg</code></td>
-<td>String</td>
-<td><code>req.query.msg</code></td>
-<td>Optional query parameter for flash messages</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Sources:</strong> <a href="routes/courses#L162-L167">routes/courses.js L162-L167</a></p>
-<h3 id="view-template-structure">View Template Structure<a class="headerlink" href="#view-template-structure" title="Permanent link">&para;</a></h3>
-<p>The <code>perfil.ejs</code> template displays:</p>
-<ul>
-<li>Greeting message with <code>usuario.nombre</code> <a href="views/perfil#L6-L6">views/perfil.ejs L6</a></li>
-<li>Table of enrolled courses showing <code>titulo</code>, <code>categoria</code>, <code>descripcion</code> <a href="views/perfil#L12-L29">views/perfil.ejs L12-L29</a></li>
-<li>Empty state message if <code>cursos.length === 0</code> <a href="views/perfil#L9-L10">views/perfil.ejs L9-L10</a></li>
-<li>Link to <code>/courses</code> for browsing additional courses <a href="views/perfil#L32-L32">views/perfil.ejs L32</a></li>
-</ul>
-<p><strong>Sources:</strong> <a href="views/perfil#L1-L35">views/perfil.ejs L1-L35</a></p>
-<h3 id="authorization-failure">Authorization Failure<a class="headerlink" href="#authorization-failure" title="Permanent link">&para;</a></h3>
-<p>If the user is not authenticated or does not have <code>rol === 'registrado'</code>, the middleware chain redirects to <code>/login</code> <a href="routes/courses#L31-L31">routes/courses.js L31</a></p>
-<hr />
-<h2 id="admin-profile-endpoint">Admin Profile Endpoint<a class="headerlink" href="#admin-profile-endpoint" title="Permanent link">&para;</a></h2>
-<h3 id="route-definition_1">Route Definition<a class="headerlink" href="#route-definition_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>GET /admin/perfil
-</code></pre></div>
-<p><strong>Middleware:</strong> <a href="blob/ce0c3bcd/estaautenticado.md"><code>estaAutenticado</code></a></p>
-<p><a href="blob/ce0c3bcd/isadmin.md"><code>isAdmin</code></a></p>
-<p><strong>Authentication:</strong> Required - session must contain <code>loggedin: true</code> and <code>rol: 'admin'</code></p>
-<p><strong>Implementation:</strong> <a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
-<h3 id="request-processing-flow_1">Request Processing Flow<a class="headerlink" href="#request-processing-flow_1" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>sequenceDiagram
-  participant Client
-  participant routes/courses.js
-  participant estaAutenticado
-  participant isAdmin
-  participant MySQL Database
-  participant views/adminPerfil.ejs
-
-  Client-&gt;&gt;routes/courses.js: "GET /admin/perfil"
-  routes/courses.js-&gt;&gt;estaAutenticado: "Check authentication"
-  loop ["rol !== 'admin'"]
-    estaAutenticado-&gt;&gt;Client: "Redirect to /login"
-    estaAutenticado-&gt;&gt;isAdmin: "Check admin role"
-    isAdmin-&gt;&gt;Client: "Redirect to /login"
-    isAdmin-&gt;&gt;routes/courses.js: "Proceed"
-    routes/courses.js-&gt;&gt;MySQL Database: "SELECT COUNT(*) AS totalCursos FROM cursos"
-    MySQL Database-&gt;&gt;routes/courses.js: "Return count"
-    routes/courses.js-&gt;&gt;views/adminPerfil.ejs: "Render with usuario, totalCursos"
-    views/adminPerfil.ejs-&gt;&gt;Client: "HTML response"
-  end</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L16-L24">routes/courses.js L16-L24</a></p>
-<p><a href="routes/courses#L172-L185">routes/courses.js L172-L185</a></p>
-<h3 id="database-query_1">Database Query<a class="headerlink" href="#database-query_1" title="Permanent link">&para;</a></h3>
-<p>The endpoint retrieves aggregate statistics from the database:</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">totalCursos</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cursos</span>
-</code></pre></div>
-<p>This query counts all courses in the system regardless of visibility or enrollment status <a href="routes/courses#L176-L176">routes/courses.js L176</a></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L176-L176">routes/courses.js L176</a></p>
-<h3 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h3>
-<p>If the database query fails, the endpoint gracefully degrades by rendering the view with <code>totalCursos: 0</code> <a href="routes/courses#L179-L179">routes/courses.js L179</a></p>
-<p><strong>Sources:</strong> <a href="routes/courses#L177-L180">routes/courses.js L177-L180</a></p>
-<h3 id="response-data-structure_1">Response Data Structure<a class="headerlink" href="#response-data-structure_1" title="Permanent link">&para;</a></h3>
-<p>The endpoint renders the <code>adminPerfil</code> view with:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Source</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>usuario</code></td>
-<td>Object</td>
-<td><code>req.session.usuario</code></td>
-<td>Current admin user object from session</td>
-</tr>
-<tr>
-<td><code>totalCursos</code></td>
-<td>Number</td>
-<td>Database aggregation</td>
-<td>Total count of all courses in system</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Sources:</strong> <a href="routes/courses#L183-L183">routes/courses.js L183</a></p>
-<h3 id="view-template-structure_1">View Template Structure<a class="headerlink" href="#view-template-structure_1" title="Permanent link">&para;</a></h3>
-<p>The <code>adminPerfil.ejs</code> template displays:</p>
-<ul>
-<li>Welcome message with admin designation: <code>"Bienvenido, &lt;%= usuario.nombre %&gt; (Administrador)"</code> <a href="views/adminperfil#L6-L6">views/adminperfil.ejs L6</a></li>
-<li>System statistics: <code>"Total de cursos en el sistema: &lt;%= totalCursos %&gt;"</code> <a href="views/adminperfil#L8-L8">views/adminperfil.ejs L8</a></li>
-<li>Navigation links to <code>/courses</code> for course management <a href="views/adminperfil#L18-L18">views/adminperfil.ejs L18</a></li>
-<li>Navigation link to <code>/</code> home page <a href="views/adminperfil#L19-L19">views/adminperfil.ejs L19</a></li>
-</ul>
-<p><strong>Sources:</strong> <a href="views/adminperfil#L1-L29">views/adminperfil.ejs L1-L29</a></p>
-<hr />
-<h2 id="profile-endpoint-access-control">Profile Endpoint Access Control<a class="headerlink" href="#profile-endpoint-access-control" title="Permanent link">&para;</a></h2>
-<h3 id="middleware-implementation">Middleware Implementation<a class="headerlink" href="#middleware-implementation" title="Permanent link">&para;</a></h3>
-<p>Both profile endpoints share the <code>estaAutenticado</code> middleware but diverge at role-checking:</p>
+<h2 id="authentication-and-authorization-requirements">Authentication and Authorization Requirements<a class="headerlink" href="#authentication-and-authorization-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="middleware-chain">Middleware Chain<a class="headerlink" href="#middleware-chain" title="Permanent link">&para;</a></h3>
+<p>All enrollment endpoints pass through two middleware functions before reaching the route handler:</p>
 <pre class="mermaid"><code>flowchart TD
 
 Request["HTTP Request"]
-Auth["estaAutenticado&lt;br&gt;(routes/courses.js:8-14)"]
-RoleCheck["Role?"]
-RegCheck["isRegistrado&lt;br&gt;(routes/courses.js:26-33)"]
-AdminCheck["isAdmin&lt;br&gt;(routes/courses.js:16-24)"]
-RegHandler["GET /perfil handler&lt;br&gt;(routes/courses.js:152-169)"]
-AdminHandler["GET /admin/perfil handler&lt;br&gt;(routes/courses.js:172-185)"]
-LoginRedirect["/login redirect"]
+estaAutenticado["estaAutenticado&lt;br&gt;middleware"]
+CheckSession["req.session.loggedin&lt;br&gt;exists?"]
+isRegistrado["isRegistrado&lt;br&gt;middleware"]
+RedirectLogin["Redirect to /login"]
+CheckRole["req.session.rol&lt;br&gt;=== 'registrado'?"]
+RouteHandler["Route Handler"]
+RedirectLogin2["Redirect to /login"]
 
-Request --&gt; Auth
-Auth --&gt; LoginRedirect
-Auth --&gt; RoleCheck
-RoleCheck --&gt; RegCheck
-RoleCheck --&gt; AdminCheck
-RegCheck --&gt; RegHandler
-RegCheck --&gt; LoginRedirect
-AdminCheck --&gt; AdminHandler
-AdminCheck --&gt; LoginRedirect</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
-<h3 id="session-requirements">Session Requirements<a class="headerlink" href="#session-requirements" title="Permanent link">&para;</a></h3>
-<p>Both endpoints require specific session properties:</p>
+Request --&gt; estaAutenticado
+estaAutenticado --&gt; CheckSession
+CheckSession --&gt; isRegistrado
+CheckSession --&gt; RedirectLogin
+isRegistrado --&gt; CheckRole
+CheckRole --&gt; RouteHandler
+CheckRole --&gt; RedirectLogin2</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L106">routes/courses.js L106</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L117">routes/courses.js L117</a></p>
+<h3 id="access-control-functions">Access Control Functions<a class="headerlink" href="#access-control-functions" title="Permanent link">&para;</a></h3>
+<p><strong><code>estaAutenticado</code> Middleware</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<ul>
+<li>Verifies <code>req.session.loggedin</code> is truthy</li>
+<li>Redirects to <code>/login</code> if not authenticated</li>
+<li>Required for all protected routes</li>
+</ul>
+<p><strong><code>isRegistrado</code> Middleware</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
+<ul>
+<li>Verifies <code>req.session.loggedin</code> exists</li>
+<li>Verifies <code>req.session.rol === 'registrado'</code></li>
+<li>Redirects to <code>/login</code> if role check fails</li>
+<li>Prevents admin users from enrolling (admins have different workflows)</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<hr />
+<h2 id="get-inscribirid-enrollment-confirmation-page">GET /inscribir/:id - Enrollment Confirmation Page<a class="headerlink" href="#get-inscribirid-enrollment-confirmation-page" title="Permanent link">&para;</a></h2>
+<h3 id="endpoint-specification">Endpoint Specification<a class="headerlink" href="#endpoint-specification" title="Permanent link">&para;</a></h3>
+<p><strong>Route:</strong> <code>GET /inscribir/:id</code>
+<strong>Middleware:</strong> <code>estaAutenticado</code>, <code>isRegistrado</code>
+<strong>Handler:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
+<h3 id="request-parameters">Request Parameters<a class="headerlink" href="#request-parameters" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Session Property</th>
-<th>Required Value</th>
-<th>Checked By</th>
+<th>Parameter</th>
+<th>Type</th>
 <th>Location</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>req.session.loggedin</code></td>
-<td><code>true</code></td>
-<td><code>estaAutenticado</code></td>
-<td><a href="routes/courses#L9-L9">routes/courses.js L9</a></td>
-</tr>
-<tr>
-<td><code>req.session.rol</code></td>
-<td><code>'registrado'</code> or <code>'admin'</code></td>
-<td><code>isRegistrado</code> / <code>isAdmin</code></td>
-<td><a href="routes/courses#L17-L17">routes/courses.js L17</a> <br>  <a href="routes/courses#L27-L27">routes/courses.js L27</a></td>
-</tr>
-<tr>
-<td><code>req.session.usuario</code></td>
-<td>User object</td>
-<td>Handler functions</td>
-<td><a href="routes/courses#L154-L154">routes/courses.js L154</a> <br>  <a href="routes/courses#L173-L173">routes/courses.js L173</a></td>
-</tr>
-<tr>
-<td><code>req.session.usuario.id</code></td>
-<td>User ID</td>
-<td><code>/perfil</code> handler only</td>
-<td><a href="routes/courses#L154-L154">routes/courses.js L154</a></td>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>URL path</td>
+<td>Course ID from <code>cursos</code> table</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Sources:</strong> <a href="routes/courses#L8-L33">routes/courses.js L8-L33</a></p>
-<p><a href="routes/courses#L152-L185">routes/courses.js L152-L185</a></p>
+<h3 id="handler-logic">Handler Logic<a class="headerlink" href="#handler-logic" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>sequenceDiagram
+  participant Client
+  participant routes/courses.js
+  participant config/db
+  participant views/confirmInscripcion.ejs
+
+  Client-&gt;&gt;routes/courses.js: "GET /inscribir/:id"
+  note over routes/courses.js: "Extract id from req.params.id"
+  routes/courses.js-&gt;&gt;config/db: "SELECT * FROM cursos WHERE id = ?"
+  config/db--&gt;&gt;routes/courses.js: "results array"
+  loop ["Error or empty results"]
+    routes/courses.js-&gt;&gt;Client: "Redirect to /courses"
+    note over routes/courses.js: "Extract results[0] as curso"
+    routes/courses.js-&gt;&gt;views/confirmInscripcion.ejs: "render('confirmInscripcion', { curso, login, rol })"
+    views/confirmInscripcion.ejs--&gt;&gt;Client: "HTML confirmation page"
+  end</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
+<h3 id="database-query">Database Query<a class="headerlink" href="#database-query" title="Permanent link">&para;</a></h3>
+<p>The endpoint executes a single SELECT query to retrieve course details:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ul>
+<li><strong>Parameters:</strong> <code>[idCurso]</code> from <code>req.params.id</code></li>
+<li><strong>Expected Result:</strong> Single course record or empty array</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L109-L109">routes/courses.js L109</a></p>
+<h3 id="response-behavior">Response Behavior<a class="headerlink" href="#response-behavior" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Response</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Course found</td>
+<td>Render <code>confirmInscripcion</code> view with course data</td>
+<td>200</td>
+</tr>
+<tr>
+<td>Error or course not found</td>
+<td>Redirect to <code>/courses</code></td>
+<td>302</td>
+</tr>
+</tbody>
+</table>
+<h3 id="view-data">View Data<a class="headerlink" href="#view-data" title="Permanent link">&para;</a></h3>
+<p>The <code>confirmInscripcion</code> view receives the following data object:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L112-L112">routes/courses.js L112</a></p>
 <hr />
-<h2 id="data-flow-comparison">Data Flow Comparison<a class="headerlink" href="#data-flow-comparison" title="Permanent link">&para;</a></h2>
-<h3 id="user-profile-data-flow">User Profile Data Flow<a class="headerlink" href="#user-profile-data-flow" title="Permanent link">&para;</a></h3>
+<h2 id="post-inscribirid-process-enrollment">POST /inscribir/:id - Process Enrollment<a class="headerlink" href="#post-inscribirid-process-enrollment" title="Permanent link">&para;</a></h2>
+<h3 id="endpoint-specification_1">Endpoint Specification<a class="headerlink" href="#endpoint-specification_1" title="Permanent link">&para;</a></h3>
+<p><strong>Route:</strong> <code>POST /inscribir/:id</code>
+<strong>Middleware:</strong> <code>estaAutenticado</code>, <code>isRegistrado</code>
+<strong>Handler:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<h3 id="request-parameters_1">Request Parameters<a class="headerlink" href="#request-parameters_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>URL path</td>
+<td>Course ID to enroll in</td>
+</tr>
+<tr>
+<td><code>req.session.usuario.id</code></td>
+<td>Integer</td>
+<td>Session</td>
+<td>User ID from authenticated session</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enrollment-flow-diagram">Enrollment Flow Diagram<a class="headerlink" href="#enrollment-flow-diagram" title="Permanent link">&para;</a></h3>
 <pre class="mermaid"><code>flowchart TD
 
-Session["req.session.usuario.id"]
-Query["JOIN query on inscripciones"]
-Courses["Array of enrolled courses"]
-View["perfil.ejs template"]
-Response["HTML: course table"]
+Start["POST /inscribir/:id"]
+ExtractParams["Extract id_curso from req.params.id&lt;br&gt;Extract id_usuario from req.session.usuario.id"]
+CheckDuplicate["Query: SELECT * FROM inscripciones&lt;br&gt;WHERE id_usuario = ? AND id_curso = ?"]
+DuplicateDecision["results.length &gt; 0?"]
+RedirectPerfil1["Redirect to /perfil"]
+InsertEnrollment["Query: INSERT INTO inscripciones&lt;br&gt;(id_usuario, id_curso)&lt;br&gt;VALUES (?, ?)"]
+InsertDecision["Insert&lt;br&gt;successful?"]
+RedirectPerfil2["Redirect to /perfil"]
+RedirectCourses["Redirect to /courses"]
+QueryError["Query&lt;br&gt;error?"]
 
-Session --&gt; Query
-Query --&gt; Courses
-Courses --&gt; View
-View --&gt; Response</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L154-L168">routes/courses.js L154-L168</a></p>
-<h3 id="admin-profile-data-flow">Admin Profile Data Flow<a class="headerlink" href="#admin-profile-data-flow" title="Permanent link">&para;</a></h3>
-<pre class="mermaid"><code>flowchart TD
-
-Session["req.session.usuario"]
-Query["COUNT query on cursos"]
-Stats["totalCursos number"]
-View["adminPerfil.ejs template"]
-Response["HTML: dashboard stats"]
-
-Session --&gt; View
-Query --&gt; Stats
-Stats --&gt; View
-View --&gt; Response</code></pre>
-<p><strong>Sources:</strong> <a href="routes/courses#L173-L184">routes/courses.js L173-L184</a></p>
+Start --&gt; ExtractParams
+ExtractParams --&gt; CheckDuplicate
+CheckDuplicate --&gt; DuplicateDecision
+DuplicateDecision --&gt; RedirectPerfil1
+DuplicateDecision --&gt; InsertEnrollment
+InsertEnrollment --&gt; InsertDecision
+InsertDecision --&gt; RedirectPerfil2
+InsertDecision --&gt; RedirectCourses
+CheckDuplicate --&gt; QueryError
+QueryError --&gt; RedirectCourses</code></pre>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<h3 id="duplicate-prevention-logic">Duplicate Prevention Logic<a class="headerlink" href="#duplicate-prevention-logic" title="Permanent link">&para;</a></h3>
+<p>The endpoint implements duplicate enrollment prevention through a two-query transaction:</p>
+<p><strong>Step 1: Check for Existing Enrollment</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L133">routes/courses.js L121-L133</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ul>
+<li><strong>Parameters:</strong> <code>[id_usuario, id_curso]</code></li>
+<li><strong>Purpose:</strong> Verify if enrollment already exists</li>
+<li><strong>Action if found:</strong> Redirect to <code>/perfil</code> without inserting</li>
+</ul>
+<p><strong>Step 2: Insert New Enrollment</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L135-L146">routes/courses.js L135-L146</a></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<ul>
+<li><strong>Parameters:</strong> <code>[id_usuario, id_curso]</code></li>
+<li><strong>Purpose:</strong> Create new enrollment record</li>
+<li><strong>Action on success:</strong> Redirect to <code>/perfil</code></li>
+<li><strong>Action on error:</strong> Redirect to <code>/courses</code></li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L146">routes/courses.js L121-L146</a></p>
+<h3 id="database-schema-interaction">Database Schema Interaction<a class="headerlink" href="#database-schema-interaction" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The <code>inscripciones</code> table acts as a junction table establishing a many-to-many relationship between <code>usuarios</code> and <code>cursos</code>. The composite key <code>(id_usuario, id_curso)</code> should be unique to prevent duplicate enrollments at the database level.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L146">routes/courses.js L121-L146</a></p>
+<h3 id="session-data-requirements">Session Data Requirements<a class="headerlink" href="#session-data-requirements" title="Permanent link">&para;</a></h3>
+<p>The POST handler retrieves the user ID from the session object:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This requires that the session contains a <code>usuario</code> object with an <code>id</code> property, which is set during the login process (see <a href="/Lourdes12587/Week06/4.2-user-login">User Login</a>).</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L119-L119">routes/courses.js L119</a></p>
+<h3 id="response-patterns">Response Patterns<a class="headerlink" href="#response-patterns" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Response</th>
+<th>Status Code</th>
+<th>User Experience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Already enrolled</td>
+<td>Redirect to <code>/perfil</code></td>
+<td>302</td>
+<td>User sees existing enrollment in profile</td>
+</tr>
+<tr>
+<td>New enrollment success</td>
+<td>Redirect to <code>/perfil</code></td>
+<td>302</td>
+<td>User sees newly added course in profile</td>
+</tr>
+<tr>
+<td>Database query error</td>
+<td>Redirect to <code>/courses</code></td>
+<td>302</td>
+<td>User returns to course listing</td>
+</tr>
+<tr>
+<td>Database insert error</td>
+<td>Redirect to <code>/courses</code></td>
+<td>302</td>
+<td>User returns to course listing</td>
+</tr>
+</tbody>
+</table>
+<p>All responses use the Post-Redirect-Get (PRG) pattern to prevent duplicate form submissions on browser refresh.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L127-L144">routes/courses.js L127-L144</a></p>
 <hr />
-<h2 id="query-parameter-support">Query Parameter Support<a class="headerlink" href="#query-parameter-support" title="Permanent link">&para;</a></h2>
-<p>The <code>/perfil</code> endpoint supports an optional <code>msg</code> query parameter for displaying flash messages <a href="routes/courses#L166-L166">routes/courses.js L166</a></p>
-<p>This parameter is commonly used after enrollment operations to provide user feedback.</p>
-<p>Example: <code>GET /perfil?msg=enrolled</code></p>
-<p>The <code>/admin/perfil</code> endpoint does not accept query parameters.</p>
-<p><strong>Sources:</strong> <a href="routes/courses#L166-L166">routes/courses.js L166</a></p>
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<h3 id="console-logging">Console Logging<a class="headerlink" href="#console-logging" title="Permanent link">&para;</a></h3>
+<p>The POST handler logs errors to the console for debugging:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L126-L126">routes/courses.js L126</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L140-L140">routes/courses.js L140</a></p>
+<h3 id="graceful-degradation">Graceful Degradation<a class="headerlink" href="#graceful-degradation" title="Permanent link">&para;</a></h3>
+<p>Both endpoints implement graceful error handling:</p>
+<ul>
+<li><strong>GET endpoint:</strong> Returns empty results on error, redirects to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L110-L110">routes/courses.js L110</a></li>
+<li><strong>POST endpoint:</strong> Redirects to <code>/courses</code> on any database error <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L127-L127">routes/courses.js L127</a>  <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L141-L141">routes/courses.js L141</a></li>
+</ul>
+<p>No error messages are displayed to the user; the system silently redirects to safe pages.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
+<hr />
+<h2 id="alternative-implementation">Alternative Implementation<a class="headerlink" href="#alternative-implementation" title="Permanent link">&para;</a></h2>
+<p>The codebase includes an alternative enrollment controller at <code>src/cursoController.js</code> that implements identical logic to the POST handler:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This function <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/cursoController.js#L3-L25">src/cursoController.js L3-L25</a></p>
+<p>is not currently used by the routes but provides the same duplicate prevention and insertion logic. The active implementation is inline in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/cursoController.js#L1-L25">src/cursoController.js L1-L25</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<hr />
+<h2 id="integration-with-profile-system">Integration with Profile System<a class="headerlink" href="#integration-with-profile-system" title="Permanent link">&para;</a></h2>
+<p>Upon successful enrollment, users are redirected to <code>/perfil</code>, where enrolled courses are displayed through a JOIN query:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This query is executed in the profile endpoint <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></p>
+<p>For complete profile documentation, see <a href="/Lourdes12587/Week06/6.1-user-profile-page">User Profile Page</a>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
+<hr />
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Both endpoints enforce <code>isRegistrado</code> middleware, preventing public and admin users from enrolling</li>
+<li>Session-based authentication ensures only logged-in users can access endpoints</li>
+<li>Course ID comes from URL parameter, not user input, reducing injection risks</li>
+</ul>
+<h3 id="database-security">Database Security<a class="headerlink" href="#database-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>All queries use parameterized statements with <code>?</code> placeholders</li>
+<li>User ID retrieved from server-side session, not client input</li>
+<li>No direct SQL concatenation prevents SQL injection</li>
+</ul>
+<h3 id="business-logic-security">Business Logic Security<a class="headerlink" href="#business-logic-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Duplicate check prevents multiple enrollments in same course</li>
+<li>Silent failure on errors prevents information leakage</li>
+<li>Redirect-based responses prevent CSRF on GET requests</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
 
 
 
