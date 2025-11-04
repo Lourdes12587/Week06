@@ -51,8 +51,8 @@ Connection verification occurs immediately upon creation [config/db.js L11-L17](
 
 All modules that need database access import the connection object:
 
-```javascript
-const db = require("../config/db");
+```
+
 ```
 
 This pattern is used in:
@@ -147,12 +147,8 @@ end
 
 The system uses object notation for INSERT operations, which automatically escapes values and prevents SQL injection:
 
-```javascript
-db.query(
-    "INSERT INTO table_name SET ?",
-    { field1: value1, field2: value2 },
-    (error, results) => { /* handle response */ }
-);
+```
+
 ```
 
 **User Registration Example** [routes/auth.js L46-L69](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69)
@@ -208,12 +204,8 @@ sequenceDiagram
 
 SELECT operations use parameterized queries with placeholder syntax to prevent SQL injection:
 
-```javascript
-db.query(
-    "SELECT * FROM table_name WHERE field = ?",
-    [value],
-    (error, results) => { /* handle response */ }
-);
+```
+
 ```
 
 **User Authentication Example** [routes/auth.js L81-L118](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L118)
@@ -284,12 +276,8 @@ UPDATE operations follow a similar pattern with parameterized values to prevent 
 
 :
 
-```javascript
-db.query(
-    "UPDATE cursos SET ? WHERE id = ?",
-    [{ titulo: titulo, descripcion: descripcion, categoria: categoria }, id],
-    (error, results) => { /* handle response */ }
-);
+```
+
 ```
 
 | Component | Description |
@@ -309,12 +297,8 @@ db.query(
 
 DELETE operations are typically handled through route handlers that construct parameterized queries:
 
-```javascript
-db.query(
-    "DELETE FROM table_name WHERE id = ?",
-    [id],
-    (error, results) => { /* handle response */ }
-);
+```
+
 ```
 
 While not shown in the provided controller files, DELETE operations for courses follow this pattern based on the routing structure documented in [API Reference](/Lourdes12587/Week06/8-api-reference).
@@ -331,14 +315,8 @@ Connection errors are handled immediately upon establishing the connection [conf
 
 :
 
-```javascript
-conexion.connect((error) => {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("Conectado a la base de datos");
-    }
-});
+```
+
 ```
 
 ### Query Error Handling
@@ -542,11 +520,8 @@ All database operations use the same connection instance:
 
 All `db.query()` calls use a standard callback pattern:
 
-```javascript
-db.query(sql, params, (error, results) => {
-    // error: Error object if query failed
-    // results: Query results if successful
-});
+```
+
 ```
 
 ### Callback Parameter Details
@@ -564,11 +539,8 @@ The authentication route uses `async/await` for password hashing operations whil
 
 :
 
-```javascript
-async (req, res) => {
-    const passwordHash = await bcrypt.hash(password, 8);
-    db.query(/* callback-based query */);
-}
+```
+
 ```
 
 This hybrid approach allows synchronous-style password operations while keeping the callback pattern for database queries.
@@ -587,11 +559,8 @@ This hybrid approach allows synchronous-style password operations while keeping 
 
 SELECT queries return an array of objects:
 
-```javascript
-db.query("SELECT * FROM usuarios WHERE email = ?", [email], (error, results) => {
-    // results[0] = first matching row
-    // results.length = number of rows returned
-});
+```
+
 ```
 
 ### Common Result Processing Patterns
@@ -607,12 +576,8 @@ db.query("SELECT * FROM usuarios WHERE email = ?", [email], (error, results) => 
 
 INSERT and UPDATE operations return metadata rather than row data:
 
-```sql
-{
-    affectedRows: number,  // Rows modified
-    insertId: number,      // Auto-increment ID (INSERT only)
-    // ... other metadata
-}
+```
+
 ```
 
 **Sources:** [routes/auth.js L81-L118](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L118)
@@ -635,21 +600,8 @@ INSERT and UPDATE operations return metadata rather than row data:
 
 ### Query Template
 
-```javascript
-const db = require("../config/db");
+```
 
-db.query(
-    "SQL STATEMENT WITH ? PLACEHOLDERS",
-    [parameter1, parameter2],
-    (error, results) => {
-        if (error) {
-            console.log(error);
-            // Handle error appropriately
-        } else {
-            // Process results
-        }
-    }
-);
 ```
 
 **Sources:** [config/db.js L1-L20](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L1-L20)

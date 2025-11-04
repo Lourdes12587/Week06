@@ -1,0 +1,2346 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Technology-Stack/">
+      
+      
+        <link rel="next" href="../Database-Architecture/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Application Entry Point - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#application-entry-point" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Application Entry Point
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-initialization-sequence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Initialization Sequence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#middleware-configuration-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Configuration Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#static-file-serving" class="md-nav__link">
+    <span class="md-ellipsis">
+      Static File Serving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-engine-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      View Engine Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Route Mounting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commented-code-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commented Code Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commented Code Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commented-server-listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commented Server Listener
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commented-global-session-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commented Global Session Middleware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variable-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variable Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution-flow-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execution Flow Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-packagejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Package.json
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="application-entry-point">Application Entry Point<a class="headerlink" href="#application-entry-point" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document describes <code>app.js</code>, the main entry point and server initialization file for the course management application. It covers the Express application configuration, middleware pipeline setup, session management initialization, static file serving, view engine configuration, and route mounting.</p>
+<p>For detailed information about individual routes and their handlers, see <a href="/Lourdes12587/Week06/3.4-routing-system">Routing System</a>. For authentication middleware implementation, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>. For database connection setup, see <a href="/Lourdes12587/Week06/3.3-database-architecture">Database Architecture</a>.</p>
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <code>app.js</code> file serves as the central configuration hub for the Express.js application. It initializes the Express server, configures the middleware pipeline, establishes session management, sets up the view engine, and mounts all route handlers. However, it notably does <strong>not</strong> start the HTTP server itself (the <code>app.listen()</code> call is commented out at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L15-L17">app.js L15-L17</a></p>
+<p>).</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
+<hr />
+<h2 id="application-initialization-sequence">Application Initialization Sequence<a class="headerlink" href="#application-initialization-sequence" title="Permanent link">&para;</a></h2>
+<p>The following diagram illustrates the initialization sequence when <code>app.js</code> is loaded:</p>
+<pre class="mermaid"><code>flowchart TD
+
+Start["Node.js loads app.js"]
+ImportExpress["require('express')"]
+CreateApp["express() creates app instance"]
+LoadEnv["dotenv.config() loads environment variables"]
+ImportSession["require('express-session')"]
+ConfigSession["app.use(session()) configures session middleware"]
+ConfigStatic["app.use('/resources', express.static()) serves static files"]
+SetViewEngine["app.set('view engine', 'ejs') configures templating"]
+BodyParsers["app.use() adds body parsing middleware"]
+MountRoutes["app.use() mounts route handlers"]
+ExportApp["module.exports = app (implicit)"]
+End["Application ready for server.listen()"]
+Note1["Note: app.listen() is commented out&lt;br&gt;Server must be started elsewhere"]
+
+Start --&gt; ImportExpress
+ImportExpress --&gt; CreateApp
+CreateApp --&gt; LoadEnv
+LoadEnv --&gt; ImportSession
+ImportSession --&gt; ConfigSession
+ConfigSession --&gt; ConfigStatic
+ConfigStatic --&gt; SetViewEngine
+SetViewEngine --&gt; BodyParsers
+BodyParsers --&gt; MountRoutes
+MountRoutes --&gt; ExportApp
+ExportApp --&gt; End
+End --&gt; Note1</code></pre>
+<p><strong>Initialization Steps:</strong></p>
+<ol>
+<li><strong>Express Framework Import</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L2">app.js L1-L2</a> ): Imports Express and instantiates the application object</li>
+<li><strong>Environment Configuration</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a> ): Loads environment variables from <code>./env/.env</code> using dotenv</li>
+<li><strong>Session Middleware</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a> ): Configures express-session for user session management</li>
+<li><strong>Static File Serving</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a> ): Mounts static file middleware for the <code>/public</code> directory</li>
+<li><strong>View Engine Setup</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L21">app.js L21</a> ): Configures EJS as the templating engine</li>
+<li><strong>Body Parsing</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L26">app.js L25-L26</a> ): Enables URL-encoded and JSON body parsing</li>
+<li><strong>Route Mounting</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a> ): Mounts three route handler modules</li>
+</ol>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L31">app.js L1-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L5-L8">package.json L5-L8</a></p>
+<hr />
+<h2 id="middleware-pipeline">Middleware Pipeline<a class="headerlink" href="#middleware-pipeline" title="Permanent link">&para;</a></h2>
+<p>The middleware pipeline processes every incoming HTTP request in a specific order. The sequence is critical for proper application functionality:</p>
+<pre class="mermaid"><code>flowchart TD
+
+Request["HTTP Request"]
+Session["express-session&lt;br&gt;Creates/restores session"]
+Static["Static file?&lt;br&gt;/resources/*"]
+ServeStatic["express.static&lt;br&gt;Serve from /public"]
+BodyParse["Body Parsing&lt;br&gt;express.urlencoded + express.json"]
+Router["Route Handlers&lt;br&gt;routes/index.js&lt;br&gt;routes/auth.js&lt;br&gt;routes/courses.js"]
+Response["HTTP Response"]
+
+Request --&gt; Session
+Session --&gt; Static
+Static --&gt; ServeStatic
+Static --&gt; BodyParse
+BodyParse --&gt; Router
+Router --&gt; Response
+ServeStatic --&gt; Response</code></pre>
+<h3 id="middleware-configuration-details">Middleware Configuration Details<a class="headerlink" href="#middleware-configuration-details" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Middleware</th>
+<th>Purpose</th>
+<th>Configuration</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>express-session</code></td>
+<td>Session management</td>
+<td>Secret: "secret"resave: falsesaveUninitialized: false</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L13">app.js L6-L13</a></td>
+</tr>
+<tr>
+<td><code>express.static</code></td>
+<td>Static file serving</td>
+<td>Mount point: <code>/resources</code>Directory: <code>/public</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></td>
+</tr>
+<tr>
+<td><code>express.urlencoded</code></td>
+<td>Parse URL-encoded bodies</td>
+<td>extended: true</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L25">app.js L25</a></td>
+</tr>
+<tr>
+<td><code>express.json</code></td>
+<td>Parse JSON bodies</td>
+<td>Default configuration</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L26-L26">app.js L26</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L6-L26">app.js L6-L26</a></p>
+<hr />
+<h2 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h2>
+<p>Session management is configured using <code>express-session</code> with the following settings:</p>
+<pre class="mermaid"><code>flowchart TD
+
+SessionConfig["express-session Configuration"]
+Secret["secret: 'secret'&lt;br&gt;Session signing key"]
+Resave["resave: false&lt;br&gt;Don't save unchanged sessions"]
+SaveUninitialized["saveUninitialized: false&lt;br&gt;Don't create sessions until data stored"]
+Note["⚠️ Note: 'secret' should be moved&lt;br&gt;to environment variable for production"]
+
+SessionConfig --&gt; Secret
+SessionConfig --&gt; Resave
+SessionConfig --&gt; SaveUninitialized
+Secret --&gt; Note</code></pre>
+<p><strong>Configuration Properties:</strong></p>
+<ul>
+<li><strong>secret</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L8-L8">app.js L8</a> ): Set to hardcoded string <code>"secret"</code>. This should ideally be loaded from environment variables for production security.</li>
+<li><strong>resave</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L9-L9">app.js L9</a> ): Set to <code>false</code> to prevent unnecessary session saves when session data hasn't changed.</li>
+<li><strong>saveUninitialized</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L10-L10">app.js L10</a> ): Set to <code>false</code> to prevent creating session cookies for unauthenticated users.</li>
+</ul>
+<p><strong>Security Note:</strong> The session secret is currently hardcoded. For production deployments, this should be moved to an environment variable (e.g., <code>process.env.SESSION_SECRET</code>).</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13">app.js L4-L13</a></p>
+<hr />
+<h2 id="static-file-serving">Static File Serving<a class="headerlink" href="#static-file-serving" title="Permanent link">&para;</a></h2>
+<p>Static assets (CSS, images, JavaScript) are served through Express's built-in static file middleware:</p>
+<div class="highlight"><pre><span></span><code>app.use(&quot;/resources&quot;, express.static(__dirname + &quot;/public&quot;));
+</code></pre></div>
+<p><strong>Configuration Details:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>URL Path</strong></td>
+<td><code>/resources</code></td>
+<td>Client-side URL prefix for static files</td>
+</tr>
+<tr>
+<td><strong>File System Path</strong></td>
+<td><code>__dirname + "/public"</code></td>
+<td>Server-side directory containing static files</td>
+</tr>
+<tr>
+<td><strong>Example Mapping</strong></td>
+<td><code>/resources/css/style.css</code> → <code>/public/css/style.css</code></td>
+<td>URL to file system translation</td>
+</tr>
+</tbody>
+</table>
+<p>This means that a file at <code>/public/css/index.css</code> is accessible in the browser at <code>http://localhost:PORT/resources/css/index.css</code>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19">app.js L19</a></p>
+<hr />
+<h2 id="view-engine-configuration">View Engine Configuration<a class="headerlink" href="#view-engine-configuration" title="Permanent link">&para;</a></h2>
+<p>The application uses EJS (Embedded JavaScript) as its templating engine:</p>
+<div class="highlight"><pre><span></span><code>app.set(&#39;view engine&#39;, &#39;ejs&#39;);
+</code></pre></div>
+<p><strong>EJS Configuration:</strong></p>
+<ul>
+<li><strong>Template Engine</strong>: EJS version 3.1.10 (from <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L18-L18">package.json L18</a> )</li>
+<li><strong>Views Directory</strong>: Defaults to <code>./views/</code> (Express convention)</li>
+<li><strong>File Extension</strong>: <code>.ejs</code> files are automatically recognized</li>
+<li><strong>Rendering</strong>: Controllers call <code>res.render('templateName', data)</code> to render views</li>
+</ul>
+<p>The commented-out line at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L22-L22">app.js L22</a></p>
+<p>shows that the views directory was considered for explicit configuration, but the default is being used instead.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L21-L22">app.js L21-L22</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L18-L18">package.json L18</a></p>
+<hr />
+<h2 id="route-mounting">Route Mounting<a class="headerlink" href="#route-mounting" title="Permanent link">&para;</a></h2>
+<p>The application uses a modular routing architecture where route handlers are separated into distinct files and mounted onto the Express application:</p>
+<pre class="mermaid"><code>flowchart TD
+
+App["Express App Instance&lt;br&gt;(app.js)"]
+IndexRouter["routes/index.js&lt;br&gt;Landing page &amp; static routes"]
+AuthRouter["routes/auth.js&lt;br&gt;Authentication routes"]
+CoursesRouter["routes/courses.js&lt;br&gt;Course management routes"]
+Home["GET /&lt;br&gt;Home page"]
+Login["GET/POST /login"]
+Register["GET/POST /register"]
+Logout["POST /logout"]
+Courses["GET /courses&lt;br&gt;Course listing"]
+Create["GET/POST /create&lt;br&gt;Create course"]
+Edit["GET /edit/:id&lt;br&gt;Edit course"]
+Update["POST /update&lt;br&gt;Update course"]
+Delete["GET /delete/:id&lt;br&gt;Delete course"]
+Enroll["GET/POST /inscribir/:id&lt;br&gt;Enrollment"]
+Profile["GET /perfil&lt;br&gt;User profile"]
+AdminProfile["GET /admin/perfil&lt;br&gt;Admin dashboard"]
+
+App --&gt; IndexRouter
+App --&gt; AuthRouter
+App --&gt; CoursesRouter
+IndexRouter --&gt; Home
+AuthRouter --&gt; Login
+AuthRouter --&gt; Register
+AuthRouter --&gt; Logout
+CoursesRouter --&gt; Courses
+CoursesRouter --&gt; Create
+CoursesRouter --&gt; Edit
+CoursesRouter --&gt; Update
+CoursesRouter --&gt; Delete
+CoursesRouter --&gt; Enroll
+CoursesRouter --&gt; Profile
+CoursesRouter --&gt; AdminProfile</code></pre>
+<p><strong>Route Mounting Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes/index&quot;</span><span class="p">));</span><span class="w">     </span><span class="c1">// Line 29</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes/auth&quot;</span><span class="p">));</span><span class="w">      </span><span class="c1">// Line 30</span>
+<span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./routes/courses&quot;</span><span class="p">));</span><span class="w">   </span><span class="c1">// Line 31</span>
+</code></pre></div>
+<p>All three router modules are mounted at the root path (<code>"/"</code>). Each router module exports an Express Router instance that defines specific endpoints.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31">app.js L29-L31</a></p>
+<hr />
+<h2 id="commented-code-analysis">Commented Code Analysis<a class="headerlink" href="#commented-code-analysis" title="Permanent link">&para;</a></h2>
+<p>Several lines in <code>app.js</code> are commented out, indicating features that were considered or may be used in alternative configurations:</p>
+<h3 id="commented-server-listener">Commented Server Listener<a class="headerlink" href="#commented-server-listener" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Lines 15-17 (commented)</span>
+<span class="c1">//app.listen(4000, () =&gt; { </span>
+<span class="c1">//    console.log(&quot;Servidor corriendo en http://localhost:4000&quot;);</span>
+<span class="c1">//});</span>
+</code></pre></div>
+<p><strong>Analysis:</strong> The HTTP server startup is commented out. This suggests either:</p>
+<ol>
+<li>The server is started in a separate file (e.g., <code>server.js</code> or <code>index.js</code>)</li>
+<li>The application is deployed using a process manager that handles server startup</li>
+<li>The startup code was moved for testing purposes</li>
+</ol>
+<h3 id="commented-global-session-middleware">Commented Global Session Middleware<a class="headerlink" href="#commented-global-session-middleware" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Lines 33-39 (commented)</span>
+<span class="c1">//app.use((req, res, next) =&gt; {</span>
+<span class="c1">//  res.locals.user = req.session?.usuario || null;</span>
+<span class="c1">//  res.locals.rol = req.session?.rol || &#39;publico&#39;;</span>
+<span class="c1">//  res.locals.login = !!req.session?.loggedin;</span>
+<span class="c1">//  next();</span>
+<span class="c1">//});</span>
+</code></pre></div>
+<p><strong>Analysis:</strong> This middleware would make session data globally available to all EJS templates via <code>res.locals</code>. It's currently disabled, which means:</p>
+<ul>
+<li>Views must explicitly receive session data through controller render calls</li>
+<li>Authentication state checking happens in individual route handlers</li>
+<li>Each route must manually pass user/role information to templates</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L15-L17">app.js L15-L17</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L33-L39">app.js L33-L39</a></p>
+<hr />
+<h2 id="environment-variable-configuration">Environment Variable Configuration<a class="headerlink" href="#environment-variable-configuration" title="Permanent link">&para;</a></h2>
+<p>Environment variables are loaded using the <code>dotenv</code> package:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;dotenv&quot;</span><span class="p">).</span><span class="nx">config</span><span class="p">({</span><span class="w"> </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./env/.env&quot;</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Configuration Details:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Package</strong></td>
+<td>dotenv 17.2.1</td>
+<td>Environment variable loader</td>
+</tr>
+<tr>
+<td><strong>Config Path</strong></td>
+<td><code>./env/.env</code></td>
+<td>Non-standard location (typically <code>.env</code> at root)</td>
+</tr>
+<tr>
+<td><strong>Loading Time</strong></td>
+<td>During app initialization</td>
+<td>Before any middleware or routes are configured</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Environment Variables Expected:</strong></p>
+<ul>
+<li>Database connection parameters (referenced in <code>config/db.js</code>)</li>
+<li>Potentially JWT secrets, API keys, etc.</li>
+</ul>
+<p>The non-standard path <code>./env/.env</code> suggests the environment file is stored in a subdirectory rather than the project root.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L17-L17">package.json L17</a></p>
+<hr />
+<h2 id="module-dependencies">Module Dependencies<a class="headerlink" href="#module-dependencies" title="Permanent link">&para;</a></h2>
+<p>The following diagram shows the direct dependencies imported by <code>app.js</code>:</p>
+<pre class="mermaid"><code>flowchart TD
+
+AppJS["app.js&lt;br&gt;Main Application Entry Point"]
+Express["Unsupported markdown: link"]
+Dotenv["Unsupported markdown: link"]
+ExpressSession["Unsupported markdown: link"]
+IndexRoute["./routes/index.js"]
+AuthRoute["./routes/auth.js"]
+CoursesRoute["./routes/courses.js"]
+EnvFile["./env/.env"]
+
+AppJS --&gt; Express
+AppJS --&gt; Dotenv
+AppJS --&gt; ExpressSession
+AppJS --&gt; IndexRoute
+AppJS --&gt; AuthRoute
+AppJS --&gt; CoursesRoute
+Dotenv --&gt; EnvFile
+
+subgraph Environment ["Environment"]
+    EnvFile
+end
+
+subgraph subGraph1 ["Route Modules"]
+    IndexRoute
+    AuthRoute
+    CoursesRoute
+end
+
+subgraph subGraph0 ["NPM Packages"]
+    Express
+    Dotenv
+    ExpressSession
+end</code></pre>
+<p><strong>Direct Dependencies:</strong></p>
+<ol>
+<li><strong>express</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L1">app.js L1</a> ): Core web framework</li>
+<li><strong>dotenv</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L3-L3">app.js L3</a> ): Environment configuration</li>
+<li><strong>express-session</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L4">app.js L4</a> ): Session management</li>
+<li><strong>./routes/index</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L29">app.js L29</a> ): Landing page routes</li>
+<li><strong>./routes/auth</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L30-L30">app.js L30</a> ): Authentication routes</li>
+<li><strong>./routes/courses</strong> (<a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L31-L31">app.js L31</a> ): Course management routes</li>
+</ol>
+<p><strong>Indirect Dependencies</strong> (used by route modules, not directly by <code>app.js</code>):</p>
+<ul>
+<li>bcryptjs (password hashing)</li>
+<li>jsonwebtoken (token generation)</li>
+<li>express-validator (input validation)</li>
+<li>mysql2 (database driver)</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L31">app.js L1-L31</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
+<hr />
+<h2 id="execution-flow-summary">Execution Flow Summary<a class="headerlink" href="#execution-flow-summary" title="Permanent link">&para;</a></h2>
+<p>The complete execution flow when the application starts:</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant Node.js Runtime
+  participant app.js
+  participant Express Framework
+  participant dotenv
+  participant express-session
+  participant Route Modules
+
+  Node.js Runtime-&gt;&gt;app.js: Execute app.js
+  app.js-&gt;&gt;Express Framework: require('express')
+  app.js-&gt;&gt;Express Framework: express() creates app
+  app.js-&gt;&gt;dotenv: config({ path: './env/.env' })
+  dotenv--&gt;&gt;app.js: Environment variables loaded
+  app.js-&gt;&gt;express-session: require('express-session')
+  app.js-&gt;&gt;Express Framework: app.use(session(...))
+  app.js-&gt;&gt;Express Framework: app.use('/resources', static(...))
+  app.js-&gt;&gt;Express Framework: app.set('view engine', 'ejs')
+  app.js-&gt;&gt;Express Framework: app.use(express.urlencoded(...))
+  app.js-&gt;&gt;Express Framework: app.use(express.json())
+  app.js-&gt;&gt;Route Modules: require('./routes/index')
+  app.js-&gt;&gt;Express Framework: app.use('/', indexRouter)
+  app.js-&gt;&gt;Route Modules: require('./routes/auth')
+  app.js-&gt;&gt;Express Framework: app.use('/', authRouter)
+  app.js-&gt;&gt;Route Modules: require('./routes/courses')
+  app.js-&gt;&gt;Express Framework: app.use('/', coursesRouter)
+  app.js--&gt;&gt;Node.js Runtime: Export configured app instance
+  note over Node.js Runtime,app.js: app.listen() must be called</code></pre>
+<p><strong>Key Takeaways:</strong></p>
+<ol>
+<li><strong>Synchronous Initialization</strong>: All configuration is synchronous and completes during module load</li>
+<li><strong>Middleware Order Matters</strong>: Session management is configured before routes to ensure session availability</li>
+<li><strong>Route Modularity</strong>: Routes are separated into logical modules for maintainability</li>
+<li><strong>No Server Start</strong>: The configured app must be started by another module or script</li>
+</ol>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L1-L41">app.js L1-L41</a></p>
+<hr />
+<h2 id="integration-with-packagejson">Integration with Package.json<a class="headerlink" href="#integration-with-packagejson" title="Permanent link">&para;</a></h2>
+<p>The <code>package.json</code> file defines <code>app.js</code> as the main entry point:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;app.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;start&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node app.js&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>This configuration means:</p>
+<ul>
+<li>Running <code>npm start</code> executes <code>node app.js</code></li>
+<li>The application can be imported as a module if needed</li>
+<li><code>app.js</code> is the conventional entry point for the application</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L5-L8">package.json L5-L8</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

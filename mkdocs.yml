@@ -1,7 +1,7 @@
 site_name: Week06 Project Documentation
-docs_dir: "docs/mkdocs"
 site_description: Full documentation for the Week06 project hosted on Deepwiki
 site_author: Lourdes12587
+docs_dir: "docs/mkdocs"
 repo_url: https://deepwiki.com/Lourdes12587/Week06/1-overview9
 
 theme:
@@ -14,45 +14,82 @@ theme:
     - toc.integrate
     - content.code.copy
     - content.action.edit
+  palette:
+    scheme: default
+    primary: indigo
+    accent: cyan
+    toggle:
+      icon: material/weather-night
+      name: Modo oscuro
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.highlight
 
 nav:
   - Overview: Overview.md
   - Getting Started: Getting-Started.md
 
+  - Project Structure:
+      - Project Structure: Project-Structure.md
+      - Adding New Routes: Adding-New-Routes.md
+
   - Architecture Overview:
       - Technology Stack: Technology-Stack.md
       - Application Entry Point: Application-Entry-Point.md
       - Database Architecture: Database-Architecture.md
+      - Database Operations: Database-Operations.md
       - Routing System: Routing-System.md
+      - Security Considerations: Security-Considerations.md
 
   - Authentication & Authorization:
+      - Overview: Authentication-&-Authorization.md
       - User Registration: User-Registration.md
       - User Login: User-Login.md
       - Role-Based Access Control: Role-Based-Access-Control.md
       - Session Management: Session-Management.md
+     # - Authentication Views: Authentication-Views.md
+      - Authentication Endpoints: Authentication-Endpoints.md
 
   - Course Management System:
+      - Overview: Course-Management-System.md
       - Creating Courses: Creating-Courses.md
       - Editing & Deleting Courses: Editing-&-Deleting-Courses.md
       - Course Listing & Visibility: Course-Listing-&-Visibility.md
       - Course Enrollment: Course-Enrollment.md
+      - Course Views: Course-Views.md
+      - Course Management Endpoints: Course-Management-Endpoints.md
 
   - User Profiles:
+      - Overview: User-Profiles.md
       - User Profile Page: User-Profile-Page.md
       - Administrator Dashboard: Administrator-Dashboard.md
+    #  - Profile Endpoints: Profile-Endpoints.md
 
   - Frontend Architecture:
+      - Overview: Frontend-Architecture.md
       - Template System & Partials: Template-System-&-Partials.md
-      - Landing Page: Frontend-Architecture.md
-      - Authentication Views: Authentication-&-Authorization.md
-      - Course Views: Course-Views.md
-      - Styling System: Development-Guide.md
+      - Landing Page: Landing-Page.md
+      - Styling System: Styling-System.md
+      - Development Guide: Development-Guide.md
 
   - API Reference:
-      - Authentication Endpoints: Authentication-&-Authorization.md
+      - Overview: API-Reference.md
+      - Authentication Endpoints: Authentication-Endpoints.md
       - Course Management Endpoints: Course-Management-Endpoints.md
-      - Enrollment Endpoints: Enrollment-Endpoints.md
-      - Database Operations: Database-Operations.md
+    #  - Profile Endpoints: Profile-Endpoints.md
 
-  - Development Guide: Development-Guide.md
-  - README: README.md
+  - Appendix:
+      - README: README.md
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - javascripts/mermaid-init.js

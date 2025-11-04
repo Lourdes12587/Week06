@@ -27,29 +27,8 @@ Before beginning the setup process, ensure your system has the following install
 
 The following diagram illustrates the complete installation workflow, from cloning the repository to starting the server:
 
-```mermaid
-flowchart TD
+```
 
-Start["Start Installation"]
-Clone["Clone Repository<br>github.com/Lourdes12587/Week06"]
-Install["npm install<br>Reads package.json"]
-CreateEnv["Create .env File<br>Configure environment variables"]
-SetupDB["Initialize MySQL Database<br>Create tables: usuarios, cursos, inscripciones"]
-StartServer["node app.js<br>Starts Express server"]
-Verify["Verify Installation<br>Access Unsupported markdown: link"]
-PackageJSON["package.json<br>Dependencies list"]
-DBConfig["config/db.js<br>Database connection"]
-AppJS["app.js<br>Server initialization"]
-
-Start --> Clone
-Clone --> Install
-Install --> CreateEnv
-CreateEnv --> SetupDB
-SetupDB --> StartServer
-StartServer --> Verify
-Install --> PackageJSON
-CreateEnv --> DBConfig
-SetupDB --> AppJS
 ```
 
 **Sources:** [package.json L1-L27](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27)
@@ -63,7 +42,8 @@ SetupDB --> AppJS
 Clone the project repository to your local machine:
 
 ```
-
+git clone https://github.com/Lourdes12587/Week06.git
+cd Week06
 ```
 
 ---
@@ -73,7 +53,7 @@ Clone the project repository to your local machine:
 Install all required npm packages by running:
 
 ```
-
+npm install
 ```
 
 This command reads [package.json L1-L27](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27)
@@ -113,23 +93,8 @@ Create a `.env` file in the project root directory to configure environment-spec
 
 The following diagram shows how environment variables flow through the application:
 
-```mermaid
-flowchart TD
+```
 
-EnvFile[".env File"]
-Dotenv["dotenv package<br>Loads variables into process.env"]
-AppJS["app.js<br>Server configuration"]
-DBConfig["config/db.js<br>MySQL connection"]
-Connection["mysql.createConnection()<br>Database connection pool"]
-
-EnvFile --> Dotenv
-Dotenv --> AppJS
-Dotenv --> AppJS
-Dotenv --> DBConfig
-Dotenv --> DBConfig
-Dotenv --> DBConfig
-Dotenv --> DBConfig
-DBConfig --> Connection
 ```
 
 **Sources:** [config/db.js L3-L9](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L3-L9)
@@ -138,8 +103,18 @@ DBConfig --> Connection
 
 Create a `.env` file with the following structure:
 
-```
+```markdown
+# Server Configuration
+PORT=3000
 
+# Session Configuration
+SESSION_SECRET=your-secret-key-here
+
+# MySQL Database Configuration
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=your-database-password
+DB_NAME=curso_db
 ```
 
 ### Configuration Details
@@ -167,14 +142,50 @@ Create a `.env` file with the following structure:
 
 Connect to your MySQL server and execute the following SQL commands to create the database and tables:
 
-```
+```sql
+-- Create database
+CREATE DATABASE IF NOT EXISTS curso_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE curso_db;
 
+-- Create usuarios table
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    rol ENUM('publico', 'registrado', 'admin') DEFAULT 'registrado',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create cursos table
+CREATE TABLE IF NOT EXISTS cursos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(200) NOT NULL,
+    descripcion TEXT,
+    categoria VARCHAR(100),
+    visibilidad ENUM('publico', 'privado') DEFAULT 'publico',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create inscripciones table (junction table for many-to-many relationship)
+CREATE TABLE IF NOT EXISTS inscripciones (
+    id_usuario INT NOT NULL,
+    id_curso INT NOT NULL,
+    fecha_inscripcion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_usuario, id_curso),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_curso) REFERENCES cursos(id) ON DELETE CASCADE
+);
+
+-- Create default admin user (password: 'admin123')
+INSERT INTO usuarios (nombre, email, password, rol) VALUES
+('Administrator', 'admin@example.com', '$2a$10$K8m.1JzU5H5KkJLWZxvHwOYxT5xGxHhZx.7LQnVZLZGBv3mZJk7ye', 'admin');
 ```
 
 ### Database Schema Relationships
 
-```css
-#mermaid-aify78p32qb{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-aify78p32qb .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-aify78p32qb .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-aify78p32qb .error-icon{fill:#dddddd;}#mermaid-aify78p32qb .error-text{fill:#222222;stroke:#222222;}#mermaid-aify78p32qb .edge-thickness-normal{stroke-width:1px;}#mermaid-aify78p32qb .edge-thickness-thick{stroke-width:3.5px;}#mermaid-aify78p32qb .edge-pattern-solid{stroke-dasharray:0;}#mermaid-aify78p32qb .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-aify78p32qb .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-aify78p32qb .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-aify78p32qb .marker{fill:#999;stroke:#999;}#mermaid-aify78p32qb .marker.cross{stroke:#999;}#mermaid-aify78p32qb svg{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;font-size:16px;}#mermaid-aify78p32qb p{margin:0;}#mermaid-aify78p32qb .entityBox{fill:#ffffff;stroke:#dddddd;}#mermaid-aify78p32qb .relationshipLabelBox{fill:#dddddd;opacity:0.7;background-color:#dddddd;}#mermaid-aify78p32qb .relationshipLabelBox rect{opacity:0.5;}#mermaid-aify78p32qb .labelBkg{background-color:rgba(221, 221, 221, 0.5);}#mermaid-aify78p32qb .edgeLabel .label{fill:#dddddd;font-size:14px;}#mermaid-aify78p32qb .label{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;color:#333;}#mermaid-aify78p32qb .edge-pattern-dashed{stroke-dasharray:8,8;}#mermaid-aify78p32qb .node rect,#mermaid-aify78p32qb .node circle,#mermaid-aify78p32qb .node ellipse,#mermaid-aify78p32qb .node polygon{fill:#ffffff;stroke:#dddddd;stroke-width:1px;}#mermaid-aify78p32qb .relationshipLine{stroke:#999;stroke-width:1;fill:none;}#mermaid-aify78p32qb .marker{fill:none!important;stroke:#999!important;stroke-width:1;}#mermaid-aify78p32qb :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}enrolls inhas enrollmentsusuariosINTidPKVARCHARnombreVARCHARemailUKVARCHARpasswordENUMrolTIMESTAMPcreated_atinscripcionesINTid_usuarioFKINTid_cursoFKTIMESTAMPfecha_inscripcioncursosINTidPKVARCHARtituloTEXTdescripcionVARCHARcategoriaENUMvisibilidadTIMESTAMPcreated_at
+```
+
 ```
 
 ### Database Connection Verification
@@ -207,40 +218,19 @@ Start the Express server using the npm start script defined in [package.json L8]
 :
 
 ```
-
+npm start
 ```
 
 Alternatively, run directly with Node.js:
 
 ```
-
+node app.js
 ```
 
 ### Application Startup Sequence
 
-```mermaid
-sequenceDiagram
-  participant npm start
-  participant Node.js Runtime
-  participant dotenv Package
-  participant app.js
-  participant config/db.js
-  participant MySQL Database
-  participant Express Server
+```
 
-  npm start->>Node.js Runtime: Execute "node app.js"
-  Node.js Runtime->>app.js: Load application
-  app.js->>dotenv Package: require('dotenv').config()
-  dotenv Package->>dotenv Package: Parse .env file
-  dotenv Package-->>app.js: Environment variables loaded
-  app.js->>config/db.js: require('./config/db.js')
-  config/db.js->>MySQL Database: mysql.createConnection()
-  MySQL Database-->>config/db.js: Connection established
-  config/db.js-->>config/db.js: console.log("Conectado a la base de datos")
-  config/db.js-->>app.js: Export conexion object
-  app.js->>Express Server: app.listen(PORT)
-  Express Server-->>app.js: Server listening
-  app.js->>app.js: console.log("Server running on port PORT")
 ```
 
 ### Expected Console Output
@@ -310,45 +300,8 @@ If you see "Cannot connect to database" in the console:
 
 After successful installation, your project structure should look like this:
 
-```mermaid
-flowchart TD
+```
 
-Root["Project Root<br>Week06/"]
-Config["config/<br>Configuration"]
-Routes["routes/<br>Route Handlers"]
-Views["views/<br>EJS Templates"]
-Public["public/<br>Static Assets"]
-Src["src/<br>Controllers"]
-DB["db.js<br>MySQL connection"]
-Auth["auth.js<br>Login/Register routes"]
-Courses["courses.js<br>Course management"]
-Index["index.js<br>Home routes"]
-CSS["css/<br>Stylesheets"]
-Resources["resources/<br>Images/Icons"]
-Controller["controller.js<br>Course CRUD"]
-CursoCtrl["cursoController.js<br>Enrollment logic"]
-AppJS["app.js<br>Main server file"]
-PackageJSON["package.json<br>Dependencies"]
-Env[".env<br>Environment config"]
-NodeModules["node_modules/<br>Installed packages"]
-
-Root --> Config
-Root --> Routes
-Root --> Views
-Root --> Public
-Root --> Src
-Root --> AppJS
-Root --> PackageJSON
-Root --> Env
-Root --> NodeModules
-Config --> DB
-Routes --> Auth
-Routes --> Courses
-Routes --> Index
-Public --> CSS
-Public --> Resources
-Src --> Controller
-Src --> CursoCtrl
 ```
 
 **Sources:** [package.json L1-L27](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L1-L27)

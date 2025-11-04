@@ -31,8 +31,20 @@ For enrollment-related endpoints, see [Enrollment Endpoints](/Lourdes12587/Week0
 
 ### Authentication and Authorization Flow
 
-```
+```mermaid
+flowchart TD
 
+Request["HTTP Request"]
+EstaAuth["estaAutenticado()<br>routes/courses.js:8-14"]
+IsAdmin["isAdmin()<br>routes/courses.js:16-24"]
+RouteHandler["Route Handler"]
+LoginRedirect["Redirect to /login"]
+
+Request --> EstaAuth
+EstaAuth --> IsAdmin
+EstaAuth --> LoginRedirect
+IsAdmin --> RouteHandler
+IsAdmin --> LoginRedirect
 ```
 
 **Middleware Functions**
@@ -75,22 +87,42 @@ Renders the `courses` EJS template with the following data:
 
 ### Implementation Logic
 
-```
+```mermaid
+flowchart TD
 
+Start["GET /courses"]
+GetRole["Determine role:<br>req.session.rol || 'publico'"]
+CheckRole["rol === 'publico'?"]
+PublicSQL["SQL: SELECT * FROM cursos<br>WHERE visibilidad='publico'"]
+AllSQL["SQL: SELECT * FROM cursos"]
+Query["db.query()"]
+Error["Error?"]
+RenderEmpty["Render with empty array"]
+RenderResults["Render with results"]
+
+Start --> GetRole
+GetRole --> CheckRole
+CheckRole --> PublicSQL
+CheckRole --> AllSQL
+PublicSQL --> Query
+AllSQL --> Query
+Query --> Error
+Error --> RenderEmpty
+Error --> RenderResults
 ```
 
 ### Database Query
 
 **For public users:**
 
-```
-
+```sql
+SELECT * FROM cursos WHERE visibilidad='publico'
 ```
 
 **For authenticated users:**
 
-```
-
+```sql
+SELECT * FROM cursos
 ```
 
 ### Error Handling
@@ -166,8 +198,8 @@ The endpoint delegates to `crud.save` function which performs the following oper
 
 **Database Query:**
 
-```
-
+```sql
+INSERT INTO cursos SET ?
 ```
 
 With object containing: `titulo`, `descripcion`, `categoria`
@@ -178,8 +210,23 @@ Redirects to `/courses` regardless of success or failure
 
 ### Flow Diagram
 
-```
+```mermaid
+sequenceDiagram
+  participant Client
+  participant POST /save
+  participant routes/courses.js:70
+  participant Middleware Chain
+  participant crud.save
+  participant src/controller.js:4-25
+  participant MySQL cursos table
 
+  Client->>POST /save: POST /save {titulo, descripcion, categoria}
+  POST /save->>Middleware Chain: Check authentication & admin role
+  Middleware Chain->>crud.save: Forward request
+  crud.save->>crud.save: Extract body parameters
+  crud.save->>MySQL cursos table: INSERT INTO cursos SET ?
+  MySQL cursos table-->>crud.save: Result/Error
+  crud.save-->>Client: Redirect to /courses
 ```
 
 **Sources:** [routes/courses.js L70](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70)
@@ -213,8 +260,8 @@ Displays the course edit form pre-populated with existing course data. Retrieves
 
 ### Database Query
 
-```
-
+```sql
+SELECT * FROM cursos WHERE id = ?
 ```
 
 Uses parameterized query with `req.params.id` to prevent SQL injection.
@@ -272,8 +319,8 @@ The endpoint delegates to `crud.update` which executes:
 
 **Database Query:**
 
-```
-
+```sql
+UPDATE cursos SET ? WHERE id = ?
 ```
 
 With parameters: `[{titulo, descripcion, categoria}, id]`
@@ -317,8 +364,8 @@ Permanently deletes a course from the database. This is a destructive operation 
 
 ### Database Query
 
-```
-
+```sql
+DELETE FROM cursos WHERE id = ?
 ```
 
 Uses parameterized query with `req.params.id` to prevent SQL injection.
@@ -343,8 +390,54 @@ If database query fails, throws an error (no graceful handling implemented).
 
 The following diagram maps HTTP routes to their implementation in the codebase:
 
-```
+```mermaid
+flowchart TD
 
+CoursesRoute["GET /courses<br>lines 35-62"]
+CreateRoute["GET /create<br>lines 64-67"]
+SaveRoute["POST /save<br>line 70"]
+EditRoute["GET /edit/:id<br>lines 73-84"]
+UpdateRoute["POST /update<br>line 103"]
+DeleteRoute["GET /delete/:id<br>lines 87-98"]
+SaveController["crud.save<br>lines 4-25"]
+UpdateController["crud.update<br>lines 28-52"]
+DBModule["MySQL connection pool"]
+CursosTable["cursos table"]
+Views["views/create.ejs"]
+EditViews["views/edit.ejs"]
+
+CoursesRoute --> DBModule
+CreateRoute --> Views
+SaveRoute --> SaveController
+EditRoute --> DBModule
+EditRoute --> EditViews
+UpdateRoute --> UpdateController
+DeleteRoute --> DBModule
+SaveController --> DBModule
+UpdateController --> DBModule
+DBModule --> CursosTable
+
+subgraph subGraph3 ["MySQL Database"]
+    CursosTable
+end
+
+subgraph config/db.js ["config/db.js"]
+    DBModule
+end
+
+subgraph src/controller.js ["src/controller.js"]
+    SaveController
+    UpdateController
+end
+
+subgraph routes/courses.js ["routes/courses.js"]
+    CoursesRoute
+    CreateRoute
+    SaveRoute
+    EditRoute
+    UpdateRoute
+    DeleteRoute
+end
 ```
 
 **Sources:** [routes/courses.js L1-L187](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187)

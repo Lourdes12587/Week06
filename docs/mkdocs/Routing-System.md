@@ -564,8 +564,35 @@ This separation allows complex business logic and validation to be centralized i
 
 The enrollment process demonstrates the complete routing system capabilities including parameter extraction, middleware chains, database interactions, and duplicate prevention:
 
-```
+```mermaid
+sequenceDiagram
+  participant Browser
+  participant courses.js router
+  participant estaAutenticado
+  participant isRegistrado
+  participant Database
 
+  note over Browser,Database: Step 1: Display Confirmation Page
+  Browser->>courses.js router: GET /inscribir/5
+  courses.js router->>estaAutenticado: Check authentication
+  estaAutenticado->>isRegistrado: User authenticated
+  isRegistrado->>courses.js router: Role verified
+  courses.js router->>Database: SELECT * FROM cursos WHERE id = 5
+  Database->>courses.js router: Course data
+  courses.js router->>Browser: Render confirmInscripcion.ejs
+  note over Browser,Database: Step 2: Process Enrollment
+  Browser->>courses.js router: POST /inscribir/5
+  courses.js router->>estaAutenticado: Check authentication
+  estaAutenticado->>isRegistrado: User authenticated
+  isRegistrado->>courses.js router: Role verified
+  courses.js router->>Database: SELECT * FROM inscripciones
+  Database->>courses.js router: WHERE id_usuario = X AND id_curso = 5
+  loop [Already Enrolled]
+    courses.js router->>Browser: Check results
+    courses.js router->>Database: Redirect to /perfil
+    Database->>courses.js router: INSERT INTO inscripciones
+    courses.js router->>Browser: (id_usuario, id_curso) VALUES (X, 5)
+  end
 ```
 
 The enrollment implementation at [routes/courses.js L117-L149](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149)

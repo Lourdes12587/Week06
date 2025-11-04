@@ -91,8 +91,8 @@ The dashboard executes a database query to retrieve system-wide course statistic
 
 The route handler executes the following SQL query:
 
-```sql
-SELECT COUNT(*) AS totalCursos FROM cursos
+```
+
 ```
 
 This query returns the total number of courses in the system, regardless of visibility status or enrollment count.
@@ -142,11 +142,8 @@ end
 
 The `res.render()` call passes the following data structure:
 
-```python
-{
-  usuario: req.session.usuario,  // User object from session
-  totalCursos: results[0].totalCursos  // Course count from query
-}
+```
+
 ```
 
 **Properties:**
@@ -188,10 +185,8 @@ The template includes JavaScript for mobile menu functionality [views/adminperfi
 
 :
 
-```javascript
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+```
+
 ```
 
 This function toggles the `active` class on the navigation links container, enabling responsive menu behavior on mobile devices.
@@ -297,17 +292,8 @@ The dashboard relies on session data populated during the login process.
 
 The route handler expects the following session structure:
 
-```yaml
-req.session = {
-  loggedin: true,
-  rol: 'admin',
-  usuario: {
-    id: Number,
-    nombre: String,
-    email: String,
-    rol: 'admin'
-  }
-}
+```
+
 ```
 
 These properties are set by the authentication system during login. See [User Login](/Lourdes12587/Week06/4.2-user-login) for session initialization details.

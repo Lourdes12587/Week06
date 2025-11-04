@@ -122,8 +122,8 @@ sequenceDiagram
 
 The endpoint executes a single SELECT query to retrieve course details:
 
-```sql
-SELECT * FROM cursos WHERE id = ?
+```
+
 ```
 
 * **Parameters:** `[idCurso]` from `req.params.id`
@@ -142,12 +142,8 @@ SELECT * FROM cursos WHERE id = ?
 
 The `confirmInscripcion` view receives the following data object:
 
-```python
-{
-  curso: results[0],              // Course object from database
-  login: req.session.loggedin,    // Boolean authentication status
-  rol: req.session.rol            // User role string ('registrado')
-}
+```
+
 ```
 
 **Sources:** [routes/courses.js L112](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L112-L112)
@@ -205,9 +201,8 @@ The endpoint implements duplicate enrollment prevention through a two-query tran
 
 **Step 1: Check for Existing Enrollment** [routes/courses.js L121-L133](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L133)
 
-```sql
-SELECT * FROM inscripciones 
-WHERE id_usuario = ? AND id_curso = ?
+```
+
 ```
 
 * **Parameters:** `[id_usuario, id_curso]`
@@ -216,9 +211,8 @@ WHERE id_usuario = ? AND id_curso = ?
 
 **Step 2: Insert New Enrollment** [routes/courses.js L135-L146](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L135-L146)
 
-```sql
-INSERT INTO inscripciones (id_usuario, id_curso) 
-VALUES (?, ?)
+```
+
 ```
 
 * **Parameters:** `[id_usuario, id_curso]`
@@ -230,8 +224,8 @@ VALUES (?, ?)
 
 ### Database Schema Interaction
 
-```css
-#mermaid-77niozwrg1q{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-77niozwrg1q .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-77niozwrg1q .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-77niozwrg1q .error-icon{fill:#dddddd;}#mermaid-77niozwrg1q .error-text{fill:#222222;stroke:#222222;}#mermaid-77niozwrg1q .edge-thickness-normal{stroke-width:1px;}#mermaid-77niozwrg1q .edge-thickness-thick{stroke-width:3.5px;}#mermaid-77niozwrg1q .edge-pattern-solid{stroke-dasharray:0;}#mermaid-77niozwrg1q .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-77niozwrg1q .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-77niozwrg1q .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-77niozwrg1q .marker{fill:#999;stroke:#999;}#mermaid-77niozwrg1q .marker.cross{stroke:#999;}#mermaid-77niozwrg1q svg{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;font-size:16px;}#mermaid-77niozwrg1q p{margin:0;}#mermaid-77niozwrg1q .entityBox{fill:#ffffff;stroke:#dddddd;}#mermaid-77niozwrg1q .relationshipLabelBox{fill:#dddddd;opacity:0.7;background-color:#dddddd;}#mermaid-77niozwrg1q .relationshipLabelBox rect{opacity:0.5;}#mermaid-77niozwrg1q .labelBkg{background-color:rgba(221, 221, 221, 0.5);}#mermaid-77niozwrg1q .edgeLabel .label{fill:#dddddd;font-size:14px;}#mermaid-77niozwrg1q .label{font-family:ui-sans-serif,-apple-system,system-ui,Segoe UI,Helvetica;color:#333;}#mermaid-77niozwrg1q .edge-pattern-dashed{stroke-dasharray:8,8;}#mermaid-77niozwrg1q .node rect,#mermaid-77niozwrg1q .node circle,#mermaid-77niozwrg1q .node ellipse,#mermaid-77niozwrg1q .node polygon{fill:#ffffff;stroke:#dddddd;stroke-width:1px;}#mermaid-77niozwrg1q .relationshipLine{stroke:#999;stroke-width:1;fill:none;}#mermaid-77niozwrg1q .marker{fill:none!important;stroke:#999!important;stroke-width:1;}#mermaid-77niozwrg1q :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}id_usuarioid_cursousuariosintidPKstringnombrestringemailstringpasswordenumrolinscripcionesintid_usuarioFKintid_cursoFKcursosintidPKstringtitulostringdescripcionstringcategoriastringvisibilidad
+```
+
 ```
 
 The `inscripciones` table acts as a junction table establishing a many-to-many relationship between `usuarios` and `cursos`. The composite key `(id_usuario, id_curso)` should be unique to prevent duplicate enrollments at the database level.
@@ -242,8 +236,8 @@ The `inscripciones` table acts as a junction table establishing a many-to-many r
 
 The POST handler retrieves the user ID from the session object:
 
-```javascript
-const id_usuario = req.session.usuario.id;
+```
+
 ```
 
 This requires that the session contains a `usuario` object with an `id` property, which is set during the login process (see [User Login](/Lourdes12587/Week06/4.2-user-login)).
@@ -252,27 +246,8 @@ This requires that the session contains a `usuario` object with an `id` property
 
 ### Response Patterns
 
-```mermaid
-flowchart TD
+```
 
-Handler["POST /inscribir/:id<br>Handler"]
-Case1["Query Error"]
-Case2["Duplicate Found"]
-Case3["Insert Error"]
-Case4["Success"]
-Response1["Redirect: /courses<br>Status: 302"]
-Response2["Redirect: /perfil<br>Status: 302"]
-Response3["Redirect: /courses<br>Status: 302"]
-Response4["Redirect: /perfil<br>Status: 302"]
-
-Handler --> Case1
-Handler --> Case2
-Handler --> Case3
-Handler --> Case4
-Case1 --> Response1
-Case2 --> Response2
-Case3 --> Response3
-Case4 --> Response4
 ```
 
 **Sources:** [routes/courses.js L117-L149](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149)
@@ -297,17 +272,11 @@ All responses use the Post-Redirect-Get (PRG) pattern to prevent duplicate form 
 The POST handler logs errors to the console for debugging:
 
 ```
-if (err) {
-  console.error(err);
-  return res.redirect("/courses");
-}
+
 ```
 
 ```
-if (err2) {
-  console.error(err2);
-  return res.redirect("/courses");
-}
+
 ```
 
 **Sources:** [routes/courses.js L126](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L126-L126)
@@ -331,8 +300,8 @@ No error messages are displayed to the user; the system silently redirects to sa
 
 The codebase includes an alternative enrollment controller at `src/cursoController.js` that implements identical logic to the POST handler:
 
-```javascript
-exports.inscribirCurso = (req, res) => { ... }
+```
+
 ```
 
 This function [src/cursoController.js L3-L25](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/cursoController.js#L3-L25)
@@ -349,11 +318,8 @@ This function [src/cursoController.js L3-L25](https://github.com/Lourdes12587/We
 
 Upon successful enrollment, users are redirected to `/perfil`, where enrolled courses are displayed through a JOIN query:
 
-```sql
-SELECT c.* 
-FROM cursos c
-JOIN inscripciones i ON c.id = i.id_curso
-WHERE i.id_usuario = ?
+```
+
 ```
 
 This query is executed in the profile endpoint [routes/courses.js L155-L160](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160)

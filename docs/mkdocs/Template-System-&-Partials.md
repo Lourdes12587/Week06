@@ -20,7 +20,7 @@ The application uses **EJS (Embedded JavaScript)** version 3.1.10 as its templat
  where the view engine is set:
 
 ```
-app.set('view engine', 'ejs')
+
 ```
 
 EJS allows embedding JavaScript logic directly in HTML templates using special tags:
@@ -45,10 +45,7 @@ The application implements a modular template architecture using **two core part
 Every EJS template in the application follows this composition pattern:
 
 ```
-<%- include('partials/head') %>
-<!-- Optional page-specific CSS -->
-<%- include('partials/header') %>
-<!-- Page-specific content -->
+
 ```
 
 This pattern ensures consistent styling, navigation, and HTML structure without code duplication.
@@ -190,9 +187,7 @@ Individual templates can inject additional CSS files between the two partials:
 **Example from index.ejs:**
 
 ```
-<%- include('partials/head') %>
-<link rel="stylesheet" href="/resources/css/header.css">
-<%- include('partials/header') %>
+
 ```
 
 This pattern at [views/index.ejs L1-L3](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L1-L3)
@@ -217,35 +212,16 @@ This architecture allows each page to:
 
 **Diagram: Route to View Data Flow**
 
-```mermaid
-sequenceDiagram
-  participant Route Handler
-  participant res.render()
-  participant EJS Engine
-  participant EJS Template
-  participant Browser
+```
 
-  Route Handler->>Route Handler: "Prepare data object"
-  Route Handler->>res.render(): "res.render('index', {
-  res.render()->>EJS Engine: nombre: value,
-  EJS Engine->>EJS Template: login: bool,
-  EJS Template->>EJS Template: name: string})"
-  EJS Template->>EJS Template: "Process template with data"
-  EJS Template->>EJS Engine: "Inject variables"
-  EJS Engine->>Browser: "Evaluate <%= variable %>"
 ```
 
 ### Data Object Structure
 
 Routes pass data to templates as JavaScript objects in the second parameter of `res.render()`:
 
-```yaml
-res.render('viewName', {
-  nombre: 'Company Name',
-  experiencia: 'Description',
-  login: true,
-  name: 'User Name'
-})
+```
+
 ```
 
 These variables become available in the EJS template for:
@@ -268,27 +244,16 @@ The `index.ejs` template demonstrates two common conditional patterns:
 
 :
 
-```html
-<% if (nombre) { %>
-  <h1>SOMOS <%= nombre %></h1>
-  <p>Es más que una experiencia, <%= experiencia %></p>
-<% } %>
+```
+
 ```
 
 **Pattern 2: Authenticated vs. Guest UI** at [views/index.ejs L13-L21](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/index.ejs#L13-L21)
 
 :
 
-```xml
-<% if (login) { %>
-  <h3>Usuario Conectado: <strong><%= name %></strong></h3>
-  <form action="/logout" method="POST">
-    <button type="submit" class="btn btn-primary mt-3">Cerrar sesión</button>
-  </form>
-<% } else { %>
-  <h3>Bienvenido, <strong><%= name || 'Invitado' %></strong></h3>
-  <a href="/login" class="btn btn-primary mt-3">Iniciar Sesion</a>
-<% } %>
+```
+
 ```
 
 ### Variable Escaping
@@ -333,16 +298,13 @@ The escaped syntax (`<%= %>`) is used for all user-provided data to prevent cros
 **Template inclusion syntax:**
 
 ```
-<%- include('partials/head') %>
-<%- include('partials/header') %>
+
 ```
 
 **Data output syntax:**
 
 ```
-<%= escapedVariable %>      <!-- Safe output -->
-<%- unescapedHTML %>         <!-- Trusted HTML -->
-<% if (condition) { %>       <!-- Control flow -->
+
 ```
 
 **Sources:** views/partials/head.ejs, views/partials/header.ejs, views/index.ejs, app.js

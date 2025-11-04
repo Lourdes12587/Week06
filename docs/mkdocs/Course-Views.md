@@ -52,27 +52,8 @@ The view loads Boxicons for action icons and a custom admin stylesheet for enhan
 
 The entire course listing is conditionally rendered based on the `login` status. The view receives three critical variables from the route handler: `login` (boolean), `rol` (string), and `cursos` (array).
 
-```mermaid
-flowchart TD
+```
 
-RouteHandler["routes/courses.js<br>GET /courses"]
-LoginCheck["login === true?"]
-RoleCheck["rol value"]
-NoContent["No table rendered"]
-AdminView["Show table with<br>Create button<br>Edit/Delete actions"]
-RegisteredView["Show table with<br>Inscribirse buttons"]
-BasicView["Show table only<br>No actions"]
-TableRender["Render course table"]
-
-RouteHandler --> LoginCheck
-LoginCheck --> NoContent
-LoginCheck --> RoleCheck
-RoleCheck --> AdminView
-RoleCheck --> RegisteredView
-RoleCheck --> BasicView
-AdminView --> TableRender
-RegisteredView --> TableRender
-BasicView --> TableRender
 ```
 
 **Sources:** [views/courses.ejs L8-L57](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57)
@@ -89,10 +70,8 @@ Administrators see enhanced functionality including a course creation button and
 
 The action column header is conditionally rendered only for admin users:
 
-```xml
-<% if (rol == "admin") { %>       
-  <th scope="col">Acciones</th>
-<% } %>
+```
+
 ```
 
 **Sources:** [views/courses.ejs L12-L14](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14)
@@ -105,16 +84,8 @@ The action column header is conditionally rendered only for admin users:
 
 Registered users (with `rol === "registrado"`) see an enrollment button for each course instead of edit/delete actions. The implementation uses a POST form with an inline submit button:
 
-```xml
-<% if (rol === "registrado") { %>
-  <td>
-    <form action="/inscribir/<%= curso.id %>" method="POST" style="display:inline;">
-      <button type="submit" class="btn btn-outline-success btn-sm">
-        <i class="bx bxs-bookmark-plus"></i> Inscribirse
-      </button>
-    </form>
-  </td>
-<% } %>
+```
+
 ```
 
 Note: This form implementation has been superseded by the two-step enrollment process using `views/confirmInscripcion.ejs`. The route `GET /inscribir/:id` now displays the confirmation page before processing the enrollment.
@@ -172,11 +143,8 @@ The form collects three fields for course creation:
 
 Each field follows the same structure with label and input wrapped in `mb-3` (margin-bottom) divs:
 
-```html
-<div class="mb-3">
-  <label for="titulo" class="form-label">Titulo: </label>
-  <input type="text" class="form-control" id="titulo" name="titulo"/>
-</div>
+```
+
 ```
 
 **Sources:** [views/create.ejs L11-L22](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L11-L22)
@@ -188,9 +156,8 @@ The form submits to `POST /save` with two action buttons:
 * **Guardar (Save)**: Primary button that submits the form
 * **Cancelar (Cancel)**: Secondary link-styled as button that redirects to `/courses`
 
-```xml
-<button type="submit" class="btn btn-primary">Guardar</button>
-<a href="/courses" class="btn btn-danger">Cancelar</a>
+```
+
 ```
 
 **Sources:** [views/create.ejs L10](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L10-L10)
@@ -203,12 +170,8 @@ The form submits to `POST /save` with two action buttons:
 
 The edit view (`views/edit.ejs`) conditionally renders based on whether a `curso` object was found. If the course exists, the form is pre-populated with current values; otherwise, an error message displays:
 
-```xml
-<% if(curso){ %>
-  <!-- Edit form -->
-<% } else { %>
-  <h1> CURSOS NO ENCONTRADO</h1>
-<% } %>
+```
+
 ```
 
 **Sources:** [views/edit.ejs L5](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5)
@@ -219,11 +182,8 @@ The edit view (`views/edit.ejs`) conditionally renders based on whether a `curso
 
 The edit form includes a hidden `id` field to identify which course to update. This field is placed at the beginning of the form and is not displayed to the user:
 
-```sql
-<form action="/update" method="post">
-  <input type="text" name="id" id="id" value="<%= curso.id%>"/>
-  ...
-</form>
+```
+
 ```
 
 Note: The `id` field should use `type="hidden"` instead of `type="text"` for proper form semantics, though it functions correctly as-is.
@@ -235,14 +195,7 @@ Note: The `id` field should use `type="hidden"` instead of `type="text"` for pro
 Each input field is pre-filled with the current course data using the `value` attribute:
 
 ```
-<input type="text" class="form-control" id="titulo" 
-       name="titulo" value="<%= curso.titulo %>" />
 
-<input type="text" class="form-control" id="descripcion" 
-       name="descripcion" value="<%= curso.descripcion %>" />
-
-<input type="text" class="form-control" id="categoria" 
-       name="categoria" value="<%= curso.categoria%>"/>
 ```
 
 The form structure mirrors the creation form but includes pre-populated values and posts to `POST /update` instead of `/save`.
@@ -255,25 +208,8 @@ The form structure mirrors the creation form but includes pre-populated values a
 
 The enrollment confirmation view (`views/confirmInscripcion.ejs`) implements a two-step enrollment process to prevent accidental enrollments. The view displays course details and requires explicit user confirmation:
 
-```mermaid
-sequenceDiagram
-  participant User
-  participant views/courses.ejs
-  participant views/confirmInscripcion.ejs
-  participant routes/courses.js
-  participant Database
+```
 
-  User->>views/courses.ejs: "Click Inscribirse"
-  views/courses.ejs->>routes/courses.js: "GET /inscribir/:id"
-  routes/courses.js->>Database: "SELECT curso WHERE id = ?"
-  Database->>routes/courses.js: "Return curso object"
-  routes/courses.js->>views/confirmInscripcion.ejs: "Render with curso data"
-  views/confirmInscripcion.ejs->>User: "Display confirmation"
-  User->>views/confirmInscripcion.ejs: "Click Inscribirme button"
-  views/confirmInscripcion.ejs->>routes/courses.js: "POST /courses/inscribir/:id"
-  routes/courses.js->>Database: "INSERT INTO inscripciones"
-  Database->>routes/courses.js: "Confirm enrollment"
-  routes/courses.js->>User: "Redirect to /courses"
 ```
 
 **Sources:** [views/confirmInscripcion.ejs L1-L14](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14)
@@ -282,10 +218,8 @@ sequenceDiagram
 
 The confirmation page displays two key pieces of course information:
 
-```html
-<h3>Confirmar inscripción</h3>
-<p>Curso: <strong><%= curso.titulo %></strong></p>
-<p>Descripción: <%= curso.descripcion %></p>
+```
+
 ```
 
 The course title is emphasized with `<strong>` tags to draw attention to the course being enrolled in.
@@ -301,11 +235,8 @@ The form provides two buttons for user decision:
 | Inscribirme | submit | Posts to `/courses/inscribir/<%= curso.id %>` | `btn btn-success` |
 | Cancelar | link | Redirects to `/courses` | `btn btn-secondary` |
 
-```xml
-<form action="/courses/inscribir/<%= curso.id %>" method="POST">
-  <button type="submit" class="btn btn-success">Inscribirme</button>
-  <a href="/courses" class="btn btn-secondary">Cancelar</a>
-</form>
+```
+
 ```
 
 **Sources:** [views/confirmInscripcion.ejs L10-L13](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L10-L13)
@@ -314,71 +245,8 @@ The form provides two buttons for user decision:
 
 The following diagram illustrates how each course view connects to its corresponding route handler, middleware, and database operations:
 
-```mermaid
-flowchart TD
+```
 
-CoursesView["views/courses.ejs"]
-CreateView["views/create.ejs"]
-EditView["views/edit.ejs"]
-ConfirmView["views/confirmInscripcion.ejs"]
-GetCourses["GET /courses<br>Line: courses route"]
-GetCreate["GET /create<br>isAdmin middleware"]
-PostSave["POST /save<br>isAdmin middleware"]
-GetEdit["GET /edit/:id<br>isAdmin middleware"]
-PostUpdate["POST /update<br>isAdmin middleware"]
-GetDelete["GET /delete/:id<br>isAdmin middleware"]
-GetInscribir["GET /inscribir/:id<br>isRegistrado middleware"]
-PostInscribir["POST /courses/inscribir/:id<br>estaAutenticado middleware"]
-CRUDController["src/controller.js<br>save()<br>update()<br>borrar()"]
-CursoController["src/cursoController.js<br>inscribirUsuario()"]
-DBModule["config/db.js<br>query()"]
-
-GetCourses --> DBModule
-GetCourses --> CoursesView
-GetCreate --> CreateView
-PostSave --> CRUDController
-CRUDController --> DBModule
-GetEdit --> DBModule
-GetEdit --> EditView
-PostUpdate --> CRUDController
-CRUDController --> DBModule
-GetDelete --> CRUDController
-CRUDController --> DBModule
-GetInscribir --> DBModule
-GetInscribir --> ConfirmView
-PostInscribir --> CursoController
-CursoController --> DBModule
-
-subgraph subGraph3 ["Database Layer"]
-    DBModule
-end
-
-subgraph subGraph2 ["Controllers Layer"]
-    CRUDController
-    CursoController
-end
-
-subgraph subGraph1 ["Routes Layer - routes/courses.js"]
-    GetCourses
-    GetCreate
-    PostSave
-    GetEdit
-    PostUpdate
-    GetDelete
-    GetInscribir
-    PostInscribir
-    PostSave --> GetCourses
-    PostUpdate --> GetCourses
-    GetDelete --> GetCourses
-    PostInscribir --> GetCourses
-end
-
-subgraph subGraph0 ["Views Layer"]
-    CoursesView
-    CreateView
-    EditView
-    ConfirmView
-end
 ```
 
 **Sources:** [views/courses.ejs L1-L58](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58)
@@ -408,15 +276,7 @@ The course views extensively use EJS conditional rendering to adapt the UI based
 The views use standard EJS scriptlet tags for conditional logic:
 
 ```
-<% if (condition) { %>
-  <!-- Content when condition is true -->
-<% } %>
 
-<% if (condition) { %>
-  <!-- Content when condition is true -->
-<% } else { %>
-  <!-- Content when condition is false -->
-<% } %>
 ```
 
 **Sources:** [views/courses.ejs L8](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8)
@@ -437,44 +297,8 @@ The views use standard EJS scriptlet tags for conditional logic:
 
 Each course view receives specific data from its route handler. The following diagram maps the data flow from database queries through route handlers to template rendering:
 
-```mermaid
-flowchart TD
+```
 
-CursosTable["cursos table<br>id, titulo,<br>descripcion,<br>categoria"]
-GetCoursesRoute["GET /courses"]
-GetCreateRoute["GET /create"]
-GetEditRoute["GET /edit/:id"]
-GetInscribirRoute["GET /inscribir/:id"]
-CoursesVars["courses.ejs:<br>login: boolean<br>rol: string<br>cursos: array"]
-CreateVars["create.ejs:<br>No data variables<br>Form only"]
-EditVars["edit.ejs:<br>curso: object<br>or undefined"]
-ConfirmVars["confirmInscripcion.ejs:<br>curso: object"]
-
-CursosTable --> GetCoursesRoute
-GetCoursesRoute --> CoursesVars
-GetCreateRoute --> CreateVars
-CursosTable --> GetEditRoute
-GetEditRoute --> EditVars
-CursosTable --> GetInscribirRoute
-GetInscribirRoute --> ConfirmVars
-
-subgraph subGraph2 ["Template Variables"]
-    CoursesVars
-    CreateVars
-    EditVars
-    ConfirmVars
-end
-
-subgraph subGraph1 ["Route Handlers"]
-    GetCoursesRoute
-    GetCreateRoute
-    GetEditRoute
-    GetInscribirRoute
-end
-
-subgraph subGraph0 ["Database Tables"]
-    CursosTable
-end
 ```
 
 ### Expected Variable Types

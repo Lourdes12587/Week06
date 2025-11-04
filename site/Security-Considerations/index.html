@@ -1,0 +1,2954 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Routing-System/">
+      
+      
+        <link rel="next" href="../Authentication-%26-Authorization/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Security Considerations - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#security-considerations" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Security Considerations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Architecture Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-layer-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Layer Stack
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-security-with-bcryptjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Security with bcryptjs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Security with bcryptjs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-hashing-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Password Hashing Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registration-password-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registration Password Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login-password-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login Password Verification
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-validation-with-express-validator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Validation with express-validator
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Validation with express-validator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation-rules-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Rules Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-rule-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Rule Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation Flow
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-injection-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      SQL Injection Prevention
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQL Injection Prevention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameterized-query-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterized Query Pattern
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameterized-query-examples-by-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameterized Query Examples by Operation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-execution-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Execution Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Lifecycle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-creation-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Creation Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-security-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Security Features
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Middleware
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Middleware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-middleware-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Middleware Implementation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-routes-using-estaautenticado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protected Routes Using estaAutenticado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-based-access-control-rbac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role-Based Access Control (RBAC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Role-Based Access Control (RBAC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-enforcement-middleware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Enforcement Middleware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role Assignment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-based-course-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role-Based Course Visibility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain Examples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Security
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrollment Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-enrollment-prevention-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate Enrollment Prevention Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enrollment-security-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Security Checks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Best Practices Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implemented-security-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implemented Security Measures
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-additional-measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Additional Measures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-entity-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Entity Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Entity Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-related-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security-Related Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-related-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security-Related Modules
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json">package.json</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document details the security mechanisms implemented in the course management system to protect against common web vulnerabilities. The system employs multiple layers of security including password hashing, input validation, SQL injection prevention, session management, and role-based access control.</p>
+<p>For information about the authentication flow and user management, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>. For details on role-specific middleware implementation, see <a href="/Lourdes12587/Week06/4.3-role-based-access-control">Role-Based Access Control</a>.</p>
+<hr />
+<h2 id="security-architecture-overview">Security Architecture Overview<a class="headerlink" href="#security-architecture-overview" title="Permanent link">&para;</a></h2>
+<p>The system implements defense-in-depth through multiple security layers that work together to protect user data and prevent unauthorized access.</p>
+<h3 id="security-layer-stack">Security Layer Stack<a class="headerlink" href="#security-layer-stack" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
+<hr />
+<h2 id="password-security-with-bcryptjs">Password Security with bcryptjs<a class="headerlink" href="#password-security-with-bcryptjs" title="Permanent link">&para;</a></h2>
+<p>The system uses <code>bcryptjs</code> version 3.0.2 to securely hash passwords before storage, preventing plaintext password exposure in case of database compromise.</p>
+<h3 id="password-hashing-implementation">Password Hashing Implementation<a class="headerlink" href="#password-hashing-implementation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Function</th>
+<th>Salt Rounds</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Registration</td>
+<td><code>bcrypt.hash()</code></td>
+<td>8</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></td>
+</tr>
+<tr>
+<td>Login Verification</td>
+<td><code>bcrypt.compare()</code></td>
+<td>N/A</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="registration-password-flow">Registration Password Flow<a class="headerlink" href="#registration-password-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Password Hashing Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">passwordHash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">bcrypt</span><span class="p">.</span><span class="nx">hash</span><span class="p">(</span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">);</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
+<p><strong>Salt Rounds:</strong> The system uses 8 salt rounds, which provides a balance between security and performance. This is configured at hash time and cannot be modified without re-hashing all passwords.</p>
+<h3 id="login-password-verification">Login Password Verification<a class="headerlink" href="#login-password-verification" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Password Comparison Code:</strong></p>
+<div class="highlight"><pre><span></span><code>if (results.length == 0 || 
+    !(await bcrypt.compare(password, results[0].password))) {
+    // Authentication failed
+}
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L85-L87">routes/auth.js L85-L87</a></p>
+<p><strong>Security Considerations:</strong></p>
+<ul>
+<li>Passwords are never stored in plaintext</li>
+<li>Password hashes are one-way; original passwords cannot be recovered</li>
+<li>Failed login attempts provide generic error messages to prevent user enumeration</li>
+<li>Timing attacks are mitigated by bcrypt's constant-time comparison</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L85-L87">routes/auth.js L85-L87</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L14-L14">package.json L14</a></p>
+<hr />
+<h2 id="input-validation-with-express-validator">Input Validation with express-validator<a class="headerlink" href="#input-validation-with-express-validator" title="Permanent link">&para;</a></h2>
+<p>The system uses <code>express-validator</code> version 7.2.1 to sanitize and validate all user inputs on registration, preventing injection attacks and ensuring data integrity.</p>
+<h3 id="validation-rules-configuration">Validation Rules Configuration<a class="headerlink" href="#validation-rules-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="validation-rule-table">Validation Rule Table<a class="headerlink" href="#validation-rule-table" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Validators</th>
+<th>Constraint</th>
+<th>Error Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nombre</code></td>
+<td><code>exists()</code>, <code>isLength()</code></td>
+<td>min: 3 characters</td>
+<td>"El nombre debe tener al menos 3 caracteres"</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>exists()</code>, <code>isEmail()</code></td>
+<td>Valid email format</td>
+<td>"El email debe ser válido"</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>exists()</code>, <code>isLength()</code></td>
+<td>min: 4 characters</td>
+<td>"La contraseña debe tener al menos 4 caracteres"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Validation Middleware Chain:</strong>
+Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L33">routes/auth.js L17-L33</a></p>
+<p><strong>Validation Execution:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">validationResult</span><span class="p">(</span><span class="nx">req</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">errors</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s2">&quot;register&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">validaciones</span><span class="o">:</span><span class="w"> </span><span class="nx">errors</span><span class="p">.</span><span class="nx">array</span><span class="p">(),</span>
+<span class="w">        </span><span class="nx">valores</span><span class="o">:</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L40">routes/auth.js L35-L40</a></p>
+<h3 id="validation-flow">Validation Flow<a class="headerlink" href="#validation-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Security Benefits:</strong></p>
+<ul>
+<li>Prevents malformed data from reaching the database</li>
+<li>Protects against XSS by sanitizing inputs</li>
+<li>Enforces business logic constraints at the input layer</li>
+<li>Provides user-friendly error messages without exposing system details</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L40">routes/auth.js L17-L40</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L21-L21">package.json L21</a></p>
+<hr />
+<h2 id="sql-injection-prevention">SQL Injection Prevention<a class="headerlink" href="#sql-injection-prevention" title="Permanent link">&para;</a></h2>
+<p>All database queries use parameterized queries (prepared statements) to prevent SQL injection attacks. The system never concatenates user input directly into SQL strings.</p>
+<h3 id="parameterized-query-pattern">Parameterized Query Pattern<a class="headerlink" href="#parameterized-query-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="parameterized-query-examples-by-operation">Parameterized Query Examples by Operation<a class="headerlink" href="#parameterized-query-examples-by-operation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>SQL Statement</th>
+<th>Parameters</th>
+<th>File Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Registration</td>
+<td><code>INSERT INTO usuarios SET ?</code></td>
+<td><code>{nombre, email, password, rol}</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L52">routes/auth.js L46-L52</a></td>
+</tr>
+<tr>
+<td>User Authentication</td>
+<td><code>SELECT * FROM usuarios WHERE email = ?</code></td>
+<td><code>[email]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L82-L83">routes/auth.js L82-L83</a></td>
+</tr>
+<tr>
+<td>Course Retrieval</td>
+<td><code>SELECT * FROM cursos WHERE id = ?</code></td>
+<td><code>[id]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></td>
+</tr>
+<tr>
+<td>Course Deletion</td>
+<td><code>DELETE FROM cursos WHERE id = ?</code></td>
+<td><code>[id]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></td>
+</tr>
+<tr>
+<td>Check Enrollment</td>
+<td><code>SELECT * FROM inscripciones WHERE id_usuario = ? AND id_curso = ?</code></td>
+<td><code>[id_usuario, id_curso]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L122-L123">routes/courses.js L122-L123</a></td>
+</tr>
+<tr>
+<td>Insert Enrollment</td>
+<td><code>INSERT INTO inscripciones (id_usuario, id_curso) VALUES (?, ?)</code></td>
+<td><code>[id_usuario, id_curso]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L136-L137">routes/courses.js L136-L137</a></td>
+</tr>
+<tr>
+<td>User Profile Courses</td>
+<td><code>SELECT c.* FROM cursos c JOIN inscripciones i ON c.id = i.id_curso WHERE i.id_usuario = ?</code></td>
+<td><code>[idUsuario]</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-execution-pattern">Query Execution Pattern<a class="headerlink" href="#query-execution-pattern" title="Permanent link">&para;</a></h3>
+<p>All queries follow this secure pattern:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;SQL STATEMENT WITH ? PLACEHOLDERS&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">parameter1</span><span class="p">,</span><span class="w"> </span><span class="nx">parameter2</span><span class="p">,</span><span class="w"> </span><span class="p">...],</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Handle results</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p><strong>Example from Authentication:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;SELECT * FROM usuarios WHERE email = ?&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="p">[</span><span class="nx">email</span><span class="p">],</span><span class="w"> </span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Process results safely</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L84">routes/auth.js L81-L84</a></p>
+<p><strong>Example from Enrollment Check:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;SELECT * FROM inscripciones WHERE id_usuario = ? AND id_curso = ?&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">id_usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">id_curso</span><span class="p">],</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Check if already enrolled</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L128">routes/courses.js L121-L128</a></p>
+<p><strong>Security Benefits:</strong></p>
+<ul>
+<li>Database driver automatically escapes parameter values</li>
+<li>Prevents injection of malicious SQL commands</li>
+<li>Separates data from code at the protocol level</li>
+<li>Works with all database operations (SELECT, INSERT, UPDATE, DELETE)</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69">routes/auth.js L46-L69</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L118">routes/auth.js L81-L118</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L137">routes/courses.js L121-L137</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></p>
+<hr />
+<h2 id="session-security">Session Security<a class="headerlink" href="#session-security" title="Permanent link">&para;</a></h2>
+<p>The system uses <code>express-session</code> version 1.18.2 for server-side session management, storing sensitive user state on the server rather than in client-side cookies.</p>
+<h3 id="session-configuration">Session Configuration<a class="headerlink" href="#session-configuration" title="Permanent link">&para;</a></h3>
+<p>The session is initialized in <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a></p>
+<p>with the following properties stored:</p>
+<ul>
+<li><code>req.session.loggedin</code> - Boolean indicating authentication status</li>
+<li><code>req.session.usuario</code> - User object containing id, nombre, email, rol</li>
+<li><code>req.session.rol</code> - User role string ('publico', 'registrado', 'admin')</li>
+</ul>
+<h3 id="session-lifecycle">Session Lifecycle<a class="headerlink" href="#session-lifecycle" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="session-creation-code">Session Creation Code<a class="headerlink" href="#session-creation-code" title="Permanent link">&para;</a></h3>
+<p><strong>Login Success:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+
+<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">loggedin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">usuario</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">results</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">usuario</span><span class="p">.</span><span class="nx">rol</span><span class="p">;</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
+<p><strong>Logout:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">));</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L135-L135">routes/auth.js L135</a></p>
+<h3 id="session-security-features">Session Security Features<a class="headerlink" href="#session-security-features" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implementation</th>
+<th>Security Benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server-side storage</td>
+<td>Session data stored on server</td>
+<td>Prevents client tampering with session data</td>
+</tr>
+<tr>
+<td>Session cookies</td>
+<td>HTTPOnly cookies (via express-session)</td>
+<td>Prevents XSS attacks from stealing session IDs</td>
+</tr>
+<tr>
+<td>Session destruction</td>
+<td><code>req.session.destroy()</code></td>
+<td>Properly terminates sessions on logout</td>
+</tr>
+<tr>
+<td>Session validation</td>
+<td>Checked by <code>estaAutenticado</code> middleware</td>
+<td>Prevents unauthorized access to protected routes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L100-L104">routes/auth.js L100-L104</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L135-L135">routes/auth.js L135</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L20-L20">package.json L20</a></p>
+<hr />
+<h2 id="authentication-middleware">Authentication Middleware<a class="headerlink" href="#authentication-middleware" title="Permanent link">&para;</a></h2>
+<p>The <code>estaAutenticado</code> middleware function enforces authentication requirements on protected routes by verifying session state before allowing access.</p>
+<h3 id="authentication-middleware-implementation">Authentication Middleware Implementation<a class="headerlink" href="#authentication-middleware-implementation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Middleware Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">loggedin</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<h3 id="protected-routes-using-estaautenticado">Protected Routes Using estaAutenticado<a class="headerlink" href="#protected-routes-using-estaautenticado" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Method</th>
+<th>Additional Middleware</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/create</code></td>
+<td>GET</td>
+<td><code>isAdmin</code></td>
+<td>Course creation form</td>
+</tr>
+<tr>
+<td><code>/save</code></td>
+<td>POST</td>
+<td><code>isAdmin</code></td>
+<td>Save new course</td>
+</tr>
+<tr>
+<td><code>/edit/:id</code></td>
+<td>GET</td>
+<td><code>isAdmin</code></td>
+<td>Course edit form</td>
+</tr>
+<tr>
+<td><code>/update</code></td>
+<td>POST</td>
+<td><code>isAdmin</code></td>
+<td>Update course</td>
+</tr>
+<tr>
+<td><code>/delete/:id</code></td>
+<td>GET</td>
+<td><code>isAdmin</code></td>
+<td>Delete course</td>
+</tr>
+<tr>
+<td><code>/inscribir/:id</code></td>
+<td>GET</td>
+<td><code>isRegistrado</code></td>
+<td>Enrollment confirmation</td>
+</tr>
+<tr>
+<td><code>/inscribir/:id</code></td>
+<td>POST</td>
+<td><code>isRegistrado</code></td>
+<td>Process enrollment</td>
+</tr>
+<tr>
+<td><code>/perfil</code></td>
+<td>GET</td>
+<td><code>isRegistrado</code></td>
+<td>User profile</td>
+</tr>
+<tr>
+<td><code>/admin/perfil</code></td>
+<td>GET</td>
+<td><code>isAdmin</code></td>
+<td>Admin dashboard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Route Protection:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/create&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">estaAutenticado</span><span class="p">,</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;create&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L66">routes/courses.js L64-L66</a></p>
+<p><strong>Security Benefits:</strong></p>
+<ul>
+<li>Centralized authentication logic prevents code duplication</li>
+<li>Consistent security checks across all protected routes</li>
+<li>Clear separation between authentication (logged in) and authorization (role check)</li>
+<li>Graceful redirect to login page for unauthenticated users</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L103">routes/courses.js L64-L103</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L185">routes/courses.js L152-L185</a></p>
+<hr />
+<h2 id="role-based-access-control-rbac">Role-Based Access Control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permanent link">&para;</a></h2>
+<p>The system implements three distinct user roles with progressively higher privileges, enforced through dedicated middleware functions.</p>
+<h3 id="role-hierarchy">Role Hierarchy<a class="headerlink" href="#role-hierarchy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="role-enforcement-middleware">Role Enforcement Middleware<a class="headerlink" href="#role-enforcement-middleware" title="Permanent link">&para;</a></h3>
+<p><strong>Admin Middleware:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isAdmin</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">loggedin</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;admin&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
+<p><strong>Registrado Middleware:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">isRegistrado</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">,</span><span class="w"> </span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">loggedin</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;registrado&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">next</span><span class="p">();</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
+<h3 id="role-assignment">Role Assignment<a class="headerlink" href="#role-assignment" title="Permanent link">&para;</a></h3>
+<p>Roles are assigned during registration with a default fallback:</p>
+<div class="highlight"><pre><span></span><code><span class="n">db</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="ss">&quot;INSERT INTO usuarios SET ?&quot;</span><span class="p">,</span><span class="w"> </span><span class="err">{</span>
+<span class="w">    </span><span class="n">nombre</span><span class="p">:</span><span class="w"> </span><span class="n">nombre</span><span class="p">,</span>
+<span class="w">    </span><span class="n">email</span><span class="p">:</span><span class="w"> </span><span class="n">email</span><span class="p">,</span>
+<span class="w">    </span><span class="n">password</span><span class="p">:</span><span class="w"> </span><span class="n">passwordHash</span><span class="p">,</span>
+<span class="w">    </span><span class="n">rol</span><span class="p">:</span><span class="w"> </span><span class="n">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;registrado&#39;</span><span class="p">,</span>
+<span class="err">}</span><span class="p">);</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L52">routes/auth.js L46-L52</a></p>
+<p><strong>Default Role:</strong> Users registered through the normal registration flow receive the <code>'registrado'</code> role by default.</p>
+<h3 id="role-based-course-visibility">Role-Based Course Visibility<a class="headerlink" href="#role-based-course-visibility" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Dynamic Query Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="o">?</span><span class="p">.</span><span class="nx">rol</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;publico&#39;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM cursos&quot;</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">rol</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;publico&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">sql</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot; WHERE visibilidad=&#39;publico&#39;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">sql</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="s1">&#39;courses&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">cursos</span><span class="o">:</span><span class="w"> </span><span class="nx">results</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">login</span><span class="o">:</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">loggedin</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">rol</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L61">routes/courses.js L36-L61</a></p>
+<h3 id="middleware-chain-examples">Middleware Chain Examples<a class="headerlink" href="#middleware-chain-examples" title="Permanent link">&para;</a></h3>
+<p><strong>Admin-Only Route:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="k">create</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">estaAutenticado</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">isAdmin</span><span class="w"> </span><span class="err">→</span><span class="w"> </span><span class="n">Route</span><span class="w"> </span><span class="k">Handler</span>
+</code></pre></div>
+<p><strong>Registrado-Only Route:</strong></p>
+<div class="highlight"><pre><span></span><code>POST /inscribir/:id → estaAutenticado → isRegistrado → Route Handler
+</code></pre></div>
+<p><strong>Security Benefits:</strong></p>
+<ul>
+<li>Fine-grained access control based on user roles</li>
+<li>Principle of least privilege: users only access features appropriate to their role</li>
+<li>Multiple middleware layers prevent authorization bypass</li>
+<li>Role stored in session prevents client-side tampering</li>
+<li>Consistent role checking across all protected routes</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L33">routes/courses.js L16-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L61">routes/courses.js L36-L61</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L185">routes/courses.js L64-L185</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L52">routes/auth.js L46-L52</a></p>
+<hr />
+<h2 id="enrollment-security">Enrollment Security<a class="headerlink" href="#enrollment-security" title="Permanent link">&para;</a></h2>
+<p>The enrollment system implements duplicate prevention to ensure data integrity and prevent users from enrolling in the same course multiple times.</p>
+<h3 id="duplicate-enrollment-prevention-flow">Duplicate Enrollment Prevention Flow<a class="headerlink" href="#duplicate-enrollment-prevention-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Duplicate Check Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;SELECT * FROM inscripciones WHERE id_usuario = ? AND id_curso = ?&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">[</span><span class="nx">id_usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">id_curso</span><span class="p">],</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">err</span><span class="p">,</span><span class="w"> </span><span class="nx">results</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/perfil&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Already enrolled</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Proceed with enrollment</span>
+<span class="w">        </span><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span>
+<span class="w">            </span><span class="s2">&quot;INSERT INTO inscripciones (id_usuario, id_curso) VALUES (?, ?)&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="p">[</span><span class="nx">id_usuario</span><span class="p">,</span><span class="w"> </span><span class="nx">id_curso</span><span class="p">],</span>
+<span class="w">            </span><span class="p">(</span><span class="nx">err2</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/perfil&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+<p>Located at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L148">routes/courses.js L121-L148</a></p>
+<h3 id="enrollment-security-checks">Enrollment Security Checks<a class="headerlink" href="#enrollment-security-checks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Security Check</th>
+<th>Implementation</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authentication</td>
+<td><code>estaAutenticado</code> middleware</td>
+<td>Verify user is logged in</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td><code>isRegistrado</code> middleware</td>
+<td>Verify user has 'registrado' role</td>
+</tr>
+<tr>
+<td>Session validation</td>
+<td><code>req.session.usuario.id</code></td>
+<td>Get authenticated user's ID</td>
+</tr>
+<tr>
+<td>Duplicate prevention</td>
+<td><code>SELECT</code> query before <code>INSERT</code></td>
+<td>Prevent multiple enrollments</td>
+</tr>
+<tr>
+<td>Parameterized queries</td>
+<td><code>[id_usuario, id_curso]</code></td>
+<td>Prevent SQL injection</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Security Benefits:</strong></p>
+<ul>
+<li>Users cannot enroll multiple times in the same course</li>
+<li>Only authenticated registered users can enroll</li>
+<li>User ID taken from session, not client input (prevents enrollment as another user)</li>
+<li>All database operations use parameterized queries</li>
+<li>Error handling redirects gracefully without exposing system details</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
+<hr />
+<h2 id="security-best-practices-summary">Security Best Practices Summary<a class="headerlink" href="#security-best-practices-summary" title="Permanent link">&para;</a></h2>
+<h3 id="implemented-security-measures">Implemented Security Measures<a class="headerlink" href="#implemented-security-measures" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="security-checklist">Security Checklist<a class="headerlink" href="#security-checklist" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Security Measure</th>
+<th>Status</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Passwords</strong></td>
+<td>Never stored in plaintext</td>
+<td>✓</td>
+<td>bcryptjs hashing with 8 rounds</td>
+</tr>
+<tr>
+<td><strong>Passwords</strong></td>
+<td>Secure comparison</td>
+<td>✓</td>
+<td><code>bcrypt.compare()</code> constant-time</td>
+</tr>
+<tr>
+<td><strong>Input</strong></td>
+<td>All inputs validated</td>
+<td>✓</td>
+<td>express-validator on registration</td>
+</tr>
+<tr>
+<td><strong>Input</strong></td>
+<td>SQL injection prevention</td>
+<td>✓</td>
+<td>Parameterized queries exclusively</td>
+</tr>
+<tr>
+<td><strong>Sessions</strong></td>
+<td>Server-side storage</td>
+<td>✓</td>
+<td>express-session with secure defaults</td>
+</tr>
+<tr>
+<td><strong>Sessions</strong></td>
+<td>Proper logout</td>
+<td>✓</td>
+<td><code>req.session.destroy()</code></td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Centralized middleware</td>
+<td>✓</td>
+<td><code>estaAutenticado</code> function</td>
+</tr>
+<tr>
+<td><strong>Authorization</strong></td>
+<td>Role-based access</td>
+<td>✓</td>
+<td><code>isAdmin</code>, <code>isRegistrado</code> middleware</td>
+</tr>
+<tr>
+<td><strong>Authorization</strong></td>
+<td>Principle of least privilege</td>
+<td>✓</td>
+<td>Three-tier role system</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>User enumeration prevention</td>
+<td>✓</td>
+<td>Generic error messages</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Duplicate prevention</td>
+<td>✓</td>
+<td>Check before insert (enrollments)</td>
+</tr>
+<tr>
+<td><strong>Errors</strong></td>
+<td>No sensitive info exposure</td>
+<td>✓</td>
+<td>Generic user-facing messages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recommended-additional-measures">Recommended Additional Measures<a class="headerlink" href="#recommended-additional-measures" title="Permanent link">&para;</a></h3>
+<p>The following security enhancements are recommended for production deployment:</p>
+<ol>
+<li><strong>HTTPS Enforcement</strong>: Configure Express to redirect HTTP to HTTPS</li>
+<li><strong>CSRF Protection</strong>: Add <code>csurf</code> middleware for state-changing operations</li>
+<li><strong>Rate Limiting</strong>: Implement rate limiting on login and registration routes</li>
+<li><strong>Helmet.js</strong>: Add security headers with <code>helmet</code> middleware</li>
+<li><strong>Session Configuration</strong>: * Set <code>secure: true</code> for session cookies (HTTPS only) * Set <code>httpOnly: true</code> to prevent XSS cookie theft * Configure appropriate <code>maxAge</code> for session expiration</li>
+<li><strong>Password Policy</strong>: Increase minimum password length to 8+ characters</li>
+<li><strong>Account Lockout</strong>: Implement temporary lockout after failed login attempts</li>
+<li><strong>Audit Logging</strong>: Log authentication events and admin actions</li>
+<li><strong>Input Validation</strong>: Extend validation to all routes, not just registration</li>
+<li><strong>Database Credentials</strong>: Ensure database passwords are strong and stored only in environment variables</li>
+</ol>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
+<hr />
+<h2 id="code-entity-reference">Code Entity Reference<a class="headerlink" href="#code-entity-reference" title="Permanent link">&para;</a></h2>
+<h3 id="security-related-functions">Security-Related Functions<a class="headerlink" href="#security-related-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Purpose</th>
+<th>Location</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>estaAutenticado</code></td>
+<td>Verify user is logged in</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></td>
+<td><code>req, res, next</code></td>
+</tr>
+<tr>
+<td><code>isAdmin</code></td>
+<td>Verify user has admin role</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></td>
+<td><code>req, res, next</code></td>
+</tr>
+<tr>
+<td><code>isRegistrado</code></td>
+<td>Verify user has registrado role</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></td>
+<td><code>req, res, next</code></td>
+</tr>
+<tr>
+<td><code>bcrypt.hash</code></td>
+<td>Hash password with salt</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></td>
+<td><code>password, saltRounds</code></td>
+</tr>
+<tr>
+<td><code>bcrypt.compare</code></td>
+<td>Compare password with hash</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></td>
+<td><code>password, hash</code></td>
+</tr>
+<tr>
+<td><code>validationResult</code></td>
+<td>Extract validation errors</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L35">routes/auth.js L35</a></td>
+<td><code>req</code></td>
+</tr>
+<tr>
+<td><code>req.session.destroy</code></td>
+<td>Terminate user session</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L135-L135">routes/auth.js L135</a></td>
+<td><code>callback</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="security-related-modules">Security-Related Modules<a class="headerlink" href="#security-related-modules" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Version</th>
+<th>Purpose</th>
+<th>Configuration Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bcryptjs</code></td>
+<td>3.0.2</td>
+<td>Password hashing</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L14-L14">package.json L14</a></td>
+</tr>
+<tr>
+<td><code>express-validator</code></td>
+<td>7.2.1</td>
+<td>Input validation</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L21-L21">package.json L21</a></td>
+</tr>
+<tr>
+<td><code>express-session</code></td>
+<td>1.18.2</td>
+<td>Session management</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L20-L20">package.json L20</a></td>
+</tr>
+<tr>
+<td><code>jsonwebtoken</code></td>
+<td>9.0.2</td>
+<td>JWT token generation</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L22-L22">package.json L22</a></td>
+</tr>
+<tr>
+<td><code>cookie-parser</code></td>
+<td>1.4.7</td>
+<td>Cookie parsing</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L15-L15">package.json L15</a></td>
+</tr>
+<tr>
+<td><code>mysql2</code></td>
+<td>3.14.3</td>
+<td>Parameterized queries</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L23-L23">package.json L23</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L13-L25">package.json L13-L25</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

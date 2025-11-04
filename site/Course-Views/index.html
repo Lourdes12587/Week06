@@ -1,0 +1,2441 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Course-Enrollment/">
+      
+      
+        <link rel="next" href="../Course-Management-Endpoints/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Course Views - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#course-views" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Course Views
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../API-Reference/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-and-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose and Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-course-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Course Views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-listing-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Listing View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Listing View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-structure-and-includes" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Structure and Includes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-based-rendering-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Role-Based Rendering Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registered-user-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registered User Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-table-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Table Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-creation-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Creation View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Creation View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input Fields
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#form-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Form Submission
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-edit-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Edit View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Edit View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-population-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pre-Population Logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hidden-id-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hidden ID Field
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-pre-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value Pre-Population
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-confirmation-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Confirmation View
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrollment Confirmation View">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confirmation-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirmation Flow
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#course-information-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Information Display
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirmation-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirmation Actions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-route-controller-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      View-Route-Controller Mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-rendering-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Rendering Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conditional Rendering Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejs-conditional-syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      EJS Conditional Syntax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-flow-and-template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Flow and Template Variables
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Flow and Template Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected-variable-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expected Variable Types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API-Reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="course-views">Course Views<a class="headerlink" href="#course-views" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs">views/confirmInscripcion.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs">views/courses.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs">views/create.ejs</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs">views/edit.ejs</a></p>
+</blockquote>
+<h2 id="purpose-and-scope">Purpose and Scope<a class="headerlink" href="#purpose-and-scope" title="Permanent link">&para;</a></h2>
+<p>This document details the EJS template views that render course-related user interfaces in the system. These views handle course listing, creation, editing, and enrollment confirmation. Each view adapts its interface based on the authenticated user's role (admin, registrado, or publico).</p>
+<p>For information about the authentication-related views (login and registration forms), see <a href="/Lourdes12587/Week06/7.3-authentication-views">Authentication Views</a>. For details about the template system structure and shared partials, see <a href="/Lourdes12587/Week06/7.1-template-system-and-partials">Template System &amp; Partials</a>. For backend route handlers and controllers that serve these views, see <a href="/Lourdes12587/Week06/5-course-management-system">Course Management System</a> and <a href="/Lourdes12587/Week06/8-api-reference">API Reference</a>.</p>
+<h2 id="overview-of-course-views">Overview of Course Views<a class="headerlink" href="#overview-of-course-views" title="Permanent link">&para;</a></h2>
+<p>The system provides four primary course-related views, each serving a distinct purpose in the course management workflow:</p>
+<table>
+<thead>
+<tr>
+<th>View File</th>
+<th>Route</th>
+<th>Primary Users</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>views/courses.ejs</code></td>
+<td><code>GET /courses</code></td>
+<td>All authenticated users</td>
+<td>Display all available courses with role-specific actions</td>
+</tr>
+<tr>
+<td><code>views/create.ejs</code></td>
+<td><code>GET /create</code></td>
+<td>Admin only</td>
+<td>Form to create new courses</td>
+</tr>
+<tr>
+<td><code>views/edit.ejs</code></td>
+<td><code>GET /edit/:id</code></td>
+<td>Admin only</td>
+<td>Form to edit existing course details</td>
+</tr>
+<tr>
+<td><code>views/confirmInscripcion.ejs</code></td>
+<td><code>GET /inscribir/:id</code></td>
+<td>Registered users only</td>
+<td>Confirmation page before enrollment</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58">views/courses.ejs L1-L58</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h2 id="course-listing-view">Course Listing View<a class="headerlink" href="#course-listing-view" title="Permanent link">&para;</a></h2>
+<h3 id="file-structure-and-includes">File Structure and Includes<a class="headerlink" href="#file-structure-and-includes" title="Permanent link">&para;</a></h3>
+<p>The course listing view (<code>views/courses.ejs</code>) serves as the primary interface for browsing available courses. The view begins by including standard partials and loading external resources:</p>
+<div class="highlight"><pre><span></span><code>&lt;%- include(&#39;partials/head&#39;) %&gt;
+&lt;link href=&#39;https://cdn.boxicons.com/fonts/basic/boxicons.min.css&#39; rel=&#39;stylesheet&#39;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/resources/css/admin.css&quot;&gt;
+&lt;%- include(&#39;partials/header&#39;) %&gt;
+</code></pre></div>
+<p>The view loads Boxicons for action icons and a custom admin stylesheet for enhanced styling.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L6">views/courses.ejs L1-L6</a></p>
+<h3 id="role-based-rendering-logic">Role-Based Rendering Logic<a class="headerlink" href="#role-based-rendering-logic" title="Permanent link">&para;</a></h3>
+<p>The entire course listing is conditionally rendered based on the <code>login</code> status. The view receives three critical variables from the route handler: <code>login</code> (boolean), <code>rol</code> (string), and <code>cursos</code> (array).</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L57">views/courses.ejs L8-L57</a></p>
+<h3 id="admin-features">Admin Features<a class="headerlink" href="#admin-features" title="Permanent link">&para;</a></h3>
+<p>Administrators see enhanced functionality including a course creation button and action columns for each course:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Implementation</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create New Button</td>
+<td><code>&lt;a href="/create" class="btn btn-outline-primary"&gt;</code> with Boxicons plus icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L13-L13">views/courses.ejs L13</a></td>
+</tr>
+<tr>
+<td>Edit Action</td>
+<td><code>&lt;a href="/edit/&lt;%= curso.id %&gt;" class="btn btn-outline-warning"&gt;</code> with edit icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L35-L37">views/courses.ejs L35-L37</a></td>
+</tr>
+<tr>
+<td>Delete Action</td>
+<td><code>&lt;a href="/delete/&lt;%= curso.id %&gt;" class="btn btn-outline-danger"&gt;</code> with trash icon</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L38-L40">views/courses.ejs L38-L40</a></td>
+</tr>
+</tbody>
+</table>
+<p>The action column header is conditionally rendered only for admin users:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14">views/courses.ejs L12-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L23">views/courses.ejs L21-L23</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L42">views/courses.ejs L33-L42</a></p>
+<h3 id="registered-user-features">Registered User Features<a class="headerlink" href="#registered-user-features" title="Permanent link">&para;</a></h3>
+<p>Registered users (with <code>rol === "registrado"</code>) see an enrollment button for each course instead of edit/delete actions. The implementation uses a POST form with an inline submit button:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Note: This form implementation has been superseded by the two-step enrollment process using <code>views/confirmInscripcion.ejs</code>. The route <code>GET /inscribir/:id</code> now displays the confirmation page before processing the enrollment.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L43-L51">views/courses.ejs L43-L51</a></p>
+<h3 id="course-table-structure">Course Table Structure<a class="headerlink" href="#course-table-structure" title="Permanent link">&para;</a></h3>
+<p>The course listing displays a Bootstrap-styled table with the following columns:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Data Source</th>
+<th>Always Visible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>curso.id</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Titulo</td>
+<td><code>curso.titulo</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Descripcion</td>
+<td><code>curso.descripcion</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Categoria</td>
+<td><code>curso.categoria</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Acciones</td>
+<td>Dynamic actions based on role</td>
+<td>Conditional</td>
+</tr>
+</tbody>
+</table>
+<p>The table header uses Bootstrap's <code>bg-primary text-white</code> classes for styling:</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L10-L55">views/courses.ejs L10-L55</a></p>
+<h2 id="course-creation-view">Course Creation View<a class="headerlink" href="#course-creation-view" title="Permanent link">&para;</a></h2>
+<h3 id="form-layout">Form Layout<a class="headerlink" href="#form-layout" title="Permanent link">&para;</a></h3>
+<p>The course creation view (<code>views/create.ejs</code>) provides a simple form interface for administrators to add new courses. The form uses Bootstrap's card component for visual structure:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mt-4 w-25&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card border-secundary&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-header&quot;</span><span class="p">&gt;</span>FORMULARIO PARA CREAR CURSO<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/save&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
+        ...
+      <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The container is constrained to 25% width (<code>w-25</code>) and includes top margin (<code>mt-4</code>) for spacing.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L5-L29">views/create.ejs L5-L29</a></p>
+<h3 id="input-fields">Input Fields<a class="headerlink" href="#input-fields" title="Permanent link">&para;</a></h3>
+<p>The form collects three fields for course creation:</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Input Type</th>
+<th>Bootstrap Class</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>titulo</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td>text</td>
+<td><code>form-control</code></td>
+<td>Server-side validated</td>
+</tr>
+</tbody>
+</table>
+<p>Each field follows the same structure with label and input wrapped in <code>mb-3</code> (margin-bottom) divs:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L11-L22">views/create.ejs L11-L22</a></p>
+<h3 id="form-submission">Form Submission<a class="headerlink" href="#form-submission" title="Permanent link">&para;</a></h3>
+<p>The form submits to <code>POST /save</code> with two action buttons:</p>
+<ul>
+<li><strong>Guardar (Save)</strong>: Primary button that submits the form</li>
+<li><strong>Cancelar (Cancel)</strong>: Secondary link-styled as button that redirects to <code>/courses</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L10-L10">views/create.ejs L10</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L24-L25">views/create.ejs L24-L25</a></p>
+<h2 id="course-edit-view">Course Edit View<a class="headerlink" href="#course-edit-view" title="Permanent link">&para;</a></h2>
+<h3 id="pre-population-logic">Pre-Population Logic<a class="headerlink" href="#pre-population-logic" title="Permanent link">&para;</a></h3>
+<p>The edit view (<code>views/edit.ejs</code>) conditionally renders based on whether a <code>curso</code> object was found. If the course exists, the form is pre-populated with current values; otherwise, an error message displays:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L32-L34">views/edit.ejs L32-L34</a></p>
+<h3 id="hidden-id-field">Hidden ID Field<a class="headerlink" href="#hidden-id-field" title="Permanent link">&para;</a></h3>
+<p>The edit form includes a hidden <code>id</code> field to identify which course to update. This field is placed at the beginning of the form and is not displayed to the user:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>Note: The <code>id</code> field should use <code>type="hidden"</code> instead of <code>type="text"</code> for proper form semantics, though it functions correctly as-is.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L10-L11">views/edit.ejs L10-L11</a></p>
+<h3 id="value-pre-population">Value Pre-Population<a class="headerlink" href="#value-pre-population" title="Permanent link">&para;</a></h3>
+<p>Each input field is pre-filled with the current course data using the <code>value</code> attribute:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The form structure mirrors the creation form but includes pre-populated values and posts to <code>POST /update</code> instead of <code>/save</code>.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L13-L24">views/edit.ejs L13-L24</a></p>
+<h2 id="enrollment-confirmation-view">Enrollment Confirmation View<a class="headerlink" href="#enrollment-confirmation-view" title="Permanent link">&para;</a></h2>
+<h3 id="confirmation-flow">Confirmation Flow<a class="headerlink" href="#confirmation-flow" title="Permanent link">&para;</a></h3>
+<p>The enrollment confirmation view (<code>views/confirmInscripcion.ejs</code>) implements a two-step enrollment process to prevent accidental enrollments. The view displays course details and requires explicit user confirmation:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h3 id="course-information-display">Course Information Display<a class="headerlink" href="#course-information-display" title="Permanent link">&para;</a></h3>
+<p>The confirmation page displays two key pieces of course information:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>The course title is emphasized with <code>&lt;strong&gt;</code> tags to draw attention to the course being enrolled in.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L6-L8">views/confirmInscripcion.ejs L6-L8</a></p>
+<h3 id="confirmation-actions">Confirmation Actions<a class="headerlink" href="#confirmation-actions" title="Permanent link">&para;</a></h3>
+<p>The form provides two buttons for user decision:</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Type</th>
+<th>Action</th>
+<th>CSS Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inscribirme</td>
+<td>submit</td>
+<td>Posts to <code>/courses/inscribir/&lt;%= curso.id %&gt;</code></td>
+<td><code>btn btn-success</code></td>
+</tr>
+<tr>
+<td>Cancelar</td>
+<td>link</td>
+<td>Redirects to <code>/courses</code></td>
+<td><code>btn btn-secondary</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L10-L13">views/confirmInscripcion.ejs L10-L13</a></p>
+<h2 id="view-route-controller-mapping">View-Route-Controller Mapping<a class="headerlink" href="#view-route-controller-mapping" title="Permanent link">&para;</a></h2>
+<p>The following diagram illustrates how each course view connects to its corresponding route handler, middleware, and database operations:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L1-L58">views/courses.ejs L1-L58</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/create.ejs#L1-L29">views/create.ejs L1-L29</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L1-L35">views/edit.ejs L1-L35</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L1-L14">views/confirmInscripcion.ejs L1-L14</a></p>
+<h2 id="conditional-rendering-patterns">Conditional Rendering Patterns<a class="headerlink" href="#conditional-rendering-patterns" title="Permanent link">&para;</a></h2>
+<p>The course views extensively use EJS conditional rendering to adapt the UI based on user authentication and role. The following table summarizes the conditional logic patterns:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Condition</th>
+<th>Rendered Content</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (login)</code></td>
+<td>Entire course table</td>
+<td>Prevent unauthorized access</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>"Crear Nuevo" button</td>
+<td>Admin-only course creation</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>"Acciones" table header</td>
+<td>Admin-only action column</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol == "admin")</code></td>
+<td>Edit/Delete buttons</td>
+<td>Admin-only course management</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>if (rol === "registrado")</code></td>
+<td>"Inscribirse" button</td>
+<td>Registered user enrollment</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>if(curso)</code></td>
+<td>Edit form</td>
+<td>Handle missing course</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>else</code></td>
+<td>"CURSOS NO ENCONTRADO"</td>
+<td>Error state</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejs-conditional-syntax">EJS Conditional Syntax<a class="headerlink" href="#ejs-conditional-syntax" title="Permanent link">&para;</a></h3>
+<p>The views use standard EJS scriptlet tags for conditional logic:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8">views/courses.ejs L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L14">views/courses.ejs L12-L14</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L23">views/courses.ejs L21-L23</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L33-L42">views/courses.ejs L33-L42</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L43-L51">views/courses.ejs L43-L51</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L32-L34">views/edit.ejs L32-L34</a></p>
+<h2 id="data-flow-and-template-variables">Data Flow and Template Variables<a class="headerlink" href="#data-flow-and-template-variables" title="Permanent link">&para;</a></h2>
+<p>Each course view receives specific data from its route handler. The following diagram maps the data flow from database queries through route handlers to template rendering:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h3 id="expected-variable-types">Expected Variable Types<a class="headerlink" href="#expected-variable-types" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Variable</th>
+<th>Type</th>
+<th>Source</th>
+<th>Nullable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>courses.ejs</td>
+<td><code>login</code></td>
+<td>boolean</td>
+<td>Session/middleware</td>
+<td>No</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>rol</code></td>
+<td>string</td>
+<td>Session (<code>req.session.rol</code>)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>courses.ejs</td>
+<td><code>cursos</code></td>
+<td>array</td>
+<td>Database query result</td>
+<td>No (can be empty)</td>
+</tr>
+<tr>
+<td>edit.ejs</td>
+<td><code>curso</code></td>
+<td>object</td>
+<td>Database query result</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>confirmInscripcion.ejs</td>
+<td><code>curso</code></td>
+<td>object</td>
+<td>Database query result</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L8-L8">views/courses.ejs L8</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L12-L12">views/courses.ejs L12</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L21-L21">views/courses.ejs L21</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/courses.ejs#L27-L27">views/courses.ejs L27</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/edit.ejs#L5-L5">views/edit.ejs L5</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/confirmInscripcion.ejs#L7-L8">views/confirmInscripcion.ejs L7-L8</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3286 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Full documentation for the Week06 project hosted on Deepwiki">
+      
+      
+        <meta name="author" content="Lourdes12587">
+      
+      
+      
+        <link rel="prev" href="../Development-Guide/">
+      
+      
+        <link rel="next" href="../Authentication-Endpoints/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Overview - Week06 Project Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Week06 Project Documentation" class="md-header__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Week06 Project Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Getting-Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Project-Structure/" class="md-tabs__link">
+          
+  
+  
+  Project Structure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Technology-Stack/" class="md-tabs__link">
+          
+  
+  
+  Architecture Overview
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Authentication-%26-Authorization/" class="md-tabs__link">
+          
+  
+  
+  Authentication & Authorization
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Course-Management-System/" class="md-tabs__link">
+          
+  
+  
+  Course Management System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../User-Profiles/" class="md-tabs__link">
+          
+  
+  
+  User Profiles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Frontend-Architecture/" class="md-tabs__link">
+          
+  
+  
+  Frontend Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+  Appendix
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Week06 Project Documentation" class="md-nav__button md-logo" aria-label="Week06 Project Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Week06 Project Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://deepwiki.com/Lourdes12587/Week06/1-overview9" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Deepwiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Getting-Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Project Structure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project-Structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Project Structure
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Adding-New-Routes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adding New Routes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Architecture Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Technology-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Entry-Point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Application Entry Point
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database-Operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Routing-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-Considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security Considerations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Authentication & Authorization
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Authentication & Authorization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-%26-Authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Registration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Registration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Role-Based-Access-Control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Role-Based Access Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Session-Management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Course Management System
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Course Management System
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Creating-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Creating Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Editing-%26-Deleting-Courses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Editing & Deleting Courses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Listing-%26-Visibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Listing & Visibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Enrollment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Enrollment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Views
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Profiles
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Profiles
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User-Profile-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    User Profile Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Administrator-Dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Administrator Dashboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend-Architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Template-System-%26-Partials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Template System & Partials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Landing-Page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Landing Page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Styling-System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Styling System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Development-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Development Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Endpoint Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint-overview-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Overview Diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint Summary Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#middleware-chain-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Chain Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#session-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Session Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /login
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /auth
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /register
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-register" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /register
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /logout
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#course-management-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Course Management Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Course Management Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-courses" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /courses
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-create" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /create
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-save" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /save
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-editid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /edit/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /update
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-deleteid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /delete/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enrollment-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enrollment Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enrollment-flow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enrollment Flow Diagram
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-inscribirid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /inscribir/:id
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-inscribirid" class="md-nav__link">
+    <span class="md-ellipsis">
+      POST /inscribir/:id
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile Endpoints
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-perfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /perfil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-adminperfil" class="md-nav__link">
+    <span class="md-ellipsis">
+      GET /admin/perfil
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling Patterns
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-error-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Error Responses
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#middleware-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Middleware Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Middleware Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estaautenticado" class="md-nav__link">
+    <span class="md-ellipsis">
+      estaAutenticado
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      isAdmin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isregistrado" class="md-nav__link">
+    <span class="md-ellipsis">
+      isRegistrado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-table-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Database Table Reference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Table Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usuarios-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      usuarios Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cursos-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      cursos Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inscripciones-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      inscripciones Table
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Authentication-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Course-Management-Endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Course Management Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendix
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Appendix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    README
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Relevant source files</strong>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js">routes/auth.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js">routes/courses.js</a>
+* <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js">routes/index.js</a></p>
+</blockquote>
+<p>This document provides a comprehensive reference for all HTTP endpoints available in the course management system. It details the request methods, URL patterns, authentication requirements, role-based access restrictions, request parameters, and response formats for each endpoint.</p>
+<p>For information about authentication mechanisms and middleware implementation, see <a href="/Lourdes12587/Week06/4-authentication-and-authorization">Authentication &amp; Authorization</a>. For details about the underlying database operations, see <a href="/Lourdes12587/Week06/3.3-database-architecture">Database Architecture</a>. For route implementation patterns and middleware chains, see <a href="/Lourdes12587/Week06/3.4-routing-system">Routing System</a>.</p>
+<hr />
+<h2 id="endpoint-organization">Endpoint Organization<a class="headerlink" href="#endpoint-organization" title="Permanent link">&para;</a></h2>
+<p>The application exposes HTTP endpoints organized into four functional groups: authentication operations, course management, enrollment operations, and user profiles. All endpoints follow RESTful conventions where applicable, though some operations use form-based POST requests with redirects rather than JSON APIs.</p>
+<h3 id="endpoint-overview-diagram">Endpoint Overview Diagram<a class="headerlink" href="#endpoint-overview-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L1-L18">routes/index.js L1-L18</a></p>
+<hr />
+<h2 id="endpoint-summary-table">Endpoint Summary Table<a class="headerlink" href="#endpoint-summary-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Auth Required</th>
+<th>Role Required</th>
+<th>Controller/Handler</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>GET</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L6-L6">routes/index.js L6</a></td>
+<td>Landing page</td>
+</tr>
+<tr>
+<td><code>/login</code></td>
+<td>GET</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L8">routes/auth.js L8</a></td>
+<td>Display login form</td>
+</tr>
+<tr>
+<td><code>/register</code></td>
+<td>GET</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L12">routes/auth.js L12</a></td>
+<td>Display registration form</td>
+</tr>
+<tr>
+<td><code>/register</code></td>
+<td>POST</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></td>
+<td>Process user registration</td>
+</tr>
+<tr>
+<td><code>/auth</code></td>
+<td>POST</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></td>
+<td>Authenticate user login</td>
+</tr>
+<tr>
+<td><code>/logout</code></td>
+<td>POST</td>
+<td>Yes</td>
+<td>Any</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></td>
+<td>Destroy session and logout</td>
+</tr>
+<tr>
+<td><code>/courses</code></td>
+<td>GET</td>
+<td>No</td>
+<td>None</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></td>
+<td>List courses (filtered by role)</td>
+</tr>
+<tr>
+<td><code>/create</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L67">routes/courses.js L64-L67</a></td>
+<td>Display course creation form</td>
+</tr>
+<tr>
+<td><code>/save</code></td>
+<td>POST</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></td>
+<td>Save new course via <code>crud.save</code></td>
+</tr>
+<tr>
+<td><code>/edit/:id</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></td>
+<td>Display course edit form</td>
+</tr>
+<tr>
+<td><code>/update</code></td>
+<td>POST</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></td>
+<td>Update course via <code>crud.update</code></td>
+</tr>
+<tr>
+<td><code>/delete/:id</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></td>
+<td>Delete course</td>
+</tr>
+<tr>
+<td><code>/inscribir/:id</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>registrado</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></td>
+<td>Display enrollment confirmation</td>
+</tr>
+<tr>
+<td><code>/inscribir/:id</code></td>
+<td>POST</td>
+<td>Yes</td>
+<td><code>registrado</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></td>
+<td>Process course enrollment</td>
+</tr>
+<tr>
+<td><code>/perfil</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>registrado</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></td>
+<td>Display user profile</td>
+</tr>
+<tr>
+<td><code>/admin/perfil</code></td>
+<td>GET</td>
+<td>Yes</td>
+<td><code>admin</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></td>
+<td>Display admin dashboard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L1-L139">routes/auth.js L1-L139</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L1-L187">routes/courses.js L1-L187</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/index.js#L1-L18">routes/index.js L1-L18</a></p>
+<hr />
+<h2 id="authentication-requirements">Authentication Requirements<a class="headerlink" href="#authentication-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="middleware-chain-diagram">Middleware Chain Diagram<a class="headerlink" href="#middleware-chain-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js">app.js</a></p>
+<h3 id="session-structure">Session Structure<a class="headerlink" href="#session-structure" title="Permanent link">&para;</a></h3>
+<p>When a user authenticates successfully via <code>POST /auth</code>, the following session properties are set:</p>
+<table>
+<thead>
+<tr>
+<th>Session Property</th>
+<th>Type</th>
+<th>Description</th>
+<th>Set At</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>req.session.loggedin</code></td>
+<td><code>boolean</code></td>
+<td>Authentication status flag</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L102">routes/auth.js L102</a></td>
+</tr>
+<tr>
+<td><code>req.session.usuario</code></td>
+<td><code>object</code></td>
+<td>Complete user record from database</td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L103-L103">routes/auth.js L103</a></td>
+</tr>
+<tr>
+<td><code>req.session.rol</code></td>
+<td><code>string</code></td>
+<td>User role: <code>'publico'</code>, <code>'registrado'</code>, or <code>'admin'</code></td>
+<td><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L104-L104">routes/auth.js L104</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L98-L116">routes/auth.js L98-L116</a></p>
+<hr />
+<h2 id="authentication-endpoints">Authentication Endpoints<a class="headerlink" href="#authentication-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-login">GET /login<a class="headerlink" href="#get-login" title="Permanent link">&para;</a></h3>
+<p>Renders the login form interface.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Not required</li>
+<li>Parameters: None</li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/login.ejs</code></li>
+<li>Status: <code>200 OK</code></li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L8-L10">routes/auth.js L8-L10</a></p>
+<hr />
+<h3 id="post-auth">POST /auth<a class="headerlink" href="#post-auth" title="Permanent link">&para;</a></h3>
+<p>Authenticates user credentials and establishes a session.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Content-Type: <code>application/x-www-form-urlencoded</code></li>
+<li>Authentication: Not required</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>User email address</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Plain-text password</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Process Flow:</strong></p>
+<ol>
+<li>Extract email and password from request body <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L77-L78">routes/auth.js L77-L78</a></li>
+<li>Query database for user by email <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L81-L84">routes/auth.js L81-L84</a></li>
+<li>Compare password hash using <code>bcrypt.compare()</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L86-L86">routes/auth.js L86</a></li>
+<li>If valid, set session properties <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L102-L104">routes/auth.js L102-L104</a></li>
+<li>Render response with SweetAlert2 configuration</li>
+</ol>
+<p><strong>Success Response:</strong></p>
+<ul>
+<li>Template: <code>views/login.ejs</code></li>
+<li>Alert configuration: * <code>alertTitle</code>: "Conexion exitosa" * <code>alertIcon</code>: "success" * <code>timer</code>: 1500ms * <code>ruta</code>: "" (redirects to home)</li>
+</ul>
+<p><strong>Error Response (Invalid Credentials):</strong></p>
+<ul>
+<li>Template: <code>views/login.ejs</code></li>
+<li>Alert configuration: * <code>alertTitle</code>: "Error" * <code>alertMessage</code>: "Usuario y/o contraseña incorrectos" * <code>alertIcon</code>: "error" * Implemented at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L88-L97">routes/auth.js L88-L97</a></li>
+</ul>
+<p><strong>Error Response (Missing Fields):</strong></p>
+<ul>
+<li>Alert configuration: * <code>alertTitle</code>: "Advertencia" * <code>alertMessage</code>: "Ingrese el usuario y/o contraseña" * Implemented at <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L119-L130">routes/auth.js L119-L130</a></li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L75-L131">routes/auth.js L75-L131</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="get-register">GET /register<a class="headerlink" href="#get-register" title="Permanent link">&para;</a></h3>
+<p>Renders the user registration form.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Not required</li>
+<li>Parameters: None</li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/register.ejs</code></li>
+<li>Template Variables: <code>{ register: true }</code></li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L12-L14">routes/auth.js L12-L14</a></p>
+<hr />
+<h3 id="post-register">POST /register<a class="headerlink" href="#post-register" title="Permanent link">&para;</a></h3>
+<p>Creates a new user account with validation.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Content-Type: <code>application/x-www-form-urlencoded</code></li>
+<li>Authentication: Not required</li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Validation Rules</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nombre</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Minimum 3 characters</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Valid email format</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Minimum 4 characters</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Defaults to <code>'registrado'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Validation Configuration:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L18-L33">routes/auth.js L18-L33</a></p>
+<p><strong>Process Flow:</strong></p>
+<ol>
+<li>Validate input using <code>express-validator</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L40">routes/auth.js L35-L40</a></li>
+<li>If validation fails, re-render form with errors</li>
+<li>Hash password using <code>bcrypt.hash()</code> with salt rounds = 8 <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L44-L44">routes/auth.js L44</a></li>
+<li>Insert user into <code>usuarios</code> table <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L53">routes/auth.js L46-L53</a></li>
+<li>Render success response</li>
+</ol>
+<p><strong>Success Response:</strong></p>
+<ul>
+<li>Template: <code>views/register.ejs</code></li>
+<li>Alert configuration: * <code>alertTitle</code>: "Registro exitoso" * <code>alertMessage</code>: "Tu cuenta fue creada" * <code>alertIcon</code>: "success" * <code>timer</code>: 2500ms * <code>ruta</code>: "login"</li>
+</ul>
+<p><strong>Validation Error Response:</strong></p>
+<ul>
+<li>Template: <code>views/register.ejs</code></li>
+<li>Template Variables: * <code>validaciones</code>: Array of validation errors * <code>valores</code>: Original request body</li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L72">routes/auth.js L17-L72</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="post-logout">POST /logout<a class="headerlink" href="#post-logout" title="Permanent link">&para;</a></h3>
+<p>Destroys the user session and logs out.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Authentication: Required (any authenticated user)</li>
+<li>Parameters: None</li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTTP Redirect</li>
+<li>Location: <code>/</code> (home page)</li>
+<li>Status: <code>302 Found</code></li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L134-L136">routes/auth.js L134-L136</a></p>
+<hr />
+<h2 id="course-management-endpoints">Course Management Endpoints<a class="headerlink" href="#course-management-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-courses">GET /courses<a class="headerlink" href="#get-courses" title="Permanent link">&para;</a></h3>
+<p>Lists courses with visibility filtering based on user role.</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Not required</li>
+<li>Parameters: None</li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/courses.ejs</code></li>
+</ul>
+<p><strong>Template Variables:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursos</code></td>
+<td><code>Array&lt;Object&gt;</code></td>
+<td>Course records from database</td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>boolean</code></td>
+<td>Authentication status</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td><code>string</code></td>
+<td>User role or <code>'publico'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Role-Based Filtering:</strong></p>
+<table>
+<thead>
+<tr>
+<th>User Role</th>
+<th>SQL Query</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>publico</code> (not logged in)</td>
+<td><code>SELECT * FROM cursos WHERE visibilidad='publico'</code></td>
+<td>Shows only public courses</td>
+</tr>
+<tr>
+<td><code>registrado</code></td>
+<td><code>SELECT * FROM cursos</code></td>
+<td>Shows all courses</td>
+</tr>
+<tr>
+<td><code>admin</code></td>
+<td><code>SELECT * FROM cursos</code></td>
+<td>Shows all courses</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Filtering Logic:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L36-L42">routes/courses.js L36-L42</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62">routes/courses.js L35-L62</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="get-create">GET /create<a class="headerlink" href="#get-create" title="Permanent link">&para;</a></h3>
+<p>Displays the course creation form (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L64">routes/courses.js L64</a></li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/create.ejs</code></li>
+</ul>
+<p><strong>Authorization Failure:</strong></p>
+<ul>
+<li>Redirects to <code>/login</code> if not authenticated or not admin</li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L67">routes/courses.js L64-L67</a></p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L64-L67">routes/courses.js L64-L67</a></p>
+<hr />
+<h3 id="post-save">POST /save<a class="headerlink" href="#post-save" title="Permanent link">&para;</a></h3>
+<p>Creates a new course record (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Content-Type: <code>application/x-www-form-urlencoded</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>titulo</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Course title</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Course description</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Course category</td>
+</tr>
+<tr>
+<td><code>visibilidad</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td><code>'publico'</code> or <code>'privado'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTTP Redirect</li>
+<li>Delegates to: <code>crud.save</code> controller <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></li>
+<li>Typically redirects to <code>/courses</code> after successful creation</li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
+<p><strong>Database Query (via controller):</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L70-L70">routes/courses.js L70</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></p>
+<hr />
+<h3 id="get-editid">GET /edit/:id<a class="headerlink" href="#get-editid" title="Permanent link">&para;</a></h3>
+<p>Displays the course edit form pre-populated with existing data (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L73">routes/courses.js L73</a></li>
+</ul>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Course ID to edit</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/edit.ejs</code></li>
+<li>Template Variables: <code>{ curso: &lt;course_object&gt; }</code></li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Extract course ID from URL parameters <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L75-L75">routes/courses.js L75</a></li>
+<li>Query database for course record <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></li>
+<li>Render edit form with course data <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L81-L81">routes/courses.js L81</a></li>
+</ol>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L73-L84">routes/courses.js L73-L84</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="post-update">POST /update<a class="headerlink" href="#post-update" title="Permanent link">&para;</a></h3>
+<p>Updates an existing course record (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Content-Type: <code>application/x-www-form-urlencoded</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></li>
+</ul>
+<p><strong>Request Body:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Course ID to update</td>
+</tr>
+<tr>
+<td><code>titulo</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated course title</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated description</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated category</td>
+</tr>
+<tr>
+<td><code>visibilidad</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated visibility</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTTP Redirect</li>
+<li>Delegates to: <code>crud.update</code> controller <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></li>
+<li>Typically redirects to <code>/courses</code> after successful update</li>
+</ul>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
+<p><strong>Database Query (via controller):</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103">routes/courses.js L103</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js">src/controller.js</a></p>
+<hr />
+<h3 id="get-deleteid">GET /delete/:id<a class="headerlink" href="#get-deleteid" title="Permanent link">&para;</a></h3>
+<p>Deletes a course record (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L87">routes/courses.js L87</a></li>
+</ul>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Course ID to delete</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTTP Redirect</li>
+<li>Location: <code>/courses</code></li>
+<li>Status: <code>302 Found</code></li>
+</ul>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Extract course ID from URL parameters <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L89-L89">routes/courses.js L89</a></li>
+<li>Execute DELETE query <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91">routes/courses.js L91</a></li>
+<li>Redirect to course listing <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L95-L95">routes/courses.js L95</a></li>
+</ol>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Note:</strong> This operation may cascade to related <code>inscripciones</code> records depending on database foreign key constraints.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L87-L98">routes/courses.js L87-L98</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h2 id="enrollment-endpoints">Enrollment Endpoints<a class="headerlink" href="#enrollment-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="enrollment-flow-diagram">Enrollment Flow Diagram<a class="headerlink" href="#enrollment-flow-diagram" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L149">routes/courses.js L106-L149</a></p>
+<hr />
+<h3 id="get-inscribirid">GET /inscribir/:id<a class="headerlink" href="#get-inscribirid" title="Permanent link">&para;</a></h3>
+<p>Displays enrollment confirmation page for a specific course (registrado only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>registrado</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isRegistrado</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L106">routes/courses.js L106</a></li>
+</ul>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Course ID to enroll in</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/confirmInscripcion.ejs</code></li>
+</ul>
+<p><strong>Template Variables:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curso</code></td>
+<td><code>object</code></td>
+<td>Course record with details</td>
+</tr>
+<tr>
+<td><code>login</code></td>
+<td><code>boolean</code></td>
+<td>Always <code>true</code> (authenticated)</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td><code>string</code></td>
+<td>Always <code>'registrado'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Extract course ID <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L107-L107">routes/courses.js L107</a></li>
+<li>Query course details <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L109-L109">routes/courses.js L109</a></li>
+<li>If course not found, redirect to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L110-L110">routes/courses.js L110</a></li>
+<li>Otherwise render confirmation page <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L112-L112">routes/courses.js L112</a></li>
+</ol>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L106-L114">routes/courses.js L106-L114</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="post-inscribirid">POST /inscribir/:id<a class="headerlink" href="#post-inscribirid" title="Permanent link">&para;</a></h3>
+<p>Processes course enrollment with duplicate prevention (registrado only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>registrado</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isRegistrado</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L117">routes/courses.js L117</a></li>
+</ul>
+<p><strong>URL Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Course ID to enroll in</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTTP Redirect</li>
+<li>Location: <code>/perfil</code></li>
+<li>Status: <code>302 Found</code></li>
+</ul>
+<p><strong>Process Flow:</strong></p>
+<ol>
+<li>Extract course ID and user ID <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L118-L119">routes/courses.js L118-L119</a></li>
+<li>Check for existing enrollment <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L128">routes/courses.js L121-L128</a></li>
+<li>If already enrolled, redirect to profile immediately <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L132-L132">routes/courses.js L132</a></li>
+<li>If not enrolled, insert enrollment record <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L135-L146">routes/courses.js L135-L146</a></li>
+<li>Redirect to profile to view enrolled courses <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L144-L144">routes/courses.js L144</a></li>
+</ol>
+<p><strong>Duplicate Prevention:</strong>
+The endpoint checks the <code>inscripciones</code> table before inserting to prevent duplicate enrollments <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L121-L133">routes/courses.js L121-L133</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<p><strong>Database Queries:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Error Handling:</strong></p>
+<ul>
+<li>Database errors redirect to <code>/courses</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L127-L127">routes/courses.js L127</a></li>
+<li>Duplicate enrollments silently redirect to profile (idempotent behavior)</li>
+</ul>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L117-L149">routes/courses.js L117-L149</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h2 id="profile-endpoints">Profile Endpoints<a class="headerlink" href="#profile-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="get-perfil">GET /perfil<a class="headerlink" href="#get-perfil" title="Permanent link">&para;</a></h3>
+<p>Displays user profile with enrolled courses (registrado only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>registrado</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isRegistrado</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L152">routes/courses.js L152</a></li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/perfil.ejs</code></li>
+</ul>
+<p><strong>Template Variables:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursos</code></td>
+<td><code>Array&lt;Object&gt;</code></td>
+<td>Enrolled courses with full details</td>
+</tr>
+<tr>
+<td><code>usuario</code></td>
+<td><code>object</code></td>
+<td>User record from session</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td><code>string</code></td>
+<td>Always <code>'registrado'</code></td>
+</tr>
+<tr>
+<td><code>msg</code></td>
+<td><code>string</code></td>
+<td>Optional query parameter message</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Extract user ID from session <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L154-L154">routes/courses.js L154</a></li>
+<li>Execute JOIN query to retrieve enrolled courses <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L155-L160">routes/courses.js L155-L160</a></li>
+<li>Render profile template with results <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L162-L168">routes/courses.js L162-L168</a></li>
+</ol>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This query returns all course details for courses the user has enrolled in through the <code>inscripciones</code> junction table.</p>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L152-L169">routes/courses.js L152-L169</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h3 id="get-adminperfil">GET /admin/perfil<a class="headerlink" href="#get-adminperfil" title="Permanent link">&para;</a></h3>
+<p>Displays administrator dashboard with system statistics (admin only).</p>
+<p><strong>Request:</strong></p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Authentication: Required</li>
+<li>Role: <code>admin</code></li>
+<li>Middleware: <code>estaAutenticado</code>, <code>isAdmin</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L172">routes/courses.js L172</a></li>
+</ul>
+<p><strong>Response:</strong></p>
+<ul>
+<li>Type: HTML (EJS template)</li>
+<li>Template: <code>views/adminPerfil.ejs</code></li>
+</ul>
+<p><strong>Template Variables:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>usuario</code></td>
+<td><code>object</code></td>
+<td>Admin user record from session</td>
+</tr>
+<tr>
+<td><code>totalCursos</code></td>
+<td><code>integer</code></td>
+<td>Total count of courses in system</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Process:</strong></p>
+<ol>
+<li>Extract user from session <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L173-L173">routes/courses.js L173</a></li>
+<li>Query total course count <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L176-L176">routes/courses.js L176</a></li>
+<li>Render admin dashboard <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L183-L183">routes/courses.js L183</a></li>
+</ol>
+<p><strong>Error Handling:</strong>
+If database query fails, renders template with <code>totalCursos: 0</code> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L179-L179">routes/courses.js L179</a></p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></p>
+<p><strong>Database Query:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L172-L185">routes/courses.js L172-L185</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js">config/db.js</a></p>
+<hr />
+<h2 id="error-handling-patterns">Error Handling Patterns<a class="headerlink" href="#error-handling-patterns" title="Permanent link">&para;</a></h2>
+<h3 id="common-error-responses">Common Error Responses<a class="headerlink" href="#common-error-responses" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>HTTP Method</th>
+<th>Response Type</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unauthenticated access to protected route</td>
+<td>Any</td>
+<td>Redirect</td>
+<td><code>302</code> to <code>/login</code></td>
+</tr>
+<tr>
+<td>Invalid role for route</td>
+<td>Any</td>
+<td>Redirect</td>
+<td><code>302</code> to <code>/login</code></td>
+</tr>
+<tr>
+<td>Database query error</td>
+<td>GET</td>
+<td>HTML</td>
+<td>Renders template with empty data</td>
+</tr>
+<tr>
+<td>Database query error</td>
+<td>POST</td>
+<td>Redirect</td>
+<td><code>302</code> to appropriate page</td>
+</tr>
+<tr>
+<td>Validation errors</td>
+<td>POST</td>
+<td>HTML</td>
+<td>Re-renders form with error messages</td>
+</tr>
+<tr>
+<td>Missing required fields</td>
+<td>POST</td>
+<td>HTML</td>
+<td>Renders alert with error message</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L33">routes/courses.js L8-L33</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L40">routes/auth.js L35-L40</a></p>
+<hr />
+<h2 id="middleware-reference">Middleware Reference<a class="headerlink" href="#middleware-reference" title="Permanent link">&para;</a></h2>
+<h3 id="estaautenticado">estaAutenticado<a class="headerlink" href="#estaautenticado" title="Permanent link">&para;</a></h3>
+<p>Verifies user has an active session.</p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<p><strong>Logic:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L8-L14">routes/courses.js L8-L14</a></p>
+<hr />
+<h3 id="isadmin">isAdmin<a class="headerlink" href="#isadmin" title="Permanent link">&para;</a></h3>
+<p>Verifies user has <code>admin</code> role.</p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
+<p><strong>Logic:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24">routes/courses.js L16-L24</a></p>
+<hr />
+<h3 id="isregistrado">isRegistrado<a class="headerlink" href="#isregistrado" title="Permanent link">&para;</a></h3>
+<p>Verifies user has <code>registrado</code> role.</p>
+<p><strong>Implementation:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
+<p><strong>Logic:</strong></p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L26-L33">routes/courses.js L26-L33</a></p>
+<hr />
+<h2 id="database-table-reference">Database Table Reference<a class="headerlink" href="#database-table-reference" title="Permanent link">&para;</a></h2>
+<h3 id="usuarios-table">usuarios Table<a class="headerlink" href="#usuarios-table" title="Permanent link">&para;</a></h3>
+<p>Stores user accounts and authentication data.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td><code>nombre</code></td>
+<td><code>string</code></td>
+<td>User's display name</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>User email (unique)</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td><code>string</code></td>
+<td>bcrypt hash of password</td>
+</tr>
+<tr>
+<td><code>rol</code></td>
+<td><code>enum</code></td>
+<td><code>'publico'</code>, <code>'registrado'</code>, or <code>'admin'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L53">routes/auth.js L46-L53</a></p>
+<hr />
+<h3 id="cursos-table">cursos Table<a class="headerlink" href="#cursos-table" title="Permanent link">&para;</a></h3>
+<p>Stores course information.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Primary key</td>
+</tr>
+<tr>
+<td><code>titulo</code></td>
+<td><code>string</code></td>
+<td>Course title</td>
+</tr>
+<tr>
+<td><code>descripcion</code></td>
+<td><code>string</code></td>
+<td>Course description</td>
+</tr>
+<tr>
+<td><code>categoria</code></td>
+<td><code>string</code></td>
+<td>Course category</td>
+</tr>
+<tr>
+<td><code>visibilidad</code></td>
+<td><code>string</code></td>
+<td><code>'publico'</code> or <code>'privado'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L77-L77">routes/courses.js L77</a></p>
+<hr />
+<h3 id="inscripciones-table">inscripciones Table<a class="headerlink" href="#inscripciones-table" title="Permanent link">&para;</a></h3>
+<p>Junction table tracking course enrollments.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id_usuario</code></td>
+<td><code>integer</code></td>
+<td>Foreign key to <code>usuarios.id</code></td>
+</tr>
+<tr>
+<td><code>id_curso</code></td>
+<td><code>integer</code></td>
+<td>Foreign key to <code>cursos.id</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sources:</strong> <a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L122-L122">routes/courses.js L122</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L136-L136">routes/courses.js L136</a></p>
+<p><a href="https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L158-L158">routes/courses.js L158</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "navigation.tabs", "toc.integrate", "content.code.copy", "content.action.edit"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../javascripts/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>

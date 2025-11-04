@@ -53,49 +53,8 @@ Environment variables are loaded from `env/.env` using the dotenv package [app.j
 
 The codebase follows a modular organization pattern separating concerns across multiple directories:
 
-```mermaid
-flowchart TD
+```
 
-Root["Project Root"]
-App["app.js<br>(Main Entry Point)"]
-Package["package.json<br>(Dependencies)"]
-Env["env/.env<br>(Configuration)"]
-GitIgnore[".gitignore"]
-Config["config/<br>(Database Config)"]
-Routes["routes/<br>(Route Handlers)"]
-Src["src/<br>(Controllers)"]
-Views["views/<br>(EJS Templates)"]
-Public["public/<br>(Static Assets)"]
-DbJs["db.js"]
-IndexRoute["index.js"]
-AuthRoute["auth.js"]
-CoursesRoute["courses.js"]
-Controller["controller.js<br>(Course CRUD)"]
-CursoController["cursoController.js<br>(Enrollment Logic)"]
-Partials["partials/<br>(Reusable Components)"]
-Templates["*.ejs<br>(Page Templates)"]
-CSS["css/<br>(Stylesheets)"]
-Resources["resources/<br>(Images, etc)"]
-
-Root --> App
-Root --> Package
-Root --> Env
-Root --> GitIgnore
-Root --> Config
-Root --> Routes
-Root --> Src
-Root --> Views
-Root --> Public
-Config --> DbJs
-Routes --> IndexRoute
-Routes --> AuthRoute
-Routes --> CoursesRoute
-Src --> Controller
-Src --> CursoController
-Views --> Partials
-Views --> Templates
-Public --> CSS
-Public --> Resources
 ```
 
 ### Core Files
@@ -119,82 +78,8 @@ Public --> Resources
 
 The following diagram shows how HTTP requests flow through the application components, using actual middleware functions and file references:
 
-```mermaid
-flowchart TD
+```
 
-Request["HTTP Request"]
-Session["express-session<br>[app.js:6-13]"]
-Static["express.static<br>[app.js:19]"]
-UrlEncoded["express.urlencoded<br>[app.js:25]"]
-Json["express.json<br>[app.js:26]"]
-IndexRouter["require('./routes/index')"]
-AuthRouter["require('./routes/auth')"]
-CoursesRouter["require('./routes/courses')"]
-AuthMiddleware["estaAutenticado<br>isRegistrado<br>isAdmin"]
-Validator["express-validator<br>validationResult"]
-ControllerJs["controller.js<br>(CRUD operations)"]
-CursoControllerJs["cursoController.js<br>(Enrollment)"]
-DbConnection["conexion<br>[config/db.js]"]
-MySQLDatabase["MySQL Database<br>usuarios, cursos, inscripciones"]
-ViewRender["res.render()<br>(EJS templates)"]
-Redirect["res.redirect()"]
-JsonResponse["res.json()"]
-
-Request --> Session
-Json --> IndexRouter
-Json --> AuthRouter
-Json --> CoursesRouter
-IndexRouter --> ViewRender
-AuthRouter --> Validator
-AuthRouter --> DbConnection
-CoursesRouter --> AuthMiddleware
-CoursesRouter --> ControllerJs
-CoursesRouter --> CursoControllerJs
-AuthMiddleware --> ControllerJs
-AuthMiddleware --> CursoControllerJs
-ControllerJs --> DbConnection
-CursoControllerJs --> DbConnection
-MySQLDatabase --> ViewRender
-MySQLDatabase --> Redirect
-MySQLDatabase --> JsonResponse
-
-subgraph Response ["Response"]
-    ViewRender
-    Redirect
-    JsonResponse
-end
-
-subgraph subGraph4 ["Data Layer"]
-    DbConnection
-    MySQLDatabase
-    DbConnection --> MySQLDatabase
-end
-
-subgraph subGraph3 ["Controllers [src/]"]
-    ControllerJs
-    CursoControllerJs
-end
-
-subgraph subGraph2 ["Route-Specific Middleware"]
-    AuthMiddleware
-    Validator
-end
-
-subgraph subGraph1 ["Route Mounting [app.js:29-31]"]
-    IndexRouter
-    AuthRouter
-    CoursesRouter
-end
-
-subgraph subGraph0 ["app.js Middleware Stack"]
-    Session
-    Static
-    UrlEncoded
-    Json
-    Session --> Static
-    Static --> UrlEncoded
-    UrlEncoded --> Json
-end
 ```
 
 **Sources:** app.js:1-41, config/db.js
@@ -212,38 +97,16 @@ Middleware is configured globally in `app.js` before route mounting. The order i
 3. **Body parsers** [app.js L25-L26](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L25-L26)  - Parse URL-encoded and JSON request bodies
 4. **Route handlers** [app.js L29-L31](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L29-L31)  - Mounted after all middleware
 
-```mermaid
-flowchart TD
+```
 
-A["Incoming Request"]
-B["express-session"]
-C["express.static"]
-D["express.urlencoded"]
-E["express.json"]
-F["Route Handlers"]
-G["Response"]
-
-A --> B
-B --> C
-C --> D
-D --> E
-E --> F
-F --> G
 ```
 
 ### Database Connection Pattern
 
 The application uses a single shared connection instance exported from `config/db.js`. This connection is imported wherever database access is needed:
 
-```javascript
-// In config/db.js
-const conexion = mysql.createConnection({ ... });
-conexion.connect((error) => { ... });
-module.exports = conexion;
+```
 
-// In route handlers or controllers
-const conexion = require('../config/db');
-conexion.query('SELECT ...', (error, results) => { ... });
 ```
 
 The connection uses environment variables [config/db.js L4-L7](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/config/db.js#L4-L7)
@@ -268,10 +131,8 @@ Routes are mounted in `app.js` [app.js L29-L31](https://github.com/Lourdes12587/
 
  using the pattern:
 
-```javascript
-app.use("/", require("./routes/index"));
-app.use("/", require("./routes/auth"));
-app.use("/", require("./routes/courses"));
+```
+
 ```
 
 ### Controller Pattern
@@ -294,7 +155,7 @@ Controllers receive request data as parameters and return results via callbacks 
 To add a new feature area, follow these steps:
 
 1. **Create route file** in `routes/` directory (e.g., `routes/newfeature.js`)
-2. **Mount router** in `app.js`: ```javascript app.use("/", require("./routes/newfeature")); ```
+2. **Mount router** in `app.js`: ``` ```
 3. **Define endpoints** using `router.get()`, `router.post()`, etc.
 4. **Apply middleware** for authentication/authorization if needed
 5. **Create controller** in `src/` if complex business logic is required
@@ -303,21 +164,8 @@ To add a new feature area, follow these steps:
 
 ### Example: Adding a New Protected Route
 
-```mermaid
-flowchart TD
+```
 
-Step1["Unsupported markdown: list"]
-Step2["Unsupported markdown: list"]
-Step3["Unsupported markdown: list"]
-Step4["Unsupported markdown: list"]
-Step5["Unsupported markdown: list"]
-Step6["Unsupported markdown: list"]
-
-Step1 --> Step2
-Step2 --> Step3
-Step3 --> Step4
-Step4 --> Step5
-Step5 --> Step6
 ```
 
 **Sources:** app.js:29-31
@@ -327,7 +175,7 @@ Step5 --> Step6
 When adding database operations:
 
 1. **Import connection**: `const conexion = require('../config/db')`
-2. **Use parameterized queries** to prevent SQL injection: ```javascript conexion.query('SELECT * FROM table WHERE id = ?', [id], (error, results) => {     if (error) throw error;     // Process results }); ```
+2. **Use parameterized queries** to prevent SQL injection: ``` ```
 3. **Handle errors** appropriately
 4. **Close operations** within the callback
 
@@ -396,7 +244,7 @@ Dependencies are declared in `package.json` [package.json L13-L25](https://githu
 To add new dependencies:
 
 ```
-npm install package-name --save
+
 ```
 
 **Sources:** package.json:13-25
@@ -412,7 +260,7 @@ The application entry point is `app.js` [package.json L5](https://github.com/Lou
  Start the server using:
 
 ```
-npm start
+
 ```
 
 This executes `node app.js` [package.json L8](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/package.json#L8-L8)
@@ -447,8 +295,8 @@ Verify connection before testing features that require database access.
 
 Custom middleware functions can be added:
 
-1. **Globally** - Add before route mounting in `app.js`: ```javascript app.use((req, res, next) => {     // Custom logic     next(); }); ```
-2. **Per-route** - Add to specific route definitions: ```javascript router.get('/path', customMiddleware, (req, res) => { ... }); ```
+1. **Globally** - Add before route mounting in `app.js`: ``` ```
+2. **Per-route** - Add to specific route definitions: ``` ```
 3. **Per-router** - Add to router instance before route definitions
 
 ### Template Variables
@@ -457,13 +305,8 @@ Make data available to all views by setting `res.locals` in middleware. The comm
 
  shows the pattern:
 
-```javascript
-app.use((req, res, next) => {
-    res.locals.user = req.session?.usuario || null;
-    res.locals.rol = req.session?.rol || 'publico';
-    res.locals.login = !!req.session?.loggedin;
-    next();
-});
+```
+
 ```
 
 **Sources:** app.js:33-39

@@ -88,11 +88,8 @@ The profile retrieves enrolled courses using a JOIN query [routes/courses.js L15
 
 :
 
-```sql
-SELECT c.* 
-FROM cursos c
-JOIN inscripciones i ON c.id = i.id_curso
-WHERE i.id_usuario = ?
+```
+
 ```
 
 This query:
@@ -180,8 +177,8 @@ The dashboard executes a COUNT query to retrieve system metrics [routes/courses.
 
 :
 
-```sql
-SELECT COUNT(*) AS totalCursos FROM cursos
+```
+
 ```
 
 This query returns the total number of courses in the system, which is displayed on the dashboard.
@@ -315,27 +312,8 @@ end
 
 The `GET /perfil` endpoint passes the following data structure to the view:
 
-```yaml
-{
-  cursos: [
-    {
-      id: number,
-      titulo: string,
-      descripcion: string,
-      categoria: string,
-      visibilidad: string
-    },
-    // ... more courses
-  ],
-  usuario: {
-    id: number,
-    nombre: string,
-    email: string,
-    rol: 'registrado'
-  },
-  rol: 'registrado',
-  msg: string | undefined  // Optional query parameter
-}
+```
+
 ```
 
 **Sources:** [routes/courses.js L162-L167](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L162-L167)
@@ -344,16 +322,8 @@ The `GET /perfil` endpoint passes the following data structure to the view:
 
 The `GET /admin/perfil` endpoint passes the following data structure to the view:
 
-```python
-{
-  usuario: {
-    id: number,
-    nombre: string,
-    email: string,
-    rol: 'admin'
-  },
-  totalCursos: number  // COUNT(*) result from database
-}
+```
+
 ```
 
 **Sources:** [routes/courses.js L183](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L183-L183)
@@ -378,18 +348,8 @@ After successful enrollment, users are redirected to `/perfil` [routes/courses.j
 
 ### Admin Profile Workflow
 
-```mermaid
-stateDiagram-v2
-    [*] --> AdminLogin : "Admin authentication"
-    AdminLogin --> AdminDashboard : "GET /admin/perfil"
-    AdminDashboard --> ManageCourses : "Click "Gestionar Cursos"
-    ManageCourses --> CreateCourse : "Return to dashboard"
-    ManageCourses --> EditCourse : "Edit existing course"
-    ManageCourses --> DeleteCourse : "Return to dashboard"
-    CreateCourse --> AdminDashboard : "Logout"
-    EditCourse --> AdminDashboard : "Return to dashboard"
-    DeleteCourse --> AdminDashboard : "Return to dashboard"
-    AdminDashboard --> [*] : "Logout"
+```
+
 ```
 
 The admin dashboard provides navigation to the course management interface at `/courses` [views/adminperfil.ejs L18](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/adminperfil.ejs#L18-L18)
@@ -417,10 +377,7 @@ The admin profile includes explicit error handling for the statistics query [rou
 :
 
 ```
-if (err) {
-  console.error(err);
-  return res.render("adminPerfil", { usuario, totalCursos: 0 });
-}
+
 ```
 
 On database error, the view is rendered with `totalCursos: 0` as a fallback value, preventing complete page failure.

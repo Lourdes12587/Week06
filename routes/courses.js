@@ -29,7 +29,7 @@ router.get('/courses', (req, res) => {
   let sql = "SELECT * FROM cursos";
 
   if (rol === 'publico') {
-    sql += " WHERE visibilidad='publico'";
+    sql += " WHERE visibilidad ='publico'";
   }
 
   db.query(sql, (error, results) => {
@@ -38,8 +38,6 @@ router.get('/courses', (req, res) => {
       return res.render('courses', {
         cursos: [],
         login: req.session.loggedin || false,
-        //rol: req.session.rol || null
-        //rol: req.session.rol 
         rol: req.session.rol || 'publico'
       });
     }
@@ -47,7 +45,7 @@ router.get('/courses', (req, res) => {
     res.render('courses', {
       cursos: results,
       login: req.session.loggedin || false,
-      rol
+      rol: req.session?.rol || 'publico'
     });
   });
 });

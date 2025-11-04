@@ -93,8 +93,8 @@ The edit route retrieves a specific course record from the database and renders 
 
 **Route Definition:**
 
-```javascript
-router.get("/edit/:id", estaAutenticado, isAdmin, (req, res) => { ... }
+```
+
 ```
 
 **Middleware Chain:**
@@ -106,8 +106,8 @@ router.get("/edit/:id", estaAutenticado, isAdmin, (req, res) => { ... }
 
 The route handler extracts the course ID from the URL parameters and executes a parameterized SQL query to fetch the course record. The query uses a placeholder (`?`) to prevent SQL injection:
 
-```sql
-SELECT * FROM cursos WHERE id = ?
+```
+
 ```
 
 The first result (`results[0]`) is passed to the `edit.ejs` template as the `curso` object. If an error occurs, it is thrown, which would trigger Express's default error handler.
@@ -137,8 +137,8 @@ Sources: [views/edit.ejs L1-L35](https://github.com/Lourdes12587/Week06/blob/ce0
 
 The update route delegates processing to the `crud.update` controller function. The route definition applies the same middleware protection as the edit route:
 
-```sql
-router.post('/update', estaAutenticado, isAdmin, crud.update);
+```
+
 ```
 
 Sources: [routes/courses.js L103](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L103-L103)
@@ -156,8 +156,8 @@ The `exports.update` function in `src/controller.js` extracts form data from the
 
 **SQL Query Structure:**
 
-```sql
-UPDATE cursos SET ? WHERE id = ?
+```
+
 ```
 
 The query uses two parameters: an object containing the fields to update, and the course ID. The object notation (`SET ?`) allows MySQL to automatically format the update fields [src/controller.js L36-L42](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L36-L42)
@@ -179,8 +179,8 @@ The delete operation is implemented as a single GET request that immediately rem
 
 **Route Definition:**
 
-```javascript
-router.get("/delete/:id", estaAutenticado, isAdmin, (req, res) => { ... }
+```
+
 ```
 
 **Deletion Process:**
@@ -192,8 +192,8 @@ router.get("/delete/:id", estaAutenticado, isAdmin, (req, res) => { ... }
 
 **SQL Query:**
 
-```sql
-DELETE FROM cursos WHERE id = ?
+```
+
 ```
 
 The query uses a parameterized placeholder to safely delete the specified course record [routes/courses.js L91](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L91-L91)
@@ -257,12 +257,8 @@ If either condition fails, the request is redirected to `/login` [routes/courses
 
 **Session Object Structure:**
 
-```yaml
-req.session = {
-  loggedin: true,
-  rol: 'admin',
-  usuario: { id: ..., nombre: ..., email: ... }
-}
+```
+
 ```
 
 Sources: [routes/courses.js L16-L24](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L16-L24)
@@ -285,16 +281,8 @@ All database operations use parameterized queries (placeholders with `?`) to pre
 
 **Example from Update Operation:**
 
-```javascript
-db.query(
-    "UPDATE cursos SET ? WHERE id = ?", 
-    [{
-        titulo: titulo,
-        descripcion: descripcion,
-        categoria: categoria,
-    }, id],
-    (error, results) => { ... }
-);
+```
+
 ```
 
 The first parameter (`?`) accepts an object where keys map to column names, and the second parameter (`?`) is the scalar course ID [src/controller.js L35-L43](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/src/controller.js#L35-L43)

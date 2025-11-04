@@ -168,10 +168,8 @@ The `header.ejs` partial provides the navigation menu structure and closes the H
 
 The header includes a responsive hamburger menu toggle mechanism implemented with client-side JavaScript:
 
-```javascript
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+```
+
 ```
 
 **Sources:** [views/partials/header.ejs L1-L26](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/partials/header.ejs#L1-L26)
@@ -198,33 +196,8 @@ The frontend receives dynamic data through the route-to-view rendering pipeline.
 
 **Diagram: View Rendering Pipeline**
 
-```mermaid
-sequenceDiagram
-  participant Browser
-  participant Route Handler
-  participant (routes/*.js)
-  participant express-session
-  participant Middleware
-  participant MySQL Database
-  participant (config/db.js)
-  participant EJS Template Engine
-  participant View Template
-  participant (views/*.ejs)
+```
 
-  Browser->>Route Handler: "HTTP GET Request"
-  Route Handler->>express-session: "req.session.usuario
-  express-session-->>Route Handler: req.session.loggedin
-  loop ["Requires Database Data"]
-    Route Handler->>MySQL Database: req.session.rol"
-    MySQL Database-->>Route Handler: "Session Data"
-  end
-  Route Handler->>EJS Template Engine: "connection.query(sql, params)"
-  EJS Template Engine->>View Template: "Query Results"
-  View Template->>EJS Template Engine: "res.render('template', {
-  EJS Template Engine->>View Template: name: session.usuario,
-  View Template-->>EJS Template Engine: login: session.loggedin,
-  EJS Template Engine-->>Route Handler: rol: session.rol,
-  Route Handler-->>Browser: data: dbResults
 ```
 
 **Sources:** [app.js L4-L13](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L4-L13)
@@ -297,8 +270,7 @@ This configuration maps the `/resources` URL path to the `public/` directory. As
 Views reference static assets using the `/resources` prefix:
 
 ```
-<link rel="stylesheet" href="/resources/css/index.css">
-<link rel="stylesheet" href="/resources/css/header.css">
+
 ```
 
 **Sources:** [views/partials/head.ejs L6](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/partials/head.ejs#L6-L6)
@@ -313,54 +285,8 @@ The frontend leverages external CSS frameworks and libraries loaded via CDN for 
 
 **Diagram: Frontend Dependency Resolution**
 
-```mermaid
-flowchart TD
+```
 
-Browser["Client Browser"]
-ExpressApp["app.js<br>Express Server"]
-StaticMiddleware["express.static<br>Middleware"]
-EJSEngine["EJS Template Engine"]
-HeadPartial["views/partials/head.ejs"]
-ViewTemplate["views/*.ejs"]
-PublicDir["public/<br>directory"]
-BootstrapCDN["cdn.jsdelivr.net<br>Bootstrap 5.3.7"]
-BoxiconsCDN["cdn.boxicons.com<br>Boxicons Icons"]
-
-Browser --> ExpressApp
-EJSEngine --> HeadPartial
-EJSEngine --> ViewTemplate
-HeadPartial --> BootstrapCDN
-HeadPartial --> BoxiconsCDN
-HeadPartial --> StaticMiddleware
-StaticMiddleware --> PublicDir
-BootstrapCDN --> Browser
-BoxiconsCDN --> Browser
-PublicDir --> Browser
-
-subgraph subGraph4 ["External CDNs"]
-    BootstrapCDN
-    BoxiconsCDN
-end
-
-subgraph subGraph3 ["Local Assets"]
-    PublicDir
-end
-
-subgraph subGraph2 ["View Layer"]
-    HeadPartial
-    ViewTemplate
-end
-
-subgraph subGraph1 ["Express Server"]
-    ExpressApp
-    StaticMiddleware
-    EJSEngine
-    ExpressApp --> EJSEngine
-end
-
-subgraph subGraph0 ["Browser Request Flow"]
-    Browser
-end
 ```
 
 **Sources:** [app.js L19](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/app.js#L19-L19)
@@ -372,10 +298,7 @@ end
 The application uses Bootstrap for responsive grid layout, component styling, and utility classes:
 
 ```
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
-      crossorigin="anonymous">
+
 ```
 
 Common Bootstrap classes used:
@@ -393,7 +316,7 @@ Common Bootstrap classes used:
 Boxicons provides vector icon sets for the UI:
 
 ```
-<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+
 ```
 
 **Sources:** [views/partials/head.ejs L7](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/partials/head.ejs#L7-L7)
@@ -416,20 +339,14 @@ The navigation consists of:
 
 The responsive behavior is controlled by JavaScript that toggles the `active` class:
 
-```javascript
-function toggleMenu() {
-  document.getElementById('navLinks').classList.toggle('active');
-}
+```
+
 ```
 
 This function is triggered by the hamburger menu button:
 
-```html
-<div class="menu-btn" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+```
+
 ```
 
 The CSS (in `header.css`) handles the responsive display logic based on the `active` class state.

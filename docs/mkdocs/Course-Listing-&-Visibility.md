@@ -18,32 +18,8 @@ The course listing system implements a two-tier visibility model where courses i
 
 **Visibility Control Flow Diagram**
 
-```mermaid
-flowchart TD
+```
 
-Request["GET /courses Request"]
-SessionCheck["Session Check<br>req.session?.rol"]
-RoleDetection["User Role"]
-PublicoQuery["SQL Query<br>WHERE visibilidad='publico'"]
-FullQuery["SQL Query<br>SELECT * FROM cursos"]
-DBExec["db.query() Execution"]
-ResultsCheck["Query Success?"]
-EmptyResults["Render with<br>cursos: []"]
-RenderView["Render courses.ejs<br>with results"]
-ViewLayer["courses.ejs<br>displays empty list"]
-
-Request --> SessionCheck
-SessionCheck --> RoleDetection
-RoleDetection --> PublicoQuery
-RoleDetection --> FullQuery
-RoleDetection --> FullQuery
-PublicoQuery --> DBExec
-FullQuery --> DBExec
-DBExec --> ResultsCheck
-ResultsCheck --> EmptyResults
-ResultsCheck --> RenderView
-EmptyResults --> ViewLayer
-RenderView --> ViewLayer
 ```
 
 Sources: [routes/courses.js L35-L62](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L35-L62)
@@ -80,18 +56,8 @@ The route constructs a dynamic SQL query based on the detected role. The base qu
 
 **Query Construction Logic Diagram**
 
-```mermaid
-flowchart TD
+```
 
-Start["Initialize base query<br>let sql = 'SELECT * FROM cursos'"]
-CheckRole["rol === 'publico'?"]
-AppendWhere["sql += ' WHERE visibilidad=public'"]
-ExecuteQuery["db.query(sql, callback)"]
-
-Start --> CheckRole
-CheckRole --> AppendWhere
-CheckRole --> ExecuteQuery
-AppendWhere --> ExecuteQuery
 ```
 
 The implementation at [routes/courses.js L38-L42](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L38-L42)
@@ -115,19 +81,8 @@ Sources: [routes/courses.js L38-L42](https://github.com/Lourdes12587/Week06/blob
 
 The database query execution includes error handling that ensures graceful degradation when database operations fail.
 
-```mermaid
-flowchart TD
+```
 
-QueryExec["db.query() Callback"]
-ErrorCheck["error exists?"]
-LogError["console.error(error)"]
-RenderEmpty["res.render('courses')<br>cursos: []<br>login: false/session value<br>rol: session.rol"]
-RenderSuccess["res.render('courses')<br>cursos: results<br>login: session value<br>rol: detected rol"]
-
-QueryExec --> ErrorCheck
-ErrorCheck --> LogError
-ErrorCheck --> RenderSuccess
-LogError --> RenderEmpty
 ```
 
 The error handling at [routes/courses.js L44-L61](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/courses.js#L44-L61)
@@ -153,33 +108,8 @@ The `courses.ejs` template adapts its display based on the `login` status and `r
 
 **Template Conditional Logic Structure**
 
-```mermaid
-flowchart TD
+```
 
-Template["courses.ejs Template"]
-LoginCheck["<% if login %>"]
-HideContent["No content displayed"]
-ShowTable["Display course table"]
-RoleCheck["<% if rol == 'admin' %>"]
-ShowCreateBtn["Show Create New button"]
-HeaderLoop["<% if rol == 'admin' %>"]
-ShowActionsHeader["Show Actions column"]
-RowLoop["<% cursos.forEach %>"]
-RoleCheckRow["Role Check in Row"]
-ShowEditDelete["Admin: Edit/Delete buttons"]
-ShowEnroll["Registrado: Enroll button"]
-
-Template --> LoginCheck
-LoginCheck --> HideContent
-LoginCheck --> ShowTable
-ShowTable --> RoleCheck
-RoleCheck --> ShowCreateBtn
-ShowTable --> HeaderLoop
-HeaderLoop --> ShowActionsHeader
-ShowTable --> RowLoop
-RowLoop --> RoleCheckRow
-RoleCheckRow --> ShowEditDelete
-RoleCheckRow --> ShowEnroll
 ```
 
 ### Display Logic Implementation
@@ -245,37 +175,8 @@ The `/courses` route at [routes/courses.js L35](https://github.com/Lourdes12587/
 
 **Comparison with Protected Routes:**
 
-```mermaid
-flowchart TD
+```
 
-CreateRoute["GET /create"]
-AuthMW["estaAutenticado"]
-AdminMW["isAdmin"]
-DirectAccess["Direct handler execution"]
-CoursesRoute["GET /courses"]
-NoMiddleware["No middleware"]
-RoleDetection["Role detection in handler"]
-ConditionalQuery["Conditional SQL query"]
-
-subgraph subGraph1 ["Protected Route Pattern"]
-    CreateRoute
-    AuthMW
-    AdminMW
-    DirectAccess
-    CreateRoute --> AuthMW
-    AuthMW --> AdminMW
-    AdminMW --> DirectAccess
-end
-
-subgraph subGraph0 ["Public Route Pattern"]
-    CoursesRoute
-    NoMiddleware
-    RoleDetection
-    ConditionalQuery
-    CoursesRoute --> NoMiddleware
-    NoMiddleware --> RoleDetection
-    RoleDetection --> ConditionalQuery
-end
 ```
 
 This architectural choice means:

@@ -140,7 +140,22 @@ ErrorCheck --> ProcessRegistration
 The validation chain is defined as middleware before the route handler:
 
 ```
+[
+  body("nombre")
+    .exists()
+    .isLength({ min: 3 })
+    .withMessage("El nombre debe tener al menos 3 caracteres"),
 
+  body("email")
+    .exists()
+    .isEmail()
+    .withMessage("El email debe ser válido"),
+
+  body("password")
+    .exists()
+    .isLength({ min: 4 })
+    .withMessage("La contraseña debe tener al menos 4 caracteres")
+]
 ```
 
 [routes/auth.js L17-L33](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L17-L33)
@@ -149,8 +164,14 @@ The validation chain is defined as middleware before the route handler:
 
 When validation fails, errors are passed to the view:
 
-```
-
+```javascript
+const errors = validationResult(req); 
+if (!errors.isEmpty()) {
+  res.render("register", {
+    validaciones: errors.array(),
+    valores: req.body
+  });
+}
 ```
 
 [routes/auth.js L35-L40](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L35-L40)
@@ -184,8 +205,9 @@ HashedPassword --> DBInsert
 
 ### Implementation
 
-```
-
+```javascript
+const { nombre, email, password, rol } = req.body;
+const passwordHash = await bcrypt.hash(password, 8);
 ```
 
 [routes/auth.js L43-L44](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L43-L44)
@@ -226,8 +248,31 @@ CheckResult --> RenderSuccess
 
 ### Insertion Query
 
-```
-
+```javascript
+db.query(
+  "INSERT INTO usuarios SET ?",
+  {
+    nombre: nombre,
+    email: email,
+    password: passwordHash,
+    rol: rol || 'registrado',
+  },
+  (error, results) => { 
+    if (error) {
+      console.log(error);
+    } else {
+      res.render("register", { 
+        alert: true,
+        alertTitle: 'Registro exitoso',
+        alertMessage: 'Tu cuenta fue creada',
+        alertIcon: 'success',
+        showConfirmButton: false,
+        timer: 2500,
+        ruta: 'login' 
+      });
+    }
+  }
+);
 ```
 
 [routes/auth.js L46-L69](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L46-L69)
@@ -236,8 +281,8 @@ CheckResult --> RenderSuccess
 
 If the `rol` field is not provided or is empty, it defaults to `'registrado'` using the logical OR operator:
 
-```
-
+```yaml
+rol: rol || 'registrado',
 ```
 
 [routes/auth.js L52](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L52-L52)
@@ -290,8 +335,15 @@ end
 
 The form conditionally displays based on the `register` flag or presence of `validaciones`:
 
-```
-
+```html
+<% if ((typeof register !== 'undefined' && register) || typeof validaciones !== 'undefined') { %>
+  <div class="registro-container">
+    <h2>Crear una Cuenta</h2>
+    <form action="/register" method="POST">
+      <!-- form fields -->
+    </form>
+  </div>
+<% } %>
 ```
 
 [views/register.ejs L9-L55](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L9-L55)
@@ -300,8 +352,14 @@ The form conditionally displays based on the `register` flag or presence of `val
 
 The form includes a dropdown for role selection:
 
-```
-
+```sql
+<div class="form-group">
+  <label for="rol">Rol:</label>
+  <select name="rol">
+    <option value="admin">Administrador</option>
+    <option value="registrado">Registrado</option>
+  </select>
+</div>
 ```
 
 [views/register.ejs L26-L32](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L26-L32)
@@ -313,7 +371,8 @@ Note: In a production system, this field should not be exposed to public users. 
 On validation failure, form fields repopulate with submitted values:
 
 ```
-
+<input type="text" name="nombre"
+  value="<% if (typeof valores !=='undefined') { %> <%= valores.nombre %> <% } %>">
 ```
 
 [views/register.ejs L16-L17](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L16-L17)
@@ -328,8 +387,17 @@ Validation errors are displayed using Bootstrap dismissible alerts.
 
 ### Error Rendering Logic
 
-```
-
+```javascript
+<% if (typeof validaciones != 'undefined') { %>
+  <% validaciones.forEach(validacion=> {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>
+        <%= validacion.msg %>
+      </strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>   
+  <% }); %>
+<% } %>
 ```
 
 [views/register.ejs L42-L52](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L42-L52)
@@ -348,8 +416,16 @@ Upon successful registration, SweetAlert2 displays a modal and redirects to the 
 
 The route handler passes alert configuration to the view:
 
-```
-
+```yaml
+res.render("register", { 
+  alert: true,
+  alertTitle: 'Registro exitoso',
+  alertMessage: 'Tu cuenta fue creada',
+  alertIcon: 'success',
+  showConfirmButton: false,
+  timer: 2500,
+  ruta: 'login' 
+});
 ```
 
 [routes/auth.js L58-L66](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/routes/auth.js#L58-L66)
@@ -358,8 +434,20 @@ The route handler passes alert configuration to the view:
 
 The view conditionally renders a SweetAlert script block:
 
-```
-
+```javascript
+<% if (typeof alert != 'undefined') { %>
+  <script>
+    Swal.fire({
+      title: '<%= alertTitle %>',
+      text: '<%= alertMessage %>',
+      icon: '<%= alertIcon %>',
+      showConfirmButton: <%= showConfirmButton %>,
+      timer: <%= timer %>
+    }).then (()=> {
+      window.location ='/<%= ruta%>'
+    })
+  </script>
+<% } %>
 ```
 
 [views/register.ejs L59-L71](https://github.com/Lourdes12587/Week06/blob/ce0c3bcd/views/register.ejs#L59-L71)

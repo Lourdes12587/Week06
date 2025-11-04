@@ -131,9 +131,13 @@ router.post('/auth', async (req, res) => {
  });
 
 //cerrar sesion
-router.post('/logout', (req, res) => {
-  req.session.destroy(() => res.redirect('/'));
-});
+//router.post('/logout', (req, res) => {
+//  req.session.destroy(() => res.redirect('/'));
+//});
 
+router.post('/logout', (req, res) => {
+  req.session = null;
+  res.redirect('/');
+});
 
 module.exports = router;
